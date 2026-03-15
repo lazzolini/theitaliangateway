@@ -115,7 +115,7 @@ const ARTICLES = [
       { type: "faq", q: "Can I leave before 15 years?", a: "Yes. You can revoke the regime at any time. There is no clawback on previous payments. If you leave Italy entirely, the regime simply ends." },
       { type: "faq", q: "Is the €200,000 indexed to inflation?", a: "Currently no. The amount has been fixed at €200,000 since it was raised from €100,000 in 2024. Future budget laws could change this." },
 
-      { type: "callout", text: "Disclaimer: This guide provides general information as of March 2026. Tax laws change frequently. Always consult qualified Italian tax counsel before making decisions. Arrivo Italy coordinates these professionals on your behalf but does not provide direct tax advice." },
+      { type: "callout", text: "Disclaimer: This guide provides general information as of March 2026. Tax laws change frequently. Always consult qualified Italian tax counsel before making decisions. The Italian Gateway coordinates these professionals on your behalf but does not provide direct tax advice." },
     ]
   },
 
@@ -220,7 +220,7 @@ const ARTICLES = [
       { type: "faq", q: "How far is Lake Como from Milan airports?", a: "Malpensa (MXP): 60-75 minutes by car. Linate (LIN): 75-90 minutes. Bergamo/Orio al Serio (BGY): 90 minutes. Como itself is 50 minutes from Milan city center." },
       { type: "faq", q: "Is Lake Como a good investment?", a: "Historically, yes. Prime lakefront property has appreciated 5-8% annually over the past decade, with limited supply providing a natural floor. However, past performance is no guarantee — the market is illiquid at the top end, and you should buy primarily for lifestyle, not speculation." },
 
-      { type: "callout", text: "Disclaimer: This guide provides general information as of March 2026. Property markets, tax laws, and regulations change. Always engage qualified local professionals. Arrivo Italy provides independent buyer advisory for Lake Como properties." },
+      { type: "callout", text: "Disclaimer: This guide provides general information as of March 2026. Property markets, tax laws, and regulations change. Always engage qualified local professionals. The Italian Gateway provides independent buyer advisory for Lake Como properties." },
     ]
   },
 
@@ -408,7 +408,7 @@ const ARTICLES = [
       { type: "faq", q: "What about dental care?", a: "Dental care for adults is mostly private in Italy. A comprehensive dental check-up costs €100-200. Major procedures are significantly cheaper than in the UK or US. Many international health insurance policies include dental. Children's dental care is partially covered by SSN." },
       { type: "faq", q: "How does emergency care work?", a: "Call 112 (the European emergency number) for emergencies. The Pronto Soccorso (emergency department) at any hospital will treat you regardless of insurance status or registration. For non-life-threatening issues, you will be triaged with a color code (white, green, yellow, red) and wait times vary accordingly." },
 
-      { type: "callout", text: "Disclaimer: This guide provides general information as of March 2026. Healthcare regulations and costs change. Always consult your doctor for medical decisions. Arrivo Italy coordinates healthcare setup as part of our relocation service." },
+      { type: "callout", text: "Disclaimer: This guide provides general information as of March 2026. Healthcare regulations and costs change. Always consult your doctor for medical decisions. The Italian Gateway coordinates healthcare setup as part of our relocation service." },
     ]
   },
 
@@ -512,7 +512,7 @@ const ARTICLES = [
       { type: "faq", q: "Can I fly my car from Dubai to Milan?", a: "Yes, but you'll pay 22% VAT on the assessed value plus homologation costs. For most people, selling in Dubai and buying in Italy is simpler and cheaper." },
       { type: "faq", q: "What if I want to return to Dubai later?", a: "You can leave Italy at any time. The flat tax simply stops — no clawback. Many view the 15-year window as flexible, using it fully or partially as circumstances evolve." },
 
-      { type: "callout", text: "Disclaimer: This guide provides general information as of March 2026. Tax laws, immigration rules, and markets change frequently. Always consult qualified professionals. Arrivo Italy coordinates these professionals on your behalf." },
+      { type: "callout", text: "Disclaimer: This guide provides general information as of March 2026. Tax laws, immigration rules, and markets change frequently. Always consult qualified professionals. The Italian Gateway coordinates these professionals on your behalf." },
     ]
   },
 

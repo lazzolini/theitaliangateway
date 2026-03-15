@@ -88,8 +88,8 @@ function Nav({ setPage }) {
     }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ cursor: "pointer", display: "flex", alignItems: "baseline", gap: 8 }} onClick={() => navTo("home")}>
-          <span style={{ fontFamily: "Georgia, serif", fontSize: 24, color: C.gold, fontWeight: 400, letterSpacing: 2 }}>ARRIVO</span>
-          <span style={{ fontFamily: "'Segoe UI', sans-serif", fontSize: 12, color: C.textDim, letterSpacing: 4, textTransform: "uppercase" }}>ITALY</span>
+          <span style={{ fontFamily: "Georgia, serif", fontSize: 22, color: C.gold, fontWeight: 400, letterSpacing: 1 }}>THE ITALIAN</span>
+          <span style={{ fontFamily: "Georgia, serif", fontSize: 22, color: C.white, fontWeight: 400, letterSpacing: 1, marginLeft: 6 }}>GATEWAY</span>
         </div>
         {/* Mobile hamburger */}
         <button onClick={() => setMenuOpen(!menuOpen)} style={{ display: "none", background: "none", border: "none", color: C.gold, fontSize: 24, cursor: "pointer", "@media(maxWidth:768px)": { display: "block" } }}>☰</button>
@@ -121,7 +121,7 @@ function Hero({ setPage }) {
       <div style={{ position: "absolute", inset: 0, opacity: 0.04, backgroundImage: "radial-gradient(circle at 25% 25%, #C9A96E 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
       <div style={{ position: "relative", textAlign: "center", maxWidth: 800, padding: "120px 24px 80px" }}>
         <FadeIn>
-          <div style={{ fontSize: 13, color: C.gold, letterSpacing: 6, textTransform: "uppercase", marginBottom: 32, fontFamily: "'Segoe UI', sans-serif" }}>Your Gateway to Italian Living</div>
+          <div style={{ fontSize: 13, color: C.gold, letterSpacing: 6, textTransform: "uppercase", marginBottom: 32, fontFamily: "'Segoe UI', sans-serif" }}>Premium Relocation Advisory</div>
         </FadeIn>
         <FadeIn delay={150}>
           <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(36px, 6vw, 64px)", color: C.white, fontWeight: 400, lineHeight: 1.15, margin: "0 0 24px" }}>
@@ -298,7 +298,7 @@ function Contact() {
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <div style={{ color: C.gold, fontSize: 12, letterSpacing: 4, textTransform: "uppercase", marginBottom: 12 }}>Get in Touch</div>
             <h2 style={{ fontFamily: "Georgia, serif", fontSize: 36, color: C.white, fontWeight: 400, marginBottom: 16 }}>30-minute discovery call</h2>
-            <p style={{ color: C.textDim, fontSize: 15, lineHeight: 1.6 }}>Completely confidential. No obligation. We'll discuss your situation and whether Arrivo Italy is the right fit.</p>
+            <p style={{ color: C.textDim, fontSize: 15, lineHeight: 1.6 }}>Completely confidential. No obligation. We'll discuss your situation and whether The Italian Gateway is the right fit.</p>
           </div>
         </FadeIn>
         {sent ? (
@@ -341,11 +341,11 @@ function Footer({ setPage }) {
       <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 32 }}>
         <div>
           <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 12 }}>
-            <span style={{ fontFamily: "Georgia, serif", fontSize: 20, color: C.gold }}>ARRIVO</span>
-            <span style={{ fontSize: 10, color: C.textDim, letterSpacing: 3 }}>ITALY</span>
+            <span style={{ fontFamily: "Georgia, serif", fontSize: 18, color: C.gold }}>THE ITALIAN</span>
+            <span style={{ fontFamily: "Georgia, serif", fontSize: 18, color: C.white, marginLeft: 6 }}>GATEWAY</span>
           </div>
           <p style={{ color: C.textDim, fontSize: 13, maxWidth: 300, lineHeight: 1.6 }}>Premium relocation advisory for high-net-worth individuals. Milan, Italy.</p>
-          <p style={{ color: C.textDim, fontSize: 13, marginTop: 8 }}>hello@arrivoitaly.com</p>
+          <p style={{ color: C.textDim, fontSize: 13, marginTop: 8 }}>info@theitaliangateway.com</p>
         </div>
         <div style={{ display: "flex", gap: 48, flexWrap: "wrap" }}>
           <div>
@@ -372,7 +372,7 @@ function Footer({ setPage }) {
         </div>
       </div>
       <div style={{ maxWidth: 1200, margin: "40px auto 0", paddingTop: 24, borderTop: `1px solid ${C.border}`, textAlign: "center" }}>
-        <p style={{ color: C.textDim, fontSize: 12 }}>© 2026 Arrivo Italy. All rights reserved. This website does not constitute financial, legal, or tax advice.</p>
+        <p style={{ color: C.textDim, fontSize: 12 }}>© 2026 The Italian Gateway. All rights reserved. This website does not constitute financial, legal, or tax advice.</p>
       </div>
     </footer>
   );
