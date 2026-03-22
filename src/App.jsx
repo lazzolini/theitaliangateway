@@ -9,7 +9,7 @@ const C = {
 };
 
 // Replace with your Formspree form ID after creating account at formspree.io
-const FORM_ID = "xpwzgkvq";
+const FORM_ID = "xbdzzepp";
 const FORM_URL = "https://formspree.io/f/" + FORM_ID;
 
 async function submitForm(data) {
@@ -210,15 +210,43 @@ const QUIZ_RESULTS = {
   milan: { title: "Milan", emoji: "🏙", subtitle: "Culture, commerce, and connectivity", desc: "You want a world-class city that happens to be in Italy. Milan gives you La Scala, Michelin-starred restaurants, three airports, the best hospitals, and the best schools, all walkable.", highlights: ["3 international airports", "Top healthcare", "6+ international schools", "Direct trains everywhere"] },
 };
 
-const PROPERTIES = [
-  { id: 1, title: "Lake Como — Bellagio & the Golden Triangle", location: "Lake Como, Lombardy", tag: "Lakefront Living", img: "https://images.unsplash.com/photo-1537196836800-aa30e4c5f6a4?w=600&h=400&fit=crop", desc: "Bellagio sits at the point where Lake Como splits into two arms, offering panoramic views in every direction. International buyers prize the area for its privacy, proximity to Milan Malpensa (50 min), and access to skiing in Madesimo and St. Moritz. Villas with private docks start from €3M; grand lakefront estates reach €50M+." },
-  { id: 2, title: "Milan — Porta Nuova & CityLife Skyline", location: "Milan, Lombardy", tag: "Urban Luxury", img: "https://images.unsplash.com/photo-1513581166391-887a96ddeafd?w=600&h=400&fit=crop", desc: "Milan's Porta Nuova and CityLife districts represent Italy's most modern skyline, home to the Bosco Verticale and Hadid Tower. Penthouses with triple exposure and skyline views command €12,000-15,000/sqm. Walking distance to La Scala, Brera, and Quadrilatero della Moda." },
-  { id: 3, title: "Tuscany — Chianti Wine Country", location: "Chianti, Tuscany", tag: "Wine Estate", img: "https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?w=600&h=400&fit=crop", desc: "The rolling hills between Florence and Siena define the Chianti Classico wine region. Restored farmhouses (casali) with olive groves and vineyards appeal to buyers seeking space, land, and the slow life. Properties with 5-20 hectares of land range from €1.5M to €10M. Florence airport is 30 minutes away." },
-  { id: 4, title: "Amalfi Coast — Ravello & Positano", location: "Amalfi Coast, Campania", tag: "Mediterranean", img: "https://images.unsplash.com/photo-1533606688076-b6683a5fa4be?w=600&h=400&fit=crop", desc: "The Amalfi Coast offers the most dramatic coastline in the Mediterranean. Ravello sits 350 meters above the sea, while Positano cascades down to the water. Cliffside villas with infinity pools and sea terraces range from €3M to €20M+. Year-round warm climate and the 7% retiree flat tax in qualifying municipalities." },
-  { id: 5, title: "Lake Como — Tremezzo & Villa Carlotta", location: "Lake Como, Lombardy", tag: "Trophy Estate", img: "https://images.unsplash.com/photo-1610547477757-1d45d1b92271?w=600&h=400&fit=crop", desc: "Tremezzo's western shore catches afternoon sun and faces Bellagio across the lake. Home to Villa Carlotta and the Grand Hotel Tremezzo, this area attracts buyers seeking grand estates with private parks and boat access. Properties with historical significance and 1,000+ sqm of gardens start from €8M." },
-  { id: 6, title: "Milan — Brera Art District", location: "Milan, Lombardy", tag: "Historic Center", img: "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?w=600&h=400&fit=crop", desc: "Brera is Milan's art district: cobblestone streets, the Pinacoteca di Brera, independent galleries, and some of the city's best restaurants. Liberty-style apartments with original frescoes and high ceilings (4m+) are the signature property type. Prices range from €6,000-12,000/sqm for premium locations." },
-  { id: 7, title: "Tuscany — Val d'Orcia UNESCO Landscape", location: "Val d'Orcia, Tuscany", tag: "Panoramic Estate", img: "https://images.unsplash.com/photo-1467803738586-46b7eb7b16a1?w=600&h=400&fit=crop", desc: "Val d'Orcia is a UNESCO World Heritage landscape of cypress-lined roads, medieval hilltop towns (Pienza, Montalcino, Montepulciano), and golden wheat fields. Hilltop estates with 360-degree views and agritourismo potential range from €2M to €8M. The 7% retiree flat tax applies in qualifying municipalities." },
-  { id: 8, title: "Sardinia — Costa Smeralda", location: "Costa Smeralda, Sardinia", tag: "Beach & Marina", img: "https://images.unsplash.com/photo-1586500790786-77b895640e1d?w=600&h=400&fit=crop", desc: "Porto Cervo and the Costa Smeralda represent Italy's most exclusive summer destination. Crystal waters, world-class marinas, and a social scene that peaks June-September. Villas near the Yacht Club Costa Smeralda start from €5M. Many buyers combine a Sardinia summer home with a Milan or Como primary residence." },
+const LOCATIONS = [
+  { id: 1, title: "Lake Como", sub: "Lombardy — 50 min from Milan Malpensa", tag: "Lakefront Living",
+    img: "https://images.unsplash.com/photo-1559666126-84f389727b9a?w=800&q=80&fit=crop&crop=center",
+    highlights: ["45 min to Milan", "Skiing in 1 hour", "Privacy & discretion", "International community"],
+    property: "Lakefront villas €3M–50M+. Hillside homes €800K–8M. Apartments in Bellagio/Varenna €400K–2M. €5,000–20,000/sqm lakefront.",
+    lifestyle: "The most discreet luxury destination in Europe. George Clooney, Richard Branson, and the Versace family chose Como for a reason: unmatched natural beauty, absolute privacy, and easy access to Milan, Switzerland, and the Alps. The social scene revolves around sailing clubs, private dinners, and the Grand Hotel Tremezzo.",
+    climate: "Mild microclimate. Summers 25–30°C, winters 2–8°C. Protected by Alps from northern winds. Gardens bloom year-round." },
+  { id: 2, title: "Milan", sub: "Lombardy — Italy's financial and fashion capital", tag: "Urban Luxury",
+    img: "https://images.unsplash.com/photo-1520440229-6469a149ac59?w=800&q=80&fit=crop&crop=center",
+    highlights: ["3 international airports", "6+ international schools", "Top hospitals (San Raffaele, Humanitas)", "La Scala, Brera, Quadrilatero"],
+    property: "Porta Nuova/CityLife penthouses €10,000–15,000/sqm. Brera/Magenta €6,000–12,000/sqm. Peripheral luxury €3,000–6,000/sqm. New-build penthouses with skyline views from €2M.",
+    lifestyle: "Milan is where Italy meets the world. Michelin-starred restaurants, La Scala opera, global fashion weeks, and Serie A football. A HNWI in Milan has everything walkable: private banking in Piazza Affari, shopping in Montenapoleone, aperitivo in Brera. The city has transformed in the past decade with Porta Nuova and CityLife redefining the skyline.",
+    climate: "Continental climate. Hot summers (30–35°C), cold winters (0–5°C). Fog in November–January. Best months: April–June, September–October." },
+  { id: 3, title: "Tuscany — Chianti & Val d'Orcia", sub: "Between Florence and Siena", tag: "Wine & Estate Country",
+    img: "https://images.unsplash.com/photo-1543429258-53901c6e1576?w=800&q=80&fit=crop&crop=center",
+    highlights: ["Florence airport 30 min", "UNESCO landscape", "World-class wine", "7% retiree flat tax eligible"],
+    property: "Restored farmhouses (casali) €1.5M–10M. Wine estates with vineyards €3M–25M. Hilltop villas €2M–8M. Val d'Orcia estates with agritourismo potential yield 4–6%.",
+    lifestyle: "The Tuscan dream is real: cypress-lined roads, medieval hilltop towns, and the world's best wine at your doorstep. Chianti Classico and Val d'Orcia attract buyers who want land, space, and a rhythm of life dictated by seasons. Strong international community, especially British and American expats. Excellent local food culture.",
+    climate: "Mediterranean-continental. Warm summers (28–35°C), mild winters (4–10°C). 250+ sunny days/year. Harvest season (Sep–Oct) is magical." },
+  { id: 4, title: "Amalfi Coast", sub: "Campania — Positano, Ravello, Amalfi", tag: "Mediterranean Drama",
+    img: "https://images.unsplash.com/photo-1534008897995-27a23e859048?w=800&q=80&fit=crop&crop=center",
+    highlights: ["Year-round warmth", "Naples airport 90 min", "Capri by boat 30 min", "7% retiree flat tax eligible"],
+    property: "Cliffside villas with sea terraces €3M–20M+. Ravello (elevated, panoramic) tends to be quieter and more spacious. Positano is iconic but access is challenging. Praiano offers a balance of views and accessibility.",
+    lifestyle: "The most dramatic coastline in the Mediterranean. Life revolves around the sea: morning coffee watching fishing boats, lunch at a cliffside restaurant, sunset from a private terrace above the Tyrrhenian. The social scene peaks May–September. Off-season is quieter, locals-only, and deeply authentic.",
+    climate: "Mild year-round. Summers 28–32°C, winters 8–14°C. Swimming possible April–November. 300+ sunny days." },
+  { id: 5, title: "Sardinia — Costa Smeralda", sub: "Gallura — Porto Cervo, Porto Rotondo", tag: "Beach & Marina",
+    img: "https://images.unsplash.com/photo-1580139898410-d7b7e3cae5a1?w=800&q=80&fit=crop&crop=center",
+    highlights: ["Olbia airport (direct flights EU-wide)", "World-class marinas", "Crystal-clear beaches", "Peak social season June–Sep"],
+    property: "Villas near Yacht Club Costa Smeralda from €5M. Porto Cervo center from €8M. Porto Rotondo slightly lower at €2M–8M. Many buyers combine a Sardinia summer villa with a Milan or Como primary residence.",
+    lifestyle: "Italy's most exclusive summer playground. Porto Cervo's Yacht Club hosts the Rolex Cup and the Loro Piana Superyacht Regatta. Days are spent on private beaches, evenings at open-air restaurants. The season is short (June–September) but intense. Off-season, Sardinia is raw, wild, and empty.",
+    climate: "Hot dry summers (30–38°C), mild winters (8–15°C). Best beaches in Europe. Mistral wind keeps summers bearable." },
+  { id: 6, title: "Italian Riviera — Portofino & Liguria", sub: "Between Genoa and La Spezia", tag: "Yachting & Glamour",
+    img: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800&q=80&fit=crop&crop=center",
+    highlights: ["Genoa airport 40 min", "Santa Margherita marina", "Cinque Terre nearby", "Year-round mild climate"],
+    property: "Portofino itself has almost no inventory — properties rarely come to market and start at €5M for modest apartments. Santa Margherita Ligure and Rapallo offer better value at €4,000–10,000/sqm. Hilltop villas with sea views €2M–15M.",
+    lifestyle: "Portofino is the most photographed harbor in Italy. The piazzetta, the yacht-filled harbor, the faded pastel buildings — it's a living postcard. But beyond the glamour, the Ligurian coast offers hiking (Cinque Terre), exceptional seafood (pesto was born here), and a relaxed elegance that feels effortless. Genoa, 30 minutes away, is Italy's most underrated city.",
+    climate: "Mediterranean. Mild year-round (winters 6–12°C, summers 26–30°C). Protected by mountains. Best microclimate in Northern Italy." },
 ];
 
 const COL_CITIES = [
@@ -240,6 +268,11 @@ function FadeIn({ children, delay = 0 }) {
 
 function MobileStyles() {
   return <style>{`
+    html{scroll-behavior:smooth}
+    *{-webkit-tap-highlight-color:transparent}
+    select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239CA3AF' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px !important}
+    input::placeholder{color:#6B7280}
+    img{-webkit-user-drag:none}
     @media(max-width:768px){
       .nav-links{display:none !important}
       .nav-burger{display:flex !important}
@@ -248,7 +281,9 @@ function MobileStyles() {
       .form-grid{grid-template-columns:1fr !important}
       .footer-grid{flex-direction:column !important;gap:24px !important}
       .stats-row{gap:24px !important}
-      .hero-title{font-size:clamp(28px,8vw,48px) !important}
+      .loc-row{flex-direction:column !important}
+      .loc-img{max-width:100% !important;min-height:200px !important}
+      .loc-body{padding:20px 20px 24px !important}
     }
     @media(min-width:769px){
       .nav-burger{display:none !important}
@@ -257,12 +292,20 @@ function MobileStyles() {
   `}</style>;
 }
 
+function BackToTop() {
+  const [show, setShow] = useState(false);
+  useEffect(() => { const h = () => setShow(window.scrollY > 600); window.addEventListener("scroll", h); return () => window.removeEventListener("scroll", h); }, []);
+  if (!show) return null;
+  return <button onClick={() => window.scrollTo({top:0,behavior:"smooth"})} aria-label="Back to top"
+    style={{ position:"fixed",bottom:32,right:32,zIndex:40,width:44,height:44,borderRadius:"50%",background:C.gold,color:C.bg,border:"none",fontSize:18,cursor:"pointer",boxShadow:"0 4px 12px rgba(0,0,0,0.3)",transition:"opacity 0.3s,transform 0.3s",opacity:show?1:0,transform:show?"translateY(0)":"translateY(20px)",display:"flex",alignItems:"center",justifyContent:"center" }}>↑</button>;
+}
+
 function Nav({ setPage }) {
   const [sc, setSc] = useState(false);
   const [mob, setMob] = useState(false);
   useEffect(() => { const h = () => setSc(window.scrollY > 40); window.addEventListener("scroll", h); return () => window.removeEventListener("scroll", h); }, []);
   const go = t => { setMob(false); if (["guides","quiz","properties"].includes(t) || t.startsWith("v-")) { setPage(t); window.scrollTo(0,0); } else { setPage("home"); setTimeout(() => document.getElementById(t)?.scrollIntoView({ behavior: "smooth" }), 100); } };
-  const links = [["Services","services"],["Guides","guides"],["Quiz","quiz"],["Properties","properties"],["Plans","plans"],["Contact","contact"]];
+  const links = [["Services","services"],["Guides","guides"],["Quiz","quiz"],["Locations","properties"],["Plans","plans"],["Contact","contact"]];
   return (
     <nav style={{ position:"fixed",top:0,left:0,right:0,zIndex:50,background:sc||mob?"rgba(10,14,23,0.97)":"transparent",backdropFilter:sc?"blur(12px)":"none",borderBottom:sc||mob?("1px solid "+C.border):"none",transition:"all 0.3s" }}>
       <div style={{ maxWidth:1200,margin:"0 auto",padding:"16px 24px",display:"flex",alignItems:"center",justifyContent:"space-between" }}>
@@ -656,7 +699,7 @@ function QuizPage({ setPage }) {
       </div></FadeIn>
       <FadeIn delay={500}><div style={{ display:"flex",gap:16,justifyContent:"center",marginTop:32 }}>
         <button onClick={()=>{setStep(0);setScores({como:0,tuscany:0,amalfi:0,milan:0});setSent(false);setEmail("")}} style={{ color:C.textDim,background:"none",border:"1px solid "+C.border,padding:"10px 24px",fontSize:13,cursor:"pointer" }}>Retake Quiz</button>
-        <button onClick={()=>{setPage("properties");window.scrollTo(0,0)}} style={{ color:C.gold,background:"none",border:"1px solid "+C.gold,padding:"10px 24px",fontSize:13,cursor:"pointer" }}>Browse Properties</button>
+        <button onClick={()=>{setPage("properties");window.scrollTo(0,0)}} style={{ color:C.gold,background:"none",border:"1px solid "+C.gold,padding:"10px 24px",fontSize:13,cursor:"pointer" }}>Browse Locations</button>
       </div></FadeIn>
     </section>
   );
@@ -673,42 +716,96 @@ function QuizPage({ setPage }) {
 }
 
 function PropertyGallery({ setPage }) {
-  const [req, setReq] = useState({});
-  const [form, setForm] = useState(null);
-  const [emails, setEmails] = useState({});
+  const [expanded, setExpanded] = useState(null);
+  const [inquiryId, setInquiryId] = useState(null);
+  const [email, setEmail] = useState("");
+  const [sent, setSent] = useState({});
 
-  const handlePropertyReq = async (pid) => {
-    await submitForm({ _subject: "Property Inquiry: " + PROPERTIES.find(p=>p.id===pid).title, location: PROPERTIES.find(p=>p.id===pid).title, email: emails[pid] || "", source: "property-gallery" });
-    setReq({...req,[pid]:true}); setForm(null);
+  const handleInquiry = async (loc) => {
+    if (!email) return;
+    await submitForm({ _subject: "Location Inquiry: " + loc.title, location: loc.title, email, source: "location-gallery" });
+    setSent({...sent,[loc.id]:true}); setInquiryId(null); setEmail("");
   };
 
   return (
-    <section style={{ padding:"120px 24px 80px",maxWidth:1200,margin:"0 auto" }}>
+    <section style={{ padding:"120px 24px 80px",maxWidth:1100,margin:"0 auto" }}>
       <FadeIn><div style={{ marginBottom:56 }}>
         <div style={{ color:C.gold,fontSize:12,letterSpacing:4,textTransform:"uppercase",marginBottom:12 }}>Where to Live in Italy</div>
-        <h1 style={{ fontFamily:"Georgia,serif",fontSize:"clamp(32px,5vw,48px)",color:C.white,fontWeight:400,marginBottom:16 }}>Italy's most desirable locations for international buyers</h1>
-        <p style={{ color:C.textDim,fontSize:16,lineHeight:1.6,maxWidth:700 }}>From lakefront estates on Lake Como to historic apartments in Milan's Brera district, these are the areas where HNWI are choosing to live. Each location offers a distinct lifestyle, investment profile, and community.</p>
+        <h1 style={{ fontFamily:"Georgia,serif",fontSize:"clamp(28px,5vw,44px)",color:C.white,fontWeight:400,marginBottom:16,lineHeight:1.2 }}>Italy's most desirable locations for HNWI</h1>
+        <p style={{ color:C.textDim,fontSize:16,lineHeight:1.7,maxWidth:700 }}>Each region offers a distinct lifestyle, property market, and community. We help you find the right one — and the right property within it.</p>
       </div></FadeIn>
-      <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(340px,1fr))",gap:24 }}>
-        {PROPERTIES.map((p,i)=><FadeIn key={p.id} delay={i*60}><div style={{ background:C.card,border:"1px solid "+C.border,overflow:"hidden",transition:"all 0.3s",height:"100%",display:"flex",flexDirection:"column" }} onMouseEnter={e=>e.currentTarget.style.borderColor=C.goldDim} onMouseLeave={e=>e.currentTarget.style.borderColor=C.border}>
-          <div style={{ height:220,position:"relative",overflow:"hidden" }}>
-            <img src={p.img} alt={p.title+" — "+p.location} loading="lazy" style={{ width:"100%",height:"100%",objectFit:"cover",transition:"transform 0.5s" }} onMouseEnter={e=>e.target.style.transform="scale(1.05)"} onMouseLeave={e=>e.target.style.transform="scale(1)"}/>
-            <div style={{ position:"absolute",top:12,left:12,background:"rgba(201,169,110,0.9)",color:C.bg,padding:"4px 12px",fontSize:11,fontWeight:600,letterSpacing:1 }}>{p.tag}</div>
-            <div style={{ position:"absolute",bottom:0,left:0,right:0,height:60,background:"linear-gradient(transparent,rgba(10,14,23,0.8))" }}/>
-          </div>
-          <div style={{ padding:24,flex:1,display:"flex",flexDirection:"column" }}>
-            <h3 style={{ fontFamily:"Georgia,serif",fontSize:20,color:C.white,fontWeight:400,marginBottom:4 }}>{p.title}</h3>
-            <p style={{ color:C.gold,fontSize:13,marginBottom:12 }}>{p.location}</p>
-            <p style={{ color:C.textDim,fontSize:13,lineHeight:1.6,flex:1 }}>{p.desc}</p>
-            <div style={{ marginTop:16 }}>
-              {req[p.id] ? <div style={{ padding:"12px 0",textAlign:"center",color:C.gold,fontSize:13 }}>✓ Inquiry sent — we will be in touch</div> : form===p.id ? <div style={{ display:"flex",gap:8 }}><input type="email" placeholder="Your email" value={emails[p.id]||""} onChange={e=>setEmails({...emails,[p.id]:e.target.value})} style={{ flex:1,padding:"10px 12px",background:C.bg,color:C.white,border:"1px solid "+C.border,fontSize:13 }}/><button onClick={()=>handlePropertyReq(p.id)} style={{ background:C.gold,color:C.bg,padding:"10px 16px",border:"none",fontSize:12,fontWeight:600,cursor:"pointer" }}>SEND</button></div> : <button onClick={()=>setForm(p.id)} style={{ width:"100%",padding:"12px 0",border:"1px solid "+C.gold,background:"transparent",color:C.gold,fontSize:13,fontWeight:600,letterSpacing:1,cursor:"pointer",transition:"all 0.2s" }} onMouseEnter={e=>{e.target.style.background=C.gold;e.target.style.color=C.bg}} onMouseLeave={e=>{e.target.style.background="transparent";e.target.style.color=C.gold}}>EXPLORE THIS AREA</button>}
+
+      <div style={{ display:"flex",flexDirection:"column",gap:32 }}>
+        {LOCATIONS.map((loc,i) => {
+          const isOpen = expanded === loc.id;
+          return (
+          <FadeIn key={loc.id} delay={i*80}>
+            <div style={{ background:C.card,border:"1px solid "+(isOpen?C.gold:C.border),overflow:"hidden",transition:"all 0.4s" }}>
+              <div className="loc-row" style={{ display:"flex",flexDirection:"row",flexWrap:"wrap" }}>
+                <div className="loc-img" style={{ width:"100%",maxWidth:420,minHeight:260,position:"relative",overflow:"hidden",flexShrink:0 }}>
+                  <img src={loc.img} alt={loc.title+" Italy — luxury real estate and lifestyle for international buyers"} loading="lazy"
+                    style={{ width:"100%",height:"100%",objectFit:"cover",minHeight:260,transition:"transform 0.6s",display:"block" }}
+                    onMouseEnter={e=>e.target.style.transform="scale(1.05)"} onMouseLeave={e=>e.target.style.transform="scale(1)"}
+                    onError={e=>{e.target.style.display="none"; e.target.parentElement.style.background="linear-gradient(135deg,#1a2a3a,#2d3a4a)";}}/>
+                  <div style={{ position:"absolute",top:12,left:12,background:"rgba(201,169,110,0.92)",color:C.bg,padding:"5px 14px",fontSize:11,fontWeight:600,letterSpacing:1 }}>{loc.tag}</div>
+                  <div style={{ position:"absolute",bottom:0,left:0,right:0,height:80,background:"linear-gradient(transparent,rgba(10,14,23,0.6))" }}/>
+                </div>
+
+                <div className="loc-body" style={{ flex:1,padding:"28px 32px",minWidth:280 }}>
+                  <h2 style={{ fontFamily:"Georgia,serif",fontSize:26,color:C.white,fontWeight:400,marginBottom:4 }}>{loc.title}</h2>
+                  <p style={{ color:C.gold,fontSize:13,marginBottom:16,fontStyle:"italic" }}>{loc.sub}</p>
+
+                  <div style={{ display:"flex",flexWrap:"wrap",gap:8,marginBottom:20 }}>
+                    {loc.highlights.map((h,j)=><span key={j} style={{ display:"inline-flex",alignItems:"center",gap:6,padding:"6px 12px",background:"rgba(201,169,110,0.08)",border:"1px solid rgba(201,169,110,0.15)",fontSize:12,color:C.textDim }}><span style={{ color:C.gold,fontSize:10 }}>✦</span>{h}</span>)}
+                  </div>
+
+                  <p style={{ color:C.textDim,fontSize:14,lineHeight:1.7,marginBottom:16 }}>{loc.lifestyle.slice(0,180)}...</p>
+
+                  <div style={{ display:"flex",gap:12,flexWrap:"wrap" }}>
+                    <button onClick={()=>setExpanded(isOpen?null:loc.id)} style={{ padding:"10px 24px",background:"transparent",border:"1px solid "+C.gold,color:C.gold,fontSize:13,fontWeight:500,letterSpacing:1,cursor:"pointer",transition:"all 0.2s" }}
+                      onMouseEnter={e=>{e.target.style.background="rgba(201,169,110,0.1)"}} onMouseLeave={e=>{e.target.style.background="transparent"}}>
+                      {isOpen ? "LESS ↑" : "FULL GUIDE ↓"}
+                    </button>
+                    {!sent[loc.id] ? <button onClick={()=>setInquiryId(inquiryId===loc.id?null:loc.id)} style={{ padding:"10px 24px",background:C.gold,border:"none",color:C.bg,fontSize:13,fontWeight:600,letterSpacing:1,cursor:"pointer" }}>
+                      GET INTRODUCED
+                    </button> : <span style={{ padding:"10px 24px",color:C.gold,fontSize:13 }}>✓ We will be in touch</span>}
+                  </div>
+
+                  {inquiryId===loc.id && !sent[loc.id] && <div style={{ display:"flex",gap:8,marginTop:12 }}>
+                    <input type="email" placeholder="Your email" value={email} onChange={e=>setEmail(e.target.value)} style={{ flex:1,padding:"10px 14px",background:C.bg,color:C.white,border:"1px solid "+C.border,fontSize:13 }}/>
+                    <button onClick={()=>handleInquiry(loc)} style={{ background:C.gold,color:C.bg,padding:"10px 20px",border:"none",fontSize:12,fontWeight:600,cursor:"pointer" }}>SEND</button>
+                  </div>}
+                </div>
+              </div>
+
+              {isOpen && <div style={{ padding:"0 32px 32px",borderTop:"1px solid "+C.border,marginTop:0 }}>
+                <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:24,paddingTop:28 }}>
+                  <div>
+                    <h4 style={{ color:C.gold,fontSize:12,letterSpacing:3,textTransform:"uppercase",marginBottom:12 }}>Property Market</h4>
+                    <p style={{ color:C.text,fontSize:14,lineHeight:1.7 }}>{loc.property}</p>
+                  </div>
+                  <div>
+                    <h4 style={{ color:C.gold,fontSize:12,letterSpacing:3,textTransform:"uppercase",marginBottom:12 }}>Lifestyle & Community</h4>
+                    <p style={{ color:C.text,fontSize:14,lineHeight:1.7 }}>{loc.lifestyle}</p>
+                  </div>
+                  <div>
+                    <h4 style={{ color:C.gold,fontSize:12,letterSpacing:3,textTransform:"uppercase",marginBottom:12 }}>Climate</h4>
+                    <p style={{ color:C.text,fontSize:14,lineHeight:1.7 }}>{loc.climate}</p>
+                  </div>
+                </div>
+              </div>}
             </div>
-          </div>
-        </div></FadeIn>)}
+          </FadeIn>
+        )})}
       </div>
-      <FadeIn delay={500}><div style={{ textAlign:"center",marginTop:48,padding:32,background:C.card,border:"1px solid "+C.border }}>
-        <p style={{ color:C.textDim,fontSize:14,marginBottom:16 }}>We find off-market properties that never appear online. Tell us what you are looking for.</p>
-        <button onClick={()=>{setPage("home");setTimeout(()=>document.getElementById("contact")?.scrollIntoView({behavior:"smooth"}),100)}} style={{ background:C.gold,color:C.bg,padding:"14px 36px",border:"none",fontSize:13,fontWeight:600,letterSpacing:2,cursor:"pointer" }}>START YOUR PROPERTY SEARCH</button>
+
+      <FadeIn delay={400}><div style={{ textAlign:"center",marginTop:48,padding:40,background:C.card,border:"1px solid "+C.border }}>
+        <h3 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:8 }}>Not sure which location is right for you?</h3>
+        <p style={{ color:C.textDim,fontSize:14,marginBottom:20 }}>Take our 2-minute quiz or book a call to discuss your priorities.</p>
+        <div style={{ display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap" }}>
+          <button onClick={()=>{setPage("quiz");window.scrollTo(0,0)}} style={{ padding:"14px 32px",border:"1px solid "+C.gold,background:"transparent",color:C.gold,fontSize:13,fontWeight:600,letterSpacing:2,cursor:"pointer" }}>TAKE THE QUIZ</button>
+          <button onClick={()=>{setPage("home");setTimeout(()=>document.getElementById("contact")?.scrollIntoView({behavior:"smooth"}),100)}} style={{ padding:"14px 32px",background:C.gold,color:C.bg,border:"none",fontSize:13,fontWeight:600,letterSpacing:2,cursor:"pointer" }}>BOOK A CALL</button>
+        </div>
       </div></FadeIn>
     </section>
   );
@@ -786,7 +883,7 @@ function Footer({ setPage }) {
         </div>
         <div className="footer-grid" style={{ display:"flex",gap:48,flexWrap:"wrap" }}>
           <div><div style={{ color:C.gold,fontSize:11,letterSpacing:3,marginBottom:12,textTransform:"uppercase" }}>Services</div>{VERTICALS.slice(0,5).map(v=><div key={v.id} style={{ marginBottom:8 }}><span onClick={()=>{setPage("v-"+v.id);window.scrollTo(0,0)}} style={{ color:C.textDim,fontSize:13,cursor:"pointer",transition:"color 0.2s" }} onMouseEnter={e=>e.target.style.color=C.gold} onMouseLeave={e=>e.target.style.color=C.textDim}>{v.title}</span></div>)}</div>
-          <div><div style={{ color:C.gold,fontSize:11,letterSpacing:3,marginBottom:12,textTransform:"uppercase" }}>Tools</div>{[["Quiz","quiz"],["Properties","properties"],["Guides","guides"]].map(([l,t])=><div key={t} style={{ marginBottom:8 }}><span onClick={()=>{setPage(t);window.scrollTo(0,0)}} style={{ color:C.textDim,fontSize:13,cursor:"pointer",transition:"color 0.2s" }} onMouseEnter={e=>e.target.style.color=C.gold} onMouseLeave={e=>e.target.style.color=C.textDim}>{l}</span></div>)}</div>
+          <div><div style={{ color:C.gold,fontSize:11,letterSpacing:3,marginBottom:12,textTransform:"uppercase" }}>Tools</div>{[["Quiz","quiz"],["Locations","properties"],["Guides","guides"]].map(([l,t])=><div key={t} style={{ marginBottom:8 }}><span onClick={()=>{setPage(t);window.scrollTo(0,0)}} style={{ color:C.textDim,fontSize:13,cursor:"pointer",transition:"color 0.2s" }} onMouseEnter={e=>e.target.style.color=C.gold} onMouseLeave={e=>e.target.style.color=C.textDim}>{l}</span></div>)}</div>
           <div><div style={{ color:C.gold,fontSize:11,letterSpacing:3,marginBottom:12,textTransform:"uppercase" }}>Company</div>{["About","Contact","Privacy Policy"].map(l=><div key={l} style={{ marginBottom:8 }}><span style={{ color:C.textDim,fontSize:13,cursor:"pointer" }}>{l}</span></div>)}</div>
         </div>
       </div>
@@ -850,6 +947,7 @@ export default function App() {
   return (
     <div style={{ background:C.bg,minHeight:"100vh",fontFamily:"'Segoe UI',-apple-system,sans-serif",color:C.text }}>
       <MobileStyles/>
+      <BackToTop/>
       <Nav setPage={setPage}/>
       {page==="home" && <><Hero setPage={setPage}/><ServicesGrid setPage={setPage}/><RetireeSection setPage={setPage}/><CostOfLiving/><Pricing/><Newsletter/><Contact/></>}
       {page==="guides" && <GuidesPage setPage={setPage}/>}

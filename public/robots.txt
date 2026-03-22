@@ -1,0 +1,29 @@
+# The Italian Gateway — robots.txt
+# Allow all crawlers to index all content
+
+User-agent: *
+Allow: /
+
+# AI Crawlers — welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://theitaliangateway.com/sitemap.xml

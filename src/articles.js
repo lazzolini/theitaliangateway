@@ -835,6 +835,79 @@ const ARTICLES = [
     ]
   },
 
+  // ============================================================
+  // ARTICLE 12 — Yachting & Marina
+  // ============================================================
+  {
+    id: "yachting-italy-hnwi",
+    cat: "Yachting & Marina",
+    title: "Yachting in Italy: Berths, Registration, and Marina Life for HNWI",
+    date: "March 2026",
+    read: "10 min",
+    desc: "A complete guide to owning and operating a yacht in Italian waters: the best marinas, berth acquisition, registration, tax implications, and the Mediterranean cruising lifestyle.",
+    content: [
+      { type: "p", text: "Italy has over 7,600 kilometers of coastline, more than 800 marinas, and some of the most coveted berths in the Mediterranean. For HNWI relocating to Italy, yacht ownership is not just a lifestyle choice — it is a gateway to the entire Mediterranean, from the Amalfi Coast to Sardinia, Croatia, Greece, and the French Riviera. This guide covers everything you need to know about yachting in Italy." },
+      { type: "h2", text: "Italy's Premier Marinas and Berths" },
+      { type: "table", headers: ["Marina", "Location", "Max LOA", "Berth Cost (annual, 20m)", "Character"], rows: [
+        ["Marina di Porto Cervo (YCCS)", "Costa Smeralda, Sardinia", "100m+", "€80,000 - €200,000", "Ultra-exclusive, home of Rolex Cup and Loro Piana Regatta"],
+        ["Marina di Portofino", "Liguria", "60m", "€50,000 - €150,000", "Iconic, extremely limited berths, 15-slot waiting list"],
+        ["Porto di Capri", "Campania", "50m", "€40,000 - €120,000", "Glamorous, seasonal access, tender-heavy"],
+        ["Marina di Amalfi", "Campania", "30m", "€20,000 - €60,000", "Small but charming, Amalfi Coast base"],
+        ["Marina Genova Aeroporto", "Liguria", "120m+", "€30,000 - €80,000", "Year-round, full service, easy airport access"],
+        ["Porto Turistico di Roma (Ostia)", "Lazio", "60m", "€15,000 - €50,000", "Gateway to Pontine Islands, good value"],
+        ["Marina di Riposto", "Sicily", "50m", "€10,000 - €30,000", "Gateway to Aeolian Islands, best value in Italy"],
+        ["Porto Lotti (La Spezia)", "Liguria", "40m", "€20,000 - €60,000", "Near Cinque Terre, well-protected, modern facilities"],
+      ]},
+      { type: "callout", text: "Berths in Portofino, Porto Cervo, and Capri are extremely scarce. Waiting lists can be 2-5 years. A professional maritime agent with existing relationships can often secure berths that are not publicly available." },
+      { type: "h2", text: "How to Register a Yacht in Italy" },
+      { type: "p", text: "Italy offers a competitive yacht registration framework. Vessels can fly the Italian flag or be registered under other EU flags while operating from Italian ports. The choice depends on your tax situation, intended cruising area, and privacy preferences." },
+      { type: "h3", text: "Italian Flag Registration" },
+      { type: "list", items: [
+        "Available to: EU residents, Italian companies, or through an Italian representative",
+        "Registry: Registro Internazionale (for commercial) or Registro Navale (for pleasure)",
+        "Safety certification: RINA (Registro Italiano Navale) survey and certification required",
+        "Documentation: builder's certificate, bill of sale, proof of ownership, insurance, radio license",
+        "Timeline: 4-8 weeks for standard pleasure craft, longer for commercial registration",
+        "Benefits: EU cabotage rights, access to Italian territorial waters without restrictions",
+      ]},
+      { type: "h3", text: "Popular Alternatives" },
+      { type: "table", headers: ["Flag", "Advantage", "Best For", "Annual Cost"], rows: [
+        ["Italian (International Registry)", "EU cabotage, charter income eligible", "Charter yachts, commercial use", "€5,000 - €15,000"],
+        ["Malta", "Tax-efficient leasing structure, EU flag", "Tax optimization, privacy", "€3,000 - €10,000"],
+        ["Cayman Islands", "Zero tax, confidential registry", "Large superyachts, privacy", "€2,000 - €8,000"],
+        ["UK Red Ensign (Isle of Man)", "Strong legal framework, flexible", "Traditional choice for British owners", "€3,000 - €12,000"],
+      ]},
+      { type: "h2", text: "Tax Implications of Yacht Ownership in Italy" },
+      { type: "p", text: "Italian tax law treats yachts as indicators of wealth and potential income generators. Understanding the tax framework is essential to avoid surprises." },
+      { type: "h3", text: "Key Tax Considerations" },
+      { type: "list", items: [
+        "Stazza tax (tonnage tax): annual tax based on vessel length. Ranges from €800/year for boats 10-12m to €25,000+/year for yachts over 64m. This is a possession tax, not an income tax.",
+        "VAT on purchase: 22% Italian VAT applies to new boats purchased in Italy or imported from outside the EU. Used boats with EU VAT-paid status are exempt. Malta leasing structures can reduce effective VAT to 5-6%.",
+        "Charter income: if you charter your yacht, income is taxable in Italy if the charter operates from Italian ports. Commercial registration under the Registro Internazionale provides favorable tax treatment.",
+        "Flat tax interaction: for flat tax residents, foreign-source charter income is covered by the €200,000 lump sum. However, a yacht physically based in Italy may generate Italian-source income.",
+        "Import duty: yachts imported from outside the EU face customs duty (typically 1.7%) plus 22% VAT on the customs value.",
+      ]},
+      { type: "h2", text: "Cruising Italy: The Best Routes" },
+      { type: "h3", text: "Route 1: The Ligurian Coast (1-2 weeks)" },
+      { type: "p", text: "Start in Genoa, sail to Portofino (2 hours), continue along Cinque Terre to La Spezia. Cross to Corsica (France) or head south to Elba. Best months: May-June, September. Highlights: Portofino piazzetta, Cinque Terre by sea, Portovenere." },
+      { type: "h3", text: "Route 2: The Amalfi & Capri Loop (1 week)" },
+      { type: "p", text: "Base in Naples or Sorrento. Day-sail to Capri (Blue Grotto, Marina Piccola), Positano, Amalfi, Ravello by tender. Continue to Ischia for thermal spas. Best months: June-September. Highlights: Li Galli islands, Capri's Faraglioni rocks, sunset from Ravello." },
+      { type: "h3", text: "Route 3: Sardinia & Corsica (2-3 weeks)" },
+      { type: "p", text: "Depart Porto Cervo, explore the La Maddalena archipelago (crystal-clear anchorages), cross to Bonifacio (Corsica), return via the east coast of Sardinia. Continue south to Cagliari for a different Sardinia. Best months: June-August. Highlights: Budelli pink beach, Cala Luna, Bonifacio citadel." },
+      { type: "h3", text: "Route 4: Sicily & the Aeolian Islands (2 weeks)" },
+      { type: "p", text: "Start in Palermo or Milazzo. The Aeolian Islands (Lipari, Panarea, Stromboli, Vulcano) offer volcanic landscapes, natural hot springs, and some of the Med's best anchorages. Continue around Sicily to Syracuse and Taormina. Best months: May-October. Highlights: Stromboli eruptions at night, Panarea nightlife, Syracuse old town." },
+      { type: "h2", text: "Yacht Management Services" },
+      { type: "p", text: "For absentee owners — and many HNWI with Italian yachts are seasonal visitors — full yacht management is essential. A management company handles crew employment (Italian maritime labor law is complex), maintenance scheduling, winter storage, berth management, provisioning, and itinerary planning. Annual management costs range from €50,000-€200,000+ depending on vessel size and usage." },
+      { type: "h2", text: "Frequently Asked Questions" },
+      { type: "faq", q: "Can I charter my yacht when I am not using it?", a: "Yes, but only if the yacht is commercially registered and meets safety certification requirements (RINA or equivalent). Charter income is taxable. Many owners offset 30-50% of annual running costs through charter revenue. The Italian International Registry provides favorable conditions for commercial yachts." },
+      { type: "faq", q: "Do I need an Italian captain's license?", a: "For private use of vessels up to 24m, a recreational license (patente nautica) is sufficient. For larger vessels or commercial use, a professional master's certificate is required. International licenses (RYA, USCG) are recognized for private navigation but not for commercial charters." },
+      { type: "faq", q: "What about crew employment?", a: "Italian maritime labor law (Codice della Navigazione) governs crew employment. For yachts under Italian flag, crew must have Italian maritime employment contracts (contratto di imbarco). Social security contributions are approximately 30% on top of gross salary. Many owners use a management company to handle crew administration." },
+      { type: "faq", q: "How much does it cost to run a yacht annually in Italy?", a: "The rule of thumb is 10% of purchase price per year. A 25m yacht worth €3M costs approximately €300,000/year to run (crew, berth, fuel, maintenance, insurance, management). Larger yachts scale accordingly. Italian-specific costs (stazza tax, berth fees) add €30,000-€100,000+ depending on size and location." },
+      { type: "faq", q: "Can The Italian Gateway help with yacht-related services?", a: "Yes. We manage berth acquisition (including waitlisted marinas), registration, crew sourcing, management company selection, and itinerary planning. For clients relocating to Italy with an existing yacht, we coordinate the entire transition: re-registration, berth, crew contracts, and Italian compliance." },
+      { type: "callout", text: "Disclaimer: This guide provides general information as of March 2026. Maritime regulations and tax laws change. Always consult qualified maritime lawyers and tax advisors. The Italian Gateway coordinates all yacht-related services through our maritime partners." },
+    ]
+  },
+
 ];
 export default ARTICLES;
 
