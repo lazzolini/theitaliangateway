@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import ARTICLES from "./articles.js";
 
 const C = {
@@ -304,7 +305,7 @@ function Nav({ setPage }) {
   const [sc, setSc] = useState(false);
   const [mob, setMob] = useState(false);
   useEffect(() => { const h = () => setSc(window.scrollY > 40); window.addEventListener("scroll", h); return () => window.removeEventListener("scroll", h); }, []);
-  const go = t => { setMob(false); if (["guides","quiz","properties"].includes(t) || t.startsWith("v-")) { setPage(t); window.scrollTo(0,0); } else { setPage("home"); setTimeout(() => document.getElementById(t)?.scrollIntoView({ behavior: "smooth" }), 100); } };
+  const go = t => { setMob(false); setPage(t); };
   const links = [["Services","services"],["Guides","guides"],["Quiz","quiz"],["Locations","properties"],["Plans","plans"],["Contact","contact"]];
   return (
     <nav style={{ position:"fixed",top:0,left:0,right:0,zIndex:50,background:sc||mob?"rgba(10,14,23,0.97)":"transparent",backdropFilter:sc?"blur(12px)":"none",borderBottom:sc||mob?("1px solid "+C.border):"none",transition:"all 0.3s" }}>
@@ -390,7 +391,7 @@ function VerticalPage({ id, setPage }) {
 
   return (
     <section style={{ padding:"120px 24px 80px",maxWidth:900,margin:"0 auto" }}>
-      <span onClick={() => {setPage("home");window.scrollTo(0,0);setTimeout(()=>document.getElementById("services")?.scrollIntoView({behavior:"smooth"}),200)}} style={{ color:C.gold,fontSize:13,cursor:"pointer",display:"inline-block",marginBottom:32 }}>{"< All Services"}</span>
+      <span onClick={() => setPage("services")} style={{ color:C.gold,fontSize:13,cursor:"pointer",display:"inline-block",marginBottom:32 }}>{"< All Services"}</span>
       <FadeIn>
         <div style={{ marginBottom:56 }}>
           <div style={{ fontSize:48,marginBottom:16 }}>{v.icon}</div>
@@ -804,7 +805,7 @@ function PropertyGallery({ setPage }) {
         <p style={{ color:C.textDim,fontSize:14,marginBottom:20 }}>Take our 2-minute quiz or book a call to discuss your priorities.</p>
         <div style={{ display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap" }}>
           <button onClick={()=>{setPage("quiz");window.scrollTo(0,0)}} style={{ padding:"14px 32px",border:"1px solid "+C.gold,background:"transparent",color:C.gold,fontSize:13,fontWeight:600,letterSpacing:2,cursor:"pointer" }}>TAKE THE QUIZ</button>
-          <button onClick={()=>{setPage("home");setTimeout(()=>document.getElementById("contact")?.scrollIntoView({behavior:"smooth"}),100)}} style={{ padding:"14px 32px",background:C.gold,color:C.bg,border:"none",fontSize:13,fontWeight:600,letterSpacing:2,cursor:"pointer" }}>BOOK A CALL</button>
+          <button onClick={()=>{setPage("contact")}} style={{ padding:"14px 32px",background:C.gold,color:C.bg,border:"none",fontSize:13,fontWeight:600,letterSpacing:2,cursor:"pointer" }}>BOOK A CALL</button>
         </div>
       </div></FadeIn>
     </section>
@@ -932,7 +933,7 @@ function ArticlePage({ id, setPage }) {
         <div style={{ height:2,background:"linear-gradient(to right,"+C.gold+",transparent)",marginTop:32 }}/>
       </div>
       <ArticleContent blocks={a.content}/>
-      <div style={{ background:C.card,border:"1px solid "+C.gold,padding:48,textAlign:"center",marginTop:48 }}><h3 style={{ fontFamily:"Georgia,serif",fontSize:24,color:C.white,fontWeight:400,marginBottom:12 }}>Want personalized guidance?</h3><p style={{ color:C.textDim,fontSize:14,maxWidth:400,margin:"0 auto 24px" }}>Confidential 30-minute call to discuss your situation.</p><button onClick={()=>{setPage("home");setTimeout(()=>document.getElementById("contact")?.scrollIntoView({behavior:"smooth"}),100)}} style={{ background:C.gold,color:C.bg,padding:"14px 36px",border:"none",fontSize:13,fontWeight:600,letterSpacing:2,cursor:"pointer" }}>BOOK A CALL</button></div>
+      <div style={{ background:C.card,border:"1px solid "+C.gold,padding:48,textAlign:"center",marginTop:48 }}><h3 style={{ fontFamily:"Georgia,serif",fontSize:24,color:C.white,fontWeight:400,marginBottom:12 }}>Want personalized guidance?</h3><p style={{ color:C.textDim,fontSize:14,maxWidth:400,margin:"0 auto 24px" }}>Confidential 30-minute call to discuss your situation.</p><button onClick={()=>{setPage("contact")}} style={{ background:C.gold,color:C.bg,padding:"14px 36px",border:"none",fontSize:13,fontWeight:600,letterSpacing:2,cursor:"pointer" }}>BOOK A CALL</button></div>
       <div style={{ marginTop:64,paddingTop:32,borderTop:"1px solid "+C.border }}><div style={{ color:C.textDim,fontSize:12,letterSpacing:2,textTransform:"uppercase",marginBottom:16 }}>More Guides</div>
         {ARTICLES.filter(x=>x.id!==id).slice(0,3).map(x=><div key={x.id} onClick={()=>{setPage(x.id);window.scrollTo(0,0)}} style={{ padding:"16px 0",borderBottom:"1px solid "+C.border,cursor:"pointer",display:"flex",justifyContent:"space-between",alignItems:"center" }} onMouseEnter={e=>e.currentTarget.querySelector("h4").style.color=C.gold} onMouseLeave={e=>e.currentTarget.querySelector("h4").style.color=C.white}><div><span style={{ color:C.gold,fontSize:10,letterSpacing:2,textTransform:"uppercase" }}>{x.cat}</span><h4 style={{ fontFamily:"Georgia,serif",fontSize:16,color:C.white,fontWeight:400,margin:"4px 0 0",transition:"color 0.2s" }}>{x.title}</h4></div><span style={{ color:C.gold }}>→</span></div>)}
       </div>
@@ -941,7 +942,43 @@ function ArticlePage({ id, setPage }) {
 }
 
 export default function App() {
-  const [page, setPage] = useState("home");
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Scroll to top on route change
+  useEffect(() => { window.scrollTo(0, 0); }, [location.pathname]);
+
+  // Smart setPage: maps old page names to real URLs
+  const setPage = (p) => {
+    // Sections on homepage (scroll targets)
+    const sections = ["services", "plans", "contact", "cost"];
+    if (sections.includes(p)) {
+      if (location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => document.getElementById(p)?.scrollIntoView({ behavior: "smooth" }), 250);
+      } else {
+        document.getElementById(p)?.scrollIntoView({ behavior: "smooth" });
+      }
+      return;
+    }
+    if (p === "home") { navigate("/"); return; }
+    if (p === "guides") { navigate("/guides"); return; }
+    if (p === "quiz") { navigate("/quiz"); return; }
+    if (p === "properties") { navigate("/locations"); return; }
+    if (p.startsWith("v-")) { navigate("/service/" + p.replace("v-","")); return; }
+    if (ARTICLES.some(a => a.id === p)) { navigate("/guide/" + p); return; }
+    navigate("/");
+  };
+
+  // Derive page state from URL
+  const segments = location.pathname.split("/").filter(Boolean);
+  let page = "home";
+  if (segments[0] === "guides" && !segments[1]) page = "guides";
+  else if (segments[0] === "quiz") page = "quiz";
+  else if (segments[0] === "locations") page = "properties";
+  else if (segments[0] === "service" && segments[1]) page = "v-" + segments[1];
+  else if (segments[0] === "guide" && segments[1]) page = segments[1];
+
   const isArt = ARTICLES.some(a=>a.id===page);
   const isVert = page.startsWith("v-");
   return (
