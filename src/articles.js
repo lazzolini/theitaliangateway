@@ -516,8 +516,326 @@ const ARTICLES = [
     ]
   },
 
-];
+  // ============================================================
+  // ARTICLE 6 — Private Banking for HNWI
+  // ============================================================
+  {
+    id: "private-banking-italy",
+    cat: "Private Banking",
+    title: "How to Open a Private Bank Account in Italy as a Foreign Resident",
+    date: "March 2026",
+    read: "9 min",
+    desc: "A practical guide for HNWI on opening private banking relationships in Milan, navigating compliance requirements, and choosing between Italian and Swiss institutions.",
+    content: [
+      { type: "p", text: "Opening a private bank account in Italy as a foreign resident is not a simple walk-in process. Banks apply enhanced due diligence to international clients, particularly those with complex asset structures spanning multiple jurisdictions. This guide covers everything HNWI need to know about establishing banking relationships in Milan and Northern Italy." },
+      { type: "h2", text: "Why Italy for Private Banking?" },
+      { type: "p", text: "Italy's private banking sector manages over €900 billion in assets. Milan is home to the Italian operations of UBS, Credit Suisse (now under UBS), JP Morgan Private Bank, and several prestigious Italian institutions including Banca Generali, Mediobanca Private Banking, Fideuram, and Banca Aletti. The flat tax regime has made Italy increasingly attractive, and banks have built dedicated teams for international clients relocating under the €200,000 regime." },
+      { type: "h2", text: "What Do Italian Private Banks Require from Foreign Clients?" },
+      { type: "h3", text: "Documentation Checklist" },
+      { type: "list", items: [
+        "Valid passport and Italian codice fiscale (tax identification number)",
+        "Proof of Italian residence (residency permit or EU registration certificate)",
+        "Proof of address in Italy (rental contract or property deed)",
+        "Source of wealth documentation: business ownership records, employment history, inheritance documents, or investment portfolios",
+        "Last 2-3 years of tax returns from your previous country of residence",
+        "Bank reference letter from your current institution",
+        "If applicable: trust deeds, corporate structures, power of attorney documentation",
+      ]},
+      { type: "h3", text: "Minimum Thresholds" },
+      { type: "table", headers: ["Institution Type", "Typical Minimum AUM", "Services Offered"], rows: [
+        ["Italian private banks (Fideuram, Banca Generali)", "€500K - €1M", "Wealth management, portfolio advisory, insurance wrappers"],
+        ["International private banks (UBS, JP Morgan)", "€2M - €5M", "Multi-currency, global custody, structured products, lending"],
+        ["Family office services", "€10M+", "Bespoke advisory, direct investments, philanthropy, next-gen planning"],
+      ]},
+      { type: "h2", text: "How Long Does It Take to Open an Account?" },
+      { type: "p", text: "Expect 4-8 weeks from initial meeting to full account activation. The main bottleneck is compliance: anti-money laundering (AML) checks, source of wealth verification, and FATCA/CRS reporting setup for US and international clients. Having documentation prepared in advance can cut this to 2-3 weeks. A professional introduction from a trusted intermediary significantly accelerates the process, as it signals pre-qualification to the bank's compliance team." },
+      { type: "h2", text: "Italian Banks vs. Swiss Banks: Which Is Right for You?" },
+      { type: "table", headers: ["Factor", "Italian Private Bank", "Swiss Private Bank (from Italy)"], rows: [
+        ["Language", "Italian, English", "English, French, German, Italian"],
+        ["Regulatory framework", "Banca d'Italia / CONSOB", "FINMA (Swiss regulation)"],
+        ["Flat tax reporting", "Seamless domestic reporting", "Requires Quadro RW foreign asset declaration"],
+        ["Currency options", "EUR-centric", "Multi-currency (CHF, USD, GBP, EUR)"],
+        ["Lending / mortgages", "Easier for Italian property", "Cross-border lending available"],
+        ["Minimum AUM", "€500K+", "€1M - €5M+"],
+        ["Best for", "Primary residence, Italian life", "Multi-jurisdiction wealth, diversification"],
+      ]},
+      { type: "callout", text: "Many HNWI relocating to Italy maintain both: an Italian private bank for daily life, property financing, and local investments, alongside a Swiss institution for international portfolio management and currency diversification." },
+      { type: "h2", text: "Common Mistakes When Opening Accounts" },
+      { type: "list", items: [
+        "Walking into a branch without an introduction: private banking is relationship-driven. Cold approaches often result in being redirected to retail banking.",
+        "Incomplete source of wealth documentation: banks reject applications that cannot clearly trace how assets were accumulated.",
+        "Not disclosing all jurisdictions: FATCA and CRS mean banks will discover foreign holdings anyway. Non-disclosure delays or kills the application.",
+        "Choosing based on brand alone: the best bank for you depends on your specific needs, asset structure, and language preferences.",
+        "Ignoring Italian estate planning implications: your banking structure should align with your succession plan from day one.",
+      ]},
+      { type: "h2", text: "Frequently Asked Questions" },
+      { type: "faq", q: "Can I open an Italian bank account before I have a residence permit?", a: "Some banks allow account opening with a codice fiscale and proof of pending residence application. However, full private banking services typically require confirmed residency. A preliminary relationship can be established during the transition period." },
+      { type: "faq", q: "Do I need to close my accounts in my home country?", a: "No. Italian tax residents must declare foreign accounts on the Quadro RW of their annual tax return, but there is no obligation to close them. Under the flat tax regime, foreign-source income is covered by the €200,000 lump sum, so foreign account income is not taxed separately." },
+      { type: "faq", q: "What about banking secrecy?", a: "Italy participates fully in the Common Reporting Standard (CRS) and FATCA. There is no banking secrecy for tax purposes. However, Italian privacy laws are strict regarding third-party access to your financial information." },
+      { type: "faq", q: "Can a relocation advisor help with banking introductions?", a: "Yes. A professional introduction to a senior relationship manager, rather than a cold approach, typically results in faster onboarding, better terms, and access to institutional services not available to walk-in clients. The Italian Gateway maintains relationships with all major private banking institutions in Milan." },
+      { type: "callout", text: "Disclaimer: This guide provides general information as of March 2026. Banking regulations change. Always consult qualified professionals. The Italian Gateway coordinates introductions and does not provide financial advice." },
+    ]
+  },
 
+  // ============================================================
+  // ARTICLE 7 — Tax & Legal
+  // ============================================================
+  {
+    id: "tax-legal-relocation",
+    cat: "Tax & Legal",
+    title: "Tax Planning for HNWI Relocating to Italy: Beyond the Flat Tax",
+    date: "March 2026",
+    read: "11 min",
+    desc: "Comprehensive guide to Italy's tax advantages for new residents, including the €200K flat tax, 7% retiree regime, succession planning, and exit tax considerations.",
+    content: [
+      { type: "p", text: "Italy's flat tax regime gets the headlines, but smart tax planning for a relocation involves much more: exit taxes from your current country, succession planning across jurisdictions, corporate structuring, and long-term optimization. This guide covers the full picture for HNWI moving to Italy in 2026." },
+      { type: "h2", text: "Italy's Flat Tax Options at a Glance" },
+      { type: "table", headers: ["Regime", "Annual Tax", "Duration", "Who Qualifies", "Key Benefit"], rows: [
+        ["New Resident Flat Tax", "€200,000/year", "Up to 15 years", "Non-resident for 9 of prior 10 tax years", "All foreign income covered, regardless of amount"],
+        ["7% Retiree Flat Tax", "7% on foreign income", "10 years", "Pension recipients, move to Southern Italy municipality (<20K pop.)", "Low rate, covers all foreign-source income"],
+        ["Impatriate Regime", "70% income exemption", "5 years (extendable)", "Workers/professionals transferring to Italy", "Only 30% of employment income is taxed"],
+      ]},
+      { type: "h2", text: "Exit Tax: What You Owe Before You Leave" },
+      { type: "p", text: "Before you can benefit from Italian tax advantages, you must cleanly exit your current tax jurisdiction. Each country has different rules, and mistakes here can be extremely costly." },
+      { type: "table", headers: ["Country", "Exit Tax Risk", "Key Considerations"], rows: [
+        ["United Kingdom", "Medium", "Capital gains on UK property remain taxable. HMRC may challenge departure if ties remain (Statutory Residence Test). ISAs and pension planning needed pre-departure."],
+        ["United States", "Very High", "US citizens/green card holders remain taxable worldwide. Renunciation triggers exit tax on unrealized gains. IRS Form 8854 required."],
+        ["Switzerland", "Low", "No exit tax. Forfait/lump-sum taxpayers can leave cleanly. Canton-specific procedures for de-registration."],
+        ["UAE / Dubai", "None", "No income tax, no exit tax. Clean departure. Ensure DIFC/ADGM corporate structures are properly wound down or restructured."],
+        ["Germany", "High", "Exit tax on substantial shareholdings (1%+ in any corporation). 'Wegzugsteuer' can trigger immediate taxation of unrealized gains."],
+      ]},
+      { type: "h2", text: "Cross-Border Succession Planning" },
+      { type: "p", text: "Italy has relatively favorable inheritance tax rates compared to the UK, US, or France. The key thresholds: spouse and direct heirs receive a €1 million exemption with a 4% rate above that. Siblings receive a €100,000 exemption at 6%. However, Italian forced heirship rules (legittima) apply: you cannot fully disinherit spouse or children under Italian law, regardless of your nationality." },
+      { type: "callout", text: "EU Regulation 650/2012 allows you to elect the inheritance law of your nationality rather than your country of residence. A British citizen living in Italy can choose English succession law, avoiding Italian forced heirship rules. This election must be made explicitly in your will." },
+      { type: "h3", text: "Common Succession Structures for International Families" },
+      { type: "list", items: [
+        "Italian will + home country will: separate wills for Italian and non-Italian assets, coordinated to avoid conflicts",
+        "Life insurance wrappers: Italian-compliant insurance products that bypass succession rules and provide tax-efficient wealth transfer",
+        "Trust structures: Italian law recognizes foreign trusts. Jersey, Guernsey, and Cayman trusts are commonly used by HNWI in Italy",
+        "Donazione (gift): lifetime gifts to heirs benefit from the same €1M exemption, reducing the taxable estate",
+        "Family holding companies: Luxembourg or Italian holding structures for managing real estate and investment portfolios across generations",
+      ]},
+      { type: "h2", text: "Corporate Structuring for Entrepreneurs" },
+      { type: "p", text: "If you run a business, relocating to Italy requires careful corporate planning. The Italian SRL (limited liability company) has a 24% corporate tax rate (IRES) plus 3.9% regional tax (IRAP). For many HNWI, the optimal structure involves an Italian holding company receiving dividends from foreign operating entities, which can be 95% exempt from Italian corporate tax under the Participation Exemption (PEX) regime." },
+      { type: "h2", text: "Frequently Asked Questions" },
+      { type: "faq", q: "Can I apply for the flat tax before physically moving to Italy?", a: "No. You must establish Italian tax residency first (registered in the Anagrafe, living in Italy for 183+ days per year). The flat tax election is made on your first Italian tax return, typically filed by November 30 of the year following your arrival." },
+      { type: "faq", q: "What happens after the flat tax expires?", a: "After 15 years, you become subject to ordinary Italian taxation on worldwide income (progressive rates up to 43%). Most HNWI plan for this transition by restructuring investments into tax-efficient Italian vehicles or, in some cases, relocating again. Planning should begin 2-3 years before expiry." },
+      { type: "faq", q: "Is Italian-source income covered by the flat tax?", a: "No. The flat tax covers only foreign-source income. Italian-source income (Italian rental income, Italian employment, Italian business profits) is taxed at ordinary progressive rates. This is why asset and corporate structuring matters." },
+      { type: "faq", q: "Do I need an Italian accountant or can I use my existing advisor?", a: "You need an Italian commercialista (chartered accountant) for tax filings, compliance, and local regulatory matters. However, your international advisor remains essential for cross-border coordination. The Italian Gateway helps you build a team that works together across jurisdictions." },
+      { type: "callout", text: "Disclaimer: This guide provides general information as of March 2026. Tax laws change. Always consult qualified professionals before making tax-related decisions. The Italian Gateway coordinates between your advisors across jurisdictions." },
+    ]
+  },
+
+  // ============================================================
+  // ARTICLE 8 — Real Estate
+  // ============================================================
+  {
+    id: "buying-property-italy-hnwi",
+    cat: "Real Estate",
+    title: "Buying Property in Italy as an International Buyer: Complete 2026 Guide",
+    date: "March 2026",
+    read: "10 min",
+    desc: "Everything HNWI need to know about purchasing property in Milan, Lake Como, Tuscany, and the Amalfi Coast, from market prices to legal pitfalls.",
+    content: [
+      { type: "p", text: "Italy remains one of the most desirable property markets in the world for international buyers. Whether you are looking for a penthouse in Milan's Porta Nuova, a lakefront villa on Lake Como, a restored farmhouse in Chianti, or a cliffside retreat on the Amalfi Coast, the buying process has specific rules, risks, and opportunities that differ significantly from the UK, US, or Middle Eastern markets." },
+      { type: "h2", text: "Property Price Guide by Region (2026)" },
+      { type: "table", headers: ["Location", "Property Type", "Price Range", "Yield (if rented)"], rows: [
+        ["Milan (Porta Nuova / CityLife)", "Luxury apartment", "€8,000 - €15,000/sqm", "3-4%"],
+        ["Milan (Brera / Magenta)", "Historic apartment", "€6,000 - €12,000/sqm", "2.5-3.5%"],
+        ["Lake Como (Bellagio / Tremezzo)", "Lakefront villa", "€5M - €50M+", "Rarely rented"],
+        ["Lake Como (hillside / non-lakefront)", "Villa with views", "€1.5M - €8M", "4-6% (seasonal)"],
+        ["Tuscany (Chianti / Val d'Orcia)", "Farmhouse / estate", "€1.5M - €10M", "3-5% (agritourismo)"],
+        ["Amalfi Coast (Positano / Ravello)", "Villa", "€3M - €20M+", "5-8% (luxury seasonal)"],
+      ]},
+      { type: "h2", text: "The Buying Process Step by Step" },
+      { type: "h3", text: "1. Property Search and Selection" },
+      { type: "p", text: "The best properties in Italy sell off-market or through private networks. Working with a buyer's agent who has relationships with local agents, developers, and private sellers gives you access to inventory that never appears on Idealista or Immobiliare. Expect to view 10-20 properties before finding the right one. For Lake Como and Amalfi properties, the seasonal market means spring and early summer are peak viewing periods." },
+      { type: "h3", text: "2. Proposta d'Acquisto (Purchase Offer)" },
+      { type: "p", text: "The first formal step is a written purchase offer (proposta d'acquisto), typically accompanied by a deposit of €5,000-€50,000 held in escrow. This offer is binding on the buyer once accepted by the seller. Always include conditions: financing, building survey results, and clear title verification." },
+      { type: "h3", text: "3. Compromesso (Preliminary Contract)" },
+      { type: "p", text: "Within 30-60 days, both parties sign the compromesso, a binding preliminary contract. The buyer pays a deposit (caparra confirmatoria) of typically 10-20% of the purchase price. If the buyer withdraws, they lose the deposit. If the seller withdraws, they must return double the deposit. This contract is registered at the Agenzia delle Entrate." },
+      { type: "h3", text: "4. Rogito (Final Deed)" },
+      { type: "p", text: "The final transfer happens before a notaio (notary public), who is a public official responsible for verifying the legality of the transaction. The balance is paid, the property is transferred, and the deed is registered at the Conservatoria (land registry). The notary's fee is paid by the buyer and typically ranges from €3,000 to €10,000 depending on property value." },
+      { type: "h2", text: "Taxes and Costs When Buying" },
+      { type: "table", headers: ["Cost", "Primary Residence", "Second Home"], rows: [
+        ["Registration tax (Imposta di Registro)", "2% of cadastral value", "9% of cadastral value"],
+        ["VAT (if buying from developer)", "4%", "10% (22% for luxury)"],
+        ["Notary fees", "€3,000 - €10,000", "€3,000 - €10,000"],
+        ["Agent commission", "3-4% + VAT", "3-4% + VAT"],
+        ["Legal fees (independent lawyer)", "€3,000 - €8,000", "€3,000 - €8,000"],
+        ["Total acquisition cost", "~5-7% of purchase price", "~12-16% of purchase price"],
+      ]},
+      { type: "callout", text: "The difference between primary and second home taxation is significant. If you qualify for 'prima casa' (primary residence) status — which requires establishing residency in the municipality within 18 months of purchase — you save substantially on registration tax." },
+      { type: "h2", text: "Common Pitfalls for International Buyers" },
+      { type: "list", items: [
+        "Not hiring an independent lawyer: the notary protects the transaction, not the buyer. Your own English-speaking property lawyer is essential.",
+        "Ignoring catasto (cadastral) discrepancies: the official floor plans must match the actual property. Any undeclared modifications must be regularized before sale.",
+        "Underestimating renovation costs and timelines: Italian renovation projects typically take 1.5-2x longer than quoted. Budget accordingly.",
+        "Not checking urbanistic compliance: building permits, zoning restrictions, and landscape constraints (especially in protected areas like Lake Como and Amalfi) can limit what you can do with a property.",
+        "Buying through a corporate structure without advice: owning via an SRL or foreign company has different tax implications. This must be planned before purchase, not after.",
+      ]},
+      { type: "h2", text: "Frequently Asked Questions" },
+      { type: "faq", q: "Can non-EU citizens buy property in Italy?", a: "Yes, with one condition: reciprocity. Citizens of countries that allow Italians to buy property there can purchase freely. This includes the US, UK, Canada, Australia, UAE, and most countries. Your notary will verify reciprocity as part of the transaction." },
+      { type: "faq", q: "Can I get a mortgage as a foreign buyer?", a: "Yes. Italian banks offer mortgages to non-residents with LTV ratios of 50-60%, and to residents at 60-70%. Interest rates in 2026 are approximately 3.5-4.5% for fixed-rate mortgages. Having a private banking relationship significantly improves terms." },
+      { type: "faq", q: "Should I buy before or after establishing tax residency?", a: "Ideally, establish residency first to benefit from prima casa tax rates. However, if the right property appears before your move, you can still buy and claim prima casa within 18 months of purchase by registering residency in the municipality." },
+      { type: "callout", text: "Disclaimer: This guide provides general information as of March 2026. Property laws and tax rates change. Always engage qualified Italian legal professionals. The Italian Gateway manages the entire acquisition process on your behalf." },
+    ]
+  },
+
+  // ============================================================
+  // ARTICLE 9 — Healthcare
+  // ============================================================
+  {
+    id: "healthcare-hnwi-italy",
+    cat: "Healthcare",
+    title: "Healthcare in Italy for HNWI: Private Doctors, VIP Hospital Access, and Health Insurance",
+    date: "March 2026",
+    read: "8 min",
+    desc: "How wealthy international residents access world-class healthcare in Milan and beyond: private GPs, specialist referrals, hospital VIP programs, and insurance options.",
+    content: [
+      { type: "p", text: "Italy has the world's second-best healthcare system according to the WHO. For HNWI relocating from London, Dubai, or Singapore, the quality is comparable or better — but the system works differently. This guide explains how to set up a healthcare framework that provides immediate, English-speaking, world-class care for you and your family." },
+      { type: "h2", text: "The Italian Healthcare System: Public vs. Private" },
+      { type: "p", text: "All Italian residents are entitled to public healthcare through the SSN (Servizio Sanitario Nazionale). Registration is through your local ASL (Azienda Sanitaria Locale) and provides access to GPs, specialists, and hospital care at minimal cost. However, wait times for specialist appointments can be weeks or months. This is why most HNWI build a parallel private healthcare framework." },
+      { type: "h2", text: "Building Your Private Healthcare Framework" },
+      { type: "h3", text: "1. English-Speaking Private GP on Retainer" },
+      { type: "p", text: "The cornerstone of your healthcare setup. A private GP who speaks fluent English, is available for same-day appointments and house calls, and knows your full medical history. In Milan, several doctors specialize in international patients and offer retainer-based relationships (typically €3,000-€8,000 per year for a family) that guarantee availability and continuity." },
+      { type: "h3", text: "2. Hospital VIP Programs" },
+      { type: "table", headers: ["Hospital", "Speciality", "International Patient Services"], rows: [
+        ["San Raffaele (Milan)", "Cardiology, neurology, oncology", "International Patient Office, English-speaking coordinators, private suites"],
+        ["Humanitas (Milan)", "Oncology, orthopedics, emergency", "Dedicated international department, interpreter services, VIP rooms"],
+        ["IEO - European Institute of Oncology", "Oncology (all types)", "World-class cancer care, second opinion services, clinical trials"],
+        ["Istituto Clinico Humanitas (Rozzano)", "Robotic surgery, cardiology", "Private wing, concierge services"],
+        ["Policlinico di Milano", "Complex surgery, transplant", "Public hospital with private ward options"],
+      ]},
+      { type: "h3", text: "3. Specialist Network" },
+      { type: "p", text: "Building relationships with trusted specialists before you need them is essential. Your private GP should be your primary referral source, but having direct access to a cardiologist, dermatologist, orthopedic surgeon, and pediatrician (if applicable) means no delays when issues arise. Milan has specialists who trained at Johns Hopkins, Mayo Clinic, and Harley Street and practice both publicly and privately." },
+      { type: "h2", text: "Health Insurance Options" },
+      { type: "table", headers: ["Provider", "Coverage", "Annual Premium (family)", "Best For"], rows: [
+        ["Bupa Global", "Worldwide, all hospitals", "€15,000 - €40,000", "Full flexibility, global coverage"],
+        ["Cigna Global", "Worldwide + wellness", "€12,000 - €35,000", "Strong US coverage if needed"],
+        ["Allianz Care", "Europe + selected global", "€8,000 - €25,000", "Europe-focused, competitive rates"],
+        ["Generali (Italy)", "Italy + EU", "€5,000 - €15,000", "Local coverage, Italian-speaking support"],
+        ["Intesa Sanpaolo Assicura", "Italy + emergency abroad", "€3,000 - €10,000", "Basic Italian private coverage"],
+      ]},
+      { type: "callout", text: "Many HNWI combine international insurance (Bupa/Cigna) for global coverage and catastrophic events with a lighter Italian policy for routine private care. Under the flat tax regime, health insurance premiums paid in Italy are deductible up to €1,549.37 per year." },
+      { type: "h2", text: "Healthcare for Retirees and Elderly Care" },
+      { type: "p", text: "For retirees, healthcare is often the primary concern — more than taxes or property. Italy excels here: geriatric care is sophisticated, home care culture is strong, and live-in caregivers (badanti) are a well-established part of Italian healthcare. A full-time live-in caregiver costs approximately €1,500-€2,200 per month including board, significantly less than equivalent care in the UK or US." },
+      { type: "h2", text: "Frequently Asked Questions" },
+      { type: "faq", q: "Do I need to register with the SSN if I have private insurance?", a: "Flat tax residents can choose to opt out of the SSN and rely exclusively on private insurance. However, SSN registration costs approximately €400 per year per family member and provides emergency and hospital coverage as a safety net. Most advisors recommend maintaining SSN registration alongside private coverage." },
+      { type: "faq", q: "Can I bring my medications from abroad?", a: "You can bring a personal supply (typically up to 3 months) of prescribed medications. For ongoing prescriptions, your Italian GP can prescribe equivalent Italian/EU medications. Some US-specific drugs may not be available in Italy; your GP can identify alternatives or arrange import through international pharmacies." },
+      { type: "faq", q: "What about dental care?", a: "Italian dental care is largely private (the SSN covers very little dentistry). Quality is high, and costs are 30-50% lower than London or Zurich. Milan has several English-speaking dental clinics catering to international patients, with services ranging from routine care to implantology and orthodontics." },
+      { type: "callout", text: "Disclaimer: This guide provides general information as of March 2026. Healthcare regulations and insurance products change. Consult qualified professionals. The Italian Gateway sets up your complete healthcare framework as part of our relocation service." },
+    ]
+  },
+
+  // ============================================================
+  // ARTICLE 10 — Education
+  // ============================================================
+  {
+    id: "international-schools-guide",
+    cat: "Education",
+    title: "International Schools in Milan: How to Choose and Get Accepted in 2026",
+    date: "March 2026",
+    read: "9 min",
+    desc: "Complete comparison of Milan's international schools, including curricula, tuition fees, admission processes, and practical tips for HNWI families relocating with children.",
+    content: [
+      { type: "p", text: "For HNWI families relocating to Milan, choosing the right school is often the most emotionally complex decision. It determines your children's social circle, language development, university pathway, and daily happiness. Milan offers six major international schools, each with distinct cultures, curricula, and strengths. This guide provides the comprehensive comparison you need." },
+      { type: "h2", text: "Milan's International Schools Compared" },
+      { type: "table", headers: ["School", "Curriculum", "Ages", "Annual Tuition", "Language of Instruction"], rows: [
+        ["American School of Milan (ASM)", "American / AP + IB Diploma", "3-18", "€22,000 - €30,000", "English"],
+        ["International School of Milan (ISM)", "IB (PYP, MYP, DP)", "3-18", "€18,000 - €28,000", "English"],
+        ["Sir James Henderson (BJHS)", "British / IGCSE + A-Levels", "3-18", "€15,000 - €25,000", "English"],
+        ["St. Louis School", "British / IB", "6-18", "€16,000 - €27,000", "English"],
+        ["Scuola Americana d'Italia", "American + Italian", "3-14", "€14,000 - €20,000", "English / Italian"],
+        ["Liceo Classico/Scientifico Intl", "Italian + bilingual tracks", "14-19", "€2,000 - €5,000", "Italian / English"],
+      ]},
+      { type: "h2", text: "How to Choose: Key Factors" },
+      { type: "h3", text: "Curriculum Pathway" },
+      { type: "p", text: "If your children will likely attend university in the US, the American School of Milan (ASM) provides the strongest pipeline with AP courses and SAT preparation. For UK universities, Sir James Henderson offers A-Levels. The IB Diploma, offered by ISM and St. Louis, is universally accepted and particularly strong for European universities including Bocconi." },
+      { type: "h3", text: "School Culture and Community" },
+      { type: "p", text: "ASM has the most American feel: large campus, sports culture, school spirit. ISM is the most internationally diverse with over 60 nationalities. Sir James Henderson has a traditional British atmosphere. St. Louis combines Italian and British cultures. Each school's parent community reflects its culture — visit during drop-off and events to sense where your family fits." },
+      { type: "h3", text: "Location and Commute" },
+      { type: "list", items: [
+        "ASM: Noverasco di Opera (south Milan), requires driving or school bus. Best for families in south/west Milan.",
+        "ISM: Baranzate (northwest Milan), campus with good facilities. School bus network covers central Milan.",
+        "Sir James Henderson: Via Pisani Dossi (central-west Milan). Walkable for families in CityLife, Amendola, and Pagano areas.",
+        "St. Louis School: Via Caviglia (east-central Milan). Convenient for families in Porta Romana, Corso Italia, and central areas.",
+      ]},
+      { type: "h2", text: "Admission Process and Timeline" },
+      { type: "p", text: "Most schools accept applications year-round but the primary intake is September. For September 2026 entry, applications should ideally be submitted by January-March 2026. Popular schools (ASM, ISM) often have waiting lists for certain year groups. The process typically involves: application form and transcripts, entrance assessment (academic and sometimes language), family interview, and offer." },
+      { type: "callout", text: "If you are relocating mid-year, most schools can accommodate late entries subject to availability. Having a professional facilitate the introduction can expedite the process, particularly for waitlisted year groups where a recommendation carries weight." },
+      { type: "h2", text: "Beyond Primary and Secondary" },
+      { type: "h3", text: "University in Milan" },
+      { type: "p", text: "Bocconi University is among Europe's top business schools and offers English-taught bachelor's and master's programs. Politecnico di Milano ranks #1 in Italy for engineering and architecture. Both attract international students and accept IB, A-Level, and AP qualifications. Several international school graduates stay in Milan for university, maintaining their social connections." },
+      { type: "h2", text: "Frequently Asked Questions" },
+      { type: "faq", q: "Can my child enter without speaking Italian?", a: "Yes. All listed international schools teach primarily in English. Italian is taught as a subject (usually mandatory). Children typically become conversational in Italian within 6-12 months through school and immersion. Schools offer EAL (English as Additional Language) support for non-native English speakers." },
+      { type: "faq", q: "Are there boarding school options near Milan?", a: "In Milan itself, no. However, Switzerland (Lugano is 1 hour from Milan) has world-renowned boarding schools: TASIS, Aiglon College (further), and Franklin University Switzerland. Some families choose Milan as their base with children at Swiss boarding schools for the senior years." },
+      { type: "faq", q: "What about learning disabilities or special educational needs?", a: "ISM and ASM have the most developed learning support departments. Italian law also provides strong protections for students with DSA (disturbi specifici dell'apprendimento). Discuss your child's specific needs with the school's learning support coordinator during the application process." },
+      { type: "callout", text: "Disclaimer: This guide provides general information as of March 2026. Tuition fees and admission policies change annually. Contact schools directly for current information. The Italian Gateway manages the school selection and application process for relocating families." },
+    ]
+  },
+
+  // ============================================================
+  // ARTICLE 11 — Immigration
+  // ============================================================
+  {
+    id: "immigration-residency-italy",
+    cat: "Immigration",
+    title: "Italian Residency for HNWI: Permits, Golden Visa, and Citizenship Pathways in 2026",
+    date: "March 2026",
+    read: "10 min",
+    desc: "A complete guide to Italian immigration options for wealthy individuals: elective residency, investor visa, EU Blue Card, and the path to Italian citizenship.",
+    content: [
+      { type: "p", text: "Italian bureaucracy has a reputation for complexity, and immigration is no exception. But for HNWI with the right guidance, the process is manageable and the rewards are substantial: EU residency, Schengen travel, access to Italian healthcare and education, and eventually one of the world's most powerful passports. This guide covers every pathway." },
+      { type: "h2", text: "Immigration Pathways Compared" },
+      { type: "table", headers: ["Pathway", "Timeline", "Investment Required", "Best For", "Path to Citizenship"], rows: [
+        ["Elective Residency (Residenza Elettiva)", "2-4 months", "None (prove passive income)", "Retirees, HNWI with investment income", "Yes (10 years)"],
+        ["Investor Visa (Golden Visa)", "3-6 months", "€250K - €2M", "Investors wanting fast-track", "Yes (10 years)"],
+        ["EU Blue Card", "1-3 months", "None (employer sponsors)", "Highly qualified professionals", "Yes (5 years for EU long-term)"],
+        ["Self-Employment Visa", "3-6 months", "Business plan + capital", "Entrepreneurs, freelancers", "Yes (10 years)"],
+        ["EU Citizen Registration", "2-4 weeks", "None", "EU/EEA nationals", "Yes (4 years for EU citizens)"],
+        ["Citizenship by Descent", "1-3 years", "None", "Those with Italian ancestry", "Direct citizenship"],
+      ]},
+      { type: "h2", text: "Elective Residency: The Most Common HNWI Path" },
+      { type: "p", text: "The Elective Residency permit (permesso di soggiorno per residenza elettiva) is designed for non-EU nationals who do not intend to work in Italy and can demonstrate stable, passive income or substantial assets. There is no official minimum income threshold, but consulates typically expect proof of at least €31,000 per year for a single applicant, plus €20,000+ for a spouse and €7,000+ per dependent child. HNWI with investment portfolios, pensions, or rental income far exceed these thresholds." },
+      { type: "h3", text: "Application Process" },
+      { type: "list", items: [
+        "Step 1: Apply for a D-type visa at the Italian consulate in your country of residence. Required documents: passport, proof of accommodation in Italy, proof of income/assets, health insurance, criminal background check.",
+        "Step 2: Enter Italy on the D-type visa (valid 90-365 days depending on consulate).",
+        "Step 3: Within 8 days of arrival, apply for the permesso di soggiorno at your local Questura (police headquarters).",
+        "Step 4: Register at the Anagrafe (civil registry) of your municipality to establish official Italian residency.",
+        "Step 5: Apply for your codice fiscale at the Agenzia delle Entrate if not already obtained.",
+        "Step 6: Register with the local ASL for healthcare access.",
+      ]},
+      { type: "h2", text: "The Investor Visa (Golden Visa)" },
+      { type: "p", text: "Italy's Investor Visa offers a fast-track residency for those willing to invest in the Italian economy. The investment must be maintained for at least 2 years, and the visa is initially valid for 2 years, renewable." },
+      { type: "table", headers: ["Investment Route", "Minimum Investment", "Notes"], rows: [
+        ["Italian government bonds", "€2,000,000", "Lowest risk, lowest flexibility"],
+        ["Italian company shares", "€500,000", "Unlisted Italian companies"],
+        ["Innovative startup", "€250,000", "Must qualify as 'startup innovativa'"],
+        ["Philanthropic donation", "€1,000,000", "Culture, education, immigration, scientific research, heritage"],
+      ]},
+      { type: "h2", text: "The Path to Italian Citizenship" },
+      { type: "p", text: "After 10 years of legal residency (4 years for EU citizens), you can apply for Italian citizenship. Italy allows dual citizenship with most countries (including the US and UK). The application process takes 2-4 years. Requirements: continuous legal residency, adequate Italian language skills (B1 level), clean criminal record, and sufficient income or assets." },
+      { type: "callout", text: "An Italian passport is one of the world's most powerful, providing visa-free access to 191 countries. Combined with EU citizenship rights — live, work, and study anywhere in the EU — this is a significant long-term asset for your family." },
+      { type: "h2", text: "Practical Tips for a Smooth Immigration Process" },
+      { type: "list", items: [
+        "Apostille everything: all documents from your home country need an apostille (or legalization for non-Hague Convention countries) and certified Italian translation.",
+        "Start with the consulate: every Italian consulate has different processing times and document requirements. Milan's consulates are among the busiest. Budget extra time.",
+        "Questura appointments: the Questura (immigration police) operates on an appointment system. Slots can be scarce. Book immediately upon arrival in Italy.",
+        "Maintain a paper trail: keep copies of every receipt, appointment confirmation, and communication. Italian bureaucracy relies heavily on documentation.",
+        "Engage a specialist: immigration lawyers (avvocati specializzati in immigrazione) handle the entire process and often have direct contacts at consulates and Questura offices.",
+      ]},
+      { type: "h2", text: "Frequently Asked Questions" },
+      { type: "faq", q: "Can my spouse and children join me?", a: "Yes. Family reunification is a right under Italian law. Your spouse and dependent children (under 18) can be included in your initial visa application or join you later through family reunification procedures. Processing time for family members is typically 30-90 days." },
+      { type: "faq", q: "Can I work in Italy on an Elective Residency permit?", a: "No. The Elective Residency permit explicitly prohibits employment. If you want to work (even for your own foreign company from Italy), you need a different permit type such as the Self-Employment Visa or EU Blue Card. However, managing your own investments and passive income is permitted." },
+      { type: "faq", q: "What happens if I spend time outside Italy?", a: "To maintain residency, you should spend more than 183 days per year in Italy. Prolonged absences (more than 12 months continuously) can result in loss of residency permit. For citizenship purposes, continuous residency is important — extended gaps can reset the clock." },
+      { type: "faq", q: "Is the Italian language test difficult for citizenship?", a: "The B1 level requirement is intermediate: you need to handle everyday situations, express opinions, and understand standard Italian. Most HNWI who live in Italy for 10 years and make reasonable effort to learn Italian (weekly lessons, daily immersion) achieve B1 well before the citizenship application." },
+      { type: "callout", text: "Disclaimer: This guide provides general information as of March 2026. Immigration laws change. Always consult qualified immigration lawyers. The Italian Gateway manages the entire immigration process end-to-end through our legal partners." },
+    ]
+  },
+
+];
 export default ARTICLES;
 
 // ============================================================
