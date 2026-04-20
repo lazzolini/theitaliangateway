@@ -29,13 +29,13 @@ const ARTICLES = [
     title: "Italy's Flat Tax Regime 2026: Complete Guide for New Residents",
     date: "March 2026",
     read: "12 min",
-    desc: "Everything HNWI need to know about the €200,000 flat tax: eligibility, family extension, inheritance exemptions, and how to apply.",
+    desc: "Everything HNWI need to know about the €300,000 flat tax: eligibility, family extension, inheritance exemptions, and how to apply.",
     content: [
-      { type: "p", text: "Italy's flat tax regime for new residents — formally known as the regime forfettario per neo-residenti under Article 24-bis of the TUIR — has become one of Europe's most attractive tax frameworks for high-net-worth individuals. Introduced in 2017 and refined in subsequent budgets, it allows qualifying new tax residents to pay a fixed substitute tax of €200,000 per year on all foreign-sourced income, regardless of the amount. On an income of €5 million, that's an effective rate of 4%. On €20 million, it's 1%." },
+      { type: "p", text: "Italy's flat tax regime for new residents — formally known as the regime forfettario per neo-residenti under Article 24-bis of the TUIR — has become one of Europe's most attractive tax frameworks for high-net-worth individuals. Introduced in 2017 and refined in subsequent budgets, it allows qualifying new tax residents to pay a fixed substitute tax of €300,000 per year (raised from €200,000 in 2024 and €100,000 at inception) on all foreign-sourced income, regardless of the amount. On an income of €5 million, that's an effective rate of 6%. On €20 million, it's 1.5%. On €50 million, it's 0.6%." },
       { type: "p", text: "This guide covers everything you need to know to evaluate, plan, and apply for the regime in 2026." },
 
       { type: "h2", text: "How It Works" },
-      { type: "p", text: "The flat tax replaces Italy's ordinary progressive income tax (IRPEF), which reaches 43% on income above €50,000, with a single annual payment of €200,000 that covers all foreign-sourced income. Italian-sourced income — such as an Italian salary or rent from Italian property — remains taxed at normal progressive rates." },
+      { type: "p", text: "The flat tax replaces Italy's ordinary progressive income tax (IRPEF), which reaches 43% on income above €50,000, with a single annual payment of €300,000 that covers all foreign-sourced income. Italian-sourced income — such as an Italian salary or rent from Italian property — remains taxed at normal progressive rates." },
       { type: "p", text: "The regime lasts for 15 years from the date of election, provided you maintain Italian tax residency. You can revoke it at any time, but once revoked, you cannot re-elect it." },
 
       { type: "h2", text: "Eligibility Requirements" },
@@ -60,12 +60,12 @@ const ARTICLES = [
       { type: "callout", text: "Critical: Income sourced from Italy is NOT covered by the flat tax and is taxed at ordinary progressive rates (up to 43%). Careful income planning is essential — structure your affairs so that value creation occurs outside Italy wherever possible." },
 
       { type: "h2", text: "Family Extension" },
-      { type: "p", text: "One of the regime's most powerful features is the family extension. Each additional family member who also transfers their tax residence to Italy can be added to the flat tax regime for €25,000 per year per person. This includes your spouse, children, parents, and in-laws." },
+      { type: "p", text: "One of the regime's most powerful features is the family extension. Each additional family member who also transfers their tax residence to Italy can be added to the flat tax regime for €50,000 per year per person. This includes your spouse, children, parents, and in-laws." },
       { type: "table", headers: ["Family Size", "Annual Cost", "Effective Rate on €5M", "Effective Rate on €20M"], rows: [
-        ["Individual", "€200,000", "4.0%", "1.0%"],
-        ["Couple", "€225,000", "4.5%", "1.1%"],
-        ["Family of 4", "€275,000", "5.5%", "1.4%"],
-        ["Extended (6)", "€325,000", "6.5%", "1.6%"]
+        ["Individual", "€300,000", "6.0%", "1.5%"],
+        ["Couple", "€350,000", "7.0%", "1.75%"],
+        ["Family of 4", "€450,000", "9.0%", "2.25%"],
+        ["Extended (6)", "€550,000", "11.0%", "2.75%"]
       ]},
 
       { type: "h2", text: "Inheritance and Gift Tax Exemption" },
@@ -90,7 +90,7 @@ const ARTICLES = [
 
       { type: "h2", text: "Comparison with Other EU Regimes" },
       { type: "table", headers: ["Country", "Regime", "Duration", "Cost/Rate", "Key Limitation"], rows: [
-        ["Italy", "Flat tax", "15 years", "€200K fixed", "Only foreign income"],
+        ["Italy", "Flat tax", "15 years", "€300K fixed", "Only foreign income"],
         ["Portugal (ex-NHR)", "Simplified", "10 years", "20% on certain income", "Narrower scope since 2024"],
         ["Greece", "Flat tax", "15 years", "€100K fixed", "Must invest €500K in Greek assets"],
         ["Switzerland", "Lump-sum taxation", "Ongoing", "Varies by canton", "Cannot work in Switzerland"],
@@ -113,7 +113,7 @@ const ARTICLES = [
       { type: "faq", q: "Can I work in Italy under the flat tax?", a: "Yes, but income from work performed in Italy is Italian-sourced and taxed at progressive rates. The flat tax only covers foreign income. If you manage a foreign company from Milan, the key question is where the economic value is created." },
       { type: "faq", q: "What if I already have Italian citizenship?", a: "Citizenship is irrelevant. The only test is tax residency. If you have Italian citizenship but have not been tax resident in Italy for 9 of the last 10 years, you qualify." },
       { type: "faq", q: "Can I leave before 15 years?", a: "Yes. You can revoke the regime at any time. There is no clawback on previous payments. If you leave Italy entirely, the regime simply ends." },
-      { type: "faq", q: "Is the €200,000 indexed to inflation?", a: "Currently no. The amount has been fixed at €200,000 since it was raised from €100,000 in 2024. Future budget laws could change this." },
+      { type: "faq", q: "Is the €300,000 indexed to inflation?", a: "Currently no. The amount was raised from €200,000 to €300,000 in the 2026 Budget Law (from €100,000 at inception in 2017). Those who opted in before 2026 keep their original rate (grandfathering). Future budget laws could change this." },
 
       { type: "callout", text: "Disclaimer: This guide provides general information as of March 2026. Tax laws change frequently. Always consult qualified Italian tax counsel before making decisions. The Italian Gateway coordinates these professionals on your behalf but does not provide direct tax advice." },
     ]
@@ -203,7 +203,7 @@ const ARTICLES = [
         ["3-bed villa, garden + pool", "€5,000 – €12,000", "3-6%", "55-65% (Apr-Oct)"],
         ["5-bed estate, lakefront", "€15,000 – €30,000+", "2-4%", "40-55% (Apr-Oct)"]
       ]},
-      { type: "p", text: "Important: Under Italy's flat tax regime, rental income from Italian property is Italian-sourced and taxed at progressive rates (or the optional cedolare secca flat rate of 21% for residential rentals). It is NOT covered by the €200,000 flat tax. Factor this into your financial planning." },
+      { type: "p", text: "Important: Under Italy's flat tax regime, rental income from Italian property is Italian-sourced and taxed at progressive rates (or the optional cedolare secca flat rate of 21% for residential rentals). It is NOT covered by the €300,000 flat tax. Factor this into your financial planning." },
 
       { type: "h2", text: "Common Mistakes to Avoid" },
       { type: "list", items: [
@@ -424,12 +424,12 @@ const ARTICLES = [
     desc: "Real cost comparison, tax transition from zero to flat tax, corporate restructuring, banking, schools, and step-by-step timeline.",
     content: [
       { type: "p", text: "A pattern is emerging across the wealth management world: individuals and families who moved to Dubai in the post-pandemic wave of 2020-2023 are now looking at Europe again — and Milan is the top destination." },
-      { type: "p", text: "The reasons are consistent. Zero tax was the draw, but after two or three years in the UAE, many discover that tax is only one variable in a much larger equation. Quality of healthcare, depth of education, cultural richness, EU access, and long-term succession planning all enter the picture. Italy's flat tax regime — €200,000 per year on unlimited foreign income — has made Milan the obvious choice for those who want European life without European tax rates." },
+      { type: "p", text: "The reasons are consistent. Zero tax was the draw, but after two or three years in the UAE, many discover that tax is only one variable in a much larger equation. Quality of healthcare, depth of education, cultural richness, EU access, and long-term succession planning all enter the picture. Italy's flat tax regime — €300,000 per year on unlimited foreign income — has made Milan the obvious choice for those who want European life without European tax rates." },
 
       { type: "h2", text: "The Real Cost Comparison: Dubai vs Milan" },
       { type: "p", text: "The most common misconception is that Dubai is dramatically cheaper because of zero income tax. When you account for the full cost of living at a HNWI standard, the gap narrows significantly." },
       { type: "table", headers: ["Expense", "Dubai", "Milan (Flat Tax)"], rows: [
-        ["Income tax (on €5M)", "€0", "€200,000"],
+        ["Income tax (on €5M)", "€0", "€300,000"],
         ["Housing (4-bed luxury)", "€80K – €150K", "€48K – €96K"],
         ["International school (2 kids)", "€50K – €80K", "€40K – €60K"],
         ["Health insurance (family)", "€25K – €40K", "€10K – €18K (+ free SSN)"],
@@ -438,7 +438,7 @@ const ARTICLES = [
         ["Travel (flights to Europe)", "€15K – €30K", "€5K – €10K"],
         ["TOTAL", "€258K – €445K", "€365K – €482K"]
       ]},
-      { type: "p", text: "At €5 million of foreign income, the total cost difference is approximately €100,000 per year in Dubai's favor. At €10 million, the flat tax stays at €200,000 while all other costs remain lower — making the gap negligible. Above €10 million, Milan's lifestyle cost advantage effectively eliminates the tax benefit of Dubai." },
+      { type: "p", text: "At €5 million of foreign income, the total cost difference is approximately €100,000 per year in Dubai's favor. At €10 million, the flat tax stays at €300,000 while all other costs remain lower — making the gap negligible. Above €10 million, Milan's lifestyle cost advantage effectively eliminates the tax benefit of Dubai." },
 
       { type: "h2", text: "Tax Transition: From Zero to Flat Tax" },
       { type: "p", text: "The 9-out-of-10 rule is the critical eligibility test: you must not have been an Italian tax resident for at least 9 of the previous 10 tax years. If you moved to Dubai from Italy less than 9 years ago, you may not qualify. This needs to be verified carefully with Italian tax counsel." },
@@ -508,7 +508,7 @@ const ARTICLES = [
 
       { type: "h2", text: "Frequently Asked Questions" },
       { type: "faq", q: "Can I maintain my UAE residence visa while living in Italy?", a: "A UAE visa requires entry every 180 days. Many maintain it as a safety net the first year. For Italian tax purposes, Italy must be your primary residence (183+ days/year)." },
-      { type: "faq", q: "My spouse does not work. Do they need flat tax coverage?", a: "If your spouse will have independent foreign income, adding them for €25,000/year is worthwhile. If no independent income, it may not be necessary — consult your tax advisor." },
+      { type: "faq", q: "My spouse does not work. Do they need flat tax coverage?", a: "If your spouse will have independent foreign income, adding them for €50,000/year is worthwhile. If no independent income, it may not be necessary — consult your tax advisor." },
       { type: "faq", q: "Can I fly my car from Dubai to Milan?", a: "Yes, but you'll pay 22% VAT on the assessed value plus homologation costs. For most people, selling in Dubai and buying in Italy is simpler and cheaper." },
       { type: "faq", q: "What if I want to return to Dubai later?", a: "You can leave Italy at any time. The flat tax simply stops — no clawback. Many view the 15-year window as flexible, using it fully or partially as circumstances evolve." },
 
@@ -529,7 +529,7 @@ const ARTICLES = [
     content: [
       { type: "p", text: "Opening a private bank account in Italy as a foreign resident is not a simple walk-in process. Banks apply enhanced due diligence to international clients, particularly those with complex asset structures spanning multiple jurisdictions. This guide covers everything HNWI need to know about establishing banking relationships in Milan and Northern Italy." },
       { type: "h2", text: "Why Italy for Private Banking?" },
-      { type: "p", text: "Italy's private banking sector manages over €900 billion in assets. Milan is home to the Italian operations of UBS, Credit Suisse (now under UBS), JP Morgan Private Bank, and several prestigious Italian institutions including Banca Generali, Mediobanca Private Banking, Fideuram, and Banca Aletti. The flat tax regime has made Italy increasingly attractive, and banks have built dedicated teams for international clients relocating under the €200,000 regime." },
+      { type: "p", text: "Italy's private banking sector manages over €900 billion in assets. Milan is home to the Italian operations of UBS, Credit Suisse (now under UBS), JP Morgan Private Bank, and several prestigious Italian institutions including Banca Generali, Mediobanca Private Banking, Fideuram, and Banca Aletti. The flat tax regime has made Italy increasingly attractive, and banks have built dedicated teams for international clients relocating under the €300,000 regime." },
       { type: "h2", text: "What Do Italian Private Banks Require from Foreign Clients?" },
       { type: "h3", text: "Documentation Checklist" },
       { type: "list", items: [
@@ -570,7 +570,7 @@ const ARTICLES = [
       ]},
       { type: "h2", text: "Frequently Asked Questions" },
       { type: "faq", q: "Can I open an Italian bank account before I have a residence permit?", a: "Some banks allow account opening with a codice fiscale and proof of pending residence application. However, full private banking services typically require confirmed residency. A preliminary relationship can be established during the transition period." },
-      { type: "faq", q: "Do I need to close my accounts in my home country?", a: "No. Italian tax residents must declare foreign accounts on the Quadro RW of their annual tax return, but there is no obligation to close them. Under the flat tax regime, foreign-source income is covered by the €200,000 lump sum, so foreign account income is not taxed separately." },
+      { type: "faq", q: "Do I need to close my accounts in my home country?", a: "No. Italian tax residents must declare foreign accounts on the Quadro RW of their annual tax return, but there is no obligation to close them. Under the flat tax regime, foreign-source income is covered by the €300,000 lump sum, so foreign account income is not taxed separately." },
       { type: "faq", q: "What about banking secrecy?", a: "Italy participates fully in the Common Reporting Standard (CRS) and FATCA. There is no banking secrecy for tax purposes. However, Italian privacy laws are strict regarding third-party access to your financial information." },
       { type: "faq", q: "Can a relocation advisor help with banking introductions?", a: "Yes. A professional introduction to a senior relationship manager, rather than a cold approach, typically results in faster onboarding, better terms, and access to institutional services not available to walk-in clients. The Italian Gateway maintains relationships with all major private banking institutions in Milan." },
       { type: "callout", text: "Disclaimer: This guide provides general information as of March 2026. Banking regulations change. Always consult qualified professionals. The Italian Gateway coordinates introductions and does not provide financial advice." },
@@ -586,12 +586,12 @@ const ARTICLES = [
     title: "Tax Planning for HNWI Relocating to Italy: Beyond the Flat Tax",
     date: "March 2026",
     read: "11 min",
-    desc: "Comprehensive guide to Italy's tax advantages for new residents, including the €200K flat tax, 7% retiree regime, succession planning, and exit tax considerations.",
+    desc: "Comprehensive guide to Italy's tax advantages for new residents, including the €300K flat tax, 7% retiree regime, succession planning, and exit tax considerations.",
     content: [
       { type: "p", text: "Italy's flat tax regime gets the headlines, but smart tax planning for a relocation involves much more: exit taxes from your current country, succession planning across jurisdictions, corporate structuring, and long-term optimization. This guide covers the full picture for HNWI moving to Italy in 2026." },
       { type: "h2", text: "Italy's Flat Tax Options at a Glance" },
       { type: "table", headers: ["Regime", "Annual Tax", "Duration", "Who Qualifies", "Key Benefit"], rows: [
-        ["New Resident Flat Tax", "€200,000/year", "Up to 15 years", "Non-resident for 9 of prior 10 tax years", "All foreign income covered, regardless of amount"],
+        ["New Resident Flat Tax", "€300,000/year", "Up to 15 years", "Non-resident for 9 of prior 10 tax years", "All foreign income covered, regardless of amount"],
         ["7% Retiree Flat Tax", "7% on foreign income", "10 years", "Pension recipients, move to Southern Italy municipality (<20K pop.)", "Low rate, covers all foreign-source income"],
         ["Impatriate Regime", "70% income exemption", "5 years (extendable)", "Workers/professionals transferring to Italy", "Only 30% of employment income is taxed"],
       ]},
@@ -884,7 +884,7 @@ const ARTICLES = [
         "Stazza tax (tonnage tax): annual tax based on vessel length. Ranges from €800/year for boats 10-12m to €25,000+/year for yachts over 64m. This is a possession tax, not an income tax.",
         "VAT on purchase: 22% Italian VAT applies to new boats purchased in Italy or imported from outside the EU. Used boats with EU VAT-paid status are exempt. Malta leasing structures can reduce effective VAT to 5-6%.",
         "Charter income: if you charter your yacht, income is taxable in Italy if the charter operates from Italian ports. Commercial registration under the Registro Internazionale provides favorable tax treatment.",
-        "Flat tax interaction: for flat tax residents, foreign-source charter income is covered by the €200,000 lump sum. However, a yacht physically based in Italy may generate Italian-source income.",
+        "Flat tax interaction: for flat tax residents, foreign-source charter income is covered by the €300,000 lump sum. However, a yacht physically based in Italy may generate Italian-source income.",
         "Import duty: yachts imported from outside the EU face customs duty (typically 1.7%) plus 22% VAT on the customs value.",
       ]},
       { type: "h2", text: "Cruising Italy: The Best Routes" },
@@ -905,6 +905,382 @@ const ARTICLES = [
       { type: "faq", q: "How much does it cost to run a yacht annually in Italy?", a: "The rule of thumb is 10% of purchase price per year. A 25m yacht worth €3M costs approximately €300,000/year to run (crew, berth, fuel, maintenance, insurance, management). Larger yachts scale accordingly. Italian-specific costs (stazza tax, berth fees) add €30,000-€100,000+ depending on size and location." },
       { type: "faq", q: "Can The Italian Gateway help with yacht-related services?", a: "Yes. We manage berth acquisition (including waitlisted marinas), registration, crew sourcing, management company selection, and itinerary planning. For clients relocating to Italy with an existing yacht, we coordinate the entire transition: re-registration, berth, crew contracts, and Italian compliance." },
       { type: "callout", text: "Disclaimer: This guide provides general information as of March 2026. Maritime regulations and tax laws change. Always consult qualified maritime lawyers and tax advisors. The Italian Gateway coordinates all yacht-related services through our maritime partners." },
+    ]
+  },
+
+  // =============================================================
+  // ARTICLE 13 — UK to Italy: The WEXIT Guide
+  // =============================================================
+  {
+    id: "uk-to-italy-hnwi-2026",
+    cat: "Relocation",
+    title: "Moving from the UK to Italy in 2026: The Complete Guide for HNWI After the Non-Dom Abolition",
+    date: "April 2026",
+    read: "14 min",
+    desc: "The UK abolished non-dom status in April 2025. 16,500 millionaires are leaving Britain in 2025 alone. Here's why Italy is their #1 European destination and how the €300K flat tax compares.",
+    content: [
+      { type: "p", text: "The UK is experiencing the largest exodus of wealth in its modern history. According to the Henley Private Wealth Migration Report 2025, Britain will lose a net 16,500 millionaires this year — more than double China's outflow and the highest loss ever recorded by any country. The trigger: the abolition of the non-domiciled resident (non-dom) tax status, effective April 6, 2025, combined with sharp increases in capital gains and inheritance tax announced in the October 2024 Budget." },
+      { type: "p", text: "Italy is the single largest beneficiary of this shift within Europe, attracting a projected net inflow of 3,600 millionaires in 2025 — behind only the UAE (9,800) and the US (7,500) globally. Milan has emerged as the primary destination for UK HNWI seeking a combination of European lifestyle, tax efficiency, and cultural depth that no other jurisdiction can match." },
+
+      { type: "h2", text: "Why UK HNWI Are Choosing Italy Over Other Destinations" },
+      { type: "table", headers: ["Factor", "Italy", "Switzerland", "Portugal", "UAE"], rows: [
+        ["Flat tax", "€300K/year", "CHF 400K-1M+ (varies)", "20% (limited scope)", "0%"],
+        ["Duration", "15 years", "Ongoing", "10 years", "Ongoing"],
+        ["Can you work?", "Yes", "No (lump-sum)", "Yes", "Yes"],
+        ["Inheritance tax on foreign assets", "€0", "Varies by canton", "0% (direct line)", "0%"],
+        ["EU passport path", "10 years", "12+ years", "5 years", "Never"],
+        ["Healthcare (WHO rank)", "#2", "#20", "#12", "#27"],
+        ["Flight to London", "2 hours", "1.5 hours", "2.5 hours", "7 hours"],
+        ["Cultural depth", "2,000+ years", "Medieval-modern", "500+ years", "50 years"],
+        ["Lifestyle city", "Milan (global)", "Zurich/Geneva", "Lisbon", "Dubai"],
+      ]},
+
+      { type: "h2", text: "The Non-Dom Abolition: What Changed" },
+      { type: "p", text: "Until April 2025, UK non-dom status allowed foreign nationals living in Britain to pay UK tax only on income remitted to the UK, not on worldwide income. An estimated 74,000 individuals claimed non-dom status, contributing approximately £8.9 billion in tax revenue. The new regime replaces this with a 4-year Foreign Income and Gains (FIG) exemption for new arrivals, followed by full worldwide taxation — fundamentally changing the UK's appeal for long-term HNWI residents." },
+      { type: "p", text: "The inheritance tax changes are equally significant. From April 2025, non-UK assets held in excluded property trusts — a cornerstone of HNWI estate planning in the UK — are brought into the IHT net after 10 years of UK residence. For a family with a £50M estate, this represents a potential £20M liability that did not exist before." },
+
+      { type: "h2", text: "Italy's €300K Flat Tax: The Direct Replacement" },
+      { type: "p", text: "Italy's regime under Article 24-bis TUIR offers what the UK non-dom status used to provide — and more. For a fixed annual payment of €300,000 (€50,000 per additional family member), all foreign-sourced income is covered regardless of amount. There is no remittance basis, no 4-year cliff, and no retroactive clawback." },
+      { type: "callout", text: "Grandfathering: If you relocated to Italy and opted into the flat tax before the 2026 Budget Law, you keep the previous rate of €200,000/year for the full 15-year duration. This grandfathering has been applied consistently with every increase, providing legal certainty." },
+      { type: "p", text: "The inheritance tax advantage is the decisive factor for many UK families. Under the flat tax regime, foreign assets are completely exempt from Italian inheritance tax. A £50M foreign estate passes to heirs with zero Italian IHT. Compare this to the UK's 40% rate above the nil-rate band, and the financial logic becomes overwhelming." },
+
+      { type: "h2", text: "Practical Timeline: UK to Milan" },
+      { type: "list", items: [
+        "12 months before: Verify 9-of-10 year eligibility. Engage Italian commercialista and UK departure advisor. Begin school applications (waiting lists are 6-12 months).",
+        "9 months: Review corporate structures — UK LLPs, trusts, holding companies. Plan which structures survive the move and which need restructuring.",
+        "6 months: File interpello preventivo (advance tax ruling) with Agenzia delle Entrate. Start property search in Milan or Lake Como. Initiate KYC with Italian private bank.",
+        "3 months: Sign property contract (compromesso) or lease. Notify HMRC of departure. Arrange international health insurance.",
+        "Day 1: Register at Anagrafe. The 183-day clock starts. Register with ASL for SSN healthcare.",
+        "First tax return: Elect the flat tax regime in your Modello Redditi PF. File by November 30 of the following year."
+      ]},
+
+      { type: "h2", text: "UK Exit Considerations" },
+      { type: "p", text: "Leaving the UK cleanly requires careful planning. HMRC applies the Statutory Residence Test (SRT) to determine your departure date. You must satisfy the 'overseas' limb of the SRT, which requires fewer than 16 UK ties/days (if you have 4+ UK ties) or fewer than 46 days (if you have fewer than 4 ties). Common ties include UK property, spouse, minor children, and substantive UK work." },
+      { type: "list", items: [
+        "Capital gains on UK property remain taxable regardless of residence (non-resident CGT).",
+        "UK pensions: drawdowns remain taxable in the UK unless a Double Tax Treaty provides relief. The Italy-UK treaty allocates pension taxation to the state of residence — Italy — where it falls under the flat tax if foreign-sourced.",
+        "ISAs: no longer tax-free once you leave the UK. Withdrawals are not taxed, but new contributions are not allowed.",
+        "UK company shares: review whether split-year treatment applies for the year of departure."
+      ]},
+
+      { type: "h2", text: "Frequently Asked Questions" },
+      { type: "faq", q: "Can I keep my London property and still claim Italian tax residence?", a: "Yes, but the property counts as a UK tie under the SRT. You must manage your UK day count carefully. Italian-sourced rental income from a UK property is foreign-sourced (from Italy's perspective) and covered by the flat tax." },
+      { type: "faq", q: "What about my children's UK university plans?", a: "Your children can attend UK universities regardless of where you live. Under the flat tax, UK university fees paid from foreign income are covered. Many Milan international schools (ASM, ISM, St. Louis) have strong Oxbridge and Russell Group placement records." },
+      { type: "faq", q: "Is Milan really comparable to London for lifestyle?", a: "Different, not lesser. Milan offers Michelin-starred dining at a fraction of London prices, La Scala, Lake Como 45 minutes away, skiing in 90 minutes, and a fashion capital that just overtook Bond Street (Montenapoleone is now the world's most expensive shopping street). What Milan lacks in London's financial market depth, it compensates with quality of life, healthcare (#2 vs #18 WHO), and proximity to the rest of Europe." },
+      { type: "faq", q: "How many UK HNWI have already moved to Italy?", a: "Italy attracted a net inflow of 3,600 millionaires in 2025 according to Henley & Partners, with a significant proportion coming from the UK. The Italian flat tax regime has been used by approximately 3,000-4,000 individuals cumulatively since 2017, with applications accelerating sharply since the UK non-dom abolition announcement." },
+
+      { type: "callout", text: "Disclaimer: This guide provides general information as of April 2026. Tax laws change frequently. Always consult qualified professionals in both the UK and Italy before making relocation decisions. The Italian Gateway coordinates these professionals on your behalf." },
+    ]
+  },
+
+  // =============================================================
+  // ARTICLE 14 — Italy vs Portugal vs Greece: Tax Regime Comparison
+  // =============================================================
+  {
+    id: "italy-vs-portugal-vs-greece-tax-2026",
+    cat: "Tax & Legal",
+    title: "Italy vs Portugal vs Greece: Which European Tax Regime Is Best for HNWI in 2026?",
+    date: "April 2026",
+    read: "12 min",
+    desc: "Portugal's NHR is dead. Greece requires a €500K investment. Switzerland bans work. A side-by-side comparison of every European HNWI tax regime — with the data advisors need.",
+    content: [
+      { type: "p", text: "The European HNWI tax landscape has changed dramatically in 2024-2026. Portugal gutted its Non-Habitual Resident (NHR) program. The UK abolished non-dom status. Greece tightened its investment requirements. For wealth advisors and families evaluating relocation, the question is no longer 'which country has the lowest rate?' but 'which regime actually works for my life, wealth structure, and succession plan?'" },
+      { type: "p", text: "This guide provides a comprehensive, data-driven comparison as of April 2026, including the changes most advisors haven't yet incorporated into their planning." },
+
+      { type: "h2", text: "The 2026 Landscape at a Glance" },
+      { type: "table", headers: ["Country", "Regime", "Annual Cost", "Duration", "Can Work?", "Investment Req.", "IHT Exemption"], rows: [
+        ["Italy", "Flat tax (Art. 24-bis)", "€300K fixed", "15 years", "Yes", "None", "Full (foreign assets)"],
+        ["Portugal", "IFICI (ex-NHR)", "20% on qualifying income", "10 years", "Yes", "None", "Partial"],
+        ["Greece", "Non-dom flat tax", "€100K fixed", "15 years", "Yes", "€500K in Greek assets", "None specified"],
+        ["Switzerland", "Lump-sum (forfait)", "CHF 400K-1M+", "Ongoing", "No", "None", "Canton-dependent"],
+        ["Malta", "Non-dom", "15% min €5K/yr", "Ongoing", "Yes", "None", "N/A (remittance)"],
+        ["Cyprus", "Non-dom", "0% on dividends", "17 years", "Yes", "None", "N/A"],
+        ["Monaco", "No income tax", "€0", "Ongoing", "Yes", "Property deposit", "None"],
+        ["UK (new FIG)", "4-year exemption", "0% (4 yrs only)", "4 years", "Yes", "None", "None after 10 yrs"],
+      ]},
+
+      { type: "h2", text: "Italy: The Premium All-Rounder" },
+      { type: "p", text: "Italy's €300,000 flat tax (raised from €200,000 in the 2026 Budget Law) covers all foreign-sourced income for 15 years. Family members can be added for €50,000 each. The regime also exempts foreign assets from IVIE (0.76% property tax), IVAFE (0.2% financial assets tax), and Quadro RW reporting. Most critically, foreign assets are exempt from Italian inheritance and gift tax — making it the only regime in Europe that offers both income and succession protection in a single package." },
+      { type: "callout", text: "The killer advantage: under Italy's flat tax, a €50M foreign estate passes to heirs with €0 inheritance tax. Under the UK's new rules, the same estate faces £20M in IHT. Under France's rules, up to €22.5M. No other European regime matches Italy's combination of income + succession protection." },
+
+      { type: "h2", text: "Portugal: The Fallen Star" },
+      { type: "p", text: "Portugal's NHR was the most popular HNWI regime in Europe from 2009 to 2023, attracting over 74,000 applicants. In late 2023, the government announced its abolition, replacing it in 2024 with the IFICI (Incentivo Fiscal à Investigação Científica e Inovação) — a narrower regime targeting specific professional categories: researchers, scientists, tech workers, and startup founders." },
+      { type: "p", text: "The new regime offers a 20% flat rate on qualifying Portuguese-source employment income for 10 years. Foreign passive income (dividends, interest, capital gains, rental income) is no longer exempt. For HNWI with substantial investment portfolios, Portugal's regime is no longer competitive. The 'golden era' of NHR is definitively over." },
+
+      { type: "h2", text: "Greece: Cheap But Locked" },
+      { type: "p", text: "Greece offers a €100,000 annual flat tax for 15 years — half of Italy's. But the catch is substantial: applicants must invest at least €500,000 in Greek assets (real estate, government bonds, or shares in Greek companies). This locks significant capital in one of Europe's more volatile economies, with limited liquidity options and no guarantee of capital preservation." },
+      { type: "p", text: "Greece also lacks the infrastructure that HNWI families need: limited international schools (Athens has 3-4 vs Milan's 6+), healthcare ranked #29 by WHO (vs Italy's #2), and no city comparable to Milan as a global business and lifestyle hub." },
+
+      { type: "h2", text: "Switzerland: Premium But Restricted" },
+      { type: "p", text: "Swiss lump-sum taxation (forfait) remains attractive for passive wealth holders. The minimum tax base is calculated on living expenses, typically resulting in annual payments of CHF 400,000 to over CHF 1M depending on the canton. However, the critical restriction is absolute: you cannot work in Switzerland under lump-sum taxation. For entrepreneurs, fund managers, or active investors, this is a dealbreaker." },
+      { type: "p", text: "Switzerland also lacks a clear inheritance tax exemption for foreign assets — treatment varies by canton and can be complex. And the path to citizenship is among Europe's longest: 10 years of residence plus 2-4 years of canton-level processing." },
+
+      { type: "h2", text: "The Verdict: Which Regime for Which Profile?" },
+      { type: "table", headers: ["Profile", "Best Regime", "Why"], rows: [
+        ["Active entrepreneur (€10M+ income)", "Italy", "Work rights + flat tax + succession. No other option combines all three."],
+        ["Passive investor (€5M+ portfolio)", "Italy or Switzerland", "Italy if work rights needed. Switzerland if purely passive and prefer Alpine lifestyle."],
+        ["Retiree with pension", "Italy (7% regime)", "7% on foreign pension income in Southern Italy. Unbeatable rate."],
+        ["Tech founder / researcher", "Portugal (IFICI)", "20% on Portuguese employment income. Narrow but competitive for qualifying profiles."],
+        ["Ultra-privacy, no work", "Monaco", "Zero tax, maximum discretion. But very expensive real estate and no EU passport path."],
+        ["Young family, EU access priority", "Italy", "Best schools, healthcare, passport path (10 years), and 15-year tax certainty."],
+      ]},
+
+      { type: "h2", text: "Frequently Asked Questions" },
+      { type: "faq", q: "Can I switch from one regime to another?", a: "Generally yes, but timing matters. If you've used Portugal's NHR for 5 years, you can move to Italy and apply for the flat tax if you meet the 9-of-10 year non-residency requirement (your Portugal years don't count as Italian residency). Each regime has its own eligibility window." },
+      { type: "faq", q: "What if Italy raises the flat tax again?", a: "Italy has consistently applied grandfathering: if you opt in at €300K, you keep that rate for 15 years even if the tax is raised for new applicants. This has been proven twice (2024 and 2026 increases) and provides strong legal certainty." },
+      { type: "faq", q: "Is Monaco worth considering?", a: "For pure tax optimization, Monaco is unbeatable (zero income tax). But real estate is the world's most expensive (€50,000+/sqm), there's no EU passport path, no world-class healthcare system, and limited schooling options. It works for UHNWIs who want a base, not a home." },
+
+      { type: "callout", text: "Disclaimer: This comparison reflects laws and regulations as of April 2026. Regimes change — Portugal's experience proves this. Always verify current status with qualified advisors. The Italian Gateway works with international tax advisors to ensure your relocation is structured correctly from day one." },
+    ]
+  },
+
+  // =============================================================
+  // ARTICLE 15 — SIPP, IRA, Funds: Financial Structures Guide
+  // =============================================================
+  {
+    id: "sipp-ira-funds-italy-relocation",
+    cat: "Tax & Legal",
+    title: "SIPPs, IRAs, ISAs and Fund Structures: What Happens to Your Investments When You Move to Italy",
+    date: "April 2026",
+    read: "13 min",
+    desc: "UK SIPPs, US IRAs and 401(k)s, ISAs, harmonised vs non-harmonised funds — how Italy taxes each one, and how to restructure before arrival to avoid costly mistakes.",
+    content: [
+      { type: "p", text: "You've decided to move to Italy. Your tax advisor has confirmed the flat tax works. But then comes the question that trips up even experienced wealth managers: what happens to your existing investment structures? The answer depends entirely on what you hold and where — and getting it wrong can cost hundreds of thousands in unnecessary tax." },
+      { type: "p", text: "This guide covers the most common financial structures held by HNWI relocating from the UK, US, UAE, and Switzerland, and how Italian tax law treats each one." },
+
+      { type: "h2", text: "UK SIPPs and Pensions" },
+      { type: "p", text: "A UK Self-Invested Personal Pension (SIPP) is one of the most common structures held by UK HNWI. When you become an Italian tax resident, the treatment depends on whether you're under the flat tax regime and how you access the pension." },
+      { type: "h3", text: "Under the Flat Tax" },
+      { type: "p", text: "If your SIPP income is foreign-sourced (which it is — the pension is UK-based), it is covered by the €300,000 annual flat tax. This means drawdowns from your SIPP are included in the flat tax lump sum. You pay no additional Italian tax on these withdrawals, regardless of the amount." },
+      { type: "h3", text: "UK Tax on SIPP Withdrawals" },
+      { type: "p", text: "The Italy-UK Double Tax Treaty (Article 18) allocates pension taxation to the state of residence — Italy. However, HMRC typically applies 25% tax-free on the first withdrawal and progressive rates on the rest, unless you claim treaty relief. Filing a DT-Individual form with HMRC is essential to avoid double taxation." },
+      { type: "callout", text: "Critical: Do NOT transfer your SIPP to a QROPS without expert advice. QROPS transfers trigger a 25% overseas transfer charge unless the receiving scheme is in the same country as your residence. There are very few Italian-qualifying QROPS. In most cases, leaving the SIPP in the UK and drawing down under treaty protection is the correct strategy." },
+
+      { type: "h2", text: "US IRAs, 401(k)s, and Roth IRAs" },
+      { type: "p", text: "US citizens and green card holders face unique challenges because the US taxes worldwide income regardless of residence. Moving to Italy means navigating two complete tax systems simultaneously." },
+      { type: "table", headers: ["Structure", "Italian Treatment (Flat Tax)", "US Treatment", "Key Risk"], rows: [
+        ["Traditional IRA / 401(k)", "Foreign income — covered by flat tax", "Taxed on distribution at ordinary rates", "Must file both Italian and US returns. Foreign tax credits critical."],
+        ["Roth IRA", "Italy may not recognise tax-free status", "Tax-free distributions (if qualified)", "Italy may tax Roth distributions as ordinary income. Treaty does not explicitly address Roth."],
+        ["US Brokerage (stocks, ETFs)", "Under flat tax if foreign-sourced", "Subject to US capital gains rules", "PFIC rules apply to non-US funds held by US persons — punitive tax."],
+      ]},
+      { type: "callout", text: "US citizens cannot use the Italian flat tax regime. The US-Italy treaty and FATCA requirements mean US citizens in Italy need specialised cross-border CPAs, not generic Italian commercialisti. Budget €10,000-€20,000/year for proper compliance." },
+
+      { type: "h2", text: "UK ISAs" },
+      { type: "p", text: "ISAs (Individual Savings Accounts) lose their tax-free wrapper the moment you leave the UK. You cannot contribute to an ISA as a non-UK resident, and while the underlying investments remain, any gains realised after departure are subject to your new country's tax rules." },
+      { type: "p", text: "Under the Italian flat tax, gains from ISA holdings are foreign-sourced and covered by the €300,000 lump sum. However, if you're NOT under the flat tax (e.g., after the 15-year period), gains would be taxed at Italy's 26% capital gains rate. Strategy: consider crystallising gains before departure or during the flat tax period." },
+
+      { type: "h2", text: "Harmonised vs Non-Harmonised Funds: The Critical Distinction" },
+      { type: "p", text: "This is the single most important portfolio decision for anyone moving to Italy outside the flat tax regime. Italian tax law distinguishes sharply between:" },
+      { type: "table", headers: ["Fund Type", "Italian Tax Rate", "Examples", "Reporting"], rows: [
+        ["Harmonised (UCITS/OICR)", "26% on gains", "Irish-domiciled ETFs, Luxembourg SICAV, most European mutual funds", "Imposta sostitutiva — simple withholding"],
+        ["Non-harmonised", "Up to 43% (progressive IRPEF)", "US-domiciled ETFs (Vanguard, iShares US), Cayman funds, some UK OEICs", "Redditi diversi — complex annual reporting"],
+      ]},
+      { type: "p", text: "The difference is dramatic: a €1M gain on a non-harmonised fund could cost €430,000 in tax, versus €260,000 on a harmonised equivalent. For flat tax residents, this distinction doesn't matter (all foreign income is covered). But for post-flat-tax life, portfolio restructuring is essential." },
+      { type: "callout", text: "Action required: Before relocating, work with your wealth manager to move from US-domiciled ETFs to their Irish or Luxembourg equivalents. An iShares S&P 500 ETF domiciled in Ireland (CSPX) is taxed at 26%. The same fund domiciled in the US (IVV) faces up to 43%. Same underlying exposure, radically different tax treatment." },
+
+      { type: "h2", text: "Life Insurance Wrappers (Polizze Vita)" },
+      { type: "p", text: "Italian-compliant life insurance wrappers (polizze vita) are one of the most powerful tools for HNWI. They offer tax deferral on investment gains, favourable inheritance treatment (proceeds bypass Italian succession rules and are largely exempt from inheritance tax), and portfolio flexibility. Many private banks in Milan offer these as standard for international clients." },
+
+      { type: "h2", text: "Pre-Move Restructuring Checklist" },
+      { type: "list", items: [
+        "Map all existing structures: SIPPs, ISAs, IRAs, trusts, holding companies, brokerage accounts",
+        "Classify each as foreign-source or potentially Italian-source income",
+        "Switch non-harmonised funds to UCITS equivalents (Irish/Luxembourg domicile)",
+        "File DT-Individual with HMRC for SIPP treaty relief",
+        "For US citizens: engage cross-border CPA, review PFIC exposure, FBAR/FATCA filing",
+        "Consider crystallising ISA gains before departure if tax-efficient",
+        "Review trust structures for Italian transparency rules",
+        "Discuss polizza vita wrapper with Italian private banker post-arrival",
+      ]},
+
+      { type: "h2", text: "Frequently Asked Questions" },
+      { type: "faq", q: "Should I sell everything before moving?", a: "No. The flat tax covers all foreign investment income for 15 years. The restructuring is for post-flat-tax life, or for structures (like US IRAs) that have complexities regardless of the flat tax." },
+      { type: "faq", q: "Can my UK wealth manager continue to manage my portfolio from Italy?", a: "It depends on MiFID II cross-border rules. Many UK managers can continue servicing existing clients, but some cannot onboard 'new' EU residents post-Brexit. Your Italian private bank can typically manage the portfolio domestically with equivalent or better terms." },
+      { type: "faq", q: "What about crypto?", a: "Italy taxes crypto at 26% on gains exceeding €2,000/year (as of 2026). Under the flat tax, crypto income from foreign wallets/exchanges is foreign-sourced and covered. Italian-exchange crypto is Italian-sourced and taxed at 26%." },
+
+      { type: "callout", text: "Disclaimer: This guide provides general information as of April 2026. Financial regulations and tax laws change. Always consult qualified professionals for your specific situation. The Italian Gateway coordinates between your existing advisors and Italian professionals." },
+    ]
+  },
+
+  // =============================================================
+  // ARTICLE 16 — Corporate Relocation: Impatriati Regime
+  // =============================================================
+  {
+    id: "corporate-relocation-milan-impatriati",
+    cat: "Relocation",
+    title: "Moving to Milan for Work: The Impatriati Tax Regime and Everything Your Company's HR Won't Tell You",
+    date: "April 2026",
+    read: "11 min",
+    desc: "Transferred to Milan by your employer? The Impatriati regime exempts 70% of your income from tax. Plus: neighborhoods, schools, healthcare, banking — the complete guide for corporate relocators.",
+    content: [
+      { type: "p", text: "Your company is sending you to Milan. The contract is signed, the relocation package is generous, and HR has assigned a mobility team. But as the move approaches, you realise how much falls outside the corporate package: finding the right apartment in the right neighborhood, navigating school waitlists, opening a bank account that takes 6 weeks, converting your driving license, registering for healthcare, and — most importantly — making sure your personal tax situation is optimised, not just compliant." },
+      { type: "p", text: "This guide is for professionals and executives relocating to Milan through a corporate transfer. Whether you're coming from London, Dubai, Singapore, or New York, the fundamentals are the same — and the opportunities are bigger than your HR team knows." },
+
+      { type: "h2", text: "The Impatriati Regime: Your Personal Tax Advantage" },
+      { type: "p", text: "Italy's Impatriati regime (D.Lgs. 147/2015, as amended) is separate from the HNWI flat tax and is designed specifically for workers transferring their tax residence to Italy. The benefit is substantial: 70% of your qualifying income is exempt from Italian tax. You only pay IRPEF on the remaining 30%." },
+      { type: "table", headers: ["Detail", "Impatriati Regime"], rows: [
+        ["Tax benefit", "70% income exemption (you pay tax on only 30%)"],
+        ["Effective top rate", "~12.9% (vs 43% ordinary)"],
+        ["Duration", "5 years (extendable to 10 if you buy property or have children in Italy)"],
+        ["Eligible income", "Employment income, self-employment, business income earned in Italy"],
+        ["Requirement", "Not resident in Italy for 2+ of prior 3 tax years (or 6 of prior 7 for Italians returning)"],
+        ["Can combine with flat tax?", "No — choose one or the other"],
+      ]},
+      { type: "callout", text: "Example: On a €400,000 salary, you'd normally pay approximately €172,000 in IRPEF. Under the Impatriati regime, only €120,000 is taxable, reducing your tax to approximately €48,000. That's a saving of €124,000 per year — €620,000 over 5 years." },
+
+      { type: "h2", text: "Impatriati vs Flat Tax: Which One?" },
+      { type: "p", text: "If your company is paying you a salary in Italy, the Impatriati regime is almost always the better choice for employees. The flat tax (€300K/year) only covers foreign-sourced income — your Italian salary would still be taxed at progressive rates. The Impatriati regime, by contrast, directly reduces your Italian employment income by 70%." },
+      { type: "p", text: "The flat tax is better for HNWI with large foreign investment income and relatively little Italian employment income. If you earn €300K in Milan and €5M from foreign investments, the optimal strategy might be to use the Impatriati regime for your salary AND the flat tax for foreign income — but note: as of recent reforms, you cannot combine both. Consult a commercialista to model your specific scenario." },
+
+      { type: "h2", text: "What Your Corporate Package Typically Covers" },
+      { type: "list", items: [
+        "Visa/work permit processing",
+        "Temporary housing (usually 1-3 months)",
+        "Shipment of household goods",
+        "Tax equalisation (your employer ensures you don't pay more tax than in your home country)",
+        "Sometimes: a lump-sum relocation allowance",
+      ]},
+
+      { type: "h2", text: "What Your Package Doesn't Cover (And We Do)" },
+      { type: "list", items: [
+        "Finding the right permanent apartment in the right neighborhood for your family's lifestyle — not just the closest corporate flat",
+        "Navigating Italian rental contracts (4+4 or transitorio), deposits, and guarantees",
+        "School applications — waitlists are 6-12 months, and your HR team won't manage this",
+        "Private GP setup: finding an English-speaking doctor who knows your medical history",
+        "Bank account opening with KYC that works — not the retail branch that takes 3 months",
+        "SSN (public health) registration — your Tessera Sanitaria, GP assignment, pediatrician for children",
+        "Driving license conversion (some countries have reciprocal agreements, others require Italian exam)",
+        "Italian phone, internet, utilities — under your codice fiscale, not your company's",
+        "Spouse support: language, community, activities, professional networking",
+        "Your personal tax optimisation — the Impatriati regime, pension transfers, investment restructuring",
+      ]},
+
+      { type: "h2", text: "The Spouse Factor: Often the Most Important Person in the Move" },
+      { type: "p", text: "In our experience, the success or failure of a corporate relocation depends more on the spouse's integration than the employee's. The employee walks into an office on day one with structure, colleagues, and purpose. The spouse often arrives in a new city with no network, no language, and a list of practical problems to solve alone." },
+      { type: "p", text: "We provide dedicated spouse support: neighborhood orientation, introduction to expat and local communities, language school recommendations, professional networking (if the spouse wants to work — Italy's job market is navigable with the right introductions), and practical daily-life setup. This isn't a luxury add-on. It's what determines whether your family stays in Milan or requests a transfer back within 18 months." },
+
+      { type: "h2", text: "Best Neighborhoods for Corporate Relocators" },
+      { type: "table", headers: ["If you work in...", "Consider living in...", "Why"], rows: [
+        ["Porta Nuova / financial district", "Porta Nuova, Brera, Isola", "Walking distance, vibrant, modern or historic options"],
+        ["CityLife / Fiera", "CityLife, Pagano, Wagner", "New-build luxury, family parks, metro access"],
+        ["South Milan / Rozzano", "Navigli, Porta Romana, Bocconi area", "Creative energy, excellent dining, young-professional vibe"],
+        ["Remote / flexible", "Magenta, Pagano", "Best family neighborhoods, spacious, tree-lined, calm"],
+      ]},
+
+      { type: "h2", text: "The First 30 Days: Priority Checklist" },
+      { type: "list", items: [
+        "Week 1: Codice fiscale (if not already obtained), open bank account process, sign rental contract, register with Anagrafe",
+        "Week 2: SSN registration at ASL, choose medico di base, pediatrician assignment for children under 14",
+        "Week 3: School enrollment confirmation, uniform orders, bus registration, meet teachers",
+        "Week 4: Driving license application, utilities transfer, internet setup, join local community groups",
+        "Ongoing: Private GP retainer, international health insurance activation, find your local coffee bar (this matters more than you think)",
+      ]},
+
+      { type: "h2", text: "Frequently Asked Questions" },
+      { type: "faq", q: "Can my spouse work in Italy?", a: "If your spouse is an EU citizen, yes — no restrictions. Non-EU spouses with a family visa (ricongiungimento familiare) have full work rights in Italy. The Impatriati regime can also apply to the spouse if they find qualifying employment." },
+      { type: "faq", q: "How long does the school process take?", a: "For top international schools (ASM, ISM, St. Louis), applications should be submitted 6-12 months before the move. Mid-year entries are possible but competitive. We manage the entire process: applications, assessment days, and backup schools." },
+      { type: "faq", q: "What if I'm only staying 2-3 years?", a: "The Impatriati regime still applies for the duration of your stay (minimum 2 years required). Many corporate relocators extend beyond the initial assignment because they discover Milan's quality of life. We structure everything to be flexible — if you leave, there's no clawback." },
+      { type: "faq", q: "Does my employer need to do anything for the Impatriati regime?", a: "Your employer must apply the 70% exemption in payroll. Most Italian subsidiaries of multinational companies are familiar with this. We provide your commercialista's formal opinion to your HR/payroll team to ensure correct application from month one." },
+
+      { type: "callout", text: "Disclaimer: This guide provides general information as of April 2026. Tax regimes and regulations change. Always consult qualified professionals. The Italian Gateway provides a dedicated relocation management service for corporate transferees — contact us for a tailored plan." },
+    ]
+  },
+
+  // =============================================================
+  // ARTICLE 17 — Milan Neighborhoods for HNWI
+  // =============================================================
+  {
+    id: "best-neighborhoods-milan-hnwi",
+    cat: "Real Estate",
+    title: "Milan's Best Neighborhoods for HNWI: Where the World's Wealthy Actually Live in 2026",
+    date: "April 2026",
+    read: "10 min",
+    desc: "Porta Nuova, Brera, CityLife, Magenta, Quadrilatero: property prices, lifestyle, international schools, and which neighborhood fits which family profile.",
+    content: [
+      { type: "p", text: "Milan is not one city — it's six or seven distinct neighborhoods, each with its own character, price point, and community. Choosing the right one is as important as choosing Italy itself. A tech entrepreneur will thrive in Porta Nuova. A family with young children will prefer Magenta's tree-lined streets. A fashion executive will want the Quadrilatero. This guide maps Milan's HNWI geography so you can find your neighborhood before you arrive." },
+
+      { type: "h2", text: "Porta Nuova / Garibaldi — Milan's Manhattan" },
+      { type: "p", text: "Milan's most modern district, anchored by the Bosco Verticale (Vertical Forest) towers, the Diamond Tower, and the Unicredit Tower — Italy's tallest building. This is where Milan looks and feels like a global financial capital. Glass towers, rooftop restaurants, the Biblioteca degli Alberi park, and a concentration of corporate headquarters (Unicredit, BNP Paribas, Samsung)." },
+      { type: "table", headers: ["Detail", "Info"], rows: [
+        ["Price range", "€8,000 – €15,000/sqm"],
+        ["Property type", "Modern penthouses, new-build apartments"],
+        ["Vibe", "International, corporate, contemporary"],
+        ["Walk to", "Garibaldi station, Corso Como, Eataly, Brera"],
+        ["Best for", "Finance professionals, tech founders, international executives"],
+        ["Schools nearby", "15 min to ISM, 20 min to St. Louis"],
+      ]},
+
+      { type: "h2", text: "Brera — Art, Culture, and Old Money" },
+      { type: "p", text: "Milan's most charming neighborhood. Cobblestone streets, the Pinacoteca di Brera, independent galleries, antique shops, and some of the city's best restaurants. Property here is in historic palazzos — high ceilings, original frescoes, courtyards with gardens. This is where established Italian families and long-term foreign residents gravitate. Less flashy than Porta Nuova, more substance." },
+      { type: "table", headers: ["Detail", "Info"], rows: [
+        ["Price range", "€7,000 – €12,000/sqm"],
+        ["Property type", "Historic apartments in 18th-19th century palazzos"],
+        ["Vibe", "Bohemian-elegant, gallery culture, intellectual"],
+        ["Walk to", "La Scala, Duomo, Quadrilatero, Parco Sempione"],
+        ["Best for", "Art collectors, families seeking character, long-term residents"],
+        ["Schools nearby", "20 min to St. Louis, 25 min to ASM"],
+      ]},
+
+      { type: "h2", text: "CityLife — The New Luxury" },
+      { type: "p", text: "Milan's newest luxury district, built on the former Fiera fairgrounds. Three iconic towers designed by Zaha Hadid, Arata Isozaki, and Daniel Libeskind. The CityLife Shopping District, a large urban park, and brand-new residential buildings with hotel-style amenities: concierge, gym, pool, underground parking. If you want turnkey modern luxury without renovation headaches, CityLife is the answer." },
+      { type: "table", headers: ["Detail", "Info"], rows: [
+        ["Price range", "€8,000 – €14,000/sqm"],
+        ["Property type", "New-build luxury apartments, branded residences"],
+        ["Vibe", "Modern, family-friendly, resort-within-city"],
+        ["Walk to", "CityLife Park, shopping district, M5 metro"],
+        ["Best for", "Families wanting modern amenities, Dubai/Singapore expats"],
+        ["Schools nearby", "15 min to Sir James Henderson, 20 min to ISM"],
+      ]},
+
+      { type: "h2", text: "Magenta / Pagano — Family Milan" },
+      { type: "p", text: "The neighborhood Milanese families aspire to. Wide tree-lined boulevards (Corso Magenta, Corso Vercelli), elegant Liberty-style buildings, excellent local schools, parks, and a village-within-a-city feel. The Last Supper is here (Santa Maria delle Grazie). Quieter than Brera, more residential than Porta Nuova, and significantly more spacious — you can find 200sqm+ apartments with gardens." },
+      { type: "table", headers: ["Detail", "Info"], rows: [
+        ["Price range", "€6,000 – €10,000/sqm"],
+        ["Property type", "Large apartments in Liberty buildings, some villas"],
+        ["Vibe", "Family, residential, elegant-quiet"],
+        ["Walk to", "Parco Sempione, Cadorna station, Santa Maria delle Grazie"],
+        ["Best for", "Families with children, those seeking space and calm"],
+        ["Schools nearby", "10 min to St. Louis, walkable to several Italian schools"],
+      ]},
+
+      { type: "h2", text: "Quadrilatero della Moda — Peak Prestige" },
+      { type: "p", text: "The global fashion district: Via Montenapoleone (now officially the world's most expensive shopping street, overtaking Bond Street in 2024), Via della Spiga, Via Manzoni, Via Sant'Andrea. Apartments here are trophy assets — they rarely come to market and command peak prices. Living in the Quadrilatero means stepping out your door onto the most exclusive streets in the world." },
+      { type: "table", headers: ["Detail", "Info"], rows: [
+        ["Price range", "€10,000 – €20,000+/sqm"],
+        ["Property type", "Historic prestige apartments, some penthouses"],
+        ["Vibe", "Ultra-luxury, fashion, international elite"],
+        ["Walk to", "La Scala, Duomo, Hotel Four Seasons, Armani Hotel"],
+        ["Best for", "Fashion industry, UHNWIs, pied-à-terre investors"],
+        ["Schools nearby", "20 min to St. Louis, 25 min to ISM"],
+      ]},
+
+      { type: "h2", text: "Navigli / Tortona — Creative Milan" },
+      { type: "p", text: "Milan's canal district, home to Design Week events, contemporary art galleries, Fondazione Prada, and a lively aperitivo scene. Property is more affordable here — €4,000-€7,000/sqm — and the neighborhood attracts creative professionals, designers, and younger HNWI who want energy over formality. During Salone del Mobile (April), Tortona becomes the epicenter of global design." },
+      { type: "table", headers: ["Detail", "Info"], rows: [
+        ["Price range", "€4,000 – €7,000/sqm"],
+        ["Property type", "Converted lofts, canal-front apartments"],
+        ["Vibe", "Creative, energetic, young-affluent"],
+        ["Walk to", "Fondazione Prada, MUDEC, canal-side restaurants"],
+        ["Best for", "Design/creative industry, younger relocators, investors"],
+        ["Schools nearby", "20 min to ASM, 15 min to St. Louis"],
+      ]},
+
+      { type: "h2", text: "Which Neighborhood Is Right for You?" },
+      { type: "table", headers: ["If you are...", "Consider", "Why"], rows: [
+        ["Coming from Dubai/Singapore", "CityLife or Porta Nuova", "Modern amenities, concierge, new-build quality you're used to"],
+        ["Coming from London (Kensington)", "Brera or Magenta", "Historic character, established community, parks, schools"],
+        ["A fashion/luxury executive", "Quadrilatero", "Walking distance to every major maison and showroom"],
+        ["A family with 2-3 children", "Magenta / Pagano", "Space, calm, excellent schools, village feel"],
+        ["A tech founder / VC", "Porta Nuova", "Ecosystem, co-working, corporate proximity, modern vibe"],
+        ["An investor / pied-à-terre", "Brera or Quadrilatero", "Capital appreciation, rental demand, prestige"],
+      ]},
+
+      { type: "h2", text: "Frequently Asked Questions" },
+      { type: "faq", q: "Is Milan safe?", a: "Extremely safe by global standards. Milan ranks among the safest major cities in Europe for violent crime. Petty crime (pickpocketing) exists in tourist areas (Duomo, Centrale station) but is negligible in residential neighborhoods. Most HNWI neighborhoods feel like small towns within the city." },
+      { type: "faq", q: "Do I need a car in Milan?", a: "No. Milan has excellent public transport (metro, trams), and most HNWI neighborhoods are walkable. Area C (the congestion charge zone) covers the city center. Many residents use a car only for weekend trips to Lake Como or the mountains. A driver/car service is common for HNWI families." },
+      { type: "faq", q: "How fast are property prices rising?", a: "Milan prime has appreciated 5-8% annually since 2019, with Porta Nuova and CityLife leading. The flat tax regime has created additional demand from international buyers. Prices remain 40-60% below London, Paris, and Monaco equivalents — suggesting further upside." },
+
+      { type: "callout", text: "Disclaimer: Property prices are indicative as of April 2026 and vary significantly by floor, view, condition, and building. Always engage a qualified buyer's agent and independent lawyer. The Italian Gateway manages the entire property search and acquisition process." },
     ]
   },
 

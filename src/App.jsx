@@ -12,6 +12,43 @@ const C = {
 const FORM_ID = "xbdzzepp";
 const FORM_URL = "https://formspree.io/f/" + FORM_ID;
 
+const ADVISORS = {
+  core: [
+    {
+      id: "bolla",
+      name: "Nicolò Bolla",
+      title: "Tax, Corporate & Immigration Advisor",
+      photo: "/advisor-bolla.jpg",
+      desc: "A chartered accountant specialising in international tax and immigration law, Nicolò advises individuals and companies relocating to Italy. From flat tax applications and corporate structuring to residence permits and citizenship pathways, he provides end-to-end guidance — ensuring every aspect of your transition is handled with precision and full regulatory compliance.",
+      short: "International tax structuring, corporate advisory & immigration law",
+      topics: ["Tax & Legal", "Relocation", "Immigration", "Private Banking"],
+      email: "info@theitaliangateway.com",
+    },
+    {
+      id: "azzolini",
+      name: "Dr. Gabriele Azzolini",
+      title: "Medical Advisor",
+      photo: "/advisor-azzolini.jpg",
+      desc: "Laureato in Medicina e Chirurgia, Dr. Azzolini connects you with the most qualified specialist for your needs — whether it's a trusted GP, a world-class surgeon, or a paediatric screening. He provides a confidential technical consultation to understand your situation and refers you to the right professional in the right location.",
+      short: "Medical orientation & specialist referrals across Italy",
+      topics: ["Healthcare"],
+      email: "info@theitaliangateway.com",
+    },
+  ],
+  lifestyle: [
+    {
+      id: "marescalchi",
+      name: "Davide Marescalchi",
+      title: "Hair & Wellness Specialist",
+      photo: "/advisor-marescalchi.jpg",
+      desc: "A Milan-based hair specialist with deep expertise in scalp health and hair wellness. Davide offers personalised consultations and treatments, helping you find your trusted stylist from day one — because settling into a new city means feeling like yourself again.",
+      short: "Personalised hair care & wellness in Milan",
+      topics: [],
+      email: "info@theitaliangateway.com",
+    },
+  ],
+};
+
 async function submitForm(data) {
   try {
     await fetch(FORM_URL, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) });
@@ -38,7 +75,7 @@ const VERTICALS = [
   { id: "tax", icon: "⚖️", title: "Tax & Legal", tagline: "Structured for certainty",
     desc: "Italy's flat tax regime is one of the most attractive in Europe for HNWI. We ensure you benefit from every advantage while remaining fully compliant across jurisdictions.",
     subservices: [
-      { title: "Flat Tax Application", desc: "End-to-end management of Italy's €200K flat tax regime. Eligibility assessment, application filing, and annual compliance.", icon: "📋" },
+      { title: "Flat Tax Application", desc: "End-to-end management of Italy's €300K flat tax regime. Eligibility assessment, application filing, and annual compliance.", icon: "📋" },
       { title: "Cross-Border Succession", desc: "Inheritance structuring for families across 2-3+ countries. Coordination between Italian, UK, Swiss, US, and UAE advisors to minimize exposure.", icon: "🔗" },
       { title: "Trust & Holding Setup", desc: "Italian and international trust structures, Luxembourg holdings, and patrimony vehicles optimized for your asset profile.", icon: "🏛️" },
       { title: "Corporate Structuring", desc: "Italian SRL, branch offices, and EU holding companies. VAT registration, transfer pricing, and permanent establishment advisory.", icon: "📊" },
@@ -47,7 +84,7 @@ const VERTICALS = [
     ],
     qualifyFields: [
       { label: "Current tax residence", options: ["United Kingdom", "United States", "Switzerland", "UAE / Dubai", "Other EU", "Other"] },
-      { label: "Primary interest", options: ["€200K flat tax", "7% retiree tax", "Corporate structuring", "Succession planning", "General advisory"] },
+      { label: "Primary interest", options: ["€300K flat tax", "7% retiree tax", "Corporate structuring", "Succession planning", "General advisory"] },
       { label: "Annual foreign income range", options: ["€500K - €2M", "€2M - €5M", "€5M - €10M", "€10M+"] },
     ]
   },
@@ -338,15 +375,15 @@ function Hero({ setPage }) {
     <section style={{ minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",position:"relative",overflow:"hidden",background:"linear-gradient(160deg,"+C.bg+" 0%,#0d1423 50%,#111827 100%)" }}>
       <div style={{ position:"absolute",inset:0,opacity:0.04,backgroundImage:"radial-gradient(circle at 25% 25%,#C9A96E 1px,transparent 1px)",backgroundSize:"60px 60px" }}/>
       <div style={{ position:"relative",textAlign:"center",maxWidth:800,padding:"120px 24px 80px" }}>
-        <FadeIn><div style={{ fontSize:13,color:C.gold,letterSpacing:6,textTransform:"uppercase",marginBottom:32 }}>Premium Relocation Advisory</div></FadeIn>
-        <FadeIn delay={150}><h1 style={{ fontFamily:"Georgia,serif",fontSize:"clamp(36px,6vw,64px)",color:C.white,fontWeight:400,lineHeight:1.15,margin:"0 0 24px" }}>Your gateway to<br/><span style={{ color:C.gold }}>Italian living</span></h1></FadeIn>
-        <FadeIn delay={300}><p style={{ color:C.textDim,fontSize:18,lineHeight:1.7,maxWidth:600,margin:"0 auto 48px" }}>We guide high-net-worth individuals and families to their ideal life in Italy. Tax optimization, private banking, real estate, healthcare, education, yachting, and domestic staff — all through a single, confidential point of contact.</p></FadeIn>
+        <FadeIn><div style={{ fontSize:13,color:C.gold,letterSpacing:6,textTransform:"uppercase",marginBottom:32 }}>Premium Relocation Advisory — Milan</div></FadeIn>
+        <FadeIn delay={150}><h1 style={{ fontFamily:"Georgia,serif",fontSize:"clamp(36px,6vw,64px)",color:C.white,fontWeight:400,lineHeight:1.15,margin:"0 0 24px" }}>Your family's gateway<br/>to <span style={{ color:C.gold }}>Italian living</span></h1></FadeIn>
+        <FadeIn delay={300}><p style={{ color:C.textDim,fontSize:18,lineHeight:1.7,maxWidth:600,margin:"0 auto 48px" }}>Moving your family to Italy is exciting — and overwhelming. Schools, healthcare, pensions, bank accounts, property, tax structures, visas. We handle every detail so you can focus on settling in, not paperwork.</p></FadeIn>
         <FadeIn delay={450}><div style={{ display:"flex",gap:16,justifyContent:"center",flexWrap:"wrap" }}>
           <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior:"smooth" })} style={{ background:C.gold,color:C.bg,padding:"16px 40px",border:"none",fontSize:14,fontWeight:600,letterSpacing:2,cursor:"pointer" }}>BOOK A CALL</button>
-          <button onClick={() => { setPage("quiz"); window.scrollTo(0,0); }} style={{ background:"transparent",color:C.gold,padding:"16px 40px",border:"1px solid "+C.gold,fontSize:14,fontWeight:600,letterSpacing:2,cursor:"pointer" }}>TAKE THE QUIZ</button>
+          <button onClick={() => { setPage("quiz"); window.scrollTo(0,0); }} style={{ background:"transparent",color:C.gold,padding:"16px 40px",border:"1px solid "+C.gold,fontSize:14,fontWeight:600,letterSpacing:2,cursor:"pointer" }}>WHERE IN ITALY?</button>
         </div></FadeIn>
         <FadeIn delay={600}><div className="stats-row" style={{ display:"flex",gap:48,justifyContent:"center",marginTop:64,flexWrap:"wrap" }}>
-          {[["€200K","Annual flat tax"],["15 yrs","Tax certainty"],["#2 WHO","Healthcare ranking"]].map(([n,l]) =>
+          {[["€300K","Annual flat tax"],["15 yrs","Tax certainty"],["#2 WHO","Healthcare ranking"]].map(([n,l]) =>
             <div key={n} style={{ textAlign:"center" }}><div style={{ fontFamily:"Georgia,serif",fontSize:32,color:C.gold }}>{n}</div><div style={{ color:C.textDim,fontSize:12,letterSpacing:2,marginTop:4,textTransform:"uppercase" }}>{l}</div></div>
           )}
         </div></FadeIn>
@@ -366,6 +403,67 @@ function ServicesGrid({ setPage }) {
           <p style={{ color:C.gold,fontSize:13,fontStyle:"italic",marginBottom:12 }}>{v.tagline}</p>
           <p style={{ color:C.textDim,fontSize:14,lineHeight:1.6,margin:0 }}>{v.subservices.length} specialized services →</p>
         </div></FadeIn>)}
+      </div>
+    </section>
+  );
+}
+
+function RealProblems() {
+  const problems = [
+    { icon:"🏦", title:"UK SIPP & Pension Transfers", desc:"Your SIPP doesn't follow you to Italy. We coordinate QROPS transfers, crystallisation timing, and Italian treaty benefits so your retirement income is structured correctly — not double-taxed.", keywords:"SIPP, QROPS, pension, drawdown" },
+    { icon:"🇺🇸", title:"US IRA, 401(k) & FATCA", desc:"US citizens owe tax worldwide, even in Italy. We work with cross-border CPAs to navigate IRA distributions, PFIC reporting, FATCA compliance, and the Italy-US treaty to avoid penalties.", keywords:"IRA, 401k, FATCA, PFIC, FBAR" },
+    { icon:"📊", title:"Fund Structures & UCITS", desc:"Italian tax treats harmonised (UCITS) and non-harmonised funds completely differently — 26% vs up to 43%. We restructure your portfolio before arrival so you don't pay more than you should.", keywords:"UCITS, OICR, harmonised funds, ETF" },
+    { icon:"🏠", title:"UK ISAs & Property CGT", desc:"ISAs lose their tax wrapper when you leave the UK. Capital gains on UK property remain taxable. We plan the exit timing so you crystallise gains efficiently before or after the move.", keywords:"ISA, capital gains, property, non-resident CGT" },
+    { icon:"👨‍👩‍👧‍👦", title:"Family Trusts & Succession", desc:"Italian forced heirship rules can override your will. EU Regulation 650/2012 lets you elect your home country's law — but only if it's done correctly. We coordinate with your trust advisors.", keywords:"trust, succession, forced heirship, EU 650/2012" },
+    { icon:"🏢", title:"Corporate Structures & CFC", desc:"Your Dubai FZCO or UK LLP may trigger CFC rules in Italy. We review every entity for substance, income classification, and flat tax eligibility — before the Agenzia delle Entrate does.", keywords:"CFC, FZCO, LLP, substance, holding" },
+    { icon:"🏥", title:"Healthcare & Insurance Transfer", desc:"Transferring medical records, finding English-speaking doctors, choosing the right insurance layer (SSN + private GP + international cover) — we set it up before you land.", keywords:"SSN, healthcare, insurance, doctors" },
+    { icon:"🎓", title:"School Placement & Waitlists", desc:"The best international schools in Milan have 6-12 month waitlists. We manage applications to 2-3 schools simultaneously and navigate assessment days, even before your move is confirmed.", keywords:"international school, ISM, ASM, IB, waitlist" },
+  ];
+  return (
+    <section style={{ padding:"100px 24px",background:C.card }}>
+      <div style={{ maxWidth:1200,margin:"0 auto" }}>
+        <FadeIn><div style={{ textAlign:"center",marginBottom:64 }}>
+          <div style={{ color:C.gold,fontSize:12,letterSpacing:4,textTransform:"uppercase",marginBottom:12 }}>Real Problems, Real Solutions</div>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:36,color:C.white,fontWeight:400,marginBottom:16 }}>The details that keep you up at night</h2>
+          <p style={{ color:C.textDim,fontSize:16,maxWidth:600,margin:"0 auto",lineHeight:1.7 }}>Relocating isn't just about the flat tax. It's about the hundred technical, financial, and family decisions that come with it. We've handled them all.</p>
+        </div></FadeIn>
+        <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:20 }}>
+          {problems.map((p,i) => <FadeIn key={i} delay={i*60}><div style={{ background:C.bg,border:"1px solid "+C.border,padding:"28px 24px",height:"100%",transition:"border-color 0.3s" }} onMouseEnter={e=>e.currentTarget.style.borderColor=C.goldDim} onMouseLeave={e=>e.currentTarget.style.borderColor=C.border}>
+            <div style={{ fontSize:28,marginBottom:12 }}>{p.icon}</div>
+            <h3 style={{ fontFamily:"Georgia,serif",fontSize:17,color:C.white,fontWeight:400,marginBottom:8 }}>{p.title}</h3>
+            <p style={{ color:C.textDim,fontSize:13,lineHeight:1.6,margin:0 }}>{p.desc}</p>
+          </div></FadeIn>)}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CorporateRelocators() {
+  return (
+    <section style={{ padding:"100px 24px" }}>
+      <div style={{ maxWidth:1000,margin:"0 auto" }}>
+        <FadeIn><div style={{ display:"flex",gap:64,flexWrap:"wrap",alignItems:"center" }}>
+          <div style={{ flex:1,minWidth:300 }}>
+            <div style={{ color:C.gold,fontSize:12,letterSpacing:4,textTransform:"uppercase",marginBottom:12 }}>Corporate Relocation</div>
+            <h2 style={{ fontFamily:"Georgia,serif",fontSize:32,color:C.white,fontWeight:400,lineHeight:1.3,marginBottom:20 }}>Moving to Milan for work?<br/>We handle everything<br/><span style={{ color:C.gold }}>your company doesn't.</span></h2>
+            <p style={{ color:C.textDim,fontSize:15,lineHeight:1.7,marginBottom:24 }}>Your employer covers the transfer. But who finds the right apartment in the right neighborhood? Who navigates school waitlists? Who sets up your healthcare, opens your bank account, converts your driving license, and makes sure your pension is structured correctly?</p>
+            <p style={{ color:C.textDim,fontSize:15,lineHeight:1.7,marginBottom:24 }}>We work alongside your company's HR and mobility teams to fill the gaps — the personal, practical, and financial details that corporate packages don't cover.</p>
+          </div>
+          <div style={{ flex:1,minWidth:280 }}>
+            {[
+              ["70%","Tax exemption on Italian employment income under the Impatriati regime — for up to 5 years (extendable to 10)"],
+              ["6+","International schools in Milan with IB, British, and American curricula"],
+              ["4-6 wks","To open a private bank account with proper KYC documentation"],
+              ["183","Days of Italian presence required to qualify as tax resident"],
+            ].map(([n,desc],i) => <FadeIn key={i} delay={i*100}><div style={{ background:C.card,border:"1px solid "+C.border,padding:"20px 24px",marginBottom:12 }}>
+              <div style={{ display:"flex",alignItems:"baseline",gap:12 }}>
+                <span style={{ fontFamily:"Georgia,serif",fontSize:28,color:C.gold,fontWeight:700 }}>{n}</span>
+                <span style={{ color:C.textDim,fontSize:13,lineHeight:1.5 }}>{desc}</span>
+              </div>
+            </div></FadeIn>)}
+          </div>
+        </div></FadeIn>
       </div>
     </section>
   );
@@ -644,7 +742,7 @@ function AdvancedCalc() {
         <div className="grid-2col" style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:16 }}>
           <div><label style={lbl}>Annual Foreign Income</label><select value={income} onChange={e=>setIncome(+e.target.value)} style={sel}>{[1000000,2000000,3000000,5000000,10000000,20000000,50000000].map(v=><option key={v} value={v}>€{v.toLocaleString()}</option>)}</select></div>
           <div style={{ display:"flex",flexDirection:"column",justifyContent:"center" }}>
-            <div style={{ color:C.textDim,fontSize:13 }}>Flat tax: <strong style={{ color:C.gold }}>€200,000/year</strong> (fixed, regardless of income)</div>
+            <div style={{ color:C.textDim,fontSize:13 }}>Flat tax: <strong style={{ color:C.gold }}>€300,000/year</strong> (fixed, regardless of income)</div>
             <div style={{ color:C.textDim,fontSize:12,marginTop:4 }}>Effective rate on {fmt(income)}: <strong style={{ color:"#22c55e" }}>{(200000/income*100).toFixed(1)}%</strong></div>
           </div>
         </div>
@@ -872,6 +970,81 @@ function Contact() {
   );
 }
 
+function AdvisorsSection() {
+  const allCore = ADVISORS.core.filter(a => a.name);
+  const allLifestyle = ADVISORS.lifestyle.filter(a => a.name);
+  if (allCore.length === 0 && allLifestyle.length === 0) return null;
+  return (
+    <section style={{ padding:"100px 24px",background:C.card }}>
+      <div style={{ maxWidth:1000,margin:"0 auto" }}>
+        <FadeIn><div style={{ textAlign:"center",marginBottom:64 }}>
+          <div style={{ color:C.gold,fontSize:12,letterSpacing:4,textTransform:"uppercase",marginBottom:12 }}>Who You'll Work With</div>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:36,color:C.white,fontWeight:400,marginBottom:16 }}>A curated network of trusted professionals</h2>
+          <p style={{ color:C.textDim,fontSize:16,maxWidth:550,margin:"0 auto",lineHeight:1.7 }}>Every introduction is personal. Every professional is vetted. One point of contact coordinates everything.</p>
+        </div></FadeIn>
+
+        {allCore.length > 0 && <>
+          <div style={{ color:C.gold,fontSize:11,letterSpacing:4,textTransform:"uppercase",marginBottom:24 }}>Core Advisors</div>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))",gap:24,marginBottom:48 }}>
+            {allCore.map((a,i) => <FadeIn key={a.id} delay={i*100}>
+              <div style={{ background:C.bg,border:"1px solid "+C.border,overflow:"hidden",transition:"border-color 0.3s" }} onMouseEnter={e=>e.currentTarget.style.borderColor=C.goldDim} onMouseLeave={e=>e.currentTarget.style.borderColor=C.border}>
+                {a.photo && <div style={{ width:"100%",height:280,overflow:"hidden",background:"#0d1423" }}>
+                  <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"top",filter:"brightness(0.95)" }} />
+                </div>}
+                <div style={{ padding:"24px 28px 28px" }}>
+                  <h3 style={{ fontFamily:"Georgia,serif",fontSize:20,color:C.white,fontWeight:400,marginBottom:4 }}>{a.name}</h3>
+                  <p style={{ color:C.gold,fontSize:13,fontStyle:"italic",marginBottom:12 }}>{a.title}</p>
+                  <p style={{ color:C.textDim,fontSize:13,lineHeight:1.6,margin:0 }}>{a.short}</p>
+                </div>
+              </div>
+            </FadeIn>)}
+          </div>
+        </>}
+
+        {allLifestyle.length > 0 && <>
+          <div style={{ color:C.gold,fontSize:11,letterSpacing:4,textTransform:"uppercase",marginBottom:24 }}>Lifestyle Network</div>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:24 }}>
+            {allLifestyle.map((a,i) => <FadeIn key={a.id} delay={i*100}>
+              <div style={{ background:C.bg,border:"1px solid "+C.border,overflow:"hidden",transition:"border-color 0.3s" }} onMouseEnter={e=>e.currentTarget.style.borderColor=C.goldDim} onMouseLeave={e=>e.currentTarget.style.borderColor=C.border}>
+                {a.photo && <div style={{ width:"100%",height:240,overflow:"hidden",background:"#0d1423" }}>
+                  <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"top",filter:"brightness(0.95)" }} />
+                </div>}
+                <div style={{ padding:"24px 28px 28px" }}>
+                  <h3 style={{ fontFamily:"Georgia,serif",fontSize:18,color:C.white,fontWeight:400,marginBottom:4 }}>{a.name}</h3>
+                  <p style={{ color:C.gold,fontSize:13,fontStyle:"italic",marginBottom:12 }}>{a.title}</p>
+                  <p style={{ color:C.textDim,fontSize:13,lineHeight:1.6,margin:0 }}>{a.short}</p>
+                </div>
+              </div>
+            </FadeIn>)}
+          </div>
+        </>}
+      </div>
+    </section>
+  );
+}
+
+function ArticleAdvisor({ articleCat }) {
+  const relevant = [...ADVISORS.core, ...ADVISORS.lifestyle].filter(a => a.name && a.topics && a.topics.some(t => articleCat.toLowerCase().includes(t.toLowerCase())));
+  if (relevant.length === 0) return null;
+  const a = relevant[0];
+  return (
+    <div style={{ background:C.card,border:"1px solid "+C.border,marginTop:48,padding:0,overflow:"hidden" }}>
+      <div style={{ display:"flex",flexWrap:"wrap" }}>
+        {a.photo && <div style={{ width:200,minHeight:240,flexShrink:0,overflow:"hidden",background:"#0d1423" }}>
+          <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"top" }} />
+        </div>}
+        <div style={{ flex:1,padding:"32px 36px",minWidth:280 }}>
+          <div style={{ color:C.gold,fontSize:11,letterSpacing:3,textTransform:"uppercase",marginBottom:12 }}>Your Expert for This Topic</div>
+          <h3 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:4 }}>{a.name}</h3>
+          <p style={{ color:C.gold,fontSize:14,fontStyle:"italic",marginBottom:16 }}>{a.title}</p>
+          <p style={{ color:C.textDim,fontSize:14,lineHeight:1.7,marginBottom:20 }}>{a.desc}</p>
+          <a href={"mailto:"+a.email+"?subject=Inquiry — "+a.title} style={{ background:C.gold,color:C.bg,padding:"12px 28px",fontSize:13,fontWeight:600,letterSpacing:2,textDecoration:"none",display:"inline-block" }}>GET IN TOUCH</a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Footer({ setPage }) {
   return (
     <footer style={{ padding:"60px 24px 32px",borderTop:"1px solid "+C.border }}>
@@ -884,11 +1057,171 @@ function Footer({ setPage }) {
         <div className="footer-grid" style={{ display:"flex",gap:48,flexWrap:"wrap" }}>
           <div><div style={{ color:C.gold,fontSize:11,letterSpacing:3,marginBottom:12,textTransform:"uppercase" }}>Services</div>{VERTICALS.slice(0,5).map(v=><div key={v.id} style={{ marginBottom:8 }}><span onClick={()=>{setPage("v-"+v.id);window.scrollTo(0,0)}} style={{ color:C.textDim,fontSize:13,cursor:"pointer",transition:"color 0.2s" }} onMouseEnter={e=>e.target.style.color=C.gold} onMouseLeave={e=>e.target.style.color=C.textDim}>{v.title}</span></div>)}</div>
           <div><div style={{ color:C.gold,fontSize:11,letterSpacing:3,marginBottom:12,textTransform:"uppercase" }}>Tools</div>{[["Quiz","quiz"],["Locations","properties"],["Guides","guides"]].map(([l,t])=><div key={t} style={{ marginBottom:8 }}><span onClick={()=>{setPage(t);window.scrollTo(0,0)}} style={{ color:C.textDim,fontSize:13,cursor:"pointer",transition:"color 0.2s" }} onMouseEnter={e=>e.target.style.color=C.gold} onMouseLeave={e=>e.target.style.color=C.textDim}>{l}</span></div>)}</div>
-          <div><div style={{ color:C.gold,fontSize:11,letterSpacing:3,marginBottom:12,textTransform:"uppercase" }}>Company</div>{["About","Contact","Privacy Policy"].map(l=><div key={l} style={{ marginBottom:8 }}><span style={{ color:C.textDim,fontSize:13,cursor:"pointer" }}>{l}</span></div>)}</div>
+          <div><div style={{ color:C.gold,fontSize:11,letterSpacing:3,marginBottom:12,textTransform:"uppercase" }}>Legal</div>{[["Privacy Policy","privacy"],["Cookie Policy","cookies"],["Terms of Service","terms"]].map(([l,t])=><div key={t} style={{ marginBottom:8 }}><span onClick={()=>{setPage(t);window.scrollTo(0,0)}} style={{ color:C.textDim,fontSize:13,cursor:"pointer",transition:"color 0.2s" }} onMouseEnter={e=>e.target.style.color=C.gold} onMouseLeave={e=>e.target.style.color=C.textDim}>{l}</span></div>)}</div>
         </div>
       </div>
       <div style={{ maxWidth:1200,margin:"40px auto 0",paddingTop:24,borderTop:"1px solid "+C.border,textAlign:"center" }}><p style={{ color:C.textDim,fontSize:12 }}>© 2026 The Italian Gateway. All rights reserved. This website does not constitute financial, legal, or tax advice.</p></div>
     </footer>
+  );
+}
+
+function CookieBanner() {
+  const [show, setShow] = useState(() => {
+    try { return !sessionStorage.getItem("cookie_ok"); } catch(e) { return true; }
+  });
+  const accept = () => { try { sessionStorage.setItem("cookie_ok","1"); } catch(e){} setShow(false); };
+  if (!show) return null;
+  return (
+    <div style={{ position:"fixed",bottom:0,left:0,right:0,zIndex:60,background:"rgba(10,14,23,0.97)",borderTop:"1px solid "+C.border,padding:"16px 24px",backdropFilter:"blur(12px)" }}>
+      <div style={{ maxWidth:1000,margin:"0 auto",display:"flex",alignItems:"center",justifyContent:"space-between",gap:16,flexWrap:"wrap" }}>
+        <p style={{ color:C.textDim,fontSize:13,lineHeight:1.5,margin:0,flex:1,minWidth:250 }}>This website uses only essential technical cookies to ensure basic functionality. No tracking or profiling cookies are used. By continuing to browse, you accept our <span style={{ color:C.gold,cursor:"pointer",textDecoration:"underline" }}>Cookie Policy</span>.</p>
+        <button onClick={accept} style={{ background:C.gold,color:C.bg,padding:"10px 28px",border:"none",fontSize:13,fontWeight:600,letterSpacing:1,cursor:"pointer",whiteSpace:"nowrap",flexShrink:0 }}>OK, GOT IT</button>
+      </div>
+    </div>
+  );
+}
+
+function LegalPage({ page, setPage }) {
+  const lbl = { fontFamily:"Georgia,serif",fontSize:28,color:C.white,fontWeight:400,marginTop:48,marginBottom:16,paddingBottom:12,borderBottom:"1px solid "+C.border };
+  const p = { color:C.text,fontSize:15,lineHeight:1.8,marginBottom:16 };
+  const li = { color:C.text,fontSize:15,lineHeight:1.7,marginBottom:8 };
+
+  const privacy = (<>
+    <h1 style={{ fontFamily:"Georgia,serif",fontSize:"clamp(28px,4vw,40px)",color:C.white,fontWeight:400,marginBottom:24 }}>Privacy Policy</h1>
+    <p style={p}><strong style={{ color:C.gold }}>Last updated:</strong> March 2026</p>
+    <p style={p}>The Italian Gateway ("we", "us", "our") is committed to protecting your personal data. This Privacy Policy explains how we collect, use, and protect information when you visit theitaliangateway.com (the "Site") or interact with our services.</p>
+
+    <h2 style={lbl}>1. Data Controller</h2>
+    <p style={p}>The data controller is The Italian Gateway, based in Milan, Italy. For any privacy-related inquiries, contact us at: <strong>info@theitaliangateway.com</strong></p>
+
+    <h2 style={lbl}>2. Data We Collect</h2>
+    <p style={p}>We collect only the data you voluntarily provide through our forms:</p>
+    <ul style={{ margin:"0 0 20px",paddingLeft:24 }}>
+      <li style={li}><strong>Contact forms:</strong> name, email address, and any information you choose to include in your message</li>
+      <li style={li}><strong>Quiz:</strong> your quiz results and email address (if you choose to provide it)</li>
+      <li style={li}><strong>Newsletter:</strong> email address</li>
+      <li style={li}><strong>Location inquiries:</strong> email address and preferred location</li>
+    </ul>
+    <p style={p}>We do not collect data automatically through cookies, analytics, or tracking technologies beyond essential technical cookies required for the website to function.</p>
+
+    <h2 style={lbl}>3. Purpose and Legal Basis</h2>
+    <p style={p}>We process your personal data for the following purposes under Article 6 of the GDPR:</p>
+    <ul style={{ margin:"0 0 20px",paddingLeft:24 }}>
+      <li style={li}><strong>Consent (Art. 6(1)(a)):</strong> when you submit a form, you consent to us processing your data to respond to your inquiry</li>
+      <li style={li}><strong>Legitimate interest (Art. 6(1)(f)):</strong> to improve our services and website</li>
+    </ul>
+
+    <h2 style={lbl}>4. Data Sharing</h2>
+    <p style={p}>We do not sell, rent, or share your personal data with third parties for marketing purposes. Your data may be processed by:</p>
+    <ul style={{ margin:"0 0 20px",paddingLeft:24 }}>
+      <li style={li}><strong>Formspree Inc.</strong> (form processing) — acts as a data processor under GDPR</li>
+      <li style={li}><strong>Vercel Inc.</strong> (website hosting) — acts as a data processor under GDPR</li>
+      <li style={li}><strong>Cloudflare Inc.</strong> (DNS and email routing) — acts as a data processor under GDPR</li>
+    </ul>
+
+    <h2 style={lbl}>5. Data Retention</h2>
+    <p style={p}>We retain your personal data only for as long as necessary to fulfill the purpose for which it was collected. Contact form submissions are retained for up to 24 months. You may request deletion at any time.</p>
+
+    <h2 style={lbl}>6. Your Rights (GDPR Articles 15-22)</h2>
+    <p style={p}>Under the GDPR and Italian Legislative Decree 196/2003 (as amended by Legislative Decree 101/2018), you have the right to:</p>
+    <ul style={{ margin:"0 0 20px",paddingLeft:24 }}>
+      <li style={li}>Access your personal data</li>
+      <li style={li}>Rectify inaccurate data</li>
+      <li style={li}>Request erasure ("right to be forgotten")</li>
+      <li style={li}>Restrict processing</li>
+      <li style={li}>Data portability</li>
+      <li style={li}>Object to processing</li>
+      <li style={li}>Withdraw consent at any time</li>
+    </ul>
+    <p style={p}>To exercise any of these rights, email us at <strong>info@theitaliangateway.com</strong>. We will respond within 30 days.</p>
+
+    <h2 style={lbl}>7. Data Security</h2>
+    <p style={p}>We implement appropriate technical and organizational measures to protect your data, including encrypted transmission (HTTPS/TLS), secure hosting infrastructure, and access controls.</p>
+
+    <h2 style={lbl}>8. International Transfers</h2>
+    <p style={p}>Some of our service providers (Formspree, Vercel) are based in the United States. Data transfers are governed by Standard Contractual Clauses (SCCs) approved by the European Commission.</p>
+
+    <h2 style={lbl}>9. Supervisory Authority</h2>
+    <p style={p}>You have the right to lodge a complaint with the Italian Data Protection Authority (Garante per la protezione dei dati personali) at <strong>www.garanteprivacy.it</strong>.</p>
+
+    <h2 style={lbl}>10. Changes to This Policy</h2>
+    <p style={p}>We may update this Privacy Policy from time to time. The latest version is always available on this page with the date of last update.</p>
+  </>);
+
+  const cookies = (<>
+    <h1 style={{ fontFamily:"Georgia,serif",fontSize:"clamp(28px,4vw,40px)",color:C.white,fontWeight:400,marginBottom:24 }}>Cookie Policy</h1>
+    <p style={p}><strong style={{ color:C.gold }}>Last updated:</strong> March 2026</p>
+    <p style={p}>This Cookie Policy explains how The Italian Gateway uses cookies on theitaliangateway.com.</p>
+
+    <h2 style={lbl}>1. What Are Cookies</h2>
+    <p style={p}>Cookies are small text files stored on your device when you visit a website. They serve various purposes, from ensuring basic functionality to tracking user behavior.</p>
+
+    <h2 style={lbl}>2. Cookies We Use</h2>
+    <p style={p}>We use <strong>only essential technical cookies</strong> that are strictly necessary for the website to function. We do not use any analytics, advertising, or profiling cookies.</p>
+    <div style={{ overflowX:"auto",marginBottom:24 }}>
+      <table style={{ width:"100%",borderCollapse:"collapse",fontSize:14 }}>
+        <thead><tr><th style={{ textAlign:"left",padding:"12px 16px",background:"rgba(201,169,110,0.1)",color:C.gold,fontWeight:600,fontSize:12,letterSpacing:1,borderBottom:"2px solid "+C.gold }}>Cookie</th><th style={{ textAlign:"left",padding:"12px 16px",background:"rgba(201,169,110,0.1)",color:C.gold,fontWeight:600,fontSize:12,letterSpacing:1,borderBottom:"2px solid "+C.gold }}>Type</th><th style={{ textAlign:"left",padding:"12px 16px",background:"rgba(201,169,110,0.1)",color:C.gold,fontWeight:600,fontSize:12,letterSpacing:1,borderBottom:"2px solid "+C.gold }}>Purpose</th><th style={{ textAlign:"left",padding:"12px 16px",background:"rgba(201,169,110,0.1)",color:C.gold,fontWeight:600,fontSize:12,letterSpacing:1,borderBottom:"2px solid "+C.gold }}>Duration</th></tr></thead>
+        <tbody>
+          <tr><td style={{ padding:"12px 16px",color:C.text,borderBottom:"1px solid "+C.border }}>cookie_ok</td><td style={{ padding:"12px 16px",color:C.text,borderBottom:"1px solid "+C.border }}>Technical</td><td style={{ padding:"12px 16px",color:C.text,borderBottom:"1px solid "+C.border }}>Remembers that you acknowledged the cookie banner</td><td style={{ padding:"12px 16px",color:C.text,borderBottom:"1px solid "+C.border }}>Session</td></tr>
+          <tr><td style={{ padding:"12px 16px",color:C.text,borderBottom:"1px solid "+C.border }}>__cf_bm</td><td style={{ padding:"12px 16px",color:C.text,borderBottom:"1px solid "+C.border }}>Technical (Cloudflare)</td><td style={{ padding:"12px 16px",color:C.text,borderBottom:"1px solid "+C.border }}>Bot management and security</td><td style={{ padding:"12px 16px",color:C.text,borderBottom:"1px solid "+C.border }}>30 min</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 style={lbl}>3. Third-Party Cookies</h2>
+    <p style={p}>We do not embed third-party tracking services (Google Analytics, Facebook Pixel, etc.). If we add any in the future, this policy will be updated and explicit consent will be required before activation.</p>
+
+    <h2 style={lbl}>4. How to Manage Cookies</h2>
+    <p style={p}>You can control cookies through your browser settings. Most browsers allow you to block or delete cookies. Note that blocking essential cookies may affect website functionality.</p>
+
+    <h2 style={lbl}>5. Legal Framework</h2>
+    <p style={p}>This Cookie Policy complies with EU Regulation 2016/679 (GDPR), the Italian Privacy Code (Legislative Decree 196/2003, as amended), and the ePrivacy Directive (2002/58/EC) as implemented in Italy by the Garante per la protezione dei dati personali (Guidelines on cookies, June 2021).</p>
+  </>);
+
+  const terms = (<>
+    <h1 style={{ fontFamily:"Georgia,serif",fontSize:"clamp(28px,4vw,40px)",color:C.white,fontWeight:400,marginBottom:24 }}>Terms of Service</h1>
+    <p style={p}><strong style={{ color:C.gold }}>Last updated:</strong> March 2026</p>
+    <p style={p}>By accessing and using theitaliangateway.com (the "Site"), you agree to these Terms of Service.</p>
+
+    <h2 style={lbl}>1. About The Italian Gateway</h2>
+    <p style={p}>The Italian Gateway provides relocation advisory and coordination services for individuals and families relocating to Italy. We act as an intermediary, connecting clients with qualified professionals (tax advisors, lawyers, bankers, real estate agents, healthcare providers).</p>
+
+    <h2 style={lbl}>2. No Professional Advice</h2>
+    <p style={p}><strong>The content on this website does not constitute financial, legal, tax, medical, or investment advice.</strong> All information is provided for general informational purposes only. While we strive for accuracy, laws, regulations, and market conditions change frequently. Always consult qualified professionals before making decisions based on content from this website.</p>
+
+    <h2 style={lbl}>3. Intermediary Role</h2>
+    <p style={p}>The Italian Gateway introduces clients to third-party professionals and service providers. We do not provide financial advice, legal representation, medical treatment, or any regulated professional service directly. The relationship between you and any professional we introduce you to is independent and governed by their own terms and regulations.</p>
+
+    <h2 style={lbl}>4. No Guarantees</h2>
+    <p style={p}>We do not guarantee eligibility for any tax regime, visa, residency permit, or other benefit discussed on this website. Eligibility depends on your individual circumstances and is determined by the relevant authorities and qualified advisors.</p>
+
+    <h2 style={lbl}>5. Intellectual Property</h2>
+    <p style={p}>All content on this website — including text, design, graphics, and code — is the property of The Italian Gateway and is protected by copyright law. You may not reproduce, distribute, or modify any content without written permission.</p>
+
+    <h2 style={lbl}>6. Accuracy of Information</h2>
+    <p style={p}>We make reasonable efforts to ensure the accuracy of the information presented, including tax rates, property prices, school fees, and healthcare costs. However, these figures are indicative and subject to change. We accept no liability for decisions made based on this information.</p>
+
+    <h2 style={lbl}>7. External Links</h2>
+    <p style={p}>This website may contain links to third-party websites. We are not responsible for the content, privacy practices, or availability of external sites.</p>
+
+    <h2 style={lbl}>8. Limitation of Liability</h2>
+    <p style={p}>To the maximum extent permitted by Italian law, The Italian Gateway shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of this website or reliance on its content.</p>
+
+    <h2 style={lbl}>9. Governing Law</h2>
+    <p style={p}>These Terms are governed by Italian law. Any disputes shall be subject to the exclusive jurisdiction of the courts of Milan, Italy.</p>
+
+    <h2 style={lbl}>10. Contact</h2>
+    <p style={p}>For questions about these Terms, contact us at <strong>info@theitaliangateway.com</strong>.</p>
+  </>);
+
+  const content = page === "privacy" ? privacy : page === "cookies" ? cookies : terms;
+  const title = page === "privacy" ? "Privacy Policy" : page === "cookies" ? "Cookie Policy" : "Terms of Service";
+
+  return (
+    <section style={{ padding:"120px 24px 80px",maxWidth:780,margin:"0 auto" }}>
+      <span onClick={()=>{setPage("home");window.scrollTo(0,0)}} style={{ color:C.gold,fontSize:13,cursor:"pointer",display:"inline-block",marginBottom:24 }}>{"< Home"}</span>
+      {content}
+    </section>
   );
 }
 
@@ -932,6 +1265,7 @@ function ArticlePage({ id, setPage }) {
         <div style={{ height:2,background:"linear-gradient(to right,"+C.gold+",transparent)",marginTop:32 }}/>
       </div>
       <ArticleContent blocks={a.content}/>
+      <ArticleAdvisor articleCat={a.cat}/>
       <div style={{ background:C.card,border:"1px solid "+C.gold,padding:48,textAlign:"center",marginTop:48 }}><h3 style={{ fontFamily:"Georgia,serif",fontSize:24,color:C.white,fontWeight:400,marginBottom:12 }}>Want personalized guidance?</h3><p style={{ color:C.textDim,fontSize:14,maxWidth:400,margin:"0 auto 24px" }}>Confidential 30-minute call to discuss your situation.</p><button onClick={()=>{setPage("home");setTimeout(()=>document.getElementById("contact")?.scrollIntoView({behavior:"smooth"}),100)}} style={{ background:C.gold,color:C.bg,padding:"14px 36px",border:"none",fontSize:13,fontWeight:600,letterSpacing:2,cursor:"pointer" }}>BOOK A CALL</button></div>
       <div style={{ marginTop:64,paddingTop:32,borderTop:"1px solid "+C.border }}><div style={{ color:C.textDim,fontSize:12,letterSpacing:2,textTransform:"uppercase",marginBottom:16 }}>More Guides</div>
         {ARTICLES.filter(x=>x.id!==id).slice(0,3).map(x=><div key={x.id} onClick={()=>{setPage(x.id);window.scrollTo(0,0)}} style={{ padding:"16px 0",borderBottom:"1px solid "+C.border,cursor:"pointer",display:"flex",justifyContent:"space-between",alignItems:"center" }} onMouseEnter={e=>e.currentTarget.querySelector("h4").style.color=C.gold} onMouseLeave={e=>e.currentTarget.querySelector("h4").style.color=C.white}><div><span style={{ color:C.gold,fontSize:10,letterSpacing:2,textTransform:"uppercase" }}>{x.cat}</span><h4 style={{ fontFamily:"Georgia,serif",fontSize:16,color:C.white,fontWeight:400,margin:"4px 0 0",transition:"color 0.2s" }}>{x.title}</h4></div><span style={{ color:C.gold }}>→</span></div>)}
@@ -944,17 +1278,20 @@ export default function App() {
   const [page, setPage] = useState("home");
   const isArt = ARTICLES.some(a=>a.id===page);
   const isVert = page.startsWith("v-");
+  const isLegal = ["privacy","cookies","terms"].includes(page);
   return (
     <div style={{ background:C.bg,minHeight:"100vh",fontFamily:"'Segoe UI',-apple-system,sans-serif",color:C.text }}>
       <MobileStyles/>
       <BackToTop/>
+      <CookieBanner/>
       <Nav setPage={setPage}/>
-      {page==="home" && <><Hero setPage={setPage}/><ServicesGrid setPage={setPage}/><RetireeSection setPage={setPage}/><CostOfLiving/><Pricing/><Newsletter/><Contact/></>}
+      {page==="home" && <><Hero setPage={setPage}/><ServicesGrid setPage={setPage}/><RealProblems/><CorporateRelocators/><AdvisorsSection/><RetireeSection setPage={setPage}/><CostOfLiving/><Pricing/><Newsletter/><Contact/></>}
       {page==="guides" && <GuidesPage setPage={setPage}/>}
       {page==="quiz" && <QuizPage setPage={setPage}/>}
       {page==="properties" && <PropertyGallery setPage={setPage}/>}
       {isVert && <VerticalPage id={page.replace("v-","")} setPage={setPage}/>}
       {isArt && <ArticlePage id={page} setPage={setPage}/>}
+      {isLegal && <LegalPage page={page} setPage={setPage}/>}
       <Footer setPage={setPage}/>
     </div>
   );
