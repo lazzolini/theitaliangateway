@@ -29,7 +29,7 @@ const ADVISORS = {
       name: "Dr. Gabriele Azzolini",
       title: "Medical Advisor",
       photo: "/advisor-azzolini.jpg",
-      desc: "Laureato in Medicina e Chirurgia, Dr. Azzolini connects you with the most qualified specialist for your needs — whether it's a trusted GP, a world-class surgeon, or a paediatric screening. He provides a confidential technical consultation to understand your situation and refers you to the right professional in the right location.",
+      desc: "A qualified Doctor of Medicine and Surgery (M.D.), Dr. Azzolini connects you with the most qualified specialist for your needs — whether it's a trusted GP, a world-class surgeon, or a paediatric screening. He provides a confidential technical consultation to understand your situation and refers you to the right professional in the right location.",
       short: "Medical orientation & specialist referrals across Italy",
       topics: ["Healthcare"],
       email: "info@theitaliangateway.com",
@@ -341,8 +341,8 @@ function Nav({ setPage }) {
   const [sc, setSc] = useState(false);
   const [mob, setMob] = useState(false);
   useEffect(() => { const h = () => setSc(window.scrollY > 40); window.addEventListener("scroll", h); return () => window.removeEventListener("scroll", h); }, []);
-  const go = t => { setMob(false); if (["guides","quiz","properties"].includes(t) || t.startsWith("v-")) { setPage(t); window.scrollTo(0,0); } else { setPage("home"); setTimeout(() => document.getElementById(t)?.scrollIntoView({ behavior: "smooth" }), 100); } };
-  const links = [["Services","services"],["Guides","guides"],["Quiz","quiz"],["Locations","properties"],["Plans","plans"],["Contact","contact"]];
+  const go = t => { setMob(false); if (["guides","quiz","properties","advisors"].includes(t) || t.startsWith("v-")) { setPage(t); window.scrollTo(0,0); } else { setPage("home"); setTimeout(() => document.getElementById(t)?.scrollIntoView({ behavior: "smooth" }), 100); } };
+  const links = [["Services","services"],["Advisors","advisors"],["Guides","guides"],["Quiz","quiz"],["Locations","properties"],["Contact","contact"]];
   return (
     <nav style={{ position:"fixed",top:0,left:0,right:0,zIndex:50,background:sc||mob?"rgba(10,14,23,0.97)":"transparent",backdropFilter:sc?"blur(12px)":"none",borderBottom:sc||mob?("1px solid "+C.border):"none",transition:"all 0.3s" }}>
       <div style={{ maxWidth:1200,margin:"0 auto",padding:"16px 24px",display:"flex",alignItems:"center",justifyContent:"space-between" }}>
@@ -989,7 +989,7 @@ function AdvisorsSection() {
             {allCore.map((a,i) => <FadeIn key={a.id} delay={i*100}>
               <div style={{ background:C.bg,border:"1px solid "+C.border,overflow:"hidden",transition:"border-color 0.3s" }} onMouseEnter={e=>e.currentTarget.style.borderColor=C.goldDim} onMouseLeave={e=>e.currentTarget.style.borderColor=C.border}>
                 {a.photo && <div style={{ width:"100%",height:280,overflow:"hidden",background:"#0d1423" }}>
-                  <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"top",filter:"brightness(0.95)" }} />
+                  <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 20%",filter:"brightness(0.95)" }} />
                 </div>}
                 <div style={{ padding:"24px 28px 28px" }}>
                   <h3 style={{ fontFamily:"Georgia,serif",fontSize:20,color:C.white,fontWeight:400,marginBottom:4 }}>{a.name}</h3>
@@ -1007,7 +1007,7 @@ function AdvisorsSection() {
             {allLifestyle.map((a,i) => <FadeIn key={a.id} delay={i*100}>
               <div style={{ background:C.bg,border:"1px solid "+C.border,overflow:"hidden",transition:"border-color 0.3s" }} onMouseEnter={e=>e.currentTarget.style.borderColor=C.goldDim} onMouseLeave={e=>e.currentTarget.style.borderColor=C.border}>
                 {a.photo && <div style={{ width:"100%",height:240,overflow:"hidden",background:"#0d1423" }}>
-                  <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"top",filter:"brightness(0.95)" }} />
+                  <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 20%",filter:"brightness(0.95)" }} />
                 </div>}
                 <div style={{ padding:"24px 28px 28px" }}>
                   <h3 style={{ fontFamily:"Georgia,serif",fontSize:18,color:C.white,fontWeight:400,marginBottom:4 }}>{a.name}</h3>
@@ -1031,7 +1031,7 @@ function ArticleAdvisor({ articleCat }) {
     <div style={{ background:C.card,border:"1px solid "+C.border,marginTop:48,padding:0,overflow:"hidden" }}>
       <div style={{ display:"flex",flexWrap:"wrap" }}>
         {a.photo && <div style={{ width:200,minHeight:240,flexShrink:0,overflow:"hidden",background:"#0d1423" }}>
-          <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"top" }} />
+          <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 20%" }} />
         </div>}
         <div style={{ flex:1,padding:"32px 36px",minWidth:280 }}>
           <div style={{ color:C.gold,fontSize:11,letterSpacing:3,textTransform:"uppercase",marginBottom:12 }}>Your Expert for This Topic</div>
@@ -1274,11 +1274,57 @@ function ArticlePage({ id, setPage }) {
   );
 }
 
+// ── Hash routing ────────────────────────────────────────────
+function pageToHash(p) {
+  if (p === "home") return "/";
+  if (p === "guides") return "/guides";
+  if (p === "quiz") return "/quiz";
+  if (p === "properties") return "/locations";
+  if (p === "advisors") return "/advisors";
+  if (p === "privacy") return "/privacy";
+  if (p === "cookies") return "/cookies";
+  if (p === "terms") return "/terms";
+  if (p.startsWith("v-")) return "/service/" + p.replace("v-", "");
+  // Article IDs go to /guide/slug
+  return "/guide/" + p;
+}
+
+function hashToPage(h) {
+  const path = h.replace(/^#/, "") || "/";
+  if (path === "/") return "home";
+  if (path === "/guides") return "guides";
+  if (path === "/quiz") return "quiz";
+  if (path === "/locations") return "properties";
+  if (path === "/advisors") return "advisors";
+  if (path === "/privacy") return "privacy";
+  if (path === "/cookies") return "cookies";
+  if (path === "/terms") return "terms";
+  if (path.startsWith("/service/")) return "v-" + path.replace("/service/", "");
+  if (path.startsWith("/guide/")) return path.replace("/guide/", "");
+  return "home";
+}
+
 export default function App() {
-  const [page, setPage] = useState("home");
+  const [page, setPageRaw] = useState(() => hashToPage(window.location.hash));
   const isArt = ARTICLES.some(a=>a.id===page);
   const isVert = page.startsWith("v-");
   const isLegal = ["privacy","cookies","terms"].includes(page);
+
+  const setPage = (p) => {
+    setPageRaw(p);
+    window.location.hash = pageToHash(p);
+  };
+
+  useEffect(() => {
+    const onHash = () => {
+      const p = hashToPage(window.location.hash);
+      setPageRaw(p);
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+
   return (
     <div style={{ background:C.bg,minHeight:"100vh",fontFamily:"'Segoe UI',-apple-system,sans-serif",color:C.text }}>
       <MobileStyles/>
@@ -1289,6 +1335,7 @@ export default function App() {
       {page==="guides" && <GuidesPage setPage={setPage}/>}
       {page==="quiz" && <QuizPage setPage={setPage}/>}
       {page==="properties" && <PropertyGallery setPage={setPage}/>}
+      {page==="advisors" && <AdvisorsSection/>}
       {isVert && <VerticalPage id={page.replace("v-","")} setPage={setPage}/>}
       {isArt && <ArticlePage id={page} setPage={setPage}/>}
       {isLegal && <LegalPage page={page} setPage={setPage}/>}

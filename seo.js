@@ -134,6 +134,38 @@ writeFileSync(join(DIST, 'guides', 'index.html'), page(
 ));
 console.log('  + guides/');
 
+// ── Advisors page ───────────────────────────────────────────
+ensureDir(join(DIST, 'advisors'));
+const advisorsBody = `
+<h1>Our Advisory Network</h1>
+<p style="color:#9CA3AF;font-size:17px;margin-bottom:16px">A curated network of trusted professionals. Every introduction is personal. Every professional is vetted. One point of contact coordinates everything.</p>
+<h2>Core Advisors</h2>
+<div style="background:#111827;border:1px solid #1F2937;padding:28px;margin-bottom:16px">
+<h3 style="color:#C9A96E">Nicolò Bolla</h3>
+<p style="font-style:italic;color:#C9A96E;font-size:14px">Tax, Corporate &amp; Immigration Advisor</p>
+<p>A chartered accountant specialising in international tax and immigration law. From flat tax applications and corporate structuring to residence permits and citizenship pathways — end-to-end guidance with full regulatory compliance.</p>
+</div>
+<div style="background:#111827;border:1px solid #1F2937;padding:28px;margin-bottom:16px">
+<h3 style="color:#C9A96E">Dr. Gabriele Azzolini</h3>
+<p style="font-style:italic;color:#C9A96E;font-size:14px">Medical Advisor</p>
+<p>A qualified Doctor of Medicine and Surgery (M.D.). Dr. Azzolini connects you with the most qualified specialist for your needs — trusted GPs, world-class surgeons, and paediatric screening. Confidential medical orientation across Italy.</p>
+</div>
+<h2>Lifestyle Network</h2>
+<div style="background:#111827;border:1px solid #1F2937;padding:28px;margin-bottom:16px">
+<h3 style="color:#C9A96E">Davide Marescalchi</h3>
+<p style="font-style:italic;color:#C9A96E;font-size:14px">Hair &amp; Wellness Specialist</p>
+<p>A Milan-based hair specialist with deep expertise in scalp health and hair wellness. Personalised consultations and treatments — because settling into a new city means feeling like yourself again.</p>
+</div>
+<p style="margin-top:32px">Contact: <a href="mailto:info@theitaliangateway.com">info@theitaliangateway.com</a></p>`;
+
+writeFileSync(join(DIST, 'advisors', 'index.html'), page(
+  'Our Advisory Network | The Italian Gateway',
+  'Meet the professionals behind The Italian Gateway: tax advisors, medical consultants, and lifestyle specialists supporting HNWI families relocating to Italy.',
+  DOMAIN + '/advisors/',
+  advisorsBody
+));
+console.log('  + advisors/');
+
 // ── Inject SEO content into homepage ────────────────────────
 let homepage = readFileSync(join(DIST, 'index.html'), 'utf8');
 const seo = `<div id="seo" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
@@ -235,6 +267,7 @@ for (const lp of legalPages) {
 const urls = [
   { loc: '/', p: '1.0' },
   { loc: '/guides/', p: '0.9' },
+  { loc: '/advisors/', p: '0.8' },
   ...ARTICLES.map(a => ({ loc: '/guide/' + a.id + '/', p: '0.8' })),
   { loc: '/privacy/', p: '0.3' },
   { loc: '/cookies/', p: '0.3' },
