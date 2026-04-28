@@ -1284,6 +1284,250 @@ const ARTICLES = [
     ]
   },
 
+  // =============================================================
+  // ARTICLE 18 — Professional Athletes Relocating to Italy
+  // =============================================================
+  {
+    id: "professional-athletes-italy-tax-relocation",
+    cat: "Relocation",
+    title: "Moving to Italy as a Professional Athlete: Tax Benefits, Residency, and Everything Your Agent Won't Tell You",
+    date: "April 2026",
+    read: "12 min",
+    desc: "Serie A, basketball, volleyball, rugby — hundreds of international athletes relocate to Italy every year. The Impatriati regime, medical setup, family integration, and financial planning: the complete guide.",
+    content: [
+      { type: "p", text: "Every summer, hundreds of professional athletes sign contracts with Italian clubs — Serie A and Serie B football, Lega Basket, SuperLega volleyball, Top10 rugby. Within 48 hours of signing, they need a home, a bank account, a doctor, a school for their children, a codice fiscale, and a clear understanding of Italian tax law. Their club handles the contract. Their agent handles the negotiation. Nobody handles their life." },
+      { type: "p", text: "This guide is for international athletes and their families — and for the agents and clubs who want their players settled, happy, and performing from day one." },
+
+      { type: "h2", text: "The Impatriati Regime for Athletes: What Changed in 2024" },
+      { type: "p", text: "Italy's Impatriati regime has been reformed significantly. For athletes arriving from January 2024 onwards, the new rules apply:" },
+      { type: "table", headers: ["Detail", "New Rules (2024+)", "Old Rules (pre-2024)"], rows: [
+        ["Tax exemption", "50% of income exempt", "70% exempt (was 50% before 2019)"],
+        ["Income cap", "€600,000/year on exempt portion", "No cap"],
+        ["Duration", "5 years (extendable to 10)", "5 years (extendable)"],
+        ["Prior non-residency", "3 of prior 3 years abroad", "2 of prior 2 years"],
+        ["Minimum commitment", "4 years of Italian residency", "2 years"],
+        ["Additional contribution", "None", "0.5% surcharge on income above €1M (abolished)"],
+      ]},
+      { type: "callout", text: "What this means: an athlete earning €3M gross per year pays tax on only €1.5M — the other half is completely exempt. On €600K+ earners, the cap kicks in: only the first €600K of exemption applies. But even with the cap, the effective rate is significantly lower than the standard 43% top rate." },
+
+      { type: "h2", text: "Flat Tax vs Impatriati: Which Is Better for Athletes?" },
+      { type: "p", text: "The flat tax (€300,000/year) covers foreign income only. An athlete's salary is Italian-sourced — it's paid by an Italian club for work performed in Italy. Therefore the flat tax does NOT cover it. The Impatriati regime is the correct choice for employed athletes." },
+      { type: "p", text: "However, if the athlete also has significant income from abroad — image rights managed through a foreign company, sponsorship deals paid by non-Italian brands, property rental income — the flat tax could cover that portion. In rare cases, a combination strategy makes sense. This requires careful structuring with a specialised commercialista before arrival." },
+
+      { type: "h2", text: "The First 72 Hours: What Needs to Happen" },
+      { type: "list", items: [
+        "Day 1: Codice fiscale (can be pre-arranged). Temporary accommodation near the club's training ground.",
+        "Day 1-2: Bank account application (KYC process takes 2-4 weeks — start immediately). Emergency cash and card solutions in the interim.",
+        "Day 2-3: Anagrafe registration (residency). This starts the 183-day clock for tax residency.",
+        "Week 1: SSN registration, medico di base assignment, club medical integration. Private GP retainer for family.",
+        "Week 1-2: School research and emergency enrollment for children. Mid-year transfers are possible but competitive.",
+        "Week 2-4: Permanent apartment search, lease signing, utility setup.",
+        "Month 1-2: Driving licence conversion (varies by nationality), SIM/internet, neighbourhood orientation for spouse.",
+      ]},
+
+      { type: "h2", text: "The Spouse Problem: Why Integration Fails" },
+      { type: "p", text: "The athlete walks into a dressing room on day one. Instant structure, colleagues, purpose. The spouse arrives in a foreign city with no language, no friends, no job, and a list of problems to solve alone — from finding a paediatrician to understanding why Italian bureaucracy requires 14 documents for everything." },
+      { type: "p", text: "In our experience, when a player requests a transfer after one season, it is almost never about football. It is about the family not settling. Clubs lose millions when a player wants out early. Investing €3-5K in proper family integration at arrival saves the club from a €10-30M transfer loss." },
+
+      { type: "h2", text: "Protecting Your Career Earnings: Why It Matters Now" },
+      { type: "p", text: "The average career of a professional footballer lasts 8-10 years at the top level. For basketball and volleyball players, often less. The transition from earning €1-5M per year to zero is one of the most dramatic income cliffs in any profession. Studies show that 60-70% of professional footballers experience significant financial difficulties within 5 years of retirement." },
+      { type: "p", text: "The solution is not complex — it starts with basic financial education during the playing years and a structured savings and investment plan managed by qualified, independent professionals. Italy's polizza vita (insurance wrapper) offers tax-deferred growth, creditor protection, and succession advantages that are particularly well-suited to athletes with concentrated, short-duration earning periods." },
+
+      { type: "h2", text: "For Agents: Why This Matters to Your Business" },
+      { type: "p", text: "Every call from a player's wife about a school problem, a doctor, or a bank account is time you're not spending on the next deal. Every player who doesn't settle is a transfer you have to renegotiate — costing you commission and reputation. A dedicated relocation partner handles the 95% of post-signing logistics that aren't your job, while you focus on what is." },
+      { type: "callout", text: "The Italian Gateway offers a fixed-fee Player Landing Package: home, banking, healthcare, education, bureaucracy — everything handled within the first 30 days. The club or agent pays once. The player settles for good. Contact us for the full service outline." },
+
+      { type: "h2", text: "For Clubs: The Business Case" },
+      { type: "p", text: "A well-integrated player performs better. A player whose family is unhappy underperforms and requests a transfer. The cost of a structured relocation service (€3-5K per player) is negligible compared to the investment in the player's contract, and it directly impacts on-field performance, team stability, and resale value." },
+
+      { type: "h2", text: "Frequently Asked Questions" },
+      { type: "faq", q: "Can my spouse work in Italy?", a: "EU spouses have full work rights. Non-EU spouses with a family visa (permesso per motivi familiari) can work without restrictions. The spouse may also qualify for the Impatriati regime independently if they find qualifying employment." },
+      { type: "faq", q: "What about image rights income?", a: "Image rights are typically managed through a separate company (often offshore). Under Italian tax law, this income is foreign-sourced if the company and its substance are genuinely abroad. It could be covered by the flat tax if elected separately, or it may fall under specific Italian rules depending on the structure. Professional advice is essential." },
+      { type: "faq", q: "I'm only staying 1-2 seasons. Is it worth registering as resident?", a: "If you stay 183+ days in a tax year, Italy considers you resident regardless of registration. Registering properly and electing the Impatriati regime from day one is always better than being caught as an unregistered de facto resident — the penalties are severe." },
+
+      { type: "callout", text: "Disclaimer: This guide provides general information as of April 2026. Tax and immigration regulations change frequently and depend on individual circumstances. Always consult qualified professionals. The Italian Gateway works with specialised sports tax advisors and immigration lawyers." },
+    ]
+  },
+
+  // =============================================================
+  // ARTICLE 19 — Post-Separation Relocation to Italy
+  // =============================================================
+  {
+    id: "divorce-relocation-italy-hnwi",
+    cat: "Relocation",
+    title: "Relocating to Italy After a Separation: A Confidential Guide for HNWI",
+    date: "April 2026",
+    read: "10 min",
+    desc: "Life transitions create new beginnings. For individuals starting a new chapter in Italy — tax planning, property, healthcare, schools, and rebuilding a life with discretion and support.",
+    content: [
+      { type: "p", text: "Major life transitions often prompt a reassessment of where and how you want to live. For individuals emerging from a separation or divorce — particularly those with the freedom and resources to choose their next chapter — Italy offers something rare: a world-class lifestyle, favourable tax treatment, and a fresh start in a culture that values privacy, family, and quality of life above all." },
+      { type: "p", text: "This guide addresses the practical, financial, and personal dimensions of relocating to Italy during or after a life transition, with the discretion and sensitivity the situation requires." },
+
+      { type: "h2", text: "Why Italy After a Life Transition" },
+      { type: "p", text: "The reasons are both practical and emotional. The flat tax regime (€300,000/year on all foreign income) provides long-term financial certainty at a moment when certainty matters most. Italy's healthcare system (WHO #2) provides world-class care without the complexity of private insurance-only systems. And the lifestyle — Lake Como, Milan's cultural richness, Tuscany's tranquility — offers a genuine reset, not just a change of address." },
+      { type: "p", text: "For parents, Italy's international schools provide continuity of curriculum (IB, British, American) while offering children a culturally enriching environment. Milan in particular has a large, welcoming international community where building a new social circle is natural rather than forced." },
+
+      { type: "h2", text: "Financial Structuring After Settlement" },
+      { type: "p", text: "A divorce settlement often creates a significant restructuring of assets. This is a critical moment for tax planning — the decisions you make about when and where to establish your new tax residency directly impact how your settlement is taxed going forward." },
+      { type: "list", items: [
+        "Settlement proceeds received before establishing Italian residency are not subject to Italian tax (they arise from a prior jurisdiction).",
+        "Investment income generated after becoming Italian resident is covered by the flat tax if the assets remain abroad.",
+        "Property in Italy is taxed at Italian rates regardless of the flat tax — plan your property purchase accordingly.",
+        "Maintenance payments (alimony) received from abroad are foreign income and covered by the flat tax.",
+        "Child support is generally not taxable income in Italy.",
+      ]},
+
+      { type: "h2", text: "Protecting Your Privacy" },
+      { type: "p", text: "Italy offers significant privacy protections that are particularly valuable during a sensitive transition. Under the flat tax regime, there is no Quadro RW obligation — meaning you are not required to disclose your foreign assets to the Italian tax authorities. Italian banking secrecy, while reduced from its historical levels, still provides more discretion than the UK or US systems." },
+
+      { type: "h2", text: "Children and Schools" },
+      { type: "p", text: "If your separation involves children and you are considering relocating them to Italy, the legal framework is critical. Under the Hague Convention on International Child Abduction and Brussels II Regulation, you must have either the other parent's consent or a court order permitting the relocation. This is non-negotiable and must be resolved before the move." },
+      { type: "p", text: "Once the legal framework is clear, Milan's international schools offer excellent options for continuity. The IB curriculum is available at multiple schools, allowing children to transition with minimal disruption. Mid-year entries are possible but should be planned as early as possible." },
+
+      { type: "h2", text: "Building a New Life: The Practical Side" },
+      { type: "p", text: "The practical challenges of establishing a new home are amplified when you are also managing the emotional dimensions of a major life change. This is precisely why having a single point of contact who handles every logistical detail — from property search to healthcare registration to school enrollment — is not a luxury but a necessity." },
+      { type: "list", items: [
+        "Property: we manage the entire search, negotiation, and setup — furnished rentals for the first year, then purchase when you are ready.",
+        "Healthcare: private GP introduction, specialist referrals, dental, psychological support if needed — all English-speaking.",
+        "Community: introduction to Milan's international community, social clubs, cultural associations, and professional networks.",
+        "Legal: coordination with your family law advisors in your home jurisdiction and Italian lawyers as needed.",
+        "Staff: domestic help, childcare, drivers — vetted and contracted properly under Italian employment law.",
+      ]},
+
+      { type: "h2", text: "For Family Law Professionals" },
+      { type: "p", text: "If you advise clients going through a separation where one party is considering relocation to Italy, we provide a confidential briefing on the practical and fiscal implications. Our role is to facilitate the transition — not to provide legal advice — and we work alongside your team to ensure the relocation supports your client's interests." },
+      { type: "callout", text: "All consultations are strictly confidential. Contact info@theitaliangateway.com for a private conversation." },
+
+      { type: "callout", text: "Disclaimer: This guide provides general information and is not legal or financial advice. Family law, tax law, and cross-border regulations are complex and require professional guidance tailored to your specific situation." },
+    ]
+  },
+
+  // =============================================================
+  // ARTICLE 20 — International Students in Milan
+  // =============================================================
+  {
+    id: "international-students-milan-premium",
+    cat: "Relocation",
+    title: "International Students in Milan: A Premium Guide for Families Sending Children to Bocconi, Politecnico, and Beyond",
+    date: "April 2026",
+    read: "9 min",
+    desc: "Your child got into Bocconi, Politecnico, IED, or Domus Academy. Now what? Accommodation, banking, healthcare, safety, and how parents can ensure a smooth landing — without being there.",
+    content: [
+      { type: "p", text: "Your son or daughter has been accepted at one of Milan's world-class universities — Bocconi, Politecnico di Milano, IED, Marangoni, Domus Academy, or Cattolica. You are thrilled and terrified in equal measure. Milan is safe, vibrant, and international. But you are sending your child to a foreign country where they don't speak the language, don't know the system, and need to set up an entire life from scratch." },
+      { type: "p", text: "This guide is for families — not for budget backpackers. It covers premium accommodation, private healthcare, banking, safety, and the dozens of practical details that determine whether your child's Italian experience is transformative or miserable." },
+
+      { type: "h2", text: "Accommodation: Beyond the Student Flat" },
+      { type: "p", text: "The standard student accommodation in Milan ranges from shared apartments (€500-800/month per room) to university residences (€600-1,200/month). For families seeking a higher standard — a private studio or one-bedroom apartment in a safe, well-connected neighbourhood — the budget is €1,200-2,500/month." },
+      { type: "table", headers: ["University", "Best Neighbourhoods", "Budget Range", "Notes"], rows: [
+        ["Bocconi", "Porta Romana, Bocconi area, Navigli", "€1,500-2,500/mo", "Walk to campus, lively area, great dining"],
+        ["Politecnico (Leonardo)", "Città Studi, Piola, Lambrate", "€1,200-2,000/mo", "University district, quieter, well-connected"],
+        ["Politecnico (Bovisa)", "Bovisa, Isola, Porta Nuova", "€1,400-2,200/mo", "Isola is trendy, Porta Nuova is premium"],
+        ["IED / Marangoni / Domus", "Centro, Brera, Navigli", "€1,500-2,500/mo", "Creative districts, walkable to studios"],
+        ["Cattolica", "Centro, Magenta, Sant'Ambrogio", "€1,500-2,500/mo", "Historic centre, elegant neighbourhood"],
+      ]},
+      { type: "p", text: "We work with premium rental platforms and private landlords to find furnished apartments that meet the family's standards — modern, safe, well-located, and with a proper Italian rental contract (not a sublet)." },
+
+      { type: "h2", text: "Healthcare: Because Parents Worry" },
+      { type: "p", text: "EU citizens can use the European Health Insurance Card (EHIC/TEAM) for emergency care. Non-EU students with a study visa must purchase private health insurance (€150-400/year) that meets Italian visa requirements. But neither option gives parents the peace of mind they want." },
+      { type: "p", text: "We recommend a private GP retainer (€1,000-2,000/year) that provides an English-speaking doctor available by phone and with short-notice appointments. This is the single best investment for parental peace of mind. We can also arrange dental, dermatology, and psychological support referrals — all English-speaking." },
+
+      { type: "h2", text: "Banking and Financial Setup" },
+      { type: "list", items: [
+        "Italian bank account: required for rent payments and daily expenses. We expedite the KYC process (normally 4-6 weeks) with our banking partners.",
+        "Codice fiscale: essential for everything — lease, bank, phone, healthcare. Can be obtained at the Agenzia delle Entrate or Italian consulate before arrival.",
+        "Monthly budget for a comfortable student life in Milan: €2,000-3,500 all-in (rent, food, transport, socialising, travel).",
+        "Recommended: a prepaid Italian card (Revolut/N26 work in Italy) for the first weeks while the bank account is being set up.",
+      ]},
+
+      { type: "h2", text: "Safety and Parental Peace of Mind" },
+      { type: "p", text: "Milan is one of the safest major cities in Europe. Violent crime is extremely rare. Petty crime (pickpocketing) exists near tourist areas and train stations but is negligible in residential neighbourhoods. The city is walkable, well-lit, and has reliable public transport until midnight (night buses after)." },
+      { type: "p", text: "For parents: your child is safer in Milan than in most major Western cities. The biggest risks are scooter accidents (discourage moped rental) and apartment scams (never pay a deposit without seeing the apartment and signing a proper contract — we handle this)." },
+
+      { type: "h2", text: "The Welcome Package: What We Offer" },
+      { type: "p", text: "For families who want their child's arrival handled professionally, we offer a Student Welcome Package:" },
+      { type: "list", items: [
+        "Pre-arrival: apartment sourcing and contract signing, codice fiscale application, university orientation briefing.",
+        "Arrival week: airport pickup, apartment walkthrough, neighbourhood tour, SIM card, transport card, supermarket orientation.",
+        "First month: bank account setup, healthcare registration, private GP introduction, emergency contacts list.",
+        "Ongoing: quarterly check-in with the family, emergency support line, help with any bureaucratic issues.",
+      ]},
+      { type: "callout", text: "Parents invest in their children's education. Investing in their landing experience ensures the education actually works. A student who is settled, healthy, and comfortable performs better academically and gets more from the experience." },
+
+      { type: "h2", text: "For Parents Considering Their Own Move" },
+      { type: "p", text: "Many parents visit Milan for the first time when dropping off their child — and fall in love with the city. If you are considering your own relocation, whether immediately or in the future, we provide the full range of HNWI relocation services: flat tax structuring, property acquisition, healthcare, private banking, and lifestyle integration. Your child's experience in Milan is often the first step toward the family's broader relationship with Italy." },
+
+      { type: "callout", text: "Disclaimer: This guide provides general information as of April 2026. University-specific policies and accommodation availability change annually. Contact us for current, personalised advice." },
+    ]
+  },
+
+  // =============================================================
+  // ARTICLE 21 — Italy Digital Nomad Visa for High Earners
+  // =============================================================
+  {
+    id: "italy-digital-nomad-visa-high-earners",
+    cat: "Immigration",
+    title: "Italy's Digital Nomad Visa for High Earners: Not the Bali Crowd — The €200K+ Remote Professional's Guide",
+    date: "April 2026",
+    read: "10 min",
+    desc: "Italy introduced the digital nomad visa in 2024. But the real opportunity isn't for backpackers — it's for founders, consultants, and remote executives earning €200K+ who want a European base with substance.",
+    content: [
+      { type: "p", text: "When Italy announced its digital nomad visa in April 2024 (Decreto Legislativo 152/2023, Art. 26-bis), the headlines were predictable: 'Italy joins the digital nomad race!' alongside images of laptops on Mediterranean terraces. But the real opportunity has nothing to do with the Bali-to-Lisbon crowd charging €50/night coworking spaces." },
+      { type: "p", text: "The real opportunity is for high-earning remote professionals — tech founders post-exit, management consultants, portfolio directors, crypto-wealthy individuals — who earn €200K+ per year from non-Italian sources and want a serious European base with world-class infrastructure, healthcare, culture, and connectivity. For this profile, Italy's digital nomad visa is a gateway to the flat tax regime and a European life that no other digital nomad programme can match." },
+
+      { type: "h2", text: "The Visa: What It Actually Requires" },
+      { type: "table", headers: ["Requirement", "Detail"], rows: [
+        ["Eligible applicants", "Non-EU nationals working remotely for a non-Italian employer or as self-employed with non-Italian clients"],
+        ["Minimum income", "€28,000/year (three times the ISU exemption threshold)"],
+        ["Duration", "1 year, renewable for up to 2 additional years"],
+        ["Healthcare", "Private health insurance mandatory"],
+        ["Accommodation", "Proof of suitable housing in Italy"],
+        ["Can you work for Italian clients?", "No — the work must be for non-Italian entities"],
+        ["Path to residency?", "Yes — after 5 years of legal residence, you can apply for long-term EU residency"],
+      ]},
+      { type: "p", text: "The minimum income threshold of €28,000 is deliberately low — it is designed to be accessible. But the high earners we work with are not concerned with the minimum. They are concerned with tax efficiency, lifestyle quality, and long-term planning." },
+
+      { type: "h2", text: "The Strategic Play: Digital Nomad Visa → Flat Tax" },
+      { type: "p", text: "Here is where it gets interesting. The digital nomad visa establishes legal Italian residency. After maintaining residency, a high earner can transition to the flat tax regime (€300,000/year on all foreign income) if they meet the eligibility criteria — specifically, not having been Italian tax resident for 9 of the prior 10 years." },
+      { type: "p", text: "The sequence works as follows: you arrive on the digital nomad visa, establish residency, live in Italy for 1-3 years under ordinary tax rules (with the Impatriati regime potentially applying to reduce your burden), and then elect the flat tax from the point it becomes most advantageous. The visa is the legal entry point. The flat tax is the long-term strategy." },
+
+      { type: "h2", text: "Why Milan, Not Lisbon or Tallinn" },
+      { type: "list", items: [
+        "Infrastructure: Milan has three international airports, high-speed rail to all of Europe, and some of the fastest broadband on the continent.",
+        "Business ecosystem: if you are in finance, fashion, design, or tech, Milan is where the deals happen in Southern Europe.",
+        "Healthcare: WHO #2. Your Estonian e-residency does not come with a paediatrician.",
+        "Culture: La Scala, the Quadrilatero, Lake Como in 45 minutes, skiing in 90 minutes. Lisbon has surf. Milan has substance.",
+        "EU passport path: 10 years to citizenship, 191 countries visa-free. A Tallinn e-residency gives you a company. An Italian residency gives you a future.",
+      ]},
+
+      { type: "h2", text: "Tax Comparison: Digital Nomad in Italy vs Other Hubs" },
+      { type: "table", headers: ["Country", "Visa/Programme", "Tax on €500K Foreign Income", "Healthcare", "EU Passport Path"], rows: [
+        ["Italy (DN → flat tax)", "Digital Nomad + Flat Tax", "€300K fixed (after transition)", "WHO #2", "10 years"],
+        ["Portugal", "D8 Visa + IFICI", "20% on qualifying income", "WHO #12", "5 years"],
+        ["Estonia", "e-Residency + DN Visa", "20% corporate + dividend tax", "WHO #77", "8+ years"],
+        ["Croatia", "Digital Nomad Visa", "0% (1 year only, non-renewable)", "WHO #43", "8+ years"],
+        ["Dubai", "Remote Work Visa", "0%", "WHO #27", "Never"],
+        ["Thailand", "LTR Visa", "17% flat (qualifying)", "WHO #47", "Never"],
+      ]},
+
+      { type: "h2", text: "The Profile This Works For" },
+      { type: "list", items: [
+        "Tech founder who sold their company and now advises/invests remotely — wants a European base with substance, not a beach.",
+        "Management consultant billing €300K+ to global clients from wherever they choose — wants to stop paying 45% UK tax.",
+        "Crypto-wealthy individual who needs a jurisdiction that has clear crypto tax rules (Italy: 26% above €2,000) and isn't going to change them overnight.",
+        "Portfolio director or family office executive working remotely for a non-Italian entity — wants Italian lifestyle without Italian employment.",
+        "Senior remote employee of a US tech company — earning $300K+ and tired of paying California state tax from a WeWork in Lisbon.",
+      ]},
+
+      { type: "h2", text: "Frequently Asked Questions" },
+      { type: "faq", q: "Can I freelance for Italian clients on the digital nomad visa?", a: "No. The visa requires that your work is for non-Italian entities. If you want to serve Italian clients, you need a different visa and a partita IVA (Italian VAT number). We can advise on the transition." },
+      { type: "faq", q: "What about the 183-day rule?", a: "If you spend 183+ days in Italy in a calendar year, you are Italian tax resident regardless of visa type. Plan your travel accordingly, and ensure your tax advisor knows your day count." },
+      { type: "faq", q: "Is the digital nomad visa renewable?", a: "Yes, for up to 2 additional years (3 years total). After that, you can transition to a standard permesso di soggiorno for work or the EU long-term residence permit (after 5 years)." },
+      { type: "faq", q: "Can my family come?", a: "Yes. Spouse and minor children can join you on a family visa (ricongiungimento familiare) with full access to healthcare and schools." },
+
+      { type: "callout", text: "Disclaimer: This guide provides general information as of April 2026. Immigration and tax regulations change frequently. The digital nomad visa is relatively new and implementation may vary. Always consult qualified professionals. The Italian Gateway coordinates immigration, tax, and lifestyle planning for high-earning remote professionals." },
+    ]
+  },
+
 ];
 export default ARTICLES;
 
