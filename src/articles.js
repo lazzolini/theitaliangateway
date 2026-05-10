@@ -1528,6 +1528,237 @@ const ARTICLES = [
     ]
   },
 
+  // =============================================================
+  // ARTICLE 22 — The Great UK Wealth Exodus
+  // =============================================================
+  {
+    id: "uk-millionaire-exodus-italy-2026",
+    cat: "Tax & Legal",
+    title: "The Great British Wealth Exodus: 16,500 Millionaires Left the UK in 2025 — Why Italy Is Where They're Going",
+    date: "April 2026",
+    read: "14 min",
+    desc: "The UK lost a record 16,500 millionaires in 2025. The non-dom abolition, inheritance tax reform, CGT hikes, and VAT on school fees have triggered the largest wealth migration in British history. Italy — with its €300K flat tax, zero inheritance tax on foreign assets, and world-class lifestyle — is the top European destination. The data, the drivers, and what it means for families considering the move.",
+    content: [
+      { type: "p", text: "Something unprecedented is happening in Britain. According to the Henley Private Wealth Migration Report 2025, the United Kingdom lost a net 16,500 millionaires last year — the steepest outflow ever recorded for any country, surpassing even China. An estimated £66 billion in liquid assets left with them. And the CEO of deVere Group, one of the world's largest independent financial advisory firms, has warned that these numbers could potentially double in 2026." },
+      { type: "p", text: "This is not a media narrative. It is a structural shift in where the world's mobile wealth chooses to live, invest, and raise families. And Italy — specifically Milan — has emerged as the single most popular European destination for these departures." },
+
+      { type: "h2", text: "The Numbers: What Is Actually Happening" },
+      { type: "table", headers: ["Metric", "Data", "Source"], rows: [
+        ["Net millionaire outflow from UK (2025)", "16,500 individuals", "Henley & Partners"],
+        ["Estimated wealth leaving UK (2025)", "$91.8 billion (USD)", "Henley & Partners"],
+        ["Net millionaire outflow from UK (2024)", "~9,500 individuals", "Henley & Partners"],
+        ["Year-on-year increase", "+74%", "Calculated"],
+        ["Projected 2026 outflow", "Could potentially double 2025 figures", "deVere Group CEO"],
+        ["Net millionaire inflow to Italy (2025)", "3,600 individuals", "Henley & Partners"],
+        ["Italy global ranking for HNWI inflow", "#3 (behind UAE and USA)", "Henley & Partners"],
+        ["UK tax-to-GDP ratio (2025)", "~37% — highest since 1947", "Henley & Partners"],
+        ["London millionaires lost (last decade)", "~30,000", "Henley & Partners"],
+      ]},
+      { type: "p", text: "To put this in perspective: the UK's millionaire population is approximately 3 million. A loss of 16,500 in a single year represents roughly 0.5%. But these are not average millionaires. They are disproportionately the wealthiest, most mobile, and highest-tax-contributing individuals — the loss of even a small number has an outsized impact on tax revenue, philanthropy, cultural institutions, and the luxury economy." },
+
+      { type: "h2", text: "Why Now: The Five Triggers" },
+
+      { type: "h3", text: "1. The Non-Dom Abolition (April 2025)" },
+      { type: "p", text: "The abolition of non-domiciled resident status, effective April 6, 2025, is the single largest driver. For over 200 years, non-doms could live in Britain while paying UK tax only on income remitted to the UK. In 2022-23, approximately 74,000 individuals claimed non-dom status, contributing an estimated £8.9 billion in tax. The replacement — a 4-year Foreign Income and Gains (FIG) exemption — is dramatically less generous and provides no long-term certainty." },
+
+      { type: "h3", text: "2. Inheritance Tax on Offshore Trusts" },
+      { type: "p", text: "Perhaps even more significant than the income tax changes: from April 2025, non-UK assets held in excluded property trusts are brought into the UK inheritance tax net after 10 years of UK residence. This represents a fundamental change in estate planning for internationally mobile families. For a family with a £50M estate in offshore trusts, the potential IHT exposure is £20M — a liability that did not exist before." },
+
+      { type: "h3", text: "3. Capital Gains Tax Increases" },
+      { type: "p", text: "The October 2024 Budget raised CGT rates on carried interest and asset disposals. For private equity professionals — many of whom are internationally mobile and based in London — this was a direct hit to after-tax compensation. The carried interest rate increase alone prompted significant relocation planning among London's financial community." },
+
+      { type: "h3", text: "4. VAT on Private School Fees" },
+      { type: "p", text: "The introduction of 15% VAT on private school fees may seem minor in isolation, but it signals a broader philosophical shift: the UK government is willing to tax the lifestyle choices of the wealthy. For families already considering a move, this was often the tipping point — not because of the cost, but because of the message it sends about the direction of policy." },
+
+      { type: "h3", text: "5. The Cumulative Effect and Policy Uncertainty" },
+      { type: "p", text: "No single measure would trigger an exodus. But the combination — non-dom abolition, trust exposure, CGT increases, school fees VAT, frozen tax bands, and persistent speculation about a future exit tax or wealth tax — has created a perception that the UK is becoming structurally less attractive for mobile wealth. As one advisor quoted in The National put it about his client's reaction: 'London is nice? It isn't that nice.'" },
+
+      { type: "h2", text: "Where They're Going" },
+      { type: "table", headers: ["Destination", "Net Inflow 2025", "Key Attraction"], rows: [
+        ["UAE (Dubai)", "9,800", "Zero income tax, golden visa, growing infrastructure"],
+        ["United States", "7,500", "Market depth, EB-5 visa, dollar assets"],
+        ["Italy", "3,600", "€300K flat tax, zero IHT on foreign assets, lifestyle, EU passport"],
+        ["Switzerland", "3,000", "Lump-sum taxation, political stability, banking"],
+        ["Singapore", "2,800", "Asian hub, English-speaking, low tax"],
+        ["Portugal", "1,200", "Post-NHR reforms, golden visa changes"],
+        ["Greece", "1,000", "€100K flat tax (requires €500K investment)"],
+      ]},
+      { type: "p", text: "Italy's position as #3 globally and #1 in Europe is remarkable given that the flat tax was only introduced in 2017. High-profile relocations — including senior Goldman Sachs and Aston Villa figures choosing Milan — have created a snowball effect, drawing more wealth managers, law firms, and luxury services to the city." },
+
+      { type: "h2", text: "Why Italy Over Dubai or Switzerland" },
+      { type: "p", text: "Dubai offers zero tax but no EU access, no pathway to citizenship, limited healthcare, and — as many families discover after 2-3 years — a lifestyle that revolves around air conditioning. Switzerland offers stability and discretion but prohibits work under lump-sum taxation and has a longer, more complex path to settlement." },
+      { type: "p", text: "Italy uniquely combines:" },
+      { type: "list", items: [
+        "€300,000 flat tax covering all foreign income for 15 years — with proven grandfathering when rates increase",
+        "Zero inheritance tax on foreign assets under the flat tax regime — the single most powerful succession planning tool in Europe",
+        "Full work rights — unlike Swiss lump-sum, you can run your business from Milan",
+        "EU passport after 10 years of residency — 191 countries visa-free, for you and your children",
+        "Healthcare ranked #2 in the world by the WHO (UK is #18, UAE is #27)",
+        "Milan: a global city with three airports, six international schools, La Scala, Montenapoleone (now the world's most expensive shopping street), and Lake Como 45 minutes away",
+        "A 2-hour flight to London — close enough to maintain UK business relationships and friendships",
+      ]},
+
+      { type: "h2", text: "Italy's Flat Tax: The Direct Replacement for Non-Dom Status" },
+      { type: "p", text: "The UK non-dom regime allowed foreign income to go untaxed if not remitted. Italy's flat tax goes further: for €300,000 per year (€50,000 per additional family member), ALL foreign income is covered regardless of amount or remittance. There is no 4-year cliff, no retroactive clawback, and no uncertainty about future policy — grandfathering has been consistently applied with every rate increase." },
+      { type: "p", text: "The inheritance tax advantage is what tips the balance for many families. Under the flat tax, foreign assets are completely exempt from Italian inheritance and gift tax. A £50M foreign estate passes to heirs with zero Italian IHT. In the UK under the new rules, the same estate faces up to £20M in IHT after 10 years of residence. Over a 15-year period, the total cost of Italy's flat tax (€4.5M) is dwarfed by the inheritance tax saving alone." },
+
+      { type: "h2", text: "Who Is Moving: The Profiles" },
+      { type: "p", text: "The exodus is not one type of person. It includes:" },
+      { type: "list", items: [
+        "Private equity professionals: carried interest taxation and CGT hikes have made London less competitive. Milan's growing PE ecosystem (Investindustrial, Clessidra) offers a viable alternative.",
+        "Tech founders post-exit: with liquid wealth and no operational ties to the UK, they seek lifestyle and tax efficiency. Como and Milan offer both.",
+        "Non-dom families: primarily from the Gulf, India, and Africa, who used London as a base for education and banking. Many are moving children to Milan's international schools.",
+        "Retirees with significant estates: the IHT changes on trusts have made long-term estate planning in the UK untenable. Italy's zero IHT on foreign assets is the direct solution.",
+        "Financial services executives: Goldman Sachs, JPMorgan, and hedge fund professionals who can work remotely or from Milan's growing financial district.",
+      ]},
+
+      { type: "h2", text: "The Practical Reality: What the Move Involves" },
+      { type: "p", text: "Moving from London to Milan is not like moving from London to Dubai. There is a genuine regulatory and bureaucratic process that requires professional coordination:" },
+      { type: "list", items: [
+        "Tax residency transition: HMRC Statutory Residence Test compliance, split-year treatment, DT-Individual forms for pension treaty relief",
+        "Italian tax election: interpello preventivo (advance ruling) for flat tax, 120-day processing",
+        "Property: Milan prime at €8,000-15,000/sqm vs London at €20,000-35,000/sqm — significant savings, but Italian purchase process differs (compromesso, rogito, notaio)",
+        "Schools: Milan's international schools have 6-12 month waitlists. Applications should start 9-12 months before the move.",
+        "Banking: Italian private bank KYC takes 4-6 weeks. Existing UK wealth managers may face MiFID II restrictions post-Brexit.",
+        "Healthcare: SSN registration is straightforward, but finding English-speaking GPs and private specialists requires local knowledge.",
+        "Investment restructuring: non-harmonised funds (US ETFs) face up to 43% tax in Italy vs 26% for UCITS equivalents — portfolio restructuring before arrival is critical.",
+      ]},
+
+      { type: "h2", text: "Can the UK Reverse the Trend?" },
+      { type: "p", text: "There is growing political pressure on the UK government to act. Former prime minister David Cameron has publicly called for measures to stem the flow. Some reports suggest Chancellor Reeves may be considering reversing the trust IHT changes. But the consensus among advisors is that it is probably too late for those who have already left — and the uncertainty itself is now a driver of further departures." },
+      { type: "p", text: "The independent Office for Budget Responsibility still assumes the non-dom abolition will raise £2.7 billion annually by 2028-29. But research by Oxford Economics suggests that up to 32% of non-doms could leave, which would make the policy a net cost to the Treasury. The actual figure for 2025 appears to have exceeded even pessimistic projections." },
+
+      { type: "h2", text: "What This Means for You" },
+      { type: "p", text: "If you are a UK-based HNWI considering your options, the window for planning is now. The Italian flat tax regime is open, functioning, and proven. Grandfathering provisions mean that locking in at €300,000 today protects you from future increases for 15 years. The school year begins in September — applications should already be underway. And Milan's property market, while appreciating, remains 40-60% below London equivalents." },
+      { type: "p", text: "The question is no longer whether the exodus is real. It is whether you will be part of it — proactively and on your terms — or whether you will wait until the next Budget makes the decision for you." },
+
+      { type: "h2", text: "Frequently Asked Questions" },
+      { type: "faq", q: "Is the UK going to introduce an exit tax?", a: "There is ongoing speculation but no confirmed plans as of April 2026. An exit tax would tax unrealised gains on departure. Even the threat of one is accelerating relocations — families are moving pre-emptively. Italy does not impose an entry or exit tax." },
+      { type: "faq", q: "Can I keep my London property?", a: "Yes. Owning UK property does count as a 'UK tie' under the Statutory Residence Test, so you must manage your UK day count carefully. UK rental income is taxable in the UK, but under the Italy-UK double tax treaty and the flat tax regime, it is also covered in Italy." },
+      { type: "faq", q: "What about my children at UK universities?", a: "Your children can attend UK universities regardless of where you live. Tuition fees for non-UK residents may differ for some institutions. Many families maintain a small UK base for university visits while their primary residence is in Italy." },
+      { type: "faq", q: "How long does the whole process take?", a: "From initial decision to established Italian residency: 6-12 months is typical. The advance tax ruling (interpello) takes 120 days. School applications need 6-12 months lead time. Property search: 1-3 months. The ideal timeline is to begin planning 12 months before your target move date." },
+
+      { type: "callout", text: "Disclaimer: This article reflects publicly available data and reports as of April 2026. Tax laws in both the UK and Italy change frequently. This is not financial or legal advice. Always consult qualified professionals in both jurisdictions before making relocation decisions. The Italian Gateway coordinates these professionals on your behalf." },
+    ]
+  },
+
+  // =============================================================
+  // ARTICLE 23 — Luxury Student Life in Milan
+  // =============================================================
+  {
+    id: "luxury-student-life-milan-bocconi-2026",
+    cat: "Education",
+    title: "The €50K/Year Student: A Premium Guide to Living in Milan for Bocconi, Politecnico, Marangoni, and IED Students (2026)",
+    date: "May 2026",
+    read: "15 min",
+    desc: "Your child got into Bocconi, Politecnico, Marangoni, or IED. This isn't a guide for budget travellers — it's for families investing €50K+ per year in their child's education and lifestyle. Apartments, neighborhoods, private healthcare, banking, social life, and the setup that makes Milan feel like home from week one.",
+    content: [
+      { type: "p", text: "Your son or daughter has been accepted at one of Milan's elite institutions. Congratulations — you've already made the most important decision. What follows is equally critical: where they live, how they settle in, and whether the Milan experience becomes transformative or merely tolerable." },
+      { type: "p", text: "This guide is not for the student looking for the cheapest room in a shared flat. It's for families who understand that environment shapes outcome — and who are prepared to invest in a living situation that supports focus, wellbeing, and the kind of social connections that last a career." },
+
+      { type: "h2", text: "The Real Cost of Premium Student Life in Milan (2026)" },
+      { type: "table", headers: ["Category", "Budget Range", "Notes"], rows: [
+        ["Tuition (Bocconi BSc/MSc)", "€14,000 – €30,000/year", "Means-tested; full fee for high-income families"],
+        ["Tuition (Marangoni)", "€25,000 – €35,000/year", "Fashion, design, art direction programmes"],
+        ["Tuition (Politecnico)", "€3,900 – €6,000/year", "Remarkably affordable for a top-20 global engineering school"],
+        ["Tuition (IED)", "€15,000 – €22,000/year", "Design, fashion, visual arts, communication"],
+        ["Rent (premium studio/1-bed)", "€2,000 – €3,500/month", "Furnished, central, quality building"],
+        ["Rent (premium shared 2-bed)", "€1,500 – €2,500/month per person", "Designer flat, 2 bedrooms, central location"],
+        ["Private healthcare", "€1,000 – €2,500/year", "GP retainer + international insurance"],
+        ["Living expenses", "€800 – €1,500/month", "Dining, transport, social, travel"],
+        ["Total annual investment", "€45,000 – €80,000+", "Depending on university and lifestyle"],
+      ]},
+      { type: "callout", text: "Perspective: the total annual cost of a premium student experience in Milan (including rent) is roughly equivalent to one year's tuition at a mid-tier US private university — without the accommodation. For European families, Milan offers an elite education at a fraction of the London, Paris, or US equivalent." },
+
+      { type: "h2", text: "Where to Live: Neighborhoods by University" },
+
+      { type: "h3", text: "Bocconi (Via Sarfatti / Porta Romana)" },
+      { type: "p", text: "Bocconi sits in one of Milan's most desirable residential neighborhoods. Porta Romana is tree-lined, safe, full of excellent restaurants, and well-connected by metro (M3 Porta Romana, M3 Lodi). The Bocconi area itself has been extensively renovated with the new campus designed by SANAA — it's genuinely beautiful." },
+      { type: "table", headers: ["Option", "Budget", "Walk to Campus"], rows: [
+        ["Studio in Porta Romana", "€2,000 – €2,800/mo", "5-10 min"],
+        ["1-bed in Navigli", "€2,200 – €3,000/mo", "15 min walk or 5 min bike"],
+        ["Shared 2-bed in Bocconi area", "€1,400 – €1,800/mo per person", "5 min"],
+        ["Serviced furnished apartment", "€2,500 – €3,500/mo", "Variable, all central"],
+      ]},
+      { type: "p", text: "Our recommendation: Porta Romana for those who want calm and elegance. Navigli for those who want energy and nightlife within walking distance. Avoid Corvetto and Lodi (south of Porta Romana) — cheaper but not the experience your family is paying for." },
+
+      { type: "h3", text: "Politecnico (Leonardo Campus — Città Studi)" },
+      { type: "p", text: "Città Studi is Milan's university district — vibrant, international, and more affordable than the centre. The neighbourhood has a village feel with local bars, markets, and a strong student community. Metro M2 (Piola, Lambrate) connects you to the centre in 15 minutes." },
+      { type: "table", headers: ["Option", "Budget", "Walk to Campus"], rows: [
+        ["Studio in Città Studi", "€1,500 – €2,200/mo", "5-10 min"],
+        ["1-bed in Piola / Lambrate", "€1,800 – €2,500/mo", "10 min"],
+        ["Premium in Porta Venezia", "€2,200 – €3,000/mo", "20 min walk, 10 min metro"],
+      ]},
+      { type: "p", text: "Politecnico Bovisa campus: if your child is at Bovisa, consider Isola or Porta Nuova — trendy, modern, well-connected. Bovisa itself is less premium but rapidly developing." },
+
+      { type: "h3", text: "Marangoni / IED / Domus Academy (Centro / Brera / Navigli)" },
+      { type: "p", text: "Fashion and design schools are scattered across the centre. Students in these programmes often need to be in the creative heart of the city — near Via Tortona (design district), Brera (art galleries), or the Quadrilatero. These are also the most expensive areas." },
+      { type: "table", headers: ["Option", "Budget", "Walk to Campus"], rows: [
+        ["Studio in Brera", "€2,500 – €3,500/mo", "5-15 min to most schools"],
+        ["1-bed in Navigli / Tortona", "€2,000 – €3,000/mo", "10 min to IED, 15 min to Marangoni"],
+        ["Serviced apartment Centro", "€2,800 – €3,500/mo", "Central, flexible terms"],
+      ]},
+
+      { type: "h2", text: "Finding the Right Apartment: The Premium Approach" },
+      { type: "p", text: "The standard approach — Immobiliare.it, Idealista, Facebook groups — works for budget-conscious students. For families seeking quality, safety, and a proper contract, it's a minefield of scams, illegal sublets, and overpriced listings." },
+      { type: "p", text: "The premium approach:" },
+      { type: "list", items: [
+        "Platform partners: Premium furnished apartment platforms offer design-quality apartments with all-inclusive monthly pricing, flexible terms, and proper contracts. No dealing with landlords, no deposit disputes, no furniture shopping. We work with vetted providers and can recommend the right one for your needs.",
+        "Private landlords via agent: we work with agents who specialise in premium furnished apartments for international tenants. Proper contratti transitori (temporary contracts, 12-18 months), proper inventories, proper maintenance.",
+        "The golden rule: never transfer a deposit without viewing the apartment in person or through a verified agent. Milan has a significant scam problem for international students — fake listings, phantom landlords, cash-only arrangements. A proper intermediary eliminates this risk entirely.",
+      ]},
+
+      { type: "h2", text: "Healthcare: What Parents Need to Know" },
+      { type: "p", text: "EU students can use the EHIC/TEAM card for emergency care. Non-EU students must purchase private health insurance meeting Italian visa requirements (€150-400/year for basic coverage). But neither gives parents the peace of mind they actually want." },
+      { type: "p", text: "What we recommend: a private GP retainer (€1,000-2,000/year) providing an English-speaking doctor available by phone and with same-day appointments. This is the single most valuable setup for families. Your child has a number to call when they feel unwell at midnight — and you have a doctor who calls you back with an update. We also arrange dental, dermatology, physiotherapy, and psychological support referrals — all English-speaking." },
+
+      { type: "h2", text: "Banking and Financial Setup" },
+      { type: "list", items: [
+        "Italian bank account: required for rent, bills, and daily life. The KYC process takes 4-6 weeks through traditional banks. We expedite through our banking partners.",
+        "Codice fiscale: essential for everything — lease, bank, phone, healthcare. Can be obtained at the Agenzia delle Entrate or at the Italian consulate before arrival.",
+        "Prepaid card (interim): Revolut, N26, or Wise work perfectly in Italy and can be set up before arrival. Use this for the first 4-6 weeks while the Italian account opens.",
+        "Monthly allowance recommendation: €800-1,500/month beyond rent, covering groceries, dining out, transport (€39/month ATM pass), socialising, and weekend travel.",
+        "Parent tip: set up a joint account or authorised card so you can monitor spending and top up remotely. Most Italian banks offer app-based oversight for account holders.",
+      ]},
+
+      { type: "h2", text: "Safety: Milan Is Safe — With Common Sense" },
+      { type: "p", text: "Milan is one of the safest major cities in Europe for students. Violent crime is extremely rare in residential areas. The main risks are: pickpocketing near Duomo and Centrale station (keep phone in front pocket), bike/scooter theft (use two locks, register with police), and apartment scams (use verified agents). The city is well-lit, public transport runs until midnight (night buses after), and most student neighborhoods feel like small towns within the city." },
+      { type: "p", text: "For parents: your child is statistically safer in Milan than in London, Paris, or any major US city. Encourage them to avoid moped rental (the single biggest accident risk for foreigners) and to always sign a proper rental contract (never cash-only arrangements)." },
+
+      { type: "h2", text: "The Social Advantage: Why Milan Changes Careers" },
+      { type: "p", text: "Milan is not just a city — it's a network. Bocconi alumni run investment banks, consulting firms, and luxury brands across Europe. Politecnico graduates lead engineering and architecture firms globally. Marangoni alumni are creative directors at the world's top fashion houses. The connections your child makes in Milan — over aperitivo, at design week, through university clubs — are career infrastructure that lasts decades." },
+      { type: "p", text: "Key networking moments: Salone del Mobile (April — the world's biggest design event), Milan Fashion Week (February/September), Bocconi Career Fair, Politecnico Open Days, and the dozens of industry events that happen weekly in a city that is simultaneously Italy's financial, fashion, design, and media capital." },
+
+      { type: "h2", text: "Our Student Setup Service" },
+      { type: "p", text: "For families who want their child's arrival handled professionally, we offer two packages:" },
+      { type: "table", headers: ["", "Welcome Package", "Premium Package"], rows: [
+        ["Setup fee", "€1,500", "€2,500"],
+        ["Apartment sourcing & contract", "✓", "✓"],
+        ["Airport pickup & orientation", "✓", "✓"],
+        ["Codice fiscale & SIM card", "✓", "✓"],
+        ["Transport card setup", "✓", "✓"],
+        ["Neighborhood tour", "✓", "✓"],
+        ["Bank account setup", "—", "✓"],
+        ["Private GP introduction", "—", "✓"],
+        ["Health insurance setup", "—", "✓"],
+        ["Quarterly check-in with parents", "—", "✓"],
+        ["12-month emergency contact line", "—", "✓"],
+      ]},
+      { type: "callout", text: "Parents invest in their children's education. A settled, healthy, comfortable student performs better academically and gets more from the experience. The setup fee is less than one month's rent — and it ensures the first weeks in Milan are smooth, safe, and stress-free." },
+
+      { type: "h2", text: "When Parents Visit — and Consider Their Own Move" },
+      { type: "p", text: "It happens more often than you'd expect. Parents fly to Milan to drop off their child, spend a weekend exploring the city, and think: 'Why don't we live here too?' Milan's combination of culture, cuisine, healthcare, and — for those qualifying — the €300K flat tax regime makes the city attractive far beyond student life. If you're considering your own relocation, we offer the full range of HNWI advisory services. Your child's experience in Milan is often the first step." },
+
+      { type: "h2", text: "Frequently Asked Questions" },
+      { type: "faq", q: "When should I start looking for an apartment?", a: "For September intake: start in April-May. The best premium apartments go fast, especially near Bocconi and in the centre. Premium serviced apartment providers allow booking 2-3 months ahead. Private market: 1-2 months before arrival is typical." },
+      { type: "faq", q: "Can my child work in Italy while studying?", a: "EU students can work without restrictions. Non-EU students on a study visa can work up to 20 hours/week during term time and full-time during holidays. Many Bocconi students do consulting internships or work at fashion houses during their studies." },
+      { type: "faq", q: "Is Milan expensive for students?", a: "Compared to London or Paris, Milan is 20-30% cheaper for equivalent quality. Compared to smaller Italian cities, it's expensive. The 'premium student' budget of €3,500-5,000/month all-in (rent + living) provides an excellent quality of life — far better than what the same money buys in London." },
+      { type: "faq", q: "What if my child doesn't speak Italian?", a: "Bocconi offers full English-taught programmes. Politecnico has English-taught MSc programmes. Marangoni and IED have English tracks. In daily life, Milan is Italy's most international city — you can navigate entirely in English, though basic Italian makes the experience richer. We can arrange private Italian tutoring." },
+
+      { type: "callout", text: "Disclaimer: This guide provides general information as of May 2026. University fees, rental prices, and policies change annually. Contact us for current, personalised advice tailored to your child's specific situation and university." },
+    ]
+  },
+
 ];
 export default ARTICLES;
 

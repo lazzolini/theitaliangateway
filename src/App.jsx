@@ -59,6 +59,9 @@ async function submitForm(data) {
 const VERTICALS = [
   { id: "banking", icon: "🏦", title: "Private Banking", tagline: "Your wealth, properly introduced",
     desc: "We open the doors to Italy's most exclusive private banks and wealth managers. From account opening to family office coordination, we ensure your assets are managed by the right people.",
+    clientProfile: "You manage a portfolio across multiple jurisdictions. You need a banking partner who understands international structures — SIPPs, trusts, holding companies, multi-currency accounts — and who can work alongside your existing advisors without friction.",
+    confidentialNote: "Private banking is built on discretion. Our banking partners operate under strict confidentiality obligations — you will never see their names or faces on this website. Introductions are made personally and privately, matched to your specific profile and requirements.",
+    advisorTopics: ["Private Banking", "Tax & Legal"],
     subservices: [
       { title: "Account Opening", desc: "Priority access to top-tier Italian and Swiss private banks. We handle documentation, compliance, and introductions to senior relationship managers.", icon: "🔑" },
       { title: "Wealth Advisory Introductions", desc: "Curated introductions to independent wealth advisors, multi-family offices, and asset managers specializing in international clients.", icon: "💼" },
@@ -74,6 +77,8 @@ const VERTICALS = [
   },
   { id: "tax", icon: "⚖️", title: "Tax & Legal", tagline: "Structured for certainty",
     desc: "Italy's flat tax regime is one of the most attractive in Europe for HNWI. We ensure you benefit from every advantage while remaining fully compliant across jurisdictions.",
+    clientProfile: "You are relocating from the UK, UAE, Switzerland, or the US. You need to understand how the €300K flat tax applies to your specific structures — SIPPs, IRAs, trusts, holdings, image rights — and you want certainty before you move, not surprises after.",
+    advisorTopics: ["Tax & Legal"],
     subservices: [
       { title: "Flat Tax Application", desc: "End-to-end management of Italy's €300K flat tax regime. Eligibility assessment, application filing, and annual compliance.", icon: "📋" },
       { title: "Cross-Border Succession", desc: "Inheritance structuring for families across 2-3+ countries. Coordination between Italian, UK, Swiss, US, and UAE advisors to minimize exposure.", icon: "🔗" },
@@ -90,6 +95,8 @@ const VERTICALS = [
   },
   { id: "realestate", icon: "🏠", title: "Real Estate", tagline: "From search to keys in hand",
     desc: "We find, negotiate, and manage the acquisition of exceptional properties across Milan, Lake Como, Tuscany, and the Amalfi Coast. Off-market access, due diligence, and renovation management included.",
+    clientProfile: "You are looking for a primary residence, a weekend retreat, or an investment property in Italy. You want access to off-market opportunities, an honest assessment of the Italian property process, and someone who negotiates on your behalf — not the seller's.",
+    advisorTopics: ["Real Estate"],
     subservices: [
       { title: "Property Search", desc: "Curated selection based on your lifestyle, budget, and location preferences. Access to off-market properties through our network of exclusive agents.", icon: "🔍" },
       { title: "Due Diligence", desc: "Full legal, structural, and urban planning checks. Title verification, zoning compliance, and environmental assessments.", icon: "📋" },
@@ -107,6 +114,8 @@ const VERTICALS = [
   },
   { id: "healthcare", icon: "🏥", title: "Healthcare", tagline: "World-class care, personally arranged",
     desc: "Italy ranks #2 in the WHO healthcare rankings. We connect you to the best private physicians, hospitals, and specialists — all English-speaking, all vetted.",
+    clientProfile: "You are moving your family to Italy and need to know: who will be our doctor? Who do we call at 2am if a child has a fever? How does the Italian system work? You want a medical professional who speaks your language, knows your history, and is available when you need them.",
+    advisorTopics: ["Healthcare"],
     subservices: [
       { title: "Private GP on Retainer", desc: "English-speaking general practitioner available for house calls, same-day appointments, and ongoing health management. Family coverage available.", icon: "👨‍⚕️" },
       { title: "Hospital VIP Access", desc: "Priority access to San Raffaele, Humanitas, IEO, and other top institutions. Dedicated patient coordinators and private suites.", icon: "🏥" },
@@ -123,6 +132,8 @@ const VERTICALS = [
   },
   { id: "education", icon: "🎓", title: "Education", tagline: "The right school changes everything",
     desc: "Milan has 6+ international schools with different curricula and cultures. We match your children to the right school, manage applications, and ensure a smooth transition.",
+    clientProfile: "You have children aged 3-18 and want to know: which school is best for my child? Will they be happy? Will they keep up academically? How do waitlists work? You want someone who has walked families through this before and who knows every school from the inside.",
+    advisorTopics: ["Education"],
     subservices: [
       { title: "School Assessment & Matching", desc: "We evaluate your children's needs, learning style, and your family's priorities to recommend the 2-3 best-fit schools from IB, British, and American curricula.", icon: "📚" },
       { title: "Application Management", desc: "Full application support including document preparation, entrance exam coaching, interview preparation, and waitlist management.", icon: "📝" },
@@ -138,6 +149,8 @@ const VERTICALS = [
   },
   { id: "immigration", icon: "🛂", title: "Immigration", tagline: "Residency without the red tape",
     desc: "Italian bureaucracy is notorious. We cut through it. Residence permits, golden visa, citizenship pathways — all managed end-to-end with dedicated legal support.",
+    clientProfile: "You are a non-EU citizen, or an EU citizen who needs to establish formal Italian residency. You have heard the stories about Italian bureaucracy and you want someone who handles the Questura, the Comune, and the Prefettura so you don't have to.",
+    advisorTopics: ["Immigration", "Tax & Legal"],
     subservices: [
       { title: "Elective Residency Permit", desc: "For retirees and those with passive income. Full application management, documentation, and Questura appointments.", icon: "📋" },
       { title: "Golden Visa (Investor Visa)", desc: "€250K-€2M investment pathways. Government bond, venture capital, or philanthropic donation routes. Application to approval in 3-6 months.", icon: "🏅" },
@@ -154,6 +167,8 @@ const VERTICALS = [
   },
   { id: "yachting", icon: "⛵", title: "Yachting & Marina", tagline: "The Mediterranean, your way",
     desc: "From berth acquisition to full yacht management, we handle everything for yacht owners and charterers in the Italian Riviera, Sardinia, Amalfi Coast, and Sicily.",
+    clientProfile: "You own a yacht — or you want to. You are looking for a premium berth in the Mediterranean, reliable crew, a shipyard you can trust for annual maintenance, or simply a curated charter experience along Italy's most exclusive coastline.",
+    advisorTopics: ["Yachting"],
     subservices: [
       { title: "Berth Acquisition", desc: "Secure premium berths in Portofino, Porto Cervo, Capri, Amalfi, and Sanremo. Long-term contracts and seasonal reservations at the most sought-after marinas.", icon: "⚓" },
       { title: "Yacht Registration", desc: "Italian and EU flag registration. RINA certification, safety compliance, and all documentation for commercial and private vessels up to 80m+.", icon: "🏳️" },
@@ -486,6 +501,9 @@ function VerticalPage({ id, setPage }) {
     setSent(true);
   };
 
+  // Find relevant advisors for this vertical
+  const relevantAdvisors = [...ADVISORS.core, ...ADVISORS.lifestyle].filter(a => a.name && v.advisorTopics && v.advisorTopics.some(t => a.topics.some(at => at === t)));
+
   return (
     <section style={{ padding:"120px 24px 80px",maxWidth:900,margin:"0 auto" }}>
       <span onClick={() => {setPage("home");window.scrollTo(0,0);setTimeout(()=>document.getElementById("services")?.scrollIntoView({behavior:"smooth"}),200)}} style={{ color:C.gold,fontSize:13,cursor:"pointer",display:"inline-block",marginBottom:32 }}>{"< All Services"}</span>
@@ -498,6 +516,25 @@ function VerticalPage({ id, setPage }) {
         </div>
       </FadeIn>
 
+      {/* Client profile */}
+      {v.clientProfile && <FadeIn delay={80}>
+        <div style={{ background:"rgba(201,169,110,0.04)",borderLeft:"3px solid "+C.gold,padding:"24px 28px",marginBottom:48 }}>
+          <div style={{ color:C.gold,fontSize:11,letterSpacing:3,textTransform:"uppercase",marginBottom:8 }}>Is This for You?</div>
+          <p style={{ color:C.text,fontSize:15,lineHeight:1.7,margin:0 }}>{v.clientProfile}</p>
+        </div>
+      </FadeIn>}
+
+      {/* Confidential note for banking */}
+      {v.confidentialNote && <FadeIn delay={120}>
+        <div style={{ background:C.card,border:"1px solid "+C.border,padding:"28px 32px",marginBottom:48,display:"flex",gap:24,alignItems:"flex-start",flexWrap:"wrap" }}>
+          <div style={{ fontSize:36,flexShrink:0 }}>🔒</div>
+          <div style={{ flex:1,minWidth:250 }}>
+            <div style={{ color:C.white,fontSize:16,fontFamily:"Georgia,serif",marginBottom:8 }}>A note on discretion</div>
+            <p style={{ color:C.textDim,fontSize:14,lineHeight:1.7,margin:0 }}>{v.confidentialNote}</p>
+          </div>
+        </div>
+      </FadeIn>}
+
       <div style={{ marginBottom:64 }}>
         <FadeIn delay={100}><h2 style={{ fontFamily:"Georgia,serif",fontSize:24,color:C.white,fontWeight:400,marginBottom:32,paddingBottom:16,borderBottom:"1px solid "+C.border }}>Our services</h2></FadeIn>
         <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))",gap:20 }}>
@@ -508,6 +545,25 @@ function VerticalPage({ id, setPage }) {
           </div></FadeIn>)}
         </div>
       </div>
+
+      {/* Relevant advisors */}
+      {relevantAdvisors.length > 0 && <FadeIn delay={300}>
+        <div style={{ marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:24,color:C.white,fontWeight:400,marginBottom:24,paddingBottom:16,borderBottom:"1px solid "+C.border }}>Your {v.title} team</h2>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:20 }}>
+            {relevantAdvisors.map(a => <div key={a.id} style={{ background:C.card,border:"1px solid "+C.border,overflow:"hidden" }}>
+              {a.photo && <div style={{ width:"100%",height:220,overflow:"hidden",background:"#0d1423" }}>
+                <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 20%",filter:"brightness(0.95)" }}/>
+              </div>}
+              <div style={{ padding:"20px 24px" }}>
+                <h3 style={{ fontFamily:"Georgia,serif",fontSize:18,color:C.white,fontWeight:400,marginBottom:4 }}>{a.name}</h3>
+                <p style={{ color:C.gold,fontSize:12,fontStyle:"italic",marginBottom:8 }}>{a.title}</p>
+                <p style={{ color:C.textDim,fontSize:13,lineHeight:1.5,margin:0 }}>{a.short}</p>
+              </div>
+            </div>)}
+          </div>
+        </div>
+      </FadeIn>}
 
       <FadeIn delay={400}>
         <div style={{ background:C.card,border:"1px solid "+C.gold,padding:"48px 40px" }}>
@@ -988,8 +1044,8 @@ function AdvisorsSection() {
           <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))",gap:24,marginBottom:48 }}>
             {allCore.map((a,i) => <FadeIn key={a.id} delay={i*100}>
               <div style={{ background:C.bg,border:"1px solid "+C.border,overflow:"hidden",transition:"border-color 0.3s" }} onMouseEnter={e=>e.currentTarget.style.borderColor=C.goldDim} onMouseLeave={e=>e.currentTarget.style.borderColor=C.border}>
-                {a.photo && <div style={{ width:"100%",height:280,overflow:"hidden",background:"#0d1423" }}>
-                  <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 20%",filter:"brightness(0.95)" }} />
+                {a.photo && <div style={{ width:"100%",height:320,overflow:"hidden",background:"#0d1423" }}>
+                  <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center top",display:"block" }} />
                 </div>}
                 <div style={{ padding:"24px 28px 28px" }}>
                   <h3 style={{ fontFamily:"Georgia,serif",fontSize:20,color:C.white,fontWeight:400,marginBottom:4 }}>{a.name}</h3>
@@ -1006,8 +1062,8 @@ function AdvisorsSection() {
           <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:24 }}>
             {allLifestyle.map((a,i) => <FadeIn key={a.id} delay={i*100}>
               <div style={{ background:C.bg,border:"1px solid "+C.border,overflow:"hidden",transition:"border-color 0.3s" }} onMouseEnter={e=>e.currentTarget.style.borderColor=C.goldDim} onMouseLeave={e=>e.currentTarget.style.borderColor=C.border}>
-                {a.photo && <div style={{ width:"100%",height:240,overflow:"hidden",background:"#0d1423" }}>
-                  <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 20%",filter:"brightness(0.95)" }} />
+                {a.photo && <div style={{ width:"100%",height:300,overflow:"hidden",background:"#0d1423" }}>
+                  <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center top",display:"block" }} />
                 </div>}
                 <div style={{ padding:"24px 28px 28px" }}>
                   <h3 style={{ fontFamily:"Georgia,serif",fontSize:18,color:C.white,fontWeight:400,marginBottom:4 }}>{a.name}</h3>
@@ -1030,8 +1086,8 @@ function ArticleAdvisor({ articleCat }) {
   return (
     <div style={{ background:C.card,border:"1px solid "+C.border,marginTop:48,padding:0,overflow:"hidden" }}>
       <div style={{ display:"flex",flexWrap:"wrap" }}>
-        {a.photo && <div style={{ width:200,minHeight:240,flexShrink:0,overflow:"hidden",background:"#0d1423" }}>
-          <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 20%" }} />
+        {a.photo && <div style={{ width:220,minHeight:260,flexShrink:0,overflow:"hidden",background:"#0d1423" }}>
+          <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center top",display:"block" }} />
         </div>}
         <div style={{ flex:1,padding:"32px 36px",minWidth:280 }}>
           <div style={{ color:C.gold,fontSize:11,letterSpacing:3,textTransform:"uppercase",marginBottom:12 }}>Your Expert for This Topic</div>
