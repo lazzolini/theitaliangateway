@@ -1759,6 +1759,143 @@ const ARTICLES = [
     ]
   },
 
+  // =============================================================
+  // ARTICLE 24 — Elite Universities in Milan for Wealthy Families
+  // =============================================================
+  {
+    id: "elite-universities-milan-fashion-business-design-2026",
+    cat: "Education",
+    title: "Milan's Elite Universities: Where the World's Wealthiest Families Send Their Children in 2026",
+    date: "May 2026",
+    read: "14 min",
+    desc: "Bocconi, Politecnico, Istituto Marangoni, IED, Domus Academy, NABA, Cattolica — a complete guide to Milan's top universities for wealthy international families. Tuition, reputation, career outcomes, social life, and what no brochure will tell you.",
+    content: [
+      { type: "p", text: "Milan is not just Italy's business capital — it is the only European city that is simultaneously a global hub for finance, fashion, design, and engineering. This convergence makes it the university destination of choice for wealthy international families who want their children to build careers at the intersection of creativity and commerce." },
+      { type: "p", text: "This guide covers every institution that attracts children of HNWI and UHNWI families — from the traditional prestige of Bocconi to the creative powerhouses of Marangoni and IED. We include what the brochures say, what they don't say, and what actually matters for families investing significantly in their child's future." },
+
+      { type: "h2", text: "Bocconi University — The European Ivy League" },
+      { type: "p", text: "Founded in 1902, Bocconi is Italy's most selective university and the only Italian institution consistently ranked among the world's top 10 for business and economics (QS, FT). It is where the children of Italian industrialists, European aristocrats, and global business families study alongside scholarship students — creating a network that opens doors across finance, consulting, and luxury brand management." },
+      { type: "table", headers: ["Detail", "Info"], rows: [
+        ["Ranking", "#7 worldwide for Business & Management (QS 2025)"],
+        ["Tuition (BSc)", "€5,000 – €14,000/year (means-tested); full fee ~€14,000"],
+        ["Tuition (MSc)", "€14,000 – €30,000/year"],
+        ["Language", "Full English-taught BSc and MSc programmes available"],
+        ["Acceptance rate", "~12% for international students (BSc)"],
+        ["Notable alumni", "CEOs of Gucci, Luxottica, UniCredit; Goldman Sachs MDs; McKinsey partners"],
+        ["Career placement", "96% employed within 6 months; average starting salary €35,000+ (Italy), €55,000+ (abroad)"],
+        ["Campus", "New SANAA-designed campus (2019) — one of Europe's most modern"],
+      ]},
+      { type: "callout", text: "What the brochure doesn't say: Bocconi's real value isn't the education — it's the network. The Bocconi Alumni Association has 120,000+ members globally. The student body is 50%+ international in MSc programmes. The connections made at Bocconi cocktail events, study groups, and exchange programmes (Wharton, HEC, LSE) define careers." },
+      { type: "p", text: "Social life: Bocconi students are Milan's young elite. Aperitivo in Navigli, weekends in Como and Portofino, ski trips to Cortina. The social scene is expensive by student standards (€500-800/month for dining and entertainment) but modest compared to London or New York. The university's location in the Porta Romana neighbourhood means walkable access to the city's best restaurants, galleries, and nightlife." },
+
+      { type: "h2", text: "Politecnico di Milano — World-Class Engineering & Architecture" },
+      { type: "p", text: "Politecnico is the MIT of continental Europe. Founded in 1863, it is consistently ranked #1 in Italy and top 20 globally for engineering, architecture, and design (QS). Unlike Bocconi's finance-centric culture, Politecnico attracts a more diverse, international, and technically brilliant student body — including children of industrialists, real estate developers, and tech founders." },
+      { type: "table", headers: ["Detail", "Info"], rows: [
+        ["Ranking", "#1 in Italy; #111 worldwide (QS 2025); Top 10 for Art & Design"],
+        ["Tuition", "€890 – €3,900/year (means-tested); max ~€6,000 for high-income non-EU"],
+        ["Language", "All MSc programmes in English; BSc mostly Italian with some English tracks"],
+        ["Campuses", "Leonardo (Città Studi), Bovisa (design & engineering), Lecco, Mantova"],
+        ["Notable output", "Architects: Renzo Piano studied here. Engineers at Ferrari, Lamborghini, Pirelli. Design directors at Alessi, Artemide"],
+        ["Career placement", "94% employed within 12 months; strong demand from automotive, tech, and architecture firms"],
+      ]},
+      { type: "p", text: "The hidden advantage: Politecnico's tuition is absurdly low for its quality. Even at the maximum rate, it costs less than one month's rent in the Quadrilatero. This means families invest in lifestyle and experience rather than tuition — a fundamentally different calculation from US or UK universities." },
+
+      { type: "h2", text: "Istituto Marangoni — The Fashion & Luxury Academy" },
+      { type: "p", text: "Founded in 1935, Marangoni is the most prestigious fashion school in Italy and one of the top 3 globally alongside Central Saint Martins and Parsons. Campuses in Milan, Florence, Paris, London, and Shanghai. The Milan campus is in the heart of the fashion district — students literally walk past Prada, Versace, and Armani headquarters on their way to class." },
+      { type: "table", headers: ["Detail", "Info"], rows: [
+        ["Programmes", "Fashion Design, Fashion Business, Fashion Styling, Luxury Brand Management, Interior Design, Art Direction"],
+        ["Tuition", "€25,000 – €35,000/year (depending on programme)"],
+        ["Language", "English and Italian tracks"],
+        ["Duration", "3-year undergraduate; 1-year master's"],
+        ["Notable alumni", "Domenico Dolce (Dolce & Gabbana), Franco Moschino, Alessandro Sartori (Zegna artistic director)"],
+        ["Industry access", "Internships at Gucci, Prada, LVMH, Kering arranged through the school's corporate network"],
+      ]},
+      { type: "p", text: "Marangoni attracts the children of fashion industry families, Gulf royalty, and Asian luxury brand owners. The student body is extremely international (80%+) and affluent. The school's value proposition is not academic rigour — it's industry access. Students show at Milan Fashion Week, intern at the world's top houses, and graduate into a network that is impossible to access from outside." },
+      { type: "callout", text: "The honest assessment: Marangoni is expensive and not academically comparable to a traditional university. But for students who know they want a career in fashion, luxury, or design, the industry connections and Milan location make it worth every euro. If your child is unsure about fashion, Bocconi's Luxury Brand Management track might be a better bet." },
+
+      { type: "h2", text: "IED — Istituto Europeo di Design" },
+      { type: "p", text: "IED is larger and more diverse than Marangoni, with a broader range of design disciplines: product design, transportation design, interior design, visual communication, fashion, photography, and video. Founded in 1966, IED has 11 campuses worldwide but Milan remains the flagship." },
+      { type: "table", headers: ["Detail", "Info"], rows: [
+        ["Programmes", "Design, Fashion, Visual Arts, Communication, Management"],
+        ["Tuition", "€15,000 – €22,000/year"],
+        ["Language", "English and Italian tracks"],
+        ["Duration", "3-year undergraduate; 1-year master's"],
+        ["Strength", "Transportation Design (Ferrari, Lamborghini recruit directly); Product Design; Visual Communication"],
+        ["Student body", "12,000+ students, 100+ nationalities"],
+      ]},
+      { type: "p", text: "IED is the practical alternative to Marangoni for design-minded students. Less fashion-focused, more industrially oriented. The transportation design programme is legendary — graduates work at every major automotive design studio in Europe. For families in the automotive or product design world, IED is the feeder school." },
+
+      { type: "h2", text: "Domus Academy — Postgraduate Design Excellence" },
+      { type: "p", text: "Founded in 1982 by architect and design critic Andrea Branzi, Domus Academy is Milan's most intellectually ambitious design school. It offers master's programmes only — 1-year intensives in interaction design, luxury brand management, urban planning, fashion, and product design. The school is part of the NABA-Domus group (owned by Galileo Global Education)." },
+      { type: "table", headers: ["Detail", "Info"], rows: [
+        ["Programmes", "Master's only: Interaction Design, Fashion Management, Urban Vision, Product Design, Luxury Brand Management"],
+        ["Tuition", "€22,000 – €28,000/year"],
+        ["Duration", "1 year (11 months)"],
+        ["Approach", "Project-based, working with real corporate partners (Swarovski, Fiat, Samsung)"],
+        ["Student body", "Small cohorts (20-30 per programme), 90%+ international"],
+      ]},
+      { type: "p", text: "Domus is for the student who already has an undergraduate degree and wants a transformative, intensive year in Milan's design ecosystem. Small classes, direct industry projects, and a campus in the Navigli district. It attracts mature, driven students from wealthy creative families — not undergraduates figuring out their path." },
+
+      { type: "h2", text: "NABA — Nuova Accademia di Belle Arti" },
+      { type: "p", text: "NABA is the largest private art academy in Italy, recognised by the Italian Ministry of Education. It offers undergraduate and master's programmes in fashion, design, graphic design, media design, visual arts, and set design. The campus is in the Navigli district — Milan's most creative neighbourhood." },
+      { type: "table", headers: ["Detail", "Info"], rows: [
+        ["Tuition", "€15,000 – €20,000/year"],
+        ["Programmes", "Fashion Design, Graphic Design, Media Design, Set Design, Visual Arts, Creative Technologies"],
+        ["Language", "English and Italian"],
+        ["Ranking", "Top 100 worldwide for Art & Design (QS)"],
+        ["Strength", "Set design (graduates work at La Scala, RAI, international film productions)"],
+      ]},
+
+      { type: "h2", text: "Università Cattolica del Sacro Cuore" },
+      { type: "p", text: "Italy's largest private university, founded in 1921. Cattolica occupies a stunning Renaissance cloister in central Milan (designed by Bramante — yes, the architect of St. Peter's Basilica). Less internationally known than Bocconi but highly respected in Italy for economics, law, medicine, and humanities. It attracts established Italian families and a growing number of international students." },
+      { type: "table", headers: ["Detail", "Info"], rows: [
+        ["Tuition", "€4,000 – €12,000/year (means-tested)"],
+        ["Campuses", "Milan (main), Rome, Brescia, Piacenza"],
+        ["Programmes", "Economics, Law, Political Science, Medicine, Humanities, Psychology"],
+        ["Language", "Selected English-taught programmes; most in Italian"],
+        ["Strength", "ALTIS (postgraduate sustainability management), Gemelli Hospital (Rome — Italy's top university hospital)"],
+      ]},
+
+      { type: "h2", text: "Which University for Which Student?" },
+      { type: "table", headers: ["If your child wants to...", "Best fit", "Why"], rows: [
+        ["Work in finance, consulting, or luxury brand management", "Bocconi", "Network, ranking, career placement — the only choice"],
+        ["Become an architect or engineer", "Politecnico", "Global top 20, absurdly affordable, industry-defining"],
+        ["Enter the fashion industry as a designer or creative director", "Marangoni", "Industry access, Milan Fashion Week exposure, alumni network"],
+        ["Work in automotive or product design", "IED", "Ferrari, Lamborghini, Alessi recruit directly from IED"],
+        ["Do a postgraduate year in design or innovation", "Domus Academy", "Intensive, project-based, small cohorts with corporate partners"],
+        ["Pursue arts, set design, or media in a creative environment", "NABA", "Creative freedom, Navigli campus, strong visual arts programme"],
+        ["Study economics or law with traditional Italian prestige", "Cattolica", "Renaissance campus, strong alumni in Italian institutions"],
+        ["Not sure yet — wants a broad, excellent education", "Bocconi or Politecnico", "Both offer world-class education with flexibility to specialise later"],
+      ]},
+
+      { type: "h2", text: "The Milan Student Lifestyle for Wealthy Families" },
+      { type: "p", text: "Milan is not a college town — it's a global city where your child happens to study. This means the student experience is urban, sophisticated, and international. Aperitivo culture starts at 6pm (Navigli, Brera, Porta Nuova). Weekend trips to Como, Portofino, Venice, and the Dolomites are normal. Fashion Week, Salone del Mobile, and Formula 1 at Monza are part of the social calendar." },
+      { type: "p", text: "For families accustomed to a certain standard, Milan delivers without the pretentiousness of London or the costs of New York. A beautiful apartment, excellent food, and a vibrant social life are available at a fraction of what comparable quality costs in other global cities. And when your child graduates, they do so with a professional network that spans Europe and beyond — and a city they may never want to leave." },
+
+      { type: "h2", text: "Our Student Setup Service" },
+      { type: "p", text: "We offer dedicated support for families enrolling children at any Milan university. From apartment sourcing to healthcare, banking, and neighbourhood orientation — everything handled so your child arrives ready to succeed, not overwhelmed by bureaucracy." },
+      { type: "table", headers: ["", "Welcome — €1,500", "Premium — €2,500"], rows: [
+        ["Apartment sourcing & contract", "✓", "✓"],
+        ["Airport pickup & orientation", "✓", "✓"],
+        ["Codice fiscale, SIM, transport", "✓", "✓"],
+        ["Neighbourhood tour", "✓", "✓"],
+        ["Bank account setup", "—", "✓"],
+        ["Private GP introduction", "—", "✓"],
+        ["Health insurance", "—", "✓"],
+        ["Quarterly parent check-in", "—", "✓"],
+        ["12-month emergency line", "—", "✓"],
+      ]},
+
+      { type: "h2", text: "Frequently Asked Questions" },
+      { type: "faq", q: "Is Bocconi really worth it compared to LSE or HEC?", a: "For living in Milan while studying at a top-10 business school: absolutely. Bocconi's tuition (€14-30K) is a fraction of LSE (£25-40K) or US equivalents ($80K+). The network is equally powerful in continental Europe, luxury, and finance. If your child wants a career in London specifically, LSE may edge it. For everywhere else, Bocconi is the smarter investment." },
+      { type: "faq", q: "My child wants to study fashion. Marangoni or Central Saint Martins?", a: "CSM has stronger academic rigour and London's creative ecosystem. Marangoni has Milan — the production, supply chain, and commercial heart of global fashion. CSM graduates become designers. Marangoni graduates become design directors and brand managers. Both are excellent; the choice depends on whether your child is more creative or commercial." },
+      { type: "faq", q: "Can my child get a work permit after graduating?", a: "EU citizens need no permit. Non-EU graduates can convert their study visa to a work visa if they find qualifying employment within 12 months of graduation. Italy's post-study work visa options have improved significantly since 2023. Bocconi and Politecnico have dedicated career services that assist with this process." },
+      { type: "faq", q: "Are Italian university degrees recognised globally?", a: "Yes. Bocconi, Politecnico, and Cattolica are fully accredited and internationally recognised. Bocconi holds AACSB, EQUIS, and AMBA triple accreditation. Marangoni and IED degrees are recognised by the Italian Ministry of Education and accepted by employers globally — though they carry more weight in their specific industries than in general academia." },
+
+      { type: "callout", text: "Disclaimer: This guide provides general information as of May 2026. University rankings, fees, and admission policies change annually. Contact us for current, personalised advice. The Italian Gateway provides a dedicated student setup service for families enrolling children at any Milan university." },
+    ]
+  },
+
 ];
 export default ARTICLES;
 

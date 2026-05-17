@@ -1006,6 +1006,10 @@ function Pricing() {
           <button onClick={()=>document.getElementById("contact")?.scrollIntoView({behavior:"smooth"})} style={{ width:"100%",marginTop:32,padding:"14px 0",border:t.popular?"none":"1px solid "+C.gold,background:t.popular?C.gold:"transparent",color:t.popular?C.bg:C.gold,fontSize:13,fontWeight:600,letterSpacing:2,cursor:"pointer" }}>BOOK A CALL</button>
         </div></FadeIn>)}
       </div>
+      <FadeIn delay={400}><div style={{ marginTop:40,background:"rgba(201,169,110,0.04)",borderLeft:"3px solid "+C.gold,padding:"24px 28px",maxWidth:800,margin:"40px auto 0" }}>
+        <div style={{ display:"flex",alignItems:"center",gap:12,marginBottom:8 }}><span style={{ fontSize:20 }}>🎓</span><span style={{ color:C.gold,fontSize:13,fontWeight:600,letterSpacing:1 }}>STUDENT SETUP SERVICE</span></div>
+        <p style={{ color:C.text,fontSize:14,lineHeight:1.7,margin:0 }}>Sending your child to Bocconi, Politecnico, Marangoni, IED, or Domus Academy? Our base packages are available for international students too. <strong style={{ color:C.gold }}>Welcome Package (€1,500):</strong> apartment sourcing, airport pickup, codice fiscale, SIM, transport card, neighbourhood tour. <strong style={{ color:C.gold }}>Premium Package (€2,500):</strong> everything above plus bank account, private GP, health insurance, quarterly check-ins with parents, and 12-month emergency contact line.</p>
+      </div></FadeIn>
     </section>
   );
 }
