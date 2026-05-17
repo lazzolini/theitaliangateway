@@ -34,6 +34,17 @@ const ADVISORS = {
       topics: ["Healthcare"],
       email: "info@theitaliangateway.com",
     },
+    {
+      id: "private-banking",
+      name: "Private Banking Team",
+      title: "Wealth Management & Private Banking",
+      photo: null,
+      anonymous: true,
+      desc: "Our private banking introductions are handled with the utmost discretion. We work with senior relationship managers at Italy's leading private banks and international institutions with Italian desks. By the nature of the profession, our banking partners remain confidential — introductions are made personally, matched to your specific profile, asset structure, and requirements.",
+      short: "Confidential introductions to Italy's leading private banks",
+      topics: ["Private Banking"],
+      email: "info@theitaliangateway.com",
+    },
   ],
   lifestyle: [
     {
@@ -550,16 +561,17 @@ function VerticalPage({ id, setPage }) {
       {relevantAdvisors.length > 0 && <FadeIn delay={300}>
         <div style={{ marginBottom:48 }}>
           <h2 style={{ fontFamily:"Georgia,serif",fontSize:24,color:C.white,fontWeight:400,marginBottom:24,paddingBottom:16,borderBottom:"1px solid "+C.border }}>Your {v.title} team</h2>
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:20 }}>
-            {relevantAdvisors.map(a => <div key={a.id} style={{ background:C.card,border:"1px solid "+C.border,overflow:"hidden" }}>
-              {a.photo && <div style={{ width:"100%",height:220,overflow:"hidden",background:"#0d1423" }}>
-                <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 20%",filter:"brightness(0.95)" }}/>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",gap:24 }}>
+            {relevantAdvisors.map(a => <div key={a.id} style={{ textAlign:"center",padding:"24px 16px" }}>
+              {a.photo ? <div style={{ width:120,height:120,borderRadius:"50%",overflow:"hidden",border:"2px solid "+C.gold,margin:"0 auto 12px",background:"#0d1423" }}>
+                <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 20%" }}/>
+              </div> : <div style={{ width:120,height:120,borderRadius:"50%",border:"2px solid "+C.gold,margin:"0 auto 12px",background:"linear-gradient(145deg,#111827,#0d1423)",display:"flex",alignItems:"center",justifyContent:"center" }}>
+                <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="10" r="2.5"/><path d="M12 12.5c-2.5 0-4 1.5-4 3v.5h8v-.5c0-1.5-1.5-3-4-3z"/></svg>
               </div>}
-              <div style={{ padding:"20px 24px" }}>
-                <h3 style={{ fontFamily:"Georgia,serif",fontSize:18,color:C.white,fontWeight:400,marginBottom:4 }}>{a.name}</h3>
-                <p style={{ color:C.gold,fontSize:12,fontStyle:"italic",marginBottom:8 }}>{a.title}</p>
-                <p style={{ color:C.textDim,fontSize:13,lineHeight:1.5,margin:0 }}>{a.short}</p>
-              </div>
+              <h3 style={{ fontFamily:"Georgia,serif",fontSize:17,color:C.white,fontWeight:400,marginBottom:4 }}>{a.name}</h3>
+              <p style={{ color:C.gold,fontSize:11,fontStyle:"italic",marginBottom:8 }}>{a.title}</p>
+              <p style={{ color:C.textDim,fontSize:12,lineHeight:1.5,margin:0 }}>{a.short}</p>
+              {a.anonymous && <p style={{ color:C.textDim,fontSize:10,marginTop:8,fontStyle:"italic",opacity:0.7 }}>Introductions are made confidentially</p>}
             </div>)}
           </div>
         </div>
@@ -1030,6 +1042,19 @@ function AdvisorsSection() {
   const allCore = ADVISORS.core.filter(a => a.name);
   const allLifestyle = ADVISORS.lifestyle.filter(a => a.name);
   if (allCore.length === 0 && allLifestyle.length === 0) return null;
+
+  const PhotoCircle = ({ src, name, size=160 }) => (
+    <div style={{ width:size,height:size,borderRadius:"50%",overflow:"hidden",border:"2px solid "+C.gold,flexShrink:0,margin:"0 auto 16px",background:"#0d1423" }}>
+      <img src={src} alt={name} loading="lazy" style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 20%" }}/>
+    </div>
+  );
+
+  const AnonIcon = ({ size=160 }) => (
+    <div style={{ width:size,height:size,borderRadius:"50%",overflow:"hidden",border:"2px solid "+C.gold,flexShrink:0,margin:"0 auto 16px",background:"linear-gradient(145deg,#111827,#0d1423)",display:"flex",alignItems:"center",justifyContent:"center" }}>
+      <svg width={size*0.45} height={size*0.45} viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="10" r="2.5"/><path d="M12 12.5c-2.5 0-4 1.5-4 3v.5h8v-.5c0-1.5-1.5-3-4-3z"/></svg>
+    </div>
+  );
+
   return (
     <section style={{ padding:"100px 24px",background:C.card }}>
       <div style={{ maxWidth:1000,margin:"0 auto" }}>
@@ -1040,36 +1065,29 @@ function AdvisorsSection() {
         </div></FadeIn>
 
         {allCore.length > 0 && <>
-          <div style={{ color:C.gold,fontSize:11,letterSpacing:4,textTransform:"uppercase",marginBottom:24 }}>Core Advisors</div>
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))",gap:24,marginBottom:48 }}>
+          <div style={{ color:C.gold,fontSize:11,letterSpacing:4,textTransform:"uppercase",marginBottom:32 }}>Core Advisors</div>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))",gap:32,marginBottom:56 }}>
             {allCore.map((a,i) => <FadeIn key={a.id} delay={i*100}>
-              <div style={{ background:C.bg,border:"1px solid "+C.border,overflow:"hidden",transition:"border-color 0.3s" }} onMouseEnter={e=>e.currentTarget.style.borderColor=C.goldDim} onMouseLeave={e=>e.currentTarget.style.borderColor=C.border}>
-                {a.photo && <div style={{ width:"100%",height:320,overflow:"hidden",background:"#0d1423" }}>
-                  <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center top",display:"block" }} />
-                </div>}
-                <div style={{ padding:"24px 28px 28px" }}>
-                  <h3 style={{ fontFamily:"Georgia,serif",fontSize:20,color:C.white,fontWeight:400,marginBottom:4 }}>{a.name}</h3>
-                  <p style={{ color:C.gold,fontSize:13,fontStyle:"italic",marginBottom:12 }}>{a.title}</p>
-                  <p style={{ color:C.textDim,fontSize:13,lineHeight:1.6,margin:0 }}>{a.short}</p>
-                </div>
+              <div style={{ textAlign:"center",padding:"32px 16px" }}>
+                {a.photo ? <PhotoCircle src={a.photo} name={a.name}/> : <AnonIcon/>}
+                <h3 style={{ fontFamily:"Georgia,serif",fontSize:19,color:C.white,fontWeight:400,marginBottom:4 }}>{a.name}</h3>
+                <p style={{ color:C.gold,fontSize:12,fontStyle:"italic",marginBottom:12,letterSpacing:1 }}>{a.title}</p>
+                <p style={{ color:C.textDim,fontSize:13,lineHeight:1.6,margin:0 }}>{a.short}</p>
+                {a.anonymous && <p style={{ color:C.textDim,fontSize:11,marginTop:12,fontStyle:"italic",opacity:0.7 }}>Introductions are made confidentially</p>}
               </div>
             </FadeIn>)}
           </div>
         </>}
 
         {allLifestyle.length > 0 && <>
-          <div style={{ color:C.gold,fontSize:11,letterSpacing:4,textTransform:"uppercase",marginBottom:24 }}>Lifestyle Network</div>
-          <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:24 }}>
+          <div style={{ color:C.gold,fontSize:11,letterSpacing:4,textTransform:"uppercase",marginBottom:32 }}>Lifestyle Network</div>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))",gap:32 }}>
             {allLifestyle.map((a,i) => <FadeIn key={a.id} delay={i*100}>
-              <div style={{ background:C.bg,border:"1px solid "+C.border,overflow:"hidden",transition:"border-color 0.3s" }} onMouseEnter={e=>e.currentTarget.style.borderColor=C.goldDim} onMouseLeave={e=>e.currentTarget.style.borderColor=C.border}>
-                {a.photo && <div style={{ width:"100%",height:300,overflow:"hidden",background:"#0d1423" }}>
-                  <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center top",display:"block" }} />
-                </div>}
-                <div style={{ padding:"24px 28px 28px" }}>
-                  <h3 style={{ fontFamily:"Georgia,serif",fontSize:18,color:C.white,fontWeight:400,marginBottom:4 }}>{a.name}</h3>
-                  <p style={{ color:C.gold,fontSize:13,fontStyle:"italic",marginBottom:12 }}>{a.title}</p>
-                  <p style={{ color:C.textDim,fontSize:13,lineHeight:1.6,margin:0 }}>{a.short}</p>
-                </div>
+              <div style={{ textAlign:"center",padding:"32px 16px" }}>
+                {a.photo ? <PhotoCircle src={a.photo} name={a.name} size={140}/> : <AnonIcon size={140}/>}
+                <h3 style={{ fontFamily:"Georgia,serif",fontSize:18,color:C.white,fontWeight:400,marginBottom:4 }}>{a.name}</h3>
+                <p style={{ color:C.gold,fontSize:12,fontStyle:"italic",marginBottom:12,letterSpacing:1 }}>{a.title}</p>
+                <p style={{ color:C.textDim,fontSize:13,lineHeight:1.6,margin:0 }}>{a.short}</p>
               </div>
             </FadeIn>)}
           </div>
@@ -1084,17 +1102,19 @@ function ArticleAdvisor({ articleCat }) {
   if (relevant.length === 0) return null;
   const a = relevant[0];
   return (
-    <div style={{ background:C.card,border:"1px solid "+C.border,marginTop:48,padding:0,overflow:"hidden" }}>
-      <div style={{ display:"flex",flexWrap:"wrap" }}>
-        {a.photo && <div style={{ width:220,minHeight:260,flexShrink:0,overflow:"hidden",background:"#0d1423" }}>
-          <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center top",display:"block" }} />
+    <div style={{ background:C.card,border:"1px solid "+C.border,marginTop:48,padding:"36px 40px",overflow:"hidden" }}>
+      <div style={{ display:"flex",alignItems:"center",gap:28,flexWrap:"wrap" }}>
+        {a.photo ? <div style={{ width:100,height:100,borderRadius:"50%",overflow:"hidden",border:"2px solid "+C.gold,flexShrink:0,background:"#0d1423" }}>
+          <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 20%" }}/>
+        </div> : <div style={{ width:100,height:100,borderRadius:"50%",border:"2px solid "+C.gold,flexShrink:0,background:"linear-gradient(145deg,#111827,#0d1423)",display:"flex",alignItems:"center",justifyContent:"center" }}>
+          <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="10" r="2.5"/><path d="M12 12.5c-2.5 0-4 1.5-4 3v.5h8v-.5c0-1.5-1.5-3-4-3z"/></svg>
         </div>}
-        <div style={{ flex:1,padding:"32px 36px",minWidth:280 }}>
-          <div style={{ color:C.gold,fontSize:11,letterSpacing:3,textTransform:"uppercase",marginBottom:12 }}>Your Expert for This Topic</div>
-          <h3 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:4 }}>{a.name}</h3>
-          <p style={{ color:C.gold,fontSize:14,fontStyle:"italic",marginBottom:16 }}>{a.title}</p>
-          <p style={{ color:C.textDim,fontSize:14,lineHeight:1.7,marginBottom:20 }}>{a.desc}</p>
-          <a href={"mailto:"+a.email+"?subject=Inquiry — "+a.title} style={{ background:C.gold,color:C.bg,padding:"12px 28px",fontSize:13,fontWeight:600,letterSpacing:2,textDecoration:"none",display:"inline-block" }}>GET IN TOUCH</a>
+        <div style={{ flex:1,minWidth:220 }}>
+          <div style={{ color:C.gold,fontSize:10,letterSpacing:3,textTransform:"uppercase",marginBottom:6 }}>Your Expert for This Topic</div>
+          <h3 style={{ fontFamily:"Georgia,serif",fontSize:20,color:C.white,fontWeight:400,marginBottom:2 }}>{a.name}</h3>
+          <p style={{ color:C.gold,fontSize:13,fontStyle:"italic",marginBottom:12 }}>{a.title}</p>
+          <p style={{ color:C.textDim,fontSize:13,lineHeight:1.6,marginBottom:16 }}>{a.desc}</p>
+          {a.anonymous ? <p style={{ color:C.textDim,fontSize:12,fontStyle:"italic" }}>Introductions are made confidentially and matched to your profile</p> : <a href={"mailto:"+a.email+"?subject=Inquiry — "+a.title} style={{ background:C.gold,color:C.bg,padding:"10px 24px",fontSize:12,fontWeight:600,letterSpacing:2,textDecoration:"none",display:"inline-block" }}>GET IN TOUCH</a>}
         </div>
       </div>
     </div>

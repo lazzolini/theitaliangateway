@@ -35,7 +35,8 @@ function renderBlock(b) {
   return '';
 }
 
-function page(title, desc, canonical, body) {
+function page(title, desc, canonical, body, jsonLd) {
+  const ldScript = jsonLd ? jsonLd.map(j => `<script type="application/ld+json">${JSON.stringify(j)}</script>`).join('\n') : '';
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,6 +51,7 @@ function page(title, desc, canonical, body) {
 <meta property="og:url" content="${canonical}">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="The Italian Gateway">
+${ldScript}
 <style>body{background:#0A0E17;color:#E5E7EB;font-family:Segoe UI,-apple-system,sans-serif;margin:0;padding:0}
 .w{max-width:780px;margin:0 auto;padding:60px 24px}
 a{color:#C9A96E}h1{font:400 36px/1.25 Georgia,serif;color:#fff;margin:0 0 16px}
@@ -105,11 +107,53 @@ for (const art of ARTICLES) {
 <hr style="border:none;height:2px;background:linear-gradient(to right,#C9A96E,transparent);margin:28px 0">
 ${art.content.map(renderBlock).join('\n')}`;
 
+  // Build structured data
+  const jsonLd = [];
+  
+  // Article schema
+  jsonLd.push({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": art.title,
+    "description": art.desc,
+    "datePublished": "2026-04-01",
+    "dateModified": "2026-05-01",
+    "author": { "@type": "Organization", "name": "The Italian Gateway", "url": DOMAIN },
+    "publisher": { "@type": "Organization", "name": "The Italian Gateway", "url": DOMAIN },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": DOMAIN + '/guide/' + art.id + '/' },
+  });
+
+  // FAQ schema from article FAQ blocks
+  const faqs = art.content.filter(b => b.type === 'faq');
+  if (faqs.length > 0) {
+    jsonLd.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      }))
+    });
+  }
+
+  // Breadcrumb schema
+  jsonLd.push({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": DOMAIN + "/" },
+      { "@type": "ListItem", "position": 2, "name": "Guides", "item": DOMAIN + "/guides/" },
+      { "@type": "ListItem", "position": 3, "name": art.title, "item": DOMAIN + "/guide/" + art.id + "/" },
+    ]
+  });
+
   writeFileSync(join(dir, 'index.html'), page(
     art.title + ' | The Italian Gateway',
     art.desc,
     DOMAIN + '/guide/' + art.id + '/',
-    body
+    body,
+    jsonLd
   ));
   console.log('  +', art.id);
 }
@@ -149,6 +193,11 @@ const advisorsBody = `
 <h3 style="color:#C9A96E">Dr. Gabriele Azzolini</h3>
 <p style="font-style:italic;color:#C9A96E;font-size:14px">Medical Advisor</p>
 <p>A qualified Doctor of Medicine and Surgery (M.D.). Dr. Azzolini connects you with the most qualified specialist for your needs — trusted GPs, world-class surgeons, and paediatric screening. Confidential medical orientation across Italy.</p>
+</div>
+<div style="background:#111827;border:1px solid #1F2937;padding:28px;margin-bottom:16px">
+<h3 style="color:#C9A96E">Private Banking Team</h3>
+<p style="font-style:italic;color:#C9A96E;font-size:14px">Wealth Management &amp; Private Banking</p>
+<p>Our private banking introductions are handled with the utmost discretion. We work with senior relationship managers at Italy's leading private banks and international institutions. By the nature of the profession, our banking partners remain confidential — introductions are made personally, matched to your specific profile and requirements.</p>
 </div>
 <h2>Lifestyle Network</h2>
 <div style="background:#111827;border:1px solid #1F2937;padding:28px;margin-bottom:16px">
