@@ -8,6 +8,56 @@ const C = {
   accent: "#1B3A5C", border: "#1F2937",
 };
 
+// Elegant SVG icons — thin line, premium feel
+const SVG_ICONS = {
+  "🏦": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M12 3l9 7H3l9-7z"/><path d="M5 10v11"/><path d="M9 10v11"/><path d="M15 10v11"/><path d="M19 10v11"/></svg>,
+  "⚖️": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3v18"/><path d="M8 21h8"/><path d="M3 7l9-4 9 4"/><path d="M3 7l3 6h0a3 3 0 006 0h0l3-6"/><path d="M15 7l3 6h0a3 3 0 006 0h0l3-6"/></svg>,
+  "🏠": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>,
+  "🏥": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16a1 1 0 011 1v14a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1z"/><path d="M12 8v8"/><path d="M8 12h8"/><path d="M3 10h18"/></svg>,
+  "🎓": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10l-10-6L2 10l10 6 10-6z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/><path d="M22 10v6"/></svg>,
+  "🛂": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8 18c0-2.2 1.8-4 4-4s4 1.8 4 4"/><path d="M8 6h8"/></svg>,
+  "⛵": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 20h20"/><path d="M12 4v14"/><path d="M12 4l8 14H4l8-14z"/><path d="M4 18l2 2h12l2-2"/></svg>,
+  "📋": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6"/><path d="M9 11h6"/><path d="M9 15h4"/></svg>,
+  "🔑": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="8" cy="15" r="5"/><path d="M12 12l9-9"/><path d="M17 3l4 4"/><path d="M15 7l2 2"/></svg>,
+  "💼": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><path d="M2 12h20"/></svg>,
+  "🏛️": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 20h20"/><path d="M4 20v-8"/><path d="M20 20v-8"/><path d="M12 4L2 12h20L12 4z"/><path d="M8 20v-8"/><path d="M16 20v-8"/><path d="M12 20v-8"/></svg>,
+  "📊": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>,
+  "🔗": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 007.5.5l2-2a5 5 0 00-7-7l-1 1"/><path d="M14 11a5 5 0 00-7.5-.5l-2 2a5 5 0 007 7l1-1"/></svg>,
+  "🌴": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22V8"/><path d="M5 8c0-3 3-5 7-5s7 2 7 5"/><path d="M5 8c2 1 5 1 7 0s5-1 7 0"/></svg>,
+  "✈️": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3s-3-1-4.5.5L13 7 4.8 5.2c-.5-.1-1 .1-1.2.6L2 10l7 3 3 7 4.4-1.6c.5-.2.7-.7.6-1.2z"/></svg>,
+  "🔍": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>,
+  "🤝": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M11 17l-5-5 2.5-2.5L11 12l5-5 2.5 2.5"/><path d="M2 10l4.5-4.5L9 3"/><path d="M22 10l-4.5-4.5L15 3"/><path d="M2 10h4"/><path d="M18 10h4"/></svg>,
+  "🔨": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 12l-8.5 8.5a2.12 2.12 0 01-3-3L12 9"/><path d="M17.6 13.5l4-4a2 2 0 000-2.8l-4.3-4.3a2 2 0 00-2.8 0l-4 4"/></svg>,
+  "🏡": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><circle cx="12" cy="14" r="3"/></svg>,
+  "📈": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg>,
+  "👨‍⚕️": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5 21v-2a7 7 0 0114 0v2"/><path d="M12 11v3"/><path d="M10.5 12.5h3"/></svg>,
+  "🔬": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 00-4-12.9"/><path d="M9 14l5-9"/><path d="M11 6l3 1.7"/></svg>,
+  "🛡️": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
+  "📚": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>,
+  "📝": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>,
+  "🏫": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 20h20"/><path d="M4 20V8l8-5 8 5v12"/><path d="M9 20v-6h6v6"/><circle cx="12" cy="10" r="1"/></svg>,
+  "🌍": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 014 10 15 15 0 01-4 10 15 15 0 01-4-10 15 15 0 014-10z"/></svg>,
+  "🏅": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="14" r="6"/><path d="M8 2l2 6"/><path d="M16 2l-2 6"/><path d="M12 14l1.5-3 1.5 3"/></svg>,
+  "💳": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>,
+  "💻": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>,
+  "🇮🇹": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M9 6v12"/><path d="M15 6v12"/></svg>,
+  "📄": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>,
+  "⚓": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="5" r="3"/><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0020 0h-3"/></svg>,
+  "🏳️": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 22V2"/><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/></svg>,
+  "👨‍✈️": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5 21v-2a7 7 0 0114 0v2"/><path d="M8 4h8"/></svg>,
+  "🗺️": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M1 6l7-3 8 3 7-3v15l-7 3-8-3-7 3V6z"/><path d="M8 3v15"/><path d="M16 6v15"/></svg>,
+  "🔧": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.8-3.8a6 6 0 01-7.5 7.5L6 21a2.12 2.12 0 01-3-3l8-8A6 6 0 0114.7 6.3z"/></svg>,
+  "🍾": <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M8 22h8"/><path d="M12 11v11"/><path d="M10 2l-2 5h8l-2-5z"/><path d="M8 7l-2 4h12l-2-4"/></svg>,
+  "👨‍👩‍👧‍👦": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="7" cy="5" r="2"/><circle cx="17" cy="5" r="2"/><circle cx="12" cy="16" r="2"/><path d="M3 21v-2a4 4 0 018 0v2"/><path d="M13 21v-2a4 4 0 018 0v2"/><path d="M12 14V9"/></svg>,
+  "🏢": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="2" width="16" height="20"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/></svg>,
+};
+
+function Icon({ name, size }) {
+  const svg = SVG_ICONS[name];
+  if (!svg) return <span style={{ fontSize: size || 28 }}>{name}</span>;
+  return <span style={{ display:"inline-flex",alignItems:"center",justifyContent:"center" }}>{svg}</span>;
+}
+
 // Replace with your Formspree form ID after creating account at formspree.io
 const FORM_ID = "xbdzzepp";
 const FORM_URL = "https://formspree.io/f/" + FORM_ID;
@@ -352,6 +402,11 @@ function MobileStyles() {
       .nav-burger{display:none !important}
       .mob-menu{display:none !important}
     }
+    ::selection{background:#C9A96E;color:#0A0E17}
+    @media(max-width:480px){
+      h1{font-size:28px !important}
+      h2{font-size:24px !important}
+    }
   `}</style>;
 }
 
@@ -424,7 +479,7 @@ function ServicesGrid({ setPage }) {
       <FadeIn><div style={{ textAlign:"center",marginBottom:64 }}><div style={{ color:C.gold,fontSize:12,letterSpacing:4,textTransform:"uppercase",marginBottom:12 }}>What We Do</div><h2 style={{ fontFamily:"Georgia,serif",fontSize:36,color:C.white,fontWeight:400 }}>Seven verticals, one point of contact</h2><p style={{ color:C.textDim,fontSize:15,marginTop:12 }}>Click any service to explore what we offer</p></div></FadeIn>
       <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:24 }}>
         {VERTICALS.map((v,i) => <FadeIn key={v.id} delay={i*80}><div onClick={() => {setPage("v-"+v.id);window.scrollTo(0,0)}} style={{ background:C.card,border:"1px solid "+C.border,padding:32,transition:"all 0.3s",height:"100%",cursor:"pointer" }} onMouseEnter={e=>{e.currentTarget.style.borderColor=C.gold;e.currentTarget.style.background=C.cardHover;e.currentTarget.style.transform="translateY(-4px)"}} onMouseLeave={e=>{e.currentTarget.style.borderColor=C.border;e.currentTarget.style.background=C.card;e.currentTarget.style.transform="translateY(0)"}}>
-          <div style={{ fontSize:32,marginBottom:16 }}>{v.icon}</div>
+          <div style={{ marginBottom:16 }}><Icon name={v.icon} size={32}/></div>
           <h3 style={{ fontFamily:"Georgia,serif",fontSize:20,color:C.white,fontWeight:400,marginBottom:4 }}>{v.title}</h3>
           <p style={{ color:C.gold,fontSize:13,fontStyle:"italic",marginBottom:12 }}>{v.tagline}</p>
           <p style={{ color:C.textDim,fontSize:14,lineHeight:1.6,margin:0 }}>{v.subservices.length} specialized services →</p>
@@ -455,7 +510,7 @@ function RealProblems() {
         </div></FadeIn>
         <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:20 }}>
           {problems.map((p,i) => <FadeIn key={i} delay={i*60}><div style={{ background:C.bg,border:"1px solid "+C.border,padding:"28px 24px",height:"100%",transition:"border-color 0.3s" }} onMouseEnter={e=>e.currentTarget.style.borderColor=C.goldDim} onMouseLeave={e=>e.currentTarget.style.borderColor=C.border}>
-            <div style={{ fontSize:28,marginBottom:12 }}>{p.icon}</div>
+            <div style={{ marginBottom:12 }}><Icon name={p.icon}/></div>
             <h3 style={{ fontFamily:"Georgia,serif",fontSize:17,color:C.white,fontWeight:400,marginBottom:8 }}>{p.title}</h3>
             <p style={{ color:C.textDim,fontSize:13,lineHeight:1.6,margin:0 }}>{p.desc}</p>
           </div></FadeIn>)}
@@ -520,7 +575,7 @@ function VerticalPage({ id, setPage }) {
       <span onClick={() => {setPage("home");window.scrollTo(0,0);setTimeout(()=>document.getElementById("services")?.scrollIntoView({behavior:"smooth"}),200)}} style={{ color:C.gold,fontSize:13,cursor:"pointer",display:"inline-block",marginBottom:32 }}>{"< All Services"}</span>
       <FadeIn>
         <div style={{ marginBottom:56 }}>
-          <div style={{ fontSize:48,marginBottom:16 }}>{v.icon}</div>
+          <div style={{ marginBottom:16 }}><Icon name={v.icon} size={48}/></div>
           <div style={{ color:C.gold,fontSize:12,letterSpacing:4,textTransform:"uppercase",marginBottom:12 }}>{v.tagline}</div>
           <h1 style={{ fontFamily:"Georgia,serif",fontSize:"clamp(32px,5vw,48px)",color:C.white,fontWeight:400,marginBottom:16 }}>{v.title}</h1>
           <p style={{ color:C.textDim,fontSize:17,lineHeight:1.7,maxWidth:700 }}>{v.desc}</p>
@@ -550,7 +605,7 @@ function VerticalPage({ id, setPage }) {
         <FadeIn delay={100}><h2 style={{ fontFamily:"Georgia,serif",fontSize:24,color:C.white,fontWeight:400,marginBottom:32,paddingBottom:16,borderBottom:"1px solid "+C.border }}>Our services</h2></FadeIn>
         <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))",gap:20 }}>
           {v.subservices.map((s,i) => <FadeIn key={i} delay={150+i*60}><div style={{ background:C.card,border:"1px solid "+C.border,padding:28,height:"100%",transition:"border-color 0.3s" }} onMouseEnter={e=>e.currentTarget.style.borderColor=C.goldDim} onMouseLeave={e=>e.currentTarget.style.borderColor=C.border}>
-            <div style={{ fontSize:24,marginBottom:12 }}>{s.icon}</div>
+            <div style={{ marginBottom:12 }}><Icon name={s.icon}/></div>
             <h3 style={{ fontFamily:"Georgia,serif",fontSize:17,color:C.white,fontWeight:400,marginBottom:8 }}>{s.title}</h3>
             <p style={{ color:C.textDim,fontSize:13,lineHeight:1.6,margin:0 }}>{s.desc}</p>
           </div></FadeIn>)}
@@ -635,7 +690,7 @@ function RetireeSection({ setPage }) {
       <div style={{ maxWidth:1000,margin:"0 auto" }}>
         <FadeIn><div style={{ textAlign:"center",marginBottom:56 }}><div style={{ color:C.gold,fontSize:12,letterSpacing:4,textTransform:"uppercase",marginBottom:12 }}>For Retirees & Empty Nesters</div><h2 style={{ fontFamily:"Georgia,serif",fontSize:36,color:C.white,fontWeight:400,marginBottom:16 }}>Your next chapter deserves more than a tax strategy</h2><p style={{ color:C.textDim,fontSize:16,lineHeight:1.7,maxWidth:650,margin:"0 auto" }}>The best years of your life should feel effortless.</p></div></FadeIn>
         <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:20 }}>
-          {items.map((it,i) => <FadeIn key={i} delay={i*80}><div style={{ background:C.bg,border:"1px solid "+C.border,padding:28,height:"100%" }}><div style={{ fontSize:28,marginBottom:12 }}>{it.icon}</div><h3 style={{ fontFamily:"Georgia,serif",fontSize:18,color:C.white,fontWeight:400,marginBottom:8 }}>{it.title}</h3><p style={{ color:C.textDim,fontSize:13,lineHeight:1.6,margin:0 }}>{it.desc}</p></div></FadeIn>)}
+          {items.map((it,i) => <FadeIn key={i} delay={i*80}><div style={{ background:C.bg,border:"1px solid "+C.border,padding:28,height:"100%" }}><div style={{ marginBottom:12 }}><Icon name={it.icon}/></div><h3 style={{ fontFamily:"Georgia,serif",fontSize:18,color:C.white,fontWeight:400,marginBottom:8 }}>{it.title}</h3><p style={{ color:C.textDim,fontSize:13,lineHeight:1.6,margin:0 }}>{it.desc}</p></div></FadeIn>)}
         </div>
         <FadeIn delay={500}><div style={{ textAlign:"center",marginTop:48 }}><button onClick={() => { setPage("quiz"); window.scrollTo(0,0); }} style={{ background:"transparent",color:C.gold,padding:"14px 36px",border:"1px solid "+C.gold,fontSize:13,fontWeight:600,letterSpacing:2,cursor:"pointer" }}>DISCOVER YOUR IDEAL LOCATION</button></div></FadeIn>
       </div>
@@ -1411,7 +1466,16 @@ export default function App() {
       <BackToTop/>
       <CookieBanner/>
       <Nav setPage={setPage}/>
-      {page==="home" && <><Hero setPage={setPage}/><ServicesGrid setPage={setPage}/><RealProblems/><CorporateRelocators/><AdvisorsSection/><RetireeSection setPage={setPage}/><CostOfLiving/><Pricing/><Newsletter/><Contact/></>}
+      {page==="home" && <><Hero setPage={setPage}/>
+        <div style={{ background:C.card,padding:"32px 24px",borderTop:"1px solid "+C.border,borderBottom:"1px solid "+C.border }}>
+          <div style={{ maxWidth:900,margin:"0 auto",textAlign:"center" }}>
+            <p style={{ color:C.textDim,fontSize:11,letterSpacing:4,textTransform:"uppercase",marginBottom:16 }}>Advising families relocating from</p>
+            <div style={{ display:"flex",justifyContent:"center",gap:32,flexWrap:"wrap",alignItems:"center" }}>
+              {["🇬🇧 United Kingdom","🇦🇪 UAE","🇨🇭 Switzerland","🇺🇸 United States","🇫🇷 France","🇩🇪 Germany","🇸🇬 Singapore"].map(c=><span key={c} style={{ color:C.textDim,fontSize:13,whiteSpace:"nowrap" }}>{c}</span>)}
+            </div>
+          </div>
+        </div>
+        <ServicesGrid setPage={setPage}/><RealProblems/><CorporateRelocators/><AdvisorsSection/><RetireeSection setPage={setPage}/><CostOfLiving/><Pricing/><Newsletter/><Contact/></>}
       {page==="guides" && <GuidesPage setPage={setPage}/>}
       {page==="quiz" && <QuizPage setPage={setPage}/>}
       {page==="properties" && <PropertyGallery setPage={setPage}/>}
