@@ -2799,6 +2799,120 @@ const ARTICLES = [
     ]
   },
 
+  // =============================================================
+  // ARTICLE 36 — Roth IRA in Italy
+  // =============================================================
+  {
+    id: "roth-ira-italy-tax-treatment-2026",
+    cat: "Tax & Legal",
+    title: "Roth IRA in Italy: Why Your Tax-Free Retirement Account Isn't Tax-Free Anymore (2026 Guide)",
+    date: "May 2026",
+    read: "13 min",
+    desc: "Italy does not recognise the Roth IRA's tax-free status. Your 'tax-free' withdrawals may be taxed as ordinary income at up to 43%. How Italian tax law treats Roth IRAs, what the US-Italy treaty does (and doesn't) protect, and the strategies that actually work.",
+    content: [
+      { type: "p", text: "You spent decades contributing to your Roth IRA with after-tax dollars, watching it grow tax-free, knowing that every withdrawal in retirement would be completely exempt from US federal tax. Then you move to Italy — and discover that Italy does not care. As far as the Italian tax authorities are concerned, your Roth IRA withdrawal is income. And income gets taxed." },
+      { type: "p", text: "This is one of the most common and most expensive surprises facing Americans who relocate to Italy. The Roth IRA — the crown jewel of US retirement planning — loses its magic the moment you cross the border. This guide explains exactly what happens, why, and what you can do about it." },
+      { type: "p", text: "Related: <a href=\"/#/guide/pfic-rules-us-citizens-italy-2026\">PFIC rules for US citizens in Italy</a> · <a href=\"/#/guide/sipp-ira-funds-italy-relocation\">SIPPs, IRAs &amp; fund structures guide</a> · <a href=\"/#/guide/flat-tax-2026\">Italy flat tax overview</a>" },
+
+      { type: "h2", text: "Why Italy Taxes Roth IRA Withdrawals" },
+      { type: "p", text: "The core problem is simple: the US-Italy Double Tax Treaty (signed in 1999) does not specifically address the Roth IRA. The treaty predates the Roth IRA's widespread adoption and contains no provision that obliges Italy to recognise the tax-free status that the US grants to qualified Roth distributions." },
+      { type: "p", text: "Under Italian domestic tax law, income is income. When you receive a distribution from a foreign retirement account, Italy classifies it as taxable income regardless of whether the contributions were made with pre-tax or post-tax dollars. Italy's tax system does not have an equivalent concept to the Roth — there is no Italian retirement vehicle where withdrawals are completely tax-free." },
+      { type: "callout", text: "The key distinction: in the US, you already paid tax on Roth contributions — so withdrawals are tax-free (no double taxation). Italy doesn't see it that way. Italy sees a foreign account sending you money. That's income. The fact that you already paid US tax on the contributions is, from Italy's perspective, irrelevant to the Italian tax calculation." },
+
+      { type: "h2", text: "How Italy Taxes Each Type of US Retirement Account" },
+      { type: "table", headers: ["Account Type", "US Tax Treatment", "Italian Tax Treatment", "Treaty Protection?"], rows: [
+        ["Traditional IRA", "Tax-deferred. Withdrawals taxed as ordinary income.", "Taxed as ordinary income at progressive rates (23-43%)", "Yes — Article 18. Taxed only in Italy (state of residence)."],
+        ["Roth IRA", "Tax-free qualified withdrawals", "Likely taxed as ordinary income (23-43%). Italy does not recognise tax-free status.", "Unclear. Treaty silent on Roth-specific treatment."],
+        ["401(k)", "Tax-deferred. Withdrawals taxed as ordinary income.", "Taxed as ordinary income (23-43%)", "Yes — Article 18."],
+        ["Roth 401(k)", "Tax-free qualified withdrawals", "Same problem as Roth IRA — likely taxed.", "Unclear."],
+        ["Social Security", "Partially taxable in US (up to 85%)", "Taxed as ordinary income in Italy", "Article 19 — generally taxed in country of residence."],
+        ["US Government Pension (federal/military)", "Taxable in US", "May be taxed only in the US under Article 19(2)", "Yes — favourable for government employees."],
+      ]},
+
+      { type: "h2", text: "The Treaty Gap: Article 18 and Its Limits" },
+      { type: "p", text: "Article 18 of the US-Italy treaty states that pensions and other similar remuneration paid to a resident of a Contracting State shall be taxable only in that State. This clearly assigns taxing rights to Italy for Traditional IRA and 401(k) distributions — you pay Italian tax, not US tax." },
+      { type: "p", text: "But the treaty does not define whether a Roth IRA distribution qualifies as 'pension or other similar remuneration.' The argument for including it: the Roth IRA is a retirement account, structured as a pension vehicle. The argument against: the distribution is a return of already-taxed capital plus tax-free growth — it's not 'remuneration' in the traditional sense." },
+      { type: "p", text: "In practice, Italian tax authorities (Agenzia delle Entrate) tend to treat all distributions from foreign retirement accounts as taxable income. There is no published ruling (circolare) specifically addressing Roth IRA treatment, which means the default position applies: it's income, it gets taxed." },
+
+      { type: "h2", text: "The Double Taxation Problem" },
+      { type: "p", text: "This is where the Roth IRA becomes genuinely painful:" },
+      { type: "list", items: [
+        "You contributed to the Roth with after-tax US dollars — you already paid US federal and state tax on that money",
+        "The growth inside the Roth was tax-free under US law",
+        "When you withdraw in Italy, Italy taxes the entire distribution (contributions + growth) as income",
+        "The US does not tax the withdrawal (it's a qualified Roth distribution)",
+        "Because the US doesn't tax it, you cannot claim a US Foreign Tax Credit for the Italian tax paid",
+        "Result: you pay Italian tax on money you already paid US tax on, with no offset mechanism",
+      ]},
+      { type: "callout", text: "Example: you have a $1M Roth IRA ($400K contributions, $600K growth). You withdraw $100K in Italy. Italy taxes the full $100K at progressive rates — potentially $35,000-$43,000 in Italian tax. The US doesn't tax it, so no foreign tax credit is available. You've effectively been taxed twice on the contribution portion and once on the growth — the exact opposite of what the Roth was designed to achieve." },
+
+      { type: "h2", text: "The Flat Tax: Does It Help?" },
+      { type: "p", text: "If you qualify for Italy's €300,000 flat tax regime, Roth IRA distributions are foreign-sourced income and should be covered by the flat tax lump sum. This eliminates the Italian progressive tax problem — your Roth withdrawals are absorbed into the €300K annual payment regardless of amount." },
+      { type: "p", text: "However, there is a critical caveat for US citizens: the flat tax covers your Italian tax obligation, but you still owe US tax on worldwide income. Since the Roth is tax-free in the US, there's no US tax — which is good. But you cannot use the flat tax payment as a Foreign Tax Credit on your US return because it's a lump sum, not a tax on specific income. For most US citizens, the flat tax is not beneficial because you end up paying both the €300K to Italy AND your full US tax obligation with no offset." },
+      { type: "p", text: "The flat tax works for US green card holders who surrender their green card before moving to Italy — but not for US citizens." },
+
+      { type: "h2", text: "The 7% Retiree Regime" },
+      { type: "p", text: "For US retirees (citizens or not), Italy's 7% flat tax for Southern Italy residents may be more attractive. Under this regime, ALL foreign income — including Roth IRA distributions — is taxed at just 7% for 10 years. On a $100K Roth withdrawal, you'd pay approximately €7,000 in Italian tax instead of €35,000-€43,000 at progressive rates." },
+      { type: "p", text: "For US citizens, the 7% Italian tax is low enough that the Foreign Tax Credit mechanism works better: you can potentially credit Italian taxes paid against your US obligation on other income. The 7% regime combined with careful withdrawal planning is currently the most tax-efficient way for American retirees to live in Italy." },
+      { type: "p", text: "See our complete guide: <a href=\"/#/guide/italy-7-percent-retiree-flat-tax-south-2026\">Italy's 7% retiree flat tax</a>." },
+
+      { type: "h2", text: "Strategies That Actually Work" },
+
+      { type: "h3", text: "1. Withdraw Before You Move" },
+      { type: "p", text: "The most straightforward strategy: take Roth distributions while you are still a US tax resident, before establishing Italian residency. In the US, qualified Roth withdrawals are completely tax-free — federal and state (in most states). If you know you're moving to Italy, consider taking large distributions in the year before your move." },
+      { type: "p", text: "Limitation: this only works if you're over 59½ and have held the Roth for 5+ years (qualified distribution rules). For younger account holders, early withdrawal penalties may apply." },
+
+      { type: "h3", text: "2. Roth Conversion Ladder Before Moving" },
+      { type: "p", text: "If you have a large Traditional IRA or 401(k) and are planning a move to Italy in 3-5 years, consider a Roth conversion strategy while still in the US. Convert portions of your Traditional IRA to Roth each year, paying US tax on the conversion. After 5 years, the converted amounts can be withdrawn tax-free. Time this so the 5-year window closes before you become an Italian resident." },
+
+      { type: "h3", text: "3. Use the 7% Regime and Withdraw Strategically" },
+      { type: "p", text: "If you relocate to Southern Italy under the 7% regime, plan your Roth withdrawals to maximise the 10-year window. Withdraw as much as practical during the 7% period, paying just 7% Italian tax. After the regime expires, you revert to progressive rates — so front-load the withdrawals." },
+
+      { type: "h3", text: "4. Keep the Roth and Don't Withdraw" },
+      { type: "p", text: "Italy taxes distributions, not unrealised gains. If you can fund your Italian lifestyle from other sources (savings, brokerage, pension), leaving the Roth untouched avoids Italian tax entirely. The Roth continues to grow tax-free under US law. You can withdraw later — either after returning to the US, or pass it to heirs (Roth IRAs have no required minimum distributions during the owner's lifetime)." },
+
+      { type: "h3", text: "5. Roth to Heirs: The Inheritance Play" },
+      { type: "p", text: "If you're under the flat tax regime, foreign assets (including the Roth IRA) are exempt from Italian inheritance tax. Your heirs receive the Roth tax-free under both US law (inherited Roth rules) and Italian law (flat tax inheritance exemption). This makes the Roth an excellent wealth transfer vehicle for flat tax residents — don't withdraw, let it pass to the next generation." },
+
+      { type: "h2", text: "What About the Fondo Pensione Integrativo?" },
+      { type: "p", text: "Italy's closest equivalent to a retirement savings vehicle is the fondo pensione integrativo (supplementary pension fund). Contributions are tax-deductible up to €5,164.57/year. Growth is taxed at a reduced rate (20% on most gains, vs 26% outside the fund). At withdrawal, the tax rate ranges from 15% down to 9% depending on how long you've contributed." },
+      { type: "p", text: "It's not a Roth equivalent — contributions are pre-tax and withdrawals are taxed — but it's the most tax-advantaged savings vehicle available in Italy. For Americans establishing long-term Italian residency, contributing to a fondo pensione alongside maintaining the Roth IRA creates a two-jurisdiction retirement strategy." },
+
+      { type: "h2", text: "FBAR and FATCA: Reporting Your Roth IRA" },
+      { type: "p", text: "Even if you don't withdraw from your Roth, you must report it:" },
+      { type: "table", headers: ["Obligation", "Applies to Roth?", "Threshold", "Penalty"], rows: [
+        ["FBAR (FinCEN 114)", "Yes — Roth is a foreign financial account if held at a foreign institution. If held at a US institution, typically not.", "Aggregate foreign accounts > $10,000", "Up to $100,000 per violation"],
+        ["FATCA (Form 8938)", "Yes — if held at a US institution and you meet the threshold", "$200,000 (single expat) / $400,000 (married) end of year", "Up to $50,000 penalty"],
+        ["Italian Quadro RW", "Yes — unless under the flat tax regime (exempt)", "All foreign financial assets", "3-15% of undisclosed value"],
+        ["Form 8606", "Yes — to track Roth basis and distributions", "Any Roth IRA activity", "N/A (informational)"],
+      ]},
+
+      { type: "h2", text: "The Cost of Getting It Wrong" },
+      { type: "p", text: "A US citizen in Italy with a $2M Roth IRA who takes $200K/year in distributions without proper planning could face:" },
+      { type: "list", items: [
+        "Italian tax at progressive rates: up to €86,000/year on the distributions",
+        "No US Foreign Tax Credit available (Roth is tax-free in US, so no credit mechanism)",
+        "Quadro RW penalties if the Roth is not disclosed: 3-15% of the account value",
+        "FBAR/FATCA penalties if not filed: up to $100,000+ per year",
+        "Total potential annual cost of non-compliance: €100,000-€200,000+",
+      ]},
+      { type: "p", text: "Compare with proper planning: same person under the 7% regime pays €14,000/year on the same distributions. The difference over 10 years is approximately €720,000. This is why professional cross-border tax advice is not optional — it's the highest-return investment you can make." },
+
+      { type: "h2", text: "Frequently Asked Questions" },
+      { type: "faq", q: "Can I contribute to my Roth IRA while living in Italy?", a: "Only if you have US-sourced earned income that is not excluded under the Foreign Earned Income Exclusion (FEIE). If you use the FEIE to exclude all your foreign earned income, you may have zero qualifying income for Roth contributions. If you earn income from a US employer or US-source self-employment, you can still contribute (subject to income limits — MAGI under $165,000 single / $246,000 married for 2026)." },
+      { type: "faq", q: "My Italian commercialista says Roth withdrawals are not taxable. Is that correct?", a: "This is a dangerous misunderstanding. Some Italian tax advisors are unfamiliar with US retirement account structures and may assume the Roth works like a Italian tax-free vehicle. It does not. The conservative (and legally defensible) position is that Italy taxes Roth distributions as ordinary income. Only a formal advance ruling (interpello) from the Agenzia delle Entrate could provide certainty — and even then, the answer is likely to confirm taxability." },
+      { type: "faq", q: "What if I move back to the US after a few years in Italy?", a: "If you return to US tax residency, the Roth regains its full tax-free status for US purposes. Any Italian tax paid during your residence in Italy cannot be recovered — but future distributions are back to being tax-free. If you're planning a temporary stay in Italy (3-5 years), consider not withdrawing from the Roth at all during your Italian residency." },
+      { type: "faq", q: "Is a Roth conversion worth doing while in Italy?", a: "Generally no. A Roth conversion while Italian resident means you pay US tax on the conversion (it's treated as income) AND Italy may also tax it. You'd face double taxation on the conversion event. Conversions should be done before establishing Italian residency." },
+      { type: "faq", q: "Should I just liquidate my Roth before moving?", a: "It depends on your age, total portfolio, and time horizon. If you're over 59½ with a large Roth and plan to live in Italy permanently, taking qualified distributions before the move makes sense — you lock in the US tax-free treatment. If you're younger or the stay might be temporary, keeping the Roth intact and not withdrawing is usually better. Model both scenarios with your CPA." },
+
+      { type: "h2", text: "Professional Support Required" },
+      { type: "p", text: "Roth IRA taxation in Italy sits at the intersection of two complex tax systems with an ambiguous treaty. This is not a topic for DIY tax preparation. You need: a US cross-border CPA who understands Italian tax law, and an Italian commercialista who understands US retirement account structures. Budget €10,000-€20,000/year for combined professional fees. The alternative — getting it wrong — costs multiples of that in unnecessary tax and penalties." },
+      { type: "p", text: "Related: <a href=\"/#/guide/pfic-rules-us-citizens-italy-2026\">PFIC rules — the other tax trap for Americans in Italy</a>" },
+
+      { type: "callout", text: "Disclaimer: This guide provides general information as of May 2026. US and Italian tax laws are complex, frequently changing, and heavily dependent on individual circumstances. The treatment of Roth IRAs in Italy involves significant uncertainty and no definitive ruling exists. Always consult qualified US and Italian tax professionals before making any decisions. The Italian Gateway coordinates cross-border tax advisory for Americans relocating to Italy." },
+    ]
+  },
+
 ];
 export default ARTICLES;
 

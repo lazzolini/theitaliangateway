@@ -110,9 +110,14 @@ const ADVISORS = {
   ],
 };
 
+function trackEvent(name, params) {
+  if (typeof gtag === "function") gtag("event", name, params);
+}
+
 async function submitForm(data) {
   try {
     await fetch(FORM_URL, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) });
+    trackEvent("generate_lead", { source: data.source || "unknown", service: data._subject || "" });
     return true;
   } catch (e) { return false; }
 }
@@ -403,6 +408,10 @@ function MobileStyles() {
       .mob-menu{display:none !important}
     }
     ::selection{background:#C9A96E;color:#0A0E17}
+    a{color:#C9A96E;text-decoration:none}
+    a:hover{text-decoration:underline}
+    p a,li a,td a{border-bottom:1px solid rgba(201,169,110,0.3);padding-bottom:1px}
+    p a:hover,li a:hover,td a:hover{border-bottom-color:#C9A96E}
     @media(max-width:480px){
       h1{font-size:28px !important}
       h2{font-size:24px !important}
@@ -619,7 +628,7 @@ function VerticalPage({ id, setPage }) {
           <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",gap:24 }}>
             {relevantAdvisors.map(a => <div key={a.id} style={{ textAlign:"center",padding:"24px 16px" }}>
               {a.photo ? <div style={{ width:120,height:120,borderRadius:"50%",overflow:"hidden",border:"2px solid "+C.gold,margin:"0 auto 12px",background:"#0d1423" }}>
-                <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 20%" }}/>
+                <img src={a.photo} alt={a.name} loading="lazy" style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 20%" }}/>
               </div> : <div style={{ width:120,height:120,borderRadius:"50%",border:"2px solid "+C.gold,margin:"0 auto 12px",background:"linear-gradient(145deg,#111827,#0d1423)",display:"flex",alignItems:"center",justifyContent:"center" }}>
                 <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="10" r="2.5"/><path d="M12 12.5c-2.5 0-4 1.5-4 3v.5h8v-.5c0-1.5-1.5-3-4-3z"/></svg>
               </div>}
@@ -1164,7 +1173,7 @@ function ArticleAdvisor({ articleCat }) {
     <div style={{ background:C.card,border:"1px solid "+C.border,marginTop:48,padding:"36px 40px",overflow:"hidden" }}>
       <div style={{ display:"flex",alignItems:"center",gap:28,flexWrap:"wrap" }}>
         {a.photo ? <div style={{ width:100,height:100,borderRadius:"50%",overflow:"hidden",border:"2px solid "+C.gold,flexShrink:0,background:"#0d1423" }}>
-          <img src={a.photo} alt={a.name} style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 20%" }}/>
+          <img src={a.photo} alt={a.name} loading="lazy" style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 20%" }}/>
         </div> : <div style={{ width:100,height:100,borderRadius:"50%",border:"2px solid "+C.gold,flexShrink:0,background:"linear-gradient(145deg,#111827,#0d1423)",display:"flex",alignItems:"center",justifyContent:"center" }}>
           <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="10" r="2.5"/><path d="M12 12.5c-2.5 0-4 1.5-4 3v.5h8v-.5c0-1.5-1.5-3-4-3z"/></svg>
         </div>}
@@ -1374,15 +1383,24 @@ function GuidesPage({ setPage }) {
   );
 }
 
+function Html({ text, style }) {
+  if (text && text.includes("<a ")) return <span style={style} dangerouslySetInnerHTML={{ __html: text }}/>;
+  return <span style={style}>{text}</span>;
+}
+
 function ArticleContent({ blocks }) {
+  const pStyle = { color:C.text,fontSize:16,lineHeight:1.8,marginBottom:20,display:"block" };
+  const h2Style = { fontFamily:"Georgia,serif",fontSize:28,color:C.white,fontWeight:400,marginTop:48,marginBottom:16,paddingBottom:12,borderBottom:"1px solid "+C.border,display:"block" };
+  const h3Style = { fontFamily:"Georgia,serif",fontSize:21,color:C.gold,fontWeight:400,marginTop:32,marginBottom:12,display:"block" };
+  const callStyle = { color:C.text,fontSize:15,lineHeight:1.7,margin:0 };
   return blocks.map((b,i) => {
-    if (b.type==="p") return <p key={i} style={{ color:C.text,fontSize:16,lineHeight:1.8,marginBottom:20 }}>{b.text}</p>;
-    if (b.type==="h2") return <h2 key={i} style={{ fontFamily:"Georgia,serif",fontSize:28,color:C.white,fontWeight:400,marginTop:48,marginBottom:16,paddingBottom:12,borderBottom:"1px solid "+C.border }}>{b.text}</h2>;
-    if (b.type==="h3") return <h3 key={i} style={{ fontFamily:"Georgia,serif",fontSize:21,color:C.gold,fontWeight:400,marginTop:32,marginBottom:12 }}>{b.text}</h3>;
-    if (b.type==="list") return <ul key={i} style={{ margin:"0 0 24px",paddingLeft:0,listStyle:"none" }}>{b.items.map((it,j)=><li key={j} style={{ color:C.text,fontSize:15,lineHeight:1.7,marginBottom:10,paddingLeft:24,position:"relative" }}><span style={{ position:"absolute",left:0,color:C.gold }}>•</span>{it}</li>)}</ul>;
-    if (b.type==="table") return <div key={i} style={{ overflowX:"auto",marginBottom:24 }}><table style={{ width:"100%",borderCollapse:"collapse",fontSize:14 }}><thead><tr>{b.headers.map((h,j)=><th key={j} style={{ textAlign:"left",padding:"12px 16px",background:"rgba(201,169,110,0.1)",color:C.gold,fontWeight:600,fontSize:12,letterSpacing:1,textTransform:"uppercase",borderBottom:"2px solid "+C.gold }}>{h}</th>)}</tr></thead><tbody>{b.rows.map((r,j)=><tr key={j}>{r.map((c,k)=><td key={k} style={{ padding:"12px 16px",color:C.text,borderBottom:"1px solid "+C.border,lineHeight:1.5 }}>{c}</td>)}</tr>)}</tbody></table></div>;
-    if (b.type==="callout") return <div key={i} style={{ background:"rgba(201,169,110,0.08)",borderLeft:"3px solid "+C.gold,padding:"20px 24px",marginBottom:24 }}><p style={{ color:C.text,fontSize:15,lineHeight:1.7,margin:0 }}>{b.text}</p></div>;
-    if (b.type==="faq") return <div key={i} style={{ marginBottom:24 }}><h4 style={{ color:C.white,fontSize:16,fontWeight:600,marginBottom:8 }}>{b.q}</h4><p style={{ color:C.textDim,fontSize:15,lineHeight:1.7,margin:0 }}>{b.a}</p></div>;
+    if (b.type==="p") return <p key={i} style={pStyle} dangerouslySetInnerHTML={{ __html: b.text }}/>;
+    if (b.type==="h2") return <h2 key={i} style={h2Style}>{b.text}</h2>;
+    if (b.type==="h3") return <h3 key={i} style={h3Style}>{b.text}</h3>;
+    if (b.type==="list") return <ul key={i} style={{ margin:"0 0 24px",paddingLeft:0,listStyle:"none" }}>{b.items.map((it,j)=><li key={j} style={{ color:C.text,fontSize:15,lineHeight:1.7,marginBottom:10,paddingLeft:24,position:"relative" }}><span style={{ position:"absolute",left:0,color:C.gold }}>•</span><span dangerouslySetInnerHTML={{ __html: it }}/></li>)}</ul>;
+    if (b.type==="table") return <div key={i} style={{ overflowX:"auto",marginBottom:24 }}><table style={{ width:"100%",borderCollapse:"collapse",fontSize:14 }}><thead><tr>{b.headers.map((h,j)=><th key={j} style={{ textAlign:"left",padding:"12px 16px",background:"rgba(201,169,110,0.1)",color:C.gold,fontWeight:600,fontSize:12,letterSpacing:1,textTransform:"uppercase",borderBottom:"2px solid "+C.gold }}>{h}</th>)}</tr></thead><tbody>{b.rows.map((r,j)=><tr key={j}>{r.map((c,k)=><td key={k} style={{ padding:"12px 16px",color:C.text,borderBottom:"1px solid "+C.border,lineHeight:1.5 }} dangerouslySetInnerHTML={{ __html: c }}/>)}</tr>)}</tbody></table></div>;
+    if (b.type==="callout") return <div key={i} style={{ background:"rgba(201,169,110,0.08)",borderLeft:"3px solid "+C.gold,padding:"20px 24px",marginBottom:24 }}><p style={callStyle} dangerouslySetInnerHTML={{ __html: b.text }}/></div>;
+    if (b.type==="faq") return <div key={i} style={{ marginBottom:24 }}><h4 style={{ color:C.white,fontSize:16,fontWeight:600,marginBottom:8 }}>{b.q}</h4><p style={{ color:C.textDim,fontSize:15,lineHeight:1.7,margin:0 }} dangerouslySetInnerHTML={{ __html: b.a }}/></div>;
     return null;
   });
 }
