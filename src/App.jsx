@@ -95,6 +95,16 @@ const ADVISORS = {
       topics: ["Private Banking"],
       email: "info@theitaliangateway.com",
     },
+    {
+      id: "brivio",
+      name: "Giacomo Brivio",
+      title: "Sports & Athlete Relocation",
+      photo: "/advisor-brivio.jpg",
+      desc: "Giacomo is the dedicated point of contact for professional athletes and their families relocating to Italy. From Serie A to basketball, rugby, and motorsport, he coordinates every aspect of the player's arrival — accommodation, tax structuring, healthcare, school enrollment, and spouse integration — so they can focus on performing from day one.",
+      short: "Dedicated relocation support for professional athletes & their families",
+      topics: ["Sports"],
+      email: "info@theitaliangateway.com",
+    },
   ],
   lifestyle: [
     {
@@ -431,7 +441,7 @@ function Nav({ setPage }) {
   const [sc, setSc] = useState(false);
   const [mob, setMob] = useState(false);
   useEffect(() => { const h = () => setSc(window.scrollY > 40); window.addEventListener("scroll", h); return () => window.removeEventListener("scroll", h); }, []);
-  const go = t => { setMob(false); if (["guides","quiz","properties","advisors","professionals"].includes(t) || t.startsWith("v-")) { setPage(t); window.scrollTo(0,0); } else { setPage("home"); setTimeout(() => document.getElementById(t)?.scrollIntoView({ behavior: "smooth" }), 100); } };
+  const go = t => { setMob(false); if (["guides","quiz","properties","advisors","professionals","athletes"].includes(t) || t.startsWith("v-")) { setPage(t); window.scrollTo(0,0); } else { setPage("home"); setTimeout(() => document.getElementById(t)?.scrollIntoView({ behavior: "smooth" }), 100); } };
   const links = [["Services","services"],["Advisors","advisors"],["For Professionals","professionals"],["Guides","guides"],["Contact","contact"]];
   return (
     <nav style={{ position:"fixed",top:0,left:0,right:0,zIndex:50,background:sc||mob?"rgba(10,14,23,0.97)":"transparent",backdropFilter:sc?"blur(12px)":"none",borderBottom:sc||mob?("1px solid "+C.border):"none",transition:"all 0.3s" }}>
@@ -1189,6 +1199,106 @@ function ArticleAdvisor({ articleCat }) {
   );
 }
 
+function AthletesPage({ setPage }) {
+  const [email, setEmail] = useState("");
+  const [role, setRole] = useState("");
+  const [sent, setSent] = useState(false);
+  const brivio = ADVISORS.core.find(a => a.id === "brivio");
+
+  return (
+    <section style={{ padding:"120px 24px 80px",maxWidth:900,margin:"0 auto" }}>
+      <FadeIn>
+        <div style={{ marginBottom:48 }}>
+          <div style={{ color:C.gold,fontSize:12,letterSpacing:4,textTransform:"uppercase",marginBottom:12 }}>Player Landing Service</div>
+          <h1 style={{ fontFamily:"Georgia,serif",fontSize:"clamp(28px,5vw,44px)",color:C.white,fontWeight:400,lineHeight:1.2,marginBottom:20 }}>Your player signs in Italy.<br/><span style={{ color:C.gold }}>We handle everything else.</span></h1>
+          <p style={{ color:C.textDim,fontSize:17,lineHeight:1.7,maxWidth:700 }}>Within 48 hours of signing, your player needs a home, a bank account, a doctor, a school for the children, a tax setup, and a codice fiscale. Their club handles the contract. You handle the negotiation. Nobody handles their life — until now.</p>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={100}>
+        <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))",gap:20,marginBottom:48 }}>
+          {[
+            { icon: "🏠", title: "Home", desc: "Furnished apartment sourced and contracted within 72 hours of arrival" },
+            { icon: "🏦", title: "Banking", desc: "Bank account, codice fiscale, SIM card, utilities — all set up" },
+            { icon: "🏥", title: "Healthcare", desc: "SSN registration, private GP assigned, club medical coordination" },
+            { icon: "🎓", title: "Schools", desc: "International school applications managed — 6-12 month waitlists handled" },
+            { icon: "⚖️", title: "Tax", desc: "Impatriati regime election (50% income exemption), commercialista assigned" },
+            { icon: "🛂", title: "Immigration", desc: "Residence permit, family visa, driving licence conversion" },
+          ].map((s,i) => <div key={i} style={{ background:C.card,border:"1px solid "+C.border,padding:"24px 20px" }}>
+            <div style={{ marginBottom:10 }}><Icon name={s.icon}/></div>
+            <div style={{ color:C.white,fontSize:15,fontWeight:600,marginBottom:6 }}>{s.title}</div>
+            <div style={{ color:C.textDim,fontSize:13,lineHeight:1.5 }}>{s.desc}</div>
+          </div>)}
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={150}>
+        <div style={{ background:"rgba(201,169,110,0.04)",borderLeft:"3px solid "+C.gold,padding:"24px 28px",marginBottom:48 }}>
+          <h3 style={{ fontFamily:"Georgia,serif",fontSize:18,color:C.white,fontWeight:400,marginBottom:12 }}>The spouse factor</h3>
+          <p style={{ color:C.textDim,fontSize:14,lineHeight:1.7,margin:0 }}>When a player requests a transfer after one season, it is almost never about football. It is about the family not settling. We provide dedicated spouse support — neighbourhood orientation, community introduction, language resources, professional networking. A settled family means a focused player.</p>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={200}>
+        <div style={{ background:C.card,border:"1px solid "+C.border,padding:"36px 32px",marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:24 }}>Timeline</h2>
+          {[
+            ["Day 1-3", "Emergency setup: accommodation, codice fiscale, bank application, SIM"],
+            ["Week 1-2", "SSN, doctor, school enrollment, neighbourhood tour for spouse"],
+            ["Week 2-4", "Permanent apartment, utilities, driving licence, tax advisor meeting"],
+            ["Month 2-3", "Community integration, ongoing support, financial planning introduction"],
+          ].map(([when,what],i) => <div key={i} style={{ display:"flex",gap:16,marginBottom:16,alignItems:"baseline" }}>
+            <span style={{ color:C.gold,fontFamily:"Georgia,serif",fontSize:16,minWidth:80 }}>{when}</span>
+            <span style={{ color:C.textDim,fontSize:14,lineHeight:1.5 }}>{what}</span>
+          </div>)}
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={250}>
+        <div style={{ background:C.card,border:"1px solid "+C.border,padding:"32px",marginBottom:48,display:"flex",gap:24,alignItems:"center",flexWrap:"wrap" }}>
+          <div style={{ width:120,height:120,borderRadius:"50%",overflow:"hidden",border:"2px solid "+C.gold,flexShrink:0,background:"#0d1423" }}>
+            <img src={brivio.photo} alt={brivio.name} loading="lazy" style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 20%" }}/>
+          </div>
+          <div>
+            <div style={{ color:C.gold,fontSize:10,letterSpacing:3,textTransform:"uppercase",marginBottom:4 }}>Your Point of Contact</div>
+            <h3 style={{ fontFamily:"Georgia,serif",fontSize:20,color:C.white,fontWeight:400,marginBottom:4 }}>{brivio.name}</h3>
+            <p style={{ color:C.gold,fontSize:13,fontStyle:"italic",marginBottom:8 }}>{brivio.title}</p>
+            <p style={{ color:C.textDim,fontSize:13,lineHeight:1.5,margin:0 }}>{brivio.short}</p>
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={300}>
+        <div style={{ marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:12 }}>For agents and clubs</h2>
+          <p style={{ color:C.textDim,fontSize:14,lineHeight:1.7,marginBottom:16 }}>Every call from a player's partner about a school problem or a bank account is time you're not spending on the next deal. We take that off your plate — one fixed fee, paid by the club or agent, everything handled.</p>
+          <span onClick={()=>{setPage("professional-athletes-italy-tax-relocation");window.scrollTo(0,0)}} style={{ color:C.gold,fontSize:14,cursor:"pointer",borderBottom:"1px solid rgba(201,169,110,0.3)",paddingBottom:2 }}>Read the full guide for athletes relocating to Italy →</span>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={350}>
+        <div style={{ background:C.card,border:"1px solid "+C.gold,padding:"40px 36px" }}>
+          {sent ? (
+            <div style={{ textAlign:"center" }}><div style={{ fontSize:40,marginBottom:12 }}>✓</div><h3 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white }}>Thank you</h3><p style={{ color:C.textDim,fontSize:14 }}>We will be in touch within 24 hours.</p></div>
+          ) : (<>
+            <h3 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:8 }}>Get in touch</h3>
+            <p style={{ color:C.textDim,fontSize:14,marginBottom:24 }}>For agents, clubs, and athlete management companies.</p>
+            <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:16,marginBottom:16 }}>
+              <div><label style={{ color:C.textDim,fontSize:11,letterSpacing:2,textTransform:"uppercase",display:"block",marginBottom:6 }}>Your role</label>
+                <div style={{ display:"flex",gap:8,flexWrap:"wrap" }}>
+                  {["Agent","Club / DS","Management Company","Player directly"].map(r=><button key={r} onClick={()=>setRole(r)} style={{ padding:"8px 14px",background:role===r?"rgba(201,169,110,0.15)":C.bg,border:"1px solid "+(role===r?C.gold:C.border),color:role===r?C.gold:C.textDim,fontSize:12,cursor:"pointer" }}>{r}</button>)}
+                </div>
+              </div>
+              <div><label style={{ color:C.textDim,fontSize:11,letterSpacing:2,textTransform:"uppercase",display:"block",marginBottom:6 }}>Email *</label><input type="email" value={email} onChange={e=>setEmail(e.target.value)} style={{ width:"100%",padding:"12px 14px",background:C.bg,color:C.white,border:"1px solid "+C.border,fontSize:14,boxSizing:"border-box" }}/></div>
+            </div>
+            <button onClick={async()=>{if(!email)return;await submitForm({_subject:"Athlete Landing Inquiry",role,email,source:"athletes-page"});trackEvent("generate_lead",{source:"athletes"});setSent(true)}} style={{ width:"100%",marginTop:16,padding:"16px 0",background:email?C.gold:C.border,color:email?C.bg:C.textDim,border:"none",fontSize:14,fontWeight:600,letterSpacing:2,cursor:email?"pointer":"default" }}>SEND INQUIRY</button>
+          </>)}
+        </div>
+      </FadeIn>
+    </section>
+  );
+}
+
 function ProfessionalsPage({ setPage }) {
   const [email, setEmail] = useState("");
   const [firm, setFirm] = useState("");
@@ -1519,6 +1629,7 @@ function pageToHash(p) {
   if (p === "properties") return "/locations";
   if (p === "advisors") return "/advisors";
   if (p === "professionals") return "/professionals";
+  if (p === "athletes") return "/athletes";
   if (p === "privacy") return "/privacy";
   if (p === "cookies") return "/cookies";
   if (p === "terms") return "/terms";
@@ -1535,6 +1646,7 @@ function hashToPage(h) {
   if (path === "/locations") return "properties";
   if (path === "/advisors") return "advisors";
   if (path === "/professionals") return "professionals";
+  if (path === "/athletes") return "athletes";
   if (path === "/privacy") return "privacy";
   if (path === "/cookies") return "cookies";
   if (path === "/terms") return "terms";
@@ -1585,6 +1697,7 @@ export default function App() {
       {page==="properties" && <PropertyGallery setPage={setPage}/>}
       {page==="advisors" && <AdvisorsSection/>}
       {page==="professionals" && <ProfessionalsPage setPage={setPage}/>}
+      {page==="athletes" && <AthletesPage setPage={setPage}/>}
       {isVert && <VerticalPage id={page.replace("v-","")} setPage={setPage}/>}
       {isArt && <ArticlePage id={page} setPage={setPage}/>}
       {isLegal && <LegalPage page={page} setPage={setPage}/>}

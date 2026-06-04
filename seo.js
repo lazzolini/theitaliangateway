@@ -247,6 +247,28 @@ writeFileSync(join(DIST, 'professionals', 'index.html'), page(
 ));
 console.log('  + professionals/');
 
+// ── Athletes page ───────────────────────────────────────────
+ensureDir(join(DIST, 'athletes'));
+const athBody = `
+<h1>Player Landing Service</h1>
+<p style="color:#9CA3AF;font-size:17px;margin-bottom:16px">Your player signs in Italy. We handle everything else — accommodation, banking, healthcare, schools, tax structuring, immigration. Within 48 hours of arrival. One fixed fee.</p>
+<h2>What We Handle</h2>
+<p>Home (furnished apartment within 72 hours), Banking (account, codice fiscale, SIM), Healthcare (SSN, private GP, club medical coordination), Schools (international school applications and waitlists), Tax (Impatriati regime — 50% income exemption), Immigration (residence permit, family visa, driving licence).</p>
+<h2>The Spouse Factor</h2>
+<p>When a player requests a transfer after one season, it is almost never about football. It is about the family not settling. We provide dedicated spouse support — neighbourhood orientation, community introduction, language, professional networking.</p>
+<h2>For Agents &amp; Clubs</h2>
+<p>Every call from a player's partner about a school or a bank account is time you're not spending on the next deal. One fixed fee, paid by the club or agent. The player settles. You move on.</p>
+<p><a href="/guide/professional-athletes-italy-tax-relocation/">Read the full guide for athletes relocating to Italy</a></p>
+<p style="margin-top:32px">Contact: <a href="mailto:info@theitaliangateway.com">info@theitaliangateway.com</a></p>`;
+
+writeFileSync(join(DIST, 'athletes', 'index.html'), page(
+  'Player Landing Service — Athletes Relocating to Italy | The Italian Gateway',
+  'Professional athletes relocating to Italy: accommodation, banking, healthcare, schools, Impatriati tax regime, immigration. For agents, clubs, and management companies. One fixed fee.',
+  DOMAIN + '/athletes/',
+  athBody
+));
+console.log('  + athletes/');
+
 // ── Inject SEO content into homepage ────────────────────────
 let homepage = readFileSync(join(DIST, 'index.html'), 'utf8');
 const seo = `<div id="seo" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
@@ -350,6 +372,7 @@ const urls = [
   { loc: '/guides/', p: '0.9' },
   { loc: '/advisors/', p: '0.8' },
   { loc: '/professionals/', p: '0.9' },
+  { loc: '/athletes/', p: '0.8' },
   ...ARTICLES.map(a => ({ loc: '/guide/' + a.id + '/', p: '0.8' })),
   { loc: '/privacy/', p: '0.3' },
   { loc: '/cookies/', p: '0.3' },
