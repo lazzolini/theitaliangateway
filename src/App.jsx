@@ -431,8 +431,8 @@ function Nav({ setPage }) {
   const [sc, setSc] = useState(false);
   const [mob, setMob] = useState(false);
   useEffect(() => { const h = () => setSc(window.scrollY > 40); window.addEventListener("scroll", h); return () => window.removeEventListener("scroll", h); }, []);
-  const go = t => { setMob(false); if (["guides","quiz","properties","advisors"].includes(t) || t.startsWith("v-")) { setPage(t); window.scrollTo(0,0); } else { setPage("home"); setTimeout(() => document.getElementById(t)?.scrollIntoView({ behavior: "smooth" }), 100); } };
-  const links = [["Services","services"],["Advisors","advisors"],["Guides","guides"],["Quiz","quiz"],["Locations","properties"],["Contact","contact"]];
+  const go = t => { setMob(false); if (["guides","quiz","properties","advisors","professionals"].includes(t) || t.startsWith("v-")) { setPage(t); window.scrollTo(0,0); } else { setPage("home"); setTimeout(() => document.getElementById(t)?.scrollIntoView({ behavior: "smooth" }), 100); } };
+  const links = [["Services","services"],["Advisors","advisors"],["For Professionals","professionals"],["Guides","guides"],["Contact","contact"]];
   return (
     <nav style={{ position:"fixed",top:0,left:0,right:0,zIndex:50,background:sc||mob?"rgba(10,14,23,0.97)":"transparent",backdropFilter:sc?"blur(12px)":"none",borderBottom:sc||mob?("1px solid "+C.border):"none",transition:"all 0.3s" }}>
       <div style={{ maxWidth:1200,margin:"0 auto",padding:"16px 24px",display:"flex",alignItems:"center",justifyContent:"space-between" }}>
@@ -1189,6 +1189,90 @@ function ArticleAdvisor({ articleCat }) {
   );
 }
 
+function ProfessionalsPage({ setPage }) {
+  const [email, setEmail] = useState("");
+  const [firm, setFirm] = useState("");
+  const [sent, setSent] = useState(false);
+
+  const guides = [
+    { title: "Italy Flat Tax: Technical Briefing", id: "flat-tax-2026", desc: "€300K regime, eligibility, family extension, inheritance exemption, grandfathering. The complete reference." },
+    { title: "QROPS & UK Pensions in Italy", id: "qrops-uk-pension-italy-2026", desc: "Why transfers don't work, the SIPP drawdown strategy, Luxembourg wrapper alternative." },
+    { title: "PFIC Rules for US Citizens", id: "pfic-rules-us-citizens-italy-2026", desc: "Non-US funds trigger punitive 50%+ rates. Portfolio restructuring before relocation." },
+    { title: "Roth IRA Italian Tax Treatment", id: "roth-ira-italy-tax-treatment-2026", desc: "Italy doesn't recognise tax-free status. Strategies: pre-move withdrawal, 7% regime, inheritance play." },
+    { title: "Trusts & CFC Rules", id: "trusts-cfc-rules-italy-hnwi-2026", desc: "When Italy looks through offshore structures. Jersey trusts, BVI holdings, Dubai FZCOs." },
+    { title: "Polizza Vita Luxembourg", id: "polizza-vita-luxembourg-italy-wealth", desc: "Tax deferral, inheritance exemption, creditor protection. The gold standard wrapper for Italian residents." },
+    { title: "7% Retiree Flat Tax", id: "italy-7-percent-retiree-flat-tax-south-2026", desc: "7% on all foreign income for 10 years. Now expanded to 30,000 inhabitants — 74 new qualifying towns." },
+    { title: "EU Pension Coordination", id: "eu-pension-transfer-italy-pepp-2026", desc: "German, French, Dutch pensions. Regulation 883/2004, totalisation, PEPP status, S1 form." },
+    { title: "Italy vs Portugal vs Greece", id: "italy-vs-portugal-vs-greece-tax-2026", desc: "Side-by-side regime comparison. Portugal NHR dead, Greece requires €500K, Switzerland bans work." },
+    { title: "UK Wealth Exodus Data", id: "uk-millionaire-exodus-italy-2026", desc: "16,500 millionaires left UK in 2025. Italy #3 globally for inflows. The data for client conversations." },
+  ];
+
+  return (
+    <section style={{ padding:"120px 24px 80px",maxWidth:900,margin:"0 auto" }}>
+      <FadeIn>
+        <div style={{ marginBottom:56 }}>
+          <div style={{ color:C.gold,fontSize:12,letterSpacing:4,textTransform:"uppercase",marginBottom:12 }}>For Wealth Managers, Family Offices & Law Firms</div>
+          <h1 style={{ fontFamily:"Georgia,serif",fontSize:"clamp(28px,5vw,44px)",color:C.white,fontWeight:400,lineHeight:1.2,marginBottom:20 }}>Your client wants to move to Italy.<br/><span style={{ color:C.gold }}>We handle everything on the ground.</span></h1>
+          <p style={{ color:C.textDim,fontSize:17,lineHeight:1.7,maxWidth:700 }}>You manage the relationship. We manage Italy — tax structuring, property, banking introductions, healthcare, schools, immigration. Your client gets white-glove service. You keep the client.</p>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={100}>
+        <div style={{ background:C.card,border:"1px solid "+C.border,padding:"40px 36px",marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:24,color:C.white,fontWeight:400,marginBottom:24 }}>How the referral works</h2>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",gap:24 }}>
+            {[
+              { n: "01", title: "You identify the need", desc: "Your client mentions Italy — relocation, property, retirement, tax restructuring." },
+              { n: "02", title: "Warm introduction", desc: "You introduce us via email. We schedule a confidential call with your client within 48 hours." },
+              { n: "03", title: "We handle Italy", desc: "Tax advisor, property search, banking, schools, healthcare, immigration — all coordinated through one point of contact." },
+              { n: "04", title: "You stay informed", desc: "Regular updates at a level of detail you choose. Your client remains your client. We are the Italy desk." },
+            ].map((s,i) => <div key={i}><div style={{ fontFamily:"Georgia,serif",fontSize:28,color:C.gold,marginBottom:8 }}>{s.n}</div><div style={{ color:C.white,fontSize:15,fontWeight:600,marginBottom:6 }}>{s.title}</div><div style={{ color:C.textDim,fontSize:13,lineHeight:1.6 }}>{s.desc}</div></div>)}
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={150}>
+        <div style={{ background:"rgba(201,169,110,0.04)",borderLeft:"3px solid "+C.gold,padding:"24px 28px",marginBottom:48 }}>
+          <h3 style={{ fontFamily:"Georgia,serif",fontSize:18,color:C.white,fontWeight:400,marginBottom:12 }}>Why advisors refer to us</h3>
+          <div style={{ color:C.textDim,fontSize:14,lineHeight:1.8 }}>
+            Your client's relocation to Italy creates complexity that falls outside your core mandate — Italian tax elections, notarial property processes, school waitlists, healthcare registration, driving licence conversions. Attempting to manage this in-house is costly and risky. Ignoring it means your client calls someone else — who may also manage the assets.
+            We exist to fill that gap. We coordinate every aspect of the Italian relocation without touching the investment relationship. Your AUM stays with you. Your client gets the service they expect.
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={200}>
+        <div style={{ marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:24,color:C.white,fontWeight:400,marginBottom:8,paddingBottom:16,borderBottom:"1px solid "+C.border }}>Technical reference library</h2>
+          <p style={{ color:C.textDim,fontSize:14,marginBottom:24 }}>Guides your team can use for client conversations and due diligence:</p>
+          <div style={{ display:"grid",gap:12 }}>
+            {guides.map((g,i) => <div key={i} onClick={() => {setPage(g.id);window.scrollTo(0,0)}} style={{ background:C.card,border:"1px solid "+C.border,padding:"16px 20px",cursor:"pointer",display:"flex",justifyContent:"space-between",alignItems:"center",gap:16,transition:"border-color 0.3s" }} onMouseEnter={e=>e.currentTarget.style.borderColor=C.goldDim} onMouseLeave={e=>e.currentTarget.style.borderColor=C.border}>
+              <div><div style={{ color:C.white,fontSize:15,marginBottom:4 }}>{g.title}</div><div style={{ color:C.textDim,fontSize:12,lineHeight:1.5 }}>{g.desc}</div></div>
+              <span style={{ color:C.gold,fontSize:18,flexShrink:0 }}>→</span>
+            </div>)}
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={300}>
+        <div style={{ background:C.card,border:"1px solid "+C.gold,padding:"40px 36px" }}>
+          {sent ? (
+            <div style={{ textAlign:"center" }}><div style={{ fontSize:40,marginBottom:12 }}>✓</div><h3 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,marginBottom:8 }}>Thank you</h3><p style={{ color:C.textDim,fontSize:14 }}>We will be in touch within 24 hours to discuss a referral framework.</p></div>
+          ) : (<>
+            <h3 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:8 }}>Establish a referral relationship</h3>
+            <p style={{ color:C.textDim,fontSize:14,marginBottom:24 }}>Confidential. No obligation. We respond within 24 hours.</p>
+            <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:16,marginBottom:16 }}>
+              <div><label style={{ color:C.textDim,fontSize:11,letterSpacing:2,textTransform:"uppercase",display:"block",marginBottom:6 }}>Firm name</label><input value={firm} onChange={e=>setFirm(e.target.value)} style={{ width:"100%",padding:"12px 14px",background:C.bg,color:C.white,border:"1px solid "+C.border,fontSize:14,boxSizing:"border-box" }}/></div>
+              <div><label style={{ color:C.textDim,fontSize:11,letterSpacing:2,textTransform:"uppercase",display:"block",marginBottom:6 }}>Professional email *</label><input type="email" value={email} onChange={e=>setEmail(e.target.value)} style={{ width:"100%",padding:"12px 14px",background:C.bg,color:C.white,border:"1px solid "+C.border,fontSize:14,boxSizing:"border-box" }}/></div>
+            </div>
+            <button onClick={async()=>{if(!email)return;await submitForm({_subject:"Professional Referral Inquiry",firm,email,source:"professionals-page"});trackEvent("generate_lead",{source:"professionals"});setSent(true)}} style={{ width:"100%",padding:"16px 0",background:email?C.gold:C.border,color:email?C.bg:C.textDim,border:"none",fontSize:14,fontWeight:600,letterSpacing:2,cursor:email?"pointer":"default" }}>GET IN TOUCH</button>
+          </>)}
+        </div>
+      </FadeIn>
+    </section>
+  );
+}
+
 function Footer({ setPage }) {
   return (
     <footer style={{ padding:"60px 24px 32px",borderTop:"1px solid "+C.border }}>
@@ -1434,6 +1518,7 @@ function pageToHash(p) {
   if (p === "quiz") return "/quiz";
   if (p === "properties") return "/locations";
   if (p === "advisors") return "/advisors";
+  if (p === "professionals") return "/professionals";
   if (p === "privacy") return "/privacy";
   if (p === "cookies") return "/cookies";
   if (p === "terms") return "/terms";
@@ -1449,6 +1534,7 @@ function hashToPage(h) {
   if (path === "/quiz") return "quiz";
   if (path === "/locations") return "properties";
   if (path === "/advisors") return "advisors";
+  if (path === "/professionals") return "professionals";
   if (path === "/privacy") return "privacy";
   if (path === "/cookies") return "cookies";
   if (path === "/terms") return "terms";
@@ -1498,6 +1584,7 @@ export default function App() {
       {page==="quiz" && <QuizPage setPage={setPage}/>}
       {page==="properties" && <PropertyGallery setPage={setPage}/>}
       {page==="advisors" && <AdvisorsSection/>}
+      {page==="professionals" && <ProfessionalsPage setPage={setPage}/>}
       {isVert && <VerticalPage id={page.replace("v-","")} setPage={setPage}/>}
       {isArt && <ArticlePage id={page} setPage={setPage}/>}
       {isLegal && <LegalPage page={page} setPage={setPage}/>}

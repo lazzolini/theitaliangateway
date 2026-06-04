@@ -215,6 +215,38 @@ writeFileSync(join(DIST, 'advisors', 'index.html'), page(
 ));
 console.log('  + advisors/');
 
+// ── Professionals page ───────────────────────────────────────────
+ensureDir(join(DIST, 'professionals'));
+const profBody = `
+<h1>For Wealth Managers, Family Offices &amp; Law Firms</h1>
+<p style="color:#9CA3AF;font-size:17px;margin-bottom:16px">Your client wants to move to Italy. We handle everything on the ground — tax structuring, property, banking introductions, healthcare, schools, immigration. Your client gets white-glove service. You keep the client.</p>
+<h2>How the referral works</h2>
+<p>1. You identify the need — your client mentions Italy. 2. Warm introduction via email. We schedule a confidential call within 48 hours. 3. We handle Italy — tax, property, banking, schools, healthcare, immigration. 4. You stay informed. Your client remains your client.</p>
+<h2>Why advisors refer to us</h2>
+<p>Your client's relocation creates complexity outside your core mandate. We coordinate every aspect without touching the investment relationship. Your AUM stays with you.</p>
+<h2>Technical reference library</h2>
+<ul>
+<li><a href="/guide/flat-tax-2026/">Italy Flat Tax: Technical Briefing</a></li>
+<li><a href="/guide/qrops-uk-pension-italy-2026/">QROPS &amp; UK Pensions in Italy</a></li>
+<li><a href="/guide/pfic-rules-us-citizens-italy-2026/">PFIC Rules for US Citizens</a></li>
+<li><a href="/guide/roth-ira-italy-tax-treatment-2026/">Roth IRA Italian Tax Treatment</a></li>
+<li><a href="/guide/trusts-cfc-rules-italy-hnwi-2026/">Trusts &amp; CFC Rules</a></li>
+<li><a href="/guide/polizza-vita-luxembourg-italy-wealth/">Polizza Vita Luxembourg</a></li>
+<li><a href="/guide/italy-7-percent-retiree-flat-tax-south-2026/">7% Retiree Flat Tax</a></li>
+<li><a href="/guide/eu-pension-transfer-italy-pepp-2026/">EU Pension Coordination</a></li>
+<li><a href="/guide/italy-vs-portugal-vs-greece-tax-2026/">Italy vs Portugal vs Greece</a></li>
+<li><a href="/guide/uk-millionaire-exodus-italy-2026/">UK Wealth Exodus Data</a></li>
+</ul>
+<p style="margin-top:32px">Contact: <a href="mailto:info@theitaliangateway.com">info@theitaliangateway.com</a></p>`;
+
+writeFileSync(join(DIST, 'professionals', 'index.html'), page(
+  'For Wealth Managers & Family Offices | The Italian Gateway',
+  'Your client wants to move to Italy. We handle tax structuring, property, banking, healthcare, schools, immigration. Technical reference library for advisors. Referral partnership available.',
+  DOMAIN + '/professionals/',
+  profBody
+));
+console.log('  + professionals/');
+
 // ── Inject SEO content into homepage ────────────────────────
 let homepage = readFileSync(join(DIST, 'index.html'), 'utf8');
 const seo = `<div id="seo" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
@@ -317,6 +349,7 @@ const urls = [
   { loc: '/', p: '1.0' },
   { loc: '/guides/', p: '0.9' },
   { loc: '/advisors/', p: '0.8' },
+  { loc: '/professionals/', p: '0.9' },
   ...ARTICLES.map(a => ({ loc: '/guide/' + a.id + '/', p: '0.8' })),
   { loc: '/privacy/', p: '0.3' },
   { loc: '/cookies/', p: '0.3' },
