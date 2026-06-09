@@ -72,6 +72,7 @@ const ADVISORS = {
       desc: "A chartered accountant specialising in international tax and immigration law, Nicolò advises individuals and companies relocating to Italy. From flat tax applications and corporate structuring to residence permits and citizenship pathways, he provides end-to-end guidance — ensuring every aspect of your transition is handled with precision and full regulatory compliance.",
       short: "International tax structuring, corporate advisory & immigration law",
       topics: ["Tax & Legal", "Relocation", "Immigration", "Private Banking"],
+      linkedin: "https://www.linkedin.com/in/accountingbolla",
       email: "info@theitaliangateway.com",
     },
     {
@@ -82,6 +83,7 @@ const ADVISORS = {
       desc: "A qualified Doctor of Medicine and Surgery (M.D.), Dr. Azzolini connects you with the most qualified specialist for your needs — whether it's a trusted GP, a world-class surgeon, or a paediatric screening. He provides a confidential technical consultation to understand your situation and refers you to the right professional in the right location.",
       short: "Medical orientation & specialist referrals across Italy",
       topics: ["Healthcare"],
+      linkedin: "https://www.linkedin.com/in/gabriele-azzolini-b309651b7",
       email: "info@theitaliangateway.com",
     },
     {
@@ -441,8 +443,8 @@ function Nav({ setPage }) {
   const [sc, setSc] = useState(false);
   const [mob, setMob] = useState(false);
   useEffect(() => { const h = () => setSc(window.scrollY > 40); window.addEventListener("scroll", h); return () => window.removeEventListener("scroll", h); }, []);
-  const go = t => { setMob(false); if (["guides","quiz","properties","advisors","professionals","athletes"].includes(t) || t.startsWith("v-")) { setPage(t); window.scrollTo(0,0); } else { setPage("home"); setTimeout(() => document.getElementById(t)?.scrollIntoView({ behavior: "smooth" }), 100); } };
-  const links = [["Services","services"],["Advisors","advisors"],["For Professionals","professionals"],["Guides","guides"],["Contact","contact"]];
+  const go = t => { setMob(false); if (["guides","quiz","properties","advisors","professionals","athletes","about"].includes(t) || t.startsWith("v-")) { setPage(t); window.scrollTo(0,0); } else { setPage("home"); setTimeout(() => document.getElementById(t)?.scrollIntoView({ behavior: "smooth" }), 100); } };
+  const links = [["About","about"],["Services","services"],["Advisors","advisors"],["For Professionals","professionals"],["Guides","guides"],["Contact","contact"]];
   return (
     <nav style={{ position:"fixed",top:0,left:0,right:0,zIndex:50,background:sc||mob?"rgba(10,14,23,0.97)":"transparent",backdropFilter:sc?"blur(12px)":"none",borderBottom:sc||mob?("1px solid "+C.border):"none",transition:"all 0.3s" }}>
       <div style={{ maxWidth:1200,margin:"0 auto",padding:"16px 24px",display:"flex",alignItems:"center",justifyContent:"space-between" }}>
@@ -1199,6 +1201,79 @@ function ArticleAdvisor({ articleCat }) {
   );
 }
 
+function AboutPage({ setPage }) {
+  const coreAdvisors = ADVISORS.core.filter(a => a.name);
+  return (
+    <section style={{ padding:"120px 24px 80px",maxWidth:900,margin:"0 auto" }}>
+      <FadeIn>
+        <div style={{ marginBottom:56 }}>
+          <div style={{ color:C.gold,fontSize:12,letterSpacing:4,textTransform:"uppercase",marginBottom:12 }}>About Us</div>
+          <h1 style={{ fontFamily:"Georgia,serif",fontSize:"clamp(28px,5vw,44px)",color:C.white,fontWeight:400,lineHeight:1.2,marginBottom:20 }}>Navigating Italy's complexity<br/><span style={{ color:C.gold }}>so you don't have to</span></h1>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={80}>
+        <div style={{ marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:16,paddingBottom:12,borderBottom:"1px solid "+C.border }}>Our mission</h2>
+          <p style={{ color:C.text,fontSize:16,lineHeight:1.8,marginBottom:16 }}>The Italian Gateway exists because relocating to Italy should not require a law degree, a tax encyclopaedia, and six months of bureaucratic frustration. We are a Milan-based advisory service that coordinates every dimension of a high-value relocation — from the €300,000 flat tax election to the school waiting list, from the private bank introduction to the driving licence conversion.</p>
+          <p style={{ color:C.text,fontSize:16,lineHeight:1.8,marginBottom:16 }}>Our clients are internationally mobile individuals and families — from London, Dubai, Geneva, New York, Singapore — who expect the same quality of service in Italy that they receive from their advisors at home. We provide that quality through a curated network of Italian professionals, each vetted and each operating under our coordination.</p>
+          <p style={{ color:C.text,fontSize:16,lineHeight:1.8 }}>We also work with the professionals who advise these families: wealth managers, family offices, law firms, and sports agents who need a trusted partner on the ground in Italy. For them, we are the Italy desk — handling the complexities that fall outside their core mandate, without touching the client relationship.</p>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={120}>
+        <div style={{ marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:16,paddingBottom:12,borderBottom:"1px solid "+C.border }}>Our team</h2>
+          <p style={{ color:C.textDim,fontSize:15,lineHeight:1.7,marginBottom:32 }}>Every professional in our network is independently qualified, personally vetted, and operates under Italian regulatory standards. We do not employ generalists. Each advisor is a specialist in their field.</p>
+
+          <div style={{ display:"grid",gap:32 }}>
+            {coreAdvisors.map((a,i) => <FadeIn key={a.id} delay={150+i*80}>
+              <div style={{ display:"flex",gap:24,alignItems:"flex-start",flexWrap:"wrap" }}>
+                {a.photo ? <div style={{ width:100,height:100,borderRadius:"50%",overflow:"hidden",border:"2px solid "+C.gold,flexShrink:0,background:"#0d1423" }}>
+                  <img src={a.photo} alt={a.name} loading="lazy" style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 20%" }}/>
+                </div> : <div style={{ width:100,height:100,borderRadius:"50%",border:"2px solid "+C.gold,flexShrink:0,background:"linear-gradient(145deg,#111827,#0d1423)",display:"flex",alignItems:"center",justifyContent:"center" }}>
+                  <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="10" r="2.5"/><path d="M12 12.5c-2.5 0-4 1.5-4 3v.5h8v-.5c0-1.5-1.5-3-4-3z"/></svg>
+                </div>}
+                <div style={{ flex:1,minWidth:240 }}>
+                  <div style={{ display:"flex",alignItems:"center",gap:12,flexWrap:"wrap" }}>
+                    <h3 style={{ fontFamily:"Georgia,serif",fontSize:19,color:C.white,fontWeight:400,margin:0 }}>{a.name}</h3>
+                    {a.linkedin && <a href={a.linkedin} target="_blank" rel="noopener noreferrer" style={{ color:C.gold,fontSize:12,textDecoration:"none",border:"1px solid "+C.goldDim,padding:"3px 10px",borderRadius:2 }}>LinkedIn</a>}
+                  </div>
+                  <p style={{ color:C.gold,fontSize:13,fontStyle:"italic",marginTop:4,marginBottom:8 }}>{a.title}</p>
+                  <p style={{ color:C.textDim,fontSize:14,lineHeight:1.6,margin:0 }}>{a.desc}</p>
+                  {a.anonymous && <p style={{ color:C.textDim,fontSize:12,marginTop:8,fontStyle:"italic",opacity:0.7 }}>Introductions are made confidentially and matched to your profile</p>}
+                </div>
+              </div>
+            </FadeIn>)}
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={300}>
+        <div style={{ marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:16,paddingBottom:12,borderBottom:"1px solid "+C.border }}>How we produce our content</h2>
+          <p style={{ color:C.text,fontSize:15,lineHeight:1.8,marginBottom:16 }}>Every guide and article published on The Italian Gateway is researched using primary sources: Italian legislation (Testo Unico delle Imposte sui Redditi, D.Lgs. 147/2015, D.Lgs. 209/2023), EU regulations (883/2004, 650/2012, 2019/1238), bilateral tax treaties, and circulari from the Agenzia delle Entrate.</p>
+          <p style={{ color:C.text,fontSize:15,lineHeight:1.8,marginBottom:16 }}>Tax and legal content is reviewed by Nicolò Bolla, a chartered accountant specialising in international tax and immigration law. Healthcare content is reviewed by Dr. Gabriele Azzolini, M.D. This review process ensures accuracy and compliance with current Italian law.</p>
+          <p style={{ color:C.text,fontSize:15,lineHeight:1.8 }}>We update our content when legislation changes. Recent updates include the 2026 flat tax increase to €300,000, the expansion of the 7% retiree regime to municipalities under 30,000 inhabitants (April 2026), and the UK non-dom abolition implications.</p>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={350}>
+        <div style={{ background:C.card,border:"1px solid "+C.border,padding:"32px 36px",marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:16 }}>Contact</h2>
+          <div style={{ color:C.text,fontSize:15,lineHeight:1.8 }}>
+            <p style={{ marginBottom:8 }}><strong style={{ color:C.gold }}>The Italian Gateway</strong></p>
+            <p style={{ marginBottom:8 }}>Premium Relocation Advisory</p>
+            <p style={{ marginBottom:8 }}>Milan, Italy</p>
+            <p style={{ marginBottom:8 }}>Email: <a href="mailto:info@theitaliangateway.com" style={{ color:C.gold }}>info@theitaliangateway.com</a></p>
+            <p style={{ marginBottom:0,marginTop:16,color:C.textDim,fontSize:13 }}>Registered in Italy · VAT identification pending · All advisory services are provided by independently qualified professionals in their respective regulated fields.</p>
+          </div>
+        </div>
+      </FadeIn>
+    </section>
+  );
+}
+
 function AthletesPage({ setPage }) {
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
@@ -1602,14 +1677,27 @@ function ArticleContent({ blocks }) {
 function ArticlePage({ id, setPage }) {
   const a = ARTICLES.find(x=>x.id===id);
   if (!a) return null;
+  // Determine reviewer based on category
+  const taxCats = ["Tax & Legal","Immigration","Private Banking","Relocation"];
+  const healthCats = ["Healthcare"];
+  const reviewer = healthCats.some(c=>a.cat.includes(c))
+    ? { name:"Dr. Gabriele Azzolini, M.D.", role:"Medical Advisor", linkedin:"https://www.linkedin.com/in/gabriele-azzolini-b309651b7" }
+    : taxCats.some(c=>a.cat.includes(c))
+    ? { name:"Nicolò Bolla", role:"Chartered Accountant — International Tax & Immigration", linkedin:"https://www.linkedin.com/in/accountingbolla" }
+    : null;
   return (
     <section style={{ padding:"120px 24px 80px",maxWidth:780,margin:"0 auto" }}>
       <div style={{ marginBottom:48 }}>
         <span onClick={()=>{setPage("guides");window.scrollTo(0,0)}} style={{ color:C.gold,fontSize:13,cursor:"pointer",marginBottom:24,display:"inline-block" }}>{"< Back to Guides"}</span>
-        <div style={{ display:"flex",gap:16,marginBottom:16,flexWrap:"wrap" }}><span style={{ color:C.gold,fontSize:11,letterSpacing:2,textTransform:"uppercase",background:"rgba(201,169,110,0.1)",padding:"4px 12px" }}>{a.cat}</span><span style={{ color:C.textDim,fontSize:12 }}>{a.read} read</span></div>
-        <h1 style={{ fontFamily:"Georgia,serif",fontSize:"clamp(28px,4vw,40px)",color:C.white,fontWeight:400,lineHeight:1.25,marginBottom:20 }}>{a.title}</h1>
-        <p style={{ color:C.textDim,fontSize:17,lineHeight:1.7 }}>{a.desc}</p>
-        <div style={{ height:2,background:"linear-gradient(to right,"+C.gold+",transparent)",marginTop:32 }}/>
+        <div style={{ display:"flex",gap:16,marginBottom:16,flexWrap:"wrap" }}><span style={{ color:C.gold,fontSize:11,letterSpacing:2,textTransform:"uppercase",background:"rgba(201,169,110,0.1)",padding:"4px 12px" }}>{a.cat}</span><span style={{ color:C.textDim,fontSize:12 }}>{a.read} read</span><span style={{ color:C.textDim,fontSize:12 }}>{a.date}</span></div>
+        <h1 style={{ fontFamily:"Georgia,serif",fontSize:"clamp(28px,4vw,40px)",color:C.white,fontWeight:400,lineHeight:1.25,marginBottom:16 }}>{a.title}</h1>
+        <p style={{ color:C.textDim,fontSize:17,lineHeight:1.7,marginBottom:16 }}>{a.desc}</p>
+        {reviewer && <div style={{ display:"flex",alignItems:"center",gap:8,marginBottom:8 }}>
+          <span style={{ color:C.textDim,fontSize:12 }}>Reviewed by</span>
+          <a href={reviewer.linkedin} target="_blank" rel="noopener noreferrer" style={{ color:C.gold,fontSize:12,textDecoration:"none" }}>{reviewer.name}</a>
+          <span style={{ color:C.textDim,fontSize:11 }}>— {reviewer.role}</span>
+        </div>}
+        <div style={{ height:2,background:"linear-gradient(to right,"+C.gold+",transparent)",marginTop:16 }}/>
       </div>
       <ArticleContent blocks={a.content}/>
       <ArticleAdvisor articleCat={a.cat}/>
@@ -1628,6 +1716,7 @@ function pageToHash(p) {
   if (p === "quiz") return "/quiz";
   if (p === "properties") return "/locations";
   if (p === "advisors") return "/advisors";
+  if (p === "about") return "/about";
   if (p === "professionals") return "/professionals";
   if (p === "athletes") return "/athletes";
   if (p === "privacy") return "/privacy";
@@ -1645,6 +1734,7 @@ function hashToPage(h) {
   if (path === "/quiz") return "quiz";
   if (path === "/locations") return "properties";
   if (path === "/advisors") return "advisors";
+  if (path === "/about") return "about";
   if (path === "/professionals") return "professionals";
   if (path === "/athletes") return "athletes";
   if (path === "/privacy") return "privacy";
@@ -1696,6 +1786,7 @@ export default function App() {
       {page==="quiz" && <QuizPage setPage={setPage}/>}
       {page==="properties" && <PropertyGallery setPage={setPage}/>}
       {page==="advisors" && <AdvisorsSection/>}
+      {page==="about" && <AboutPage setPage={setPage}/>}
       {page==="professionals" && <ProfessionalsPage setPage={setPage}/>}
       {page==="athletes" && <AthletesPage setPage={setPage}/>}
       {isVert && <VerticalPage id={page.replace("v-","")} setPage={setPage}/>}

@@ -111,15 +111,24 @@ ${art.content.map(renderBlock).join('\n')}`;
   const jsonLd = [];
   
   // Article schema
+  const taxCats = ["Tax & Legal","Immigration","Private Banking","Relocation"];
+  const healthCats = ["Healthcare"];
+  const reviewer = healthCats.some(c=>art.cat.includes(c))
+    ? { name:"Dr. Gabriele Azzolini", url:"https://www.linkedin.com/in/gabriele-azzolini-b309651b7" }
+    : taxCats.some(c=>art.cat.includes(c))
+    ? { name:"Nicolò Bolla", url:"https://www.linkedin.com/in/accountingbolla" }
+    : null;
+
   jsonLd.push({
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": art.title,
     "description": art.desc,
     "datePublished": "2026-04-01",
-    "dateModified": "2026-05-01",
+    "dateModified": "2026-06-01",
     "author": { "@type": "Organization", "name": "The Italian Gateway", "url": DOMAIN },
     "publisher": { "@type": "Organization", "name": "The Italian Gateway", "url": DOMAIN },
+    "reviewedBy": reviewer ? { "@type": "Person", "name": reviewer.name, "url": reviewer.url } : undefined,
     "mainEntityOfPage": { "@type": "WebPage", "@id": DOMAIN + '/guide/' + art.id + '/' },
   });
 
@@ -269,6 +278,58 @@ writeFileSync(join(DIST, 'athletes', 'index.html'), page(
 ));
 console.log('  + athletes/');
 
+// ── About page ───────────────────────────────────────────
+ensureDir(join(DIST, 'about'));
+const aboutBody = `
+<h1>About The Italian Gateway</h1>
+<h2>Our Mission</h2>
+<p>The Italian Gateway is a Milan-based advisory service that coordinates every dimension of a high-value relocation to Italy — from the EUR 300,000 flat tax election to school waiting lists, from private bank introductions to driving licence conversions. We serve internationally mobile individuals and families from London, Dubai, Geneva, New York, and Singapore who expect the same quality of service in Italy that they receive from their advisors at home.</p>
+<h2>Our Team</h2>
+<div style="background:#111827;border:1px solid #1F2937;padding:28px;margin-bottom:16px">
+<h3 style="color:#C9A96E">Nicolò Bolla</h3>
+<p style="color:#C9A96E;font-style:italic">Chartered Accountant — International Tax &amp; Immigration</p>
+<p>Specialising in international tax structuring and immigration law. From flat tax applications and corporate structuring to residence permits and citizenship pathways. <a href="https://www.linkedin.com/in/accountingbolla" style="color:#C9A96E">LinkedIn Profile</a></p>
+</div>
+<div style="background:#111827;border:1px solid #1F2937;padding:28px;margin-bottom:16px">
+<h3 style="color:#C9A96E">Dr. Gabriele Azzolini, M.D.</h3>
+<p style="color:#C9A96E;font-style:italic">Medical Advisor — Doctor of Medicine and Surgery</p>
+<p>Connects relocating families with the most qualified medical specialists across Italy. Confidential medical orientation and referrals. <a href="https://www.linkedin.com/in/gabriele-azzolini-b309651b7" style="color:#C9A96E">LinkedIn Profile</a></p>
+</div>
+<div style="background:#111827;border:1px solid #1F2937;padding:28px;margin-bottom:16px">
+<h3 style="color:#C9A96E">Private Banking Team</h3>
+<p style="color:#C9A96E;font-style:italic">Wealth Management &amp; Private Banking</p>
+<p>Confidential introductions to Italy's leading private banks and international institutions. Introductions are made personally, matched to your specific profile and requirements.</p>
+</div>
+<h2>How We Produce Our Content</h2>
+<p>Every guide published on The Italian Gateway is researched using primary sources: Italian legislation (TUIR, D.Lgs. 147/2015, D.Lgs. 209/2023), EU regulations (883/2004, 650/2012), bilateral tax treaties, and circulari from the Agenzia delle Entrate. Tax and legal content is reviewed by Nicolò Bolla, Chartered Accountant. Healthcare content is reviewed by Dr. Gabriele Azzolini, M.D.</p>
+<h2>Contact</h2>
+<p>The Italian Gateway — Premium Relocation Advisory<br>Milan, Italy<br>Email: <a href="mailto:info@theitaliangateway.com">info@theitaliangateway.com</a></p>`;
+
+const aboutLd = [{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "mainEntity": {
+    "@type": "ProfessionalService",
+    "name": "The Italian Gateway",
+    "url": DOMAIN,
+    "email": "info@theitaliangateway.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Milan", "addressCountry": "IT" },
+    "employee": [
+      { "@type": "Person", "name": "Nicolò Bolla", "jobTitle": "Chartered Accountant — International Tax & Immigration", "url": "https://www.linkedin.com/in/accountingbolla" },
+      { "@type": "Person", "name": "Dr. Gabriele Azzolini", "jobTitle": "Medical Advisor", "url": "https://www.linkedin.com/in/gabriele-azzolini-b309651b7" }
+    ]
+  }
+}];
+
+writeFileSync(join(DIST, 'about', 'index.html'), page(
+  'About Us — The Italian Gateway | HNWI Relocation Advisory Milan',
+  'About The Italian Gateway: our mission, team credentials, content methodology, and professional network. Milan-based advisory for HNWI relocating to Italy.',
+  DOMAIN + '/about/',
+  aboutBody,
+  aboutLd
+));
+console.log('  + about/');
+
 // ── Inject SEO content into homepage ────────────────────────
 let homepage = readFileSync(join(DIST, 'index.html'), 'utf8');
 const seo = `<div id="seo" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
@@ -373,6 +434,7 @@ const urls = [
   { loc: '/advisors/', p: '0.8' },
   { loc: '/professionals/', p: '0.9' },
   { loc: '/athletes/', p: '0.8' },
+  { loc: '/about/', p: '0.9' },
   ...ARTICLES.map(a => ({ loc: '/guide/' + a.id + '/', p: '0.8' })),
   { loc: '/privacy/', p: '0.3' },
   { loc: '/cookies/', p: '0.3' },
