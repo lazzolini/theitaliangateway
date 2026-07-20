@@ -1454,7 +1454,7 @@ const ARTICLES = [
     "title": "How to Open a Private Bank Account in Italy as a Foreign Resident",
     "date": "March 2026",
     "read": "9 min",
-    "desc": "A practical guide for HNWI on opening private banking relationships in Milan, navigating compliance requirements, and choosing between Italian and Swiss institutions.",
+    "desc": "How to open a private bank account in Italy as an international client. KYC process, required documents, and top-tier introductions.",
     "content": [
       {
         "type": "p",
@@ -1628,7 +1628,7 @@ const ARTICLES = [
     "title": "Tax Planning for HNWI Relocating to Italy: Beyond the Flat Tax",
     "date": "March 2026",
     "read": "11 min",
-    "desc": "Comprehensive guide to Italy's tax advantages for new residents, including the €300K flat tax, 7% retiree regime, succession planning, and exit tax considerations.",
+    "desc": "Italy's tax regimes for HNWI: flat tax, impatriati, 7% retiree. Cross-border planning for UK, US, UAE, and Swiss relocators.",
     "content": [
       {
         "type": "p",
@@ -1970,7 +1970,7 @@ const ARTICLES = [
     "title": "Healthcare in Italy for HNWI: Private Doctors, VIP Hospital Access, and Health Insurance",
     "date": "March 2026",
     "read": "8 min",
-    "desc": "How wealthy international residents access world-class healthcare in Milan and beyond: private GPs, specialist referrals, hospital VIP programs, and insurance options.",
+    "desc": "Private healthcare for HNWI in Italy. Executive screenings, specialist access, insurance, and English-speaking doctors in Milan.",
     "content": [
       {
         "type": "p",
@@ -2131,7 +2131,7 @@ const ARTICLES = [
     "title": "International Schools in Milan: How to Choose and Get Accepted in 2026",
     "date": "March 2026",
     "read": "9 min",
-    "desc": "Complete comparison of Milan's international schools, including curricula, tuition fees, admission processes, and practical tips for HNWI families relocating with children.",
+    "desc": "Comparing Milan's international schools: ASM, ISM, St. Louis, Sir James Henderson. IB, British, American curricula. Fees and waitlists.",
     "content": [
       {
         "type": "p",
@@ -2470,7 +2470,7 @@ const ARTICLES = [
     "title": "Yachting in Italy: Berths, Registration, and Marina Life for HNWI",
     "date": "March 2026",
     "read": "10 min",
-    "desc": "A complete guide to owning and operating a yacht in Italian waters: the best marinas, berth acquisition, registration, tax implications, and the Mediterranean cruising lifestyle.",
+    "desc": "Yachting in Italy for HNWI: berths, registration, crew, charter, maintenance. Portofino, Sardinia, Amalfi, Sicily — the complete guide.",
     "content": [
       {
         "type": "p",
@@ -2721,7 +2721,7 @@ const ARTICLES = [
     "title": "Moving from the UK to Italy in 2026: The Complete Guide for HNWI After the Non-Dom Abolition",
     "date": "April 2026",
     "read": "14 min",
-    "desc": "The UK abolished non-dom status in April 2025. 16,500 millionaires are leaving Britain in 2025 alone. Here's why Italy is their #1 European destination and how the €300K flat tax compares.",
+    "desc": "Moving from the UK to Italy after the non-dom abolition. Flat tax, SIPP planning, schools, property, and a practical timeline.",
     "content": [
       {
         "type": "p",
@@ -2910,7 +2910,7 @@ const ARTICLES = [
     "title": "Italy vs Portugal vs Greece: Which European Tax Regime Is Best for HNWI in 2026?",
     "date": "April 2026",
     "read": "12 min",
-    "desc": "Portugal's NHR is dead. Greece requires a €500K investment. Switzerland bans work. A side-by-side comparison of every European HNWI tax regime — with the data advisors need.",
+    "desc": "Italy vs Portugal vs Greece tax regimes for HNWI in 2026. Side-by-side comparison: rates, duration, work rights, inheritance.",
     "content": [
       {
         "type": "p",
@@ -3137,7 +3137,7 @@ const ARTICLES = [
     "title": "SIPPs, IRAs, ISAs and Fund Structures: What Happens to Your Investments When You Move to Italy",
     "date": "April 2026",
     "read": "13 min",
-    "desc": "UK SIPPs, US IRAs and 401(k)s, ISAs, harmonised vs non-harmonised funds — how Italy taxes each one, and how to restructure before arrival to avoid costly mistakes.",
+    "desc": "UK SIPPs, US IRAs, ISAs, and fund structures in Italy. Harmonised vs non-harmonised funds. Restructuring before your move.",
     "content": [
       {
         "type": "p",
@@ -3327,7 +3327,7 @@ const ARTICLES = [
     "title": "Moving to Milan for Work: The Impatriati Tax Regime and Everything Your Company's HR Won't Tell You",
     "date": "April 2026",
     "read": "11 min",
-    "desc": "Transferred to Milan by your employer? The Impatriati regime exempts 70% of your income from tax. Plus: neighborhoods, schools, healthcare, banking — the complete guide for corporate relocators.",
+    "desc": "Corporate relocation to Milan: Impatriati regime (70% tax exemption), spouse support, schools, healthcare, and what HR won't tell you.",
     "content": [
       {
         "type": "p",
@@ -3858,7 +3858,7 @@ const ARTICLES = [
     "title": "Moving to Italy as a Professional Athlete: Tax Benefits, Residency, and Everything Your Agent Won't Tell You",
     "date": "April 2026",
     "read": "12 min",
-    "desc": "Serie A, basketball, volleyball, rugby — hundreds of international athletes relocate to Italy every year. The Impatriati regime, medical setup, family integration, and financial planning: the complete guide.",
+    "desc": "Athletes relocating to Italy: Impatriati tax regime, the first 72 hours, family integration. For players, agents, and clubs.",
     "content": [
       {
         "type": "p",
@@ -4027,7 +4027,7 @@ const ARTICLES = [
     "title": "Relocating to Italy After a Separation: A Confidential Guide for HNWI",
     "date": "April 2026",
     "read": "10 min",
-    "desc": "Life transitions create new beginnings. For individuals starting a new chapter in Italy — tax planning, property, healthcare, schools, and rebuilding a life with discretion and support.",
+    "desc": "Relocating to Italy after a life transition. Tax planning, property, schools, privacy, and professional support with discretion.",
     "content": [
       {
         "type": "p",
@@ -4129,7 +4129,7 @@ const ARTICLES = [
     "title": "International Students in Milan: A Premium Guide for Families Sending Children to Bocconi, Politecnico, and Beyond",
     "date": "April 2026",
     "read": "9 min",
-    "desc": "Your child got into Bocconi, Politecnico, IED, or Domus Academy. Now what? Accommodation, banking, healthcare, safety, and how parents can ensure a smooth landing — without being there.",
+    "desc": "Premium student guide for Milan: Bocconi, Politecnico, IED. Apartments, healthcare, banking, safety. For families, not backpackers.",
     "content": [
       {
         "type": "p",
@@ -4270,7 +4270,7 @@ const ARTICLES = [
     "title": "Italy's Digital Nomad Visa for High Earners: Not the Bali Crowd — The €200K+ Remote Professional's Guide",
     "date": "April 2026",
     "read": "10 min",
-    "desc": "Italy introduced the digital nomad visa in 2024. But the real opportunity isn't for backpackers — it's for founders, consultants, and remote executives earning €200K+ who want a European base with substance.",
+    "desc": "Italy's digital nomad visa for high earners (€200K+). Not the Bali crowd — founders, consultants, and remote execs wanting Milan.",
     "content": [
       {
         "type": "p",
@@ -4459,7 +4459,7 @@ const ARTICLES = [
     "title": "The Great British Wealth Exodus: 16,500 Millionaires Left the UK in 2025 — Why Italy Is Where They're Going",
     "date": "April 2026",
     "read": "14 min",
-    "desc": "The UK lost a record 16,500 millionaires in 2025. The non-dom abolition, inheritance tax reform, CGT hikes, and VAT on school fees have triggered the largest wealth migration in British history. Italy — with its €300K flat tax, zero inheritance tax on foreign assets, and world-class lifestyle — is the top European destination. The data, the drivers, and what it means for families considering the move.",
+    "desc": "16,500 millionaires left the UK in 2025. Italy is Europe's #1 destination. The data, the drivers, and why Milan is where they go.",
     "content": [
       {
         "type": "p",
@@ -4767,7 +4767,7 @@ const ARTICLES = [
     "title": "The €50K/Year Student: A Premium Guide to Living in Milan for Bocconi, Politecnico, Marangoni, and IED Students (2026)",
     "date": "May 2026",
     "read": "15 min",
-    "desc": "Your child got into Bocconi, Politecnico, Marangoni, or IED. This isn't a guide for budget travellers — it's for families investing €50K+ per year in their child's education and lifestyle. Apartments, neighborhoods, private healthcare, banking, social life, and the setup that makes Milan feel like home from week one.",
+    "desc": "The €50K/year student in Milan: premium apartments, healthcare, banking, social life. Bocconi, Politecnico, Marangoni, IED families.",
     "content": [
       {
         "type": "p",
@@ -5151,7 +5151,7 @@ const ARTICLES = [
     "title": "Milan's Elite Universities: Where the World's Wealthiest Families Send Their Children in 2026",
     "date": "May 2026",
     "read": "14 min",
-    "desc": "Bocconi, Politecnico, Istituto Marangoni, IED, Domus Academy, NABA, Cattolica — a complete guide to Milan's top universities for wealthy international families. Tuition, reputation, career outcomes, social life, and what no brochure will tell you.",
+    "desc": "Milan's top universities for wealthy families: Bocconi, Politecnico, Marangoni, IED, Domus, NABA, Cattolica. Complete 2026 guide.",
     "content": [
       {
         "type": "p",
@@ -5641,7 +5641,7 @@ const ARTICLES = [
     "title": "QROPS and UK Pensions in Italy: Why Direct Transfers Don't Work and What to Do Instead (2026 Guide)",
     "date": "May 2026",
     "read": "13 min",
-    "desc": "Italy has zero QROPS providers. The 25% overseas transfer charge now applies to EEA transfers. Here's the complete guide to managing UK pensions (SIPPs, defined benefit, SSAS) when relocating to Italy — including the Luxembourg wrapper strategy that most advisors miss.",
+    "desc": "QROPS don't work for Italy — zero providers since 2016. The SIPP drawdown strategy and Luxembourg wrapper alternative explained.",
     "content": [
       {
         "type": "p",
@@ -5883,7 +5883,7 @@ const ARTICLES = [
     "title": "PFIC Rules in Italy: The Tax Trap That Catches Every American Expat (And How to Avoid It)",
     "date": "May 2026",
     "read": "11 min",
-    "desc": "US citizens in Italy face the PFIC regime: punitive taxation on non-US funds that can reach 50%+ effective rates. What qualifies as a PFIC, why your Italian ETFs are toxic to your US return, and the restructuring that saves hundreds of thousands.",
+    "desc": "PFIC rules catch every American in Italy. Non-US funds taxed at 50%+. How to restructure your portfolio before relocating.",
     "content": [
       {
         "type": "p",
@@ -6083,7 +6083,7 @@ const ARTICLES = [
     "title": "The Polizza Vita: Italy's Most Powerful Wealth Planning Tool (And Why Luxembourg Is the Key)",
     "date": "May 2026",
     "read": "12 min",
-    "desc": "Luxembourg-domiciled life insurance wrappers offer Italian residents tax deferral, inheritance protection, creditor shielding, and portfolio flexibility. How they work, who they're for, and why every HNWI in Italy should consider one.",
+    "desc": "Luxembourg life insurance wrappers: tax deferral, inheritance exemption, creditor protection. Italy's most powerful wealth tool.",
     "content": [
       {
         "type": "p",
@@ -6294,7 +6294,7 @@ const ARTICLES = [
     "title": "Foreign Trusts and CFC Rules in Italy: When Your Offshore Structure Becomes an Italian Tax Problem",
     "date": "May 2026",
     "read": "12 min",
-    "desc": "Italy's CFC and trust transparency rules can re-attribute income from offshore structures to Italian residents. Jersey trusts, BVI holdings, Dubai FZCOs, Liechtenstein foundations — what triggers Italian taxation and how to restructure before the move.",
+    "desc": "Foreign trusts and CFC rules in Italy. When your Jersey trust or Dubai FZCO triggers Italian tax — and how to restructure.",
     "content": [
       {
         "type": "p",
@@ -6480,7 +6480,7 @@ const ARTICLES = [
     "title": "Italy's 7% Retiree Flat Tax: Retire in Southern Italy and Pay Just 7% on All Foreign Income",
     "date": "May 2026",
     "read": "10 min",
-    "desc": "Italy's 7% flat tax for retirees who relocate to Southern Italian municipalities with under 30,000 inhabitants. Eligibility, qualifying locations, lifestyle, healthcare, and how it compares to Portugal's now-defunct NHR.",
+    "desc": "7% flat tax on all foreign income for retirees in Southern Italy. Now expanded to 30,000 inhabitants. Locations, costs, how to apply.",
     "content": [
       {
         "type": "p",
@@ -6758,7 +6758,7 @@ const ARTICLES = [
     "title": "Cost of Living Comparison 2026: Milan vs London vs Dubai for HNWI Families",
     "date": "May 2026",
     "read": "11 min",
-    "desc": "A line-by-line comparison of what a luxury lifestyle actually costs in Milan, London, and Dubai. Housing, staff, schools, healthcare, dining, transport — the real numbers that brochures don't show.",
+    "desc": "Cost of living: Milan vs London vs Dubai for HNWI families. Housing, staff, schools, dining — real numbers, line by line.",
     "content": [
       {
         "type": "p",
@@ -6974,7 +6974,7 @@ const ARTICLES = [
     "title": "Buying Property in Italy as a Foreigner: The Complete Step-by-Step Process (2026)",
     "date": "May 2026",
     "read": "13 min",
-    "desc": "Compromesso, rogito, notaio, catasto, IMU — the full Italian property purchase process explained for international buyers. From offer to keys, every step, every cost, every trap to avoid.",
+    "desc": "Buying property in Italy as a foreigner: compromesso, rogito, notaio, taxes. Every step, every cost, every trap to avoid.",
     "content": [
       {
         "type": "p",
@@ -7216,7 +7216,7 @@ const ARTICLES = [
     "title": "Converting Your Driving Licence in Italy: Which Countries Qualify, How Long It Takes, and What to Do If Yours Doesn't",
     "date": "May 2026",
     "read": "8 min",
-    "desc": "EU, UK, US, UAE, Swiss licences — which convert directly, which require an exam, and the exact process at the Motorizzazione. The practical guide nobody tells you about before you move.",
+    "desc": "Converting your driving licence in Italy. Which countries qualify, exam requirements, and the step-by-step process at Motorizzazione.",
     "content": [
       {
         "type": "p",
@@ -7353,7 +7353,7 @@ const ARTICLES = [
     "title": "The Best Private Hospitals in Milan: San Raffaele, Humanitas, IEO, and More — A Guide for International Families",
     "date": "May 2026",
     "read": "10 min",
-    "desc": "Where do Milan's wealthiest families go when they need world-class medical care? A ranked comparison of Milan's top private hospitals: specialties, languages, VIP services, insurance acceptance, and how to access them.",
+    "desc": "Milan's top private hospitals ranked: San Raffaele, Humanitas, IEO, Monzino. Specialties, VIP services, insurance, and access.",
     "content": [
       {
         "type": "p",
@@ -7631,7 +7631,7 @@ const ARTICLES = [
     "title": "Italy Golden Visa 2026: Investment Thresholds, Application Process, and Why It's Underrated",
     "date": "May 2026",
     "read": "10 min",
-    "desc": "Italy's Investor Visa (golden visa) offers residency for investments from €250K. Updated 2026 requirements, processing times, qualifying investments, and comparison with Portugal, Greece, and Spain programmes.",
+    "desc": "Italy Golden Visa 2026: invest from €250K for residency. Thresholds, process, timeline, and comparison with Portugal and Greece.",
     "content": [
       {
         "type": "p",
@@ -7830,7 +7830,7 @@ const ARTICLES = [
     "title": "Hiring Domestic Staff in Italy: Housekeepers, Nannies, Drivers, and Chefs — The Legal Way (2026 Guide)",
     "date": "May 2026",
     "read": "10 min",
-    "desc": "The CCNL domestic workers contract, real costs, legal requirements, and how to hire a housekeeper, nanny, chef, or driver in Italy without the tax, labour, and immigration traps.",
+    "desc": "Hiring domestic staff in Italy: CCNL contracts, real costs, legal requirements. Housekeepers, nannies, drivers, chefs — the right way.",
     "content": [
       {
         "type": "p",
@@ -8000,7 +8000,7 @@ const ARTICLES = [
     "title": "Roth IRA in Italy: Why Your Tax-Free Retirement Account Isn't Tax-Free Anymore (2026 Guide)",
     "date": "May 2026",
     "read": "13 min",
-    "desc": "Italy does not recognise the Roth IRA's tax-free status. Your 'tax-free' withdrawals may be taxed as ordinary income at up to 43%. How Italian tax law treats Roth IRAs, what the US-Italy treaty does (and doesn't) protect, and the strategies that actually work.",
+    "desc": "Roth IRA in Italy: your tax-free withdrawals aren't tax-free anymore. How Italy taxes Roth, the treaty gap, and 5 strategies.",
     "content": [
       {
         "type": "p",
@@ -8330,7 +8330,7 @@ const ARTICLES = [
     "title": "Transferring EU Pensions to Italy: German, French, Dutch Pensions and the PEPP (2026 Guide)",
     "date": "May 2026",
     "read": "12 min",
-    "desc": "Moving to Italy from Germany, France, or the Netherlands? How your pension follows you, EU coordination rules, totalisation, PEPP, and the tax treatment under Italy flat tax and 7% retiree regime.",
+    "desc": "EU pensions in Italy: German, French, Dutch. Coordination rules, totalisation, PEPP status, and 7% retiree regime treatment.",
     "content": [
       {
         "type": "p",
@@ -8586,7 +8586,7 @@ const ARTICLES = [
     "title": "Private Health Insurance in Italy for Expats: SSN, Bupa, Cigna, Allianz — What You Actually Need (2026 Guide)",
     "date": "July 2026",
     "read": "12 min",
-    "desc": "Italy's public healthcare ranks #2 globally, but most expats still need private cover. SSN vs private insurance, which international providers work in Italy, what it costs, and the three-layer approach that gives HNWI families complete peace of mind.",
+    "desc": "Private health insurance in Italy: SSN vs Bupa vs Cigna vs Allianz. Costs, coverage, and the three-layer approach for expat families.",
     "content": [
       {
         "type": "p",
