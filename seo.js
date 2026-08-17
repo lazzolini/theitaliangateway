@@ -250,7 +250,7 @@ const profBody = `
 
 writeFileSync(join(DIST, 'professionals', 'index.html'), page(
   'For Wealth Managers & Family Offices | The Italian Gateway',
-  'Your client wants to move to Italy. We handle tax structuring, property, banking, healthcare, schools, immigration. Technical reference library for advisors. Referral partnership available.',
+  'Your client wants to move to Italy. We handle tax, property, banking, schools, healthcare. Reference library for advisors.',
   DOMAIN + '/professionals/',
   profBody
 ));
@@ -272,7 +272,7 @@ const athBody = `
 
 writeFileSync(join(DIST, 'athletes', 'index.html'), page(
   'Player Landing Service — Athletes Relocating to Italy | The Italian Gateway',
-  'Professional athletes relocating to Italy: accommodation, banking, healthcare, schools, Impatriati tax regime, immigration. For agents, clubs, and management companies. One fixed fee.',
+  'Athletes relocating to Italy: housing, banking, healthcare, schools, Impatriati tax. For agents and clubs. One fixed fee.',
   DOMAIN + '/athletes/',
   athBody
 ));
@@ -450,5 +450,33 @@ console.log('  + sitemap.xml (' + urls.length + ' URLs)');
 // ── Robots.txt ──────────────────────────────────────────────
 writeFileSync(join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${DOMAIN}/sitemap.xml\n`);
 console.log('  + robots.txt');
+
+// ── IndexNow: ping Bing/Yandex with all URLs ────────────────
+const INDEXNOW_KEY = 'mdpubx9i7zjdmqnsr0d23kdqldypimfl';
+const allUrls = [
+  ...ARTICLES.map(a => DOMAIN + '/guide/' + a.id + '/'),
+  ...urls.map(u => DOMAIN + u.loc),
+];
+
+async function pingIndexNow() {
+  try {
+    const res = await fetch('https://api.indexnow.org/IndexNow', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      body: JSON.stringify({
+        host: 'theitaliangateway.com',
+        key: INDEXNOW_KEY,
+        keyLocation: DOMAIN + '/' + INDEXNOW_KEY + '.txt',
+        urlList: allUrls,
+      }),
+    });
+    console.log('  + IndexNow ping: ' + res.status + ' (' + allUrls.length + ' URLs submitted)');
+  } catch (e) {
+    console.log('  ! IndexNow ping failed (non-blocking):', e.message);
+  }
+}
+
+// Fire the ping — don't await, it's non-critical
+pingIndexNow();
 
 console.log('[seo] Done!');

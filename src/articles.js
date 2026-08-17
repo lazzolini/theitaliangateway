@@ -21,6 +21,47 @@ const ARTICLES = [
       },
       {
         "type": "h2",
+        "text": "Evolution of the Flat Tax Amount: 2017 – 2026"
+      },
+      {
+        "type": "p",
+        "text": "The Italian flat tax regime has evolved since its introduction in 2017. Understanding the historical rates is essential — many families still search for outdated amounts (€100,000 or €200,000) which no longer apply to new applicants, but which are grandfathered for those who elected the regime before the increases."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Period",
+          "Annual Flat Tax Amount",
+          "Additional Family Member",
+          "Status"
+        ],
+        "rows": [
+          [
+            "2017 – 2023",
+            "€100,000",
+            "€25,000 each",
+            "Original rate. Grandfathered."
+          ],
+          [
+            "2024 – 2025",
+            "€200,000",
+            "€25,000 each",
+            "Doubled by Legge di Bilancio 2024. Grandfathered."
+          ],
+          [
+            "2026 onwards",
+            "€300,000",
+            "€50,000 each",
+            "Current rate. Applies to new elections from January 1, 2026."
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "Grandfathering rule: individuals who elected the flat tax regime before the rate increases continue to pay their original amount for the full 15-year duration of the regime. If you elected in 2020 at €100,000/year, you continue paying €100,000/year until 2035. The €300,000 rate only applies to those making a new election from 2026 onwards. The 15% and 5% rates that occasionally appear in online searches do not exist — they may refer to different tax regimes (impatriati, forfettario) but not the HNWI flat tax."
+      },
+      {
+        "type": "h2",
         "text": "How It Works"
       },
       {
@@ -7205,6 +7246,41 @@ const ARTICLES = [
         "a": "From accepted offer to keys: typically 2-4 months. Rush transactions (cash buyer, no mortgage, clean title) can complete in 4-6 weeks. Complex transactions (renovation, planning issues, mortgage) can take 4-6 months."
       },
       {
+        "type": "h2",
+        "text": "Regional Considerations: Buying Property in Tuscany"
+      },
+      {
+        "type": "p",
+        "text": "Tuscany — and particularly the Florence, Siena, and Lucca areas — is one of the most sought-after property markets in Italy for international buyers. While the fundamental purchase process is identical across Italy, there are regional specifics worth knowing before you sign a compromesso in Florence, Chianti, or the Val d'Orcia."
+      },
+      {
+        "type": "h3",
+        "text": "Do you need a lawyer, or is the notary enough?"
+      },
+      {
+        "type": "p",
+        "text": "This is the single most common question from international buyers in Tuscany. The technical answer: the notary is legally sufficient to complete a valid property transfer. The practical answer for a foreign buyer: engaging an independent lawyer is strongly recommended, especially for purchases in Florence and prime areas where prices are high (€400,000+ is now typical for a 100-150 sqm apartment in central Firenze). The notary's duty is to verify legality and register the transfer — they do NOT represent your interests specifically. Your lawyer reviews the compromesso, verifies urbanistic compliance, checks that historic restrictions (vincoli storici) don't affect renovation plans, and protects your deposit. Cost: typically €3,000 – €8,000 for a Firenze transaction, easily justified on any purchase over €300,000."
+      },
+      {
+        "type": "h3",
+        "text": "Tuscany-specific considerations"
+      },
+      {
+        "type": "list",
+        "items": [
+          "<strong>Historic property restrictions (vincoli):</strong> a large percentage of Florence and Tuscan hilltown properties fall under Soprintendenza Belle Arti restrictions. Any structural work, window replacement, or exterior modification requires specific authorisations. Always verify vincoli status BEFORE the compromesso.",
+          "<strong>Cadastral discrepancies:</strong> Tuscan properties, especially in historic centres, frequently have discrepancies between the actual layout and the official planimetria catastale. These must be resolved before closing to avoid future problems and tax issues.",
+          "<strong>Rural properties (case coloniche, poderi):</strong> if buying a farmhouse or estate in Chianti or Val d'Orcia, additional checks are required on agricultural land classification, well/water rights, and potential preemption rights of neighbouring farmers (diritto di prelazione agraria).",
+          "<strong>Property management for non-residents:</strong> Firenze has a mature market of property managers who handle utilities, cleaning, security, and short-term rentals if you plan to let the property when not in use. Budget €2,000 – €5,000/year for full management.",
+          "<strong>Regional IRPEF surtax:</strong> Tuscany applies an additional regional income tax of up to 1.73% on top of national IRPEF — this affects rental income declared in Italy from Tuscan properties.",
+          "<strong>Property tax (IMU) rates:</strong> Firenze and Tuscan municipalities generally apply higher IMU rates than the national minimum, typically 0.86% – 1.06% of cadastral value on second homes. Prima casa (main residence) remains exempt."
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "For a typical €470,000 apartment purchase in central Firenze: expect total transaction costs (registration tax, notary, agent commission, lawyer, VAT where applicable) of approximately €45,000 – €60,000 on top of the purchase price. This is significantly higher than a rural farmhouse purchase of the same value in a smaller Tuscan municipality, where cadastral values and IMU rates are typically lower."
+      },
+      {
         "type": "callout",
         "text": "Disclaimer: This guide provides general information as of May 2026. Italian property law is complex and varies by region. Always engage an independent Italian lawyer and a qualified notary. The Italian Gateway manages the entire property acquisition process end-to-end."
       }
@@ -8948,8 +9024,433 @@ const ARTICLES = [
         "a": "San Raffaele, Humanitas, IEO, and most private clinics accept direct billing from major international insurers (Bupa, Cigna, Allianz). Always verify with both the hospital and your insurer before admission. See our <a href=\"/#/guide/best-private-hospitals-milan-2026\">complete guide to Milan private hospitals</a>."
       },
       {
+        "type": "h2",
+        "text": "FASI, AON, and Corporate Health Plans in Italy"
+      },
+      {
+        "type": "p",
+        "text": "A significant portion of Italy's HNWI and professional class access private healthcare through corporate integrative health funds, not through direct international insurance. If you have worked for or with an Italian corporate group, you may already be familiar with these — and if you're losing access, you may be evaluating replacements. Here's what they are, what they cover, and what alternatives exist when the corporate benefit ends."
+      },
+      {
+        "type": "h3",
+        "text": "What is FASI?"
+      },
+      {
+        "type": "p",
+        "text": "FASI (Fondo Assistenza Sanitaria Integrativa per i Dirigenti) is the largest Italian integrative healthcare fund for corporate executives (dirigenti). It provides supplementary healthcare coverage in addition to the SSN — private hospital access, specialist consultations, dental, diagnostic imaging, physiotherapy, and mental health services. Membership is typically arranged through the employer, with contributions split between company and employee. Coverage extends to the executive's family."
+      },
+      {
+        "type": "h3",
+        "text": "What is AON (as a health provider in Italy)?"
+      },
+      {
+        "type": "p",
+        "text": "AON is a global insurance broker and consultant that manages corporate health plans for many Italian and multinational companies operating in Italy. AON does not itself provide health insurance — rather, it structures and administers corporate plans that may use underlying insurers like Generali, UniSalute, or international providers. Many Italian executives receive their health benefit \"through AON\" — meaning AON manages the plan on behalf of the employer."
+      },
+      {
+        "type": "h3",
+        "text": "What happens when the corporate benefit ends?"
+      },
+      {
+        "type": "p",
+        "text": "FASI and AON-managed corporate plans typically terminate when you leave the employer. This is a common trigger event for individuals to reassess their healthcare setup: executives leaving corporate roles to become independent consultants, retirees transitioning out of active service, and international executives whose employer's Italian operations are winding down. The main options for replacement coverage are:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "<strong>Continue with FASI on a voluntary basis:</strong> some categories of former members can continue individual membership by paying the full contribution personally. Costs typically range from €3,000 to €7,000/year for family coverage. Check with FASI directly for eligibility.",
+          "<strong>Purchase an individual Italian private policy:</strong> Generali RBM, UniSalute, Intesa Sanpaolo RBM, or Allianz Care offer individual and family plans that replicate much of the FASI coverage. Premiums are age-dependent — a family policy for 40-year-olds costs €3,000 – €5,000/year; for 60-year-olds, €5,000 – €9,000/year.",
+          "<strong>International plan (Cigna, Bupa, Allianz Care):</strong> if you travel or work internationally, these plans provide worldwide coverage. Premiums are significantly higher (€10,000 – €25,000/year for a family) but include US and rest-of-world coverage.",
+          "<strong>Rely on SSN + private GP retainer:</strong> for individuals living permanently in Italy with no complex health needs, the SSN alone (already free) combined with a private GP on retainer (€1,000 – €2,000/year) often provides better cost-adjusted care than continuing a costly integrative plan."
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "For former executives evaluating alternatives to FASI or AON-managed plans, the right choice depends on age, family composition, existing health conditions, and international travel patterns. There is no universal best answer — but the SSN + private GP + targeted Italian insurance combination typically delivers 60-70% cost savings versus continuing FASI voluntarily, with comparable practical outcomes for individuals living stably in Italy."
+      },
+      {
         "type": "callout",
         "text": "Disclaimer: Insurance products, premiums, and coverage terms change frequently. The figures in this guide are indicative as of July 2026. Always obtain personalised quotes from multiple providers and read the policy terms carefully. The Italian Gateway coordinates health insurance placement as part of our relocation services — we compare providers and recommend the optimal setup for your family's specific needs."
+      }
+    ]
+  },
+  {
+    "id": "italy-yacht-charter-regulations-2026",
+    "cat": "Yachting",
+    "title": "Italy Yacht Charter Regulations 2026: The Complete Reference Guide (VAT, Flag, Crew, RINA)",
+    "date": "August 2026",
+    "read": "14 min",
+    "desc": "Italian yacht charter law reference: VAT effective use, flag choice, RINA, crew contracts, port procedures. For brokers, operators, owners.",
+    "content": [
+      {
+        "type": "p",
+        "text": "Chartering a yacht in Italian waters — or from an Italian port — sits at the intersection of Italian tax law, EU maritime regulations, and international commercial practice. Getting the framework right saves owners and operators significant tax exposure. Getting it wrong triggers audits, IVA reassessments, and administrative sanctions."
+      },
+      {
+        "type": "p",
+        "text": "This guide is a technical reference for charter brokers, yacht managers, owners, and legal advisors. It sets out the current Italian legal framework as of August 2026, with references to primary sources — no marketing, no fluff."
+      },
+      {
+        "type": "p",
+        "text": "Related: <a href=\"/#/guide/yachting-italy-hnwi\">Yachting in Italy for HNWI</a> · <a href=\"/#/guide/flat-tax-2026\">Flat tax guide</a>"
+      },
+      {
+        "type": "h2",
+        "text": "The Legal Framework"
+      },
+      {
+        "type": "p",
+        "text": "Yacht charter operations in Italy are governed by a stack of primary and secondary legislation:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "<strong>Codice della Navigazione</strong> (Royal Decree 327/1942, as amended) — the foundational maritime code",
+          "<strong>D.Lgs. 3/2001 and 96/2005</strong> — implementing EU directives on pleasure boating and commercial yachts",
+          "<strong>D.M. 146/2008</strong> — technical requirements for commercial yachts under 24 metres",
+          "<strong>D.P.R. 633/1972 (IVA Law)</strong> — the VAT framework applicable to charter operations",
+          "<strong>Legge 172/2003 (Codice della Nautica da Diporto)</strong> — the pleasure boating code",
+          "<strong>Legge 178/2020 (Legge di Bilancio 2021)</strong> — introduced the current VAT effective-use rules",
+          "<strong>Regulation (EU) 1177/2010</strong> — passenger rights for maritime transport",
+          "<strong>RINA Rules for the Classification of Pleasure Yachts</strong> — technical classification and safety"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "The VAT Regime: The Single Most Important Issue"
+      },
+      {
+        "type": "p",
+        "text": "Italian charter VAT has undergone three major reforms in the last decade. Before 2020, Italy applied a flat percentage-based reduction (typically 22% VAT reduced to a much lower effective rate based on assumed non-EU navigation time). This regime was struck down by the European Commission as non-compliant with the VAT Directive."
+      },
+      {
+        "type": "p",
+        "text": "The current regime, in force since November 2020, is based on <strong>effective use</strong>: VAT applies to the portion of the charter effectively used within EU territorial waters, and is not charged on the portion used outside EU waters. The charterer must be able to demonstrate the actual navigation with evidence."
+      },
+      {
+        "type": "h3",
+        "text": "Current VAT Rules — Effective Use Method"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Charter Type",
+          "VAT Rate",
+          "Application"
+        ],
+        "rows": [
+          [
+            "Short-term charter (< 90 days)",
+            "22% on EU navigation portion",
+            "VAT charged proportionally to time in EU waters"
+          ],
+          [
+            "Long-term charter (> 90 days)",
+            "22% on EU navigation portion",
+            "Same effective-use principle"
+          ],
+          [
+            "Charter outside EU waters",
+            "0%",
+            "Portion of charter provably in international/non-EU waters"
+          ],
+          [
+            "Charter starting from non-EU port",
+            "Depends on effective use",
+            "Complex — requires specific analysis"
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "Evidence required: GPS logs, AIS tracking data, logbook entries, port receipts, and fuel invoices are all used to demonstrate effective navigation. The Agenzia delle Entrate can and does audit charter operators — poor documentation results in full 22% VAT being applied to the entire charter fee, plus penalties (typically 90-180% of the tax underpayment)."
+      },
+      {
+        "type": "h3",
+        "text": "Practical Example"
+      },
+      {
+        "type": "p",
+        "text": "A 7-day charter for €100,000 (excluding VAT) departing Portofino, cruising the French Riviera and returning to Portofino. GPS logs show: 3 days in Italian waters, 2 days in French waters (EU), 2 days in international waters. VAT calculation: 5 days in EU waters × €14,286/day = €71,429 subject to 22% VAT = €15,714 VAT. Total invoice: €115,714."
+      },
+      {
+        "type": "h2",
+        "text": "Flag Registration: Italian vs Foreign Flag"
+      },
+      {
+        "type": "p",
+        "text": "The choice of flag affects taxation, crew requirements, and compliance costs. For yachts chartering from Italian ports, both Italian and foreign flags are permitted, but with different implications."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Flag Option",
+          "Advantages",
+          "Considerations"
+        ],
+        "rows": [
+          [
+            "Italian Flag (RIN — Registro Internazionale)",
+            "Full commercial charter rights in Italian waters. Access to Italian Tonnage Tax regime.",
+            "Requires Italian ownership structure or authorised operator. Italian crew CBA applies."
+          ],
+          [
+            "Malta (VG or MOC)",
+            "EU flag, well-established charter framework, English-language jurisdiction.",
+            "Requires Maltese company or authorised charter operator. Malta commercial licence."
+          ],
+          [
+            "Cayman Islands",
+            "Popular for large yachts. Strong regulatory reputation.",
+            "Non-EU flag — restrictions on commercial charter within EU without proper setup."
+          ],
+          [
+            "Marshall Islands",
+            "Common for large private yachts. Simple registration.",
+            "Non-EU flag — same EU commercial restrictions as Cayman."
+          ],
+          [
+            "France (Pavillon Français)",
+            "Cabotage rights, French Riviera advantages.",
+            "French crew CBA applies. Higher operating costs."
+          ]
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "RINA Certification for Commercial Yachts"
+      },
+      {
+        "type": "p",
+        "text": "RINA (Registro Italiano Navale) is one of the world's leading classification societies and the reference classification society for Italian-flagged commercial yachts. Certification is required for:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "All commercial yachts over 24 metres (LOA)",
+          "Commercial yachts under 24 metres carrying more than 12 passengers",
+          "Yachts operating under Italian commercial charter license",
+          "Yachts requiring MCA Code compliance (LY3, PYC) or equivalent"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "RINA offers dedicated Pleasure Yacht Rules, updated in 2024 to align with IMO SOLAS amendments and MARPOL requirements. Key certifications include hull classification, safety equipment surveys, propulsion machinery inspection, and periodic renewals (typically every 5 years with annual inspections)."
+      },
+      {
+        "type": "h2",
+        "text": "Crew Requirements and Contracts"
+      },
+      {
+        "type": "p",
+        "text": "Crew on Italian-flagged commercial yachts are subject to Italian maritime labour law and the applicable Contratto Collettivo Nazionale del Lavoro (CCNL) for maritime workers. Foreign-flagged yachts operating from Italian ports may apply the flag state's labour law but must still comply with the ILO Maritime Labour Convention 2006 (MLC 2006), which Italy has ratified."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Requirement",
+          "Detail",
+          "Reference"
+        ],
+        "rows": [
+          [
+            "STCW Certification",
+            "All crew must hold valid STCW basic safety training (STCW A-VI/1)",
+            "IMO STCW Convention"
+          ],
+          [
+            "Minimum crew composition",
+            "Varies by tonnage and area of operation. Minimum for 24-40m yacht: captain, engineer, deckhand, steward.",
+            "Italian Minimum Manning Document"
+          ],
+          [
+            "Master's licence",
+            "Yachtmaster Offshore (for < 200 GT), Master Yacht 500 GT / 3000 GT for larger vessels",
+            "MCA/RYA or equivalent"
+          ],
+          [
+            "Contracts",
+            "Written contract required. Italian CCNL specifies minimum wages, hours, leave.",
+            "MLC 2006 + Italian CCNL Marittimi"
+          ],
+          [
+            "Health & safety",
+            "Regular medical certificates, safety training, mandatory life-saving equipment familiarisation",
+            "MLC 2006, SOLAS"
+          ]
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Port Procedures and Documentation"
+      },
+      {
+        "type": "p",
+        "text": "Commercial charter operations from Italian ports require specific documentation and procedures at each departure and arrival:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "<strong>CIM (Certificato di Iscrizione nel Registro delle Navi Minori)</strong> for small commercial vessels",
+          "<strong>Licenza di Navigazione</strong> — commercial charter licence, renewed periodically",
+          "<strong>Ruolo di Equipaggio</strong> — official crew list stamped by Capitaneria di Porto",
+          "<strong>Assicurazione RC</strong> — third-party liability insurance meeting Italian minimum requirements (typically €10-25 million)",
+          "<strong>P&I Cover</strong> — protection and indemnity insurance for commercial operations",
+          "<strong>Passenger manifest</strong> — required for departures and reported to Guardia Costiera",
+          "<strong>Fatturazione elettronica</strong> — electronic invoicing mandatory for VAT-registered charter operations"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "The Tonnage Tax Regime"
+      },
+      {
+        "type": "p",
+        "text": "Yacht charter companies with Italian tax residency may elect the Tonnage Tax regime under Article 155 of the TUIR. Instead of taxing actual profits, tax is calculated on a notional profit based on the net tonnage of the vessel. The regime applies for 10 years and is irrevocable during that period."
+      },
+      {
+        "type": "p",
+        "text": "For commercial yacht operators with significant charter revenue, Tonnage Tax can result in a substantially lower effective tax rate compared to standard corporate income tax (IRES at 24% on actual profits)."
+      },
+      {
+        "type": "h2",
+        "text": "Cross-Border Considerations"
+      },
+      {
+        "type": "h3",
+        "text": "Charter Starting in Italy, Cruising to France or Croatia"
+      },
+      {
+        "type": "p",
+        "text": "The most common scenario for HNWI charters. Key points:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Italian VAT applies to the portion in Italian and EU waters (effective use method)",
+          "French Riviera cruising: same VAT treatment as Italian EU waters (both EU)",
+          "Croatian waters: Croatia is in EU — VAT applies proportionally",
+          "Montenegro or non-EU Balkan ports: portion outside EU is 0% VAT",
+          "Provisioning: fuel and supplies loaded in non-EU ports may qualify for VAT exemption"
+        ]
+      },
+      {
+        "type": "h3",
+        "text": "Charter Starting Outside EU (e.g., Turkey, Montenegro)"
+      },
+      {
+        "type": "p",
+        "text": "If the charter physically starts outside EU waters and enters EU only for a portion, VAT applies only to the EU portion. However, the charter operator must be able to prove the non-EU departure (port receipts, customs stamps, AIS data). Turkish and Montenegrin ports are commonly used for this structure."
+      },
+      {
+        "type": "h2",
+        "text": "Common Compliance Failures"
+      },
+      {
+        "type": "list",
+        "items": [
+          "<strong>Insufficient GPS/AIS evidence:</strong> reliance on captain's logbook alone is not accepted by Agenzia delle Entrate — automated tracking data is required",
+          "<strong>Applying old flat-rate VAT reductions:</strong> the pre-2020 percentage reductions (e.g., 30% VAT on assumed EU navigation) are no longer valid — using them triggers automatic reassessment",
+          "<strong>Charter split into artificial segments:</strong> attempting to segment a single charter into multiple 'trips' to reduce VAT is challenged as abusive",
+          "<strong>Non-EU flag operating commercially in Italian waters without proper cabotage authorisation:</strong> Cayman or Marshall Islands flags require specific commercial licences to charter from Italian ports",
+          "<strong>Missing Ruolo di Equipaggio updates:</strong> crew changes must be reflected in the official register — non-compliance triggers port authority sanctions",
+          "<strong>Electronic invoicing failures:</strong> fatturazione elettronica is mandatory — paper or PDF invoices are not accepted"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Comparison with Other Mediterranean Jurisdictions"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Jurisdiction",
+          "VAT/Tax on Charter",
+          "Commercial Framework"
+        ],
+        "rows": [
+          [
+            "Italy",
+            "22% on effective EU use",
+            "Well-developed, evidence-heavy compliance"
+          ],
+          [
+            "France",
+            "20% VAT on EU use portion",
+            "Similar effective-use approach"
+          ],
+          [
+            "Spain (Balearics)",
+            "21% VAT + matriculation tax (12%) unless exempted",
+            "Matriculation tax significantly increases costs"
+          ],
+          [
+            "Croatia",
+            "13% VAT (reduced rate for charter)",
+            "Simpler compliance, popular for cost reasons"
+          ],
+          [
+            "Malta",
+            "18% VAT with historical guidance for reductions (case-by-case)",
+            "EU compliant framework"
+          ],
+          [
+            "Monaco",
+            "N/A (charter operations rare)",
+            "Berth availability rather than charter regulation"
+          ],
+          [
+            "Montenegro",
+            "0% VAT (non-EU)",
+            "Rising in popularity as EU-adjacent alternative"
+          ]
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Recent Regulatory Developments (2024-2026)"
+      },
+      {
+        "type": "list",
+        "items": [
+          "<strong>April 2024:</strong> Agenzia delle Entrate Circular 39/E clarified evidence requirements for effective-use VAT calculation — AIS/GPS data now explicitly required",
+          "<strong>January 2025:</strong> RINA updated Pleasure Yacht Rules to Version 2025, aligning with IMO 2023 amendments on emissions",
+          "<strong>March 2025:</strong> New electronic invoicing thresholds for VAT-registered charter operators extended to all vessel sizes",
+          "<strong>June 2026:</strong> EU proposal for harmonised yacht VAT regime under discussion — no final legislation as of August 2026"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Frequently Asked Questions"
+      },
+      {
+        "type": "faq",
+        "q": "Can I charter my private yacht occasionally to friends without commercial registration?",
+        "a": "No. Any charter for consideration — whether formal or informal, whether to friends or third parties — requires proper commercial licensing. Italian authorities have significantly increased enforcement against 'private' yachts conducting undeclared charter operations. Sanctions include seizure of the vessel and IVA assessment on the full commercial value."
+      },
+      {
+        "type": "faq",
+        "q": "What is the 'effective use' method and why is it important?",
+        "a": "It is the current legal basis for calculating Italian VAT on charter operations. VAT applies proportionally to the actual time the yacht spends in EU territorial waters (measured by GPS/AIS), rather than a flat assumed reduction. This method is EU-compliant but requires detailed documentation."
+      },
+      {
+        "type": "faq",
+        "q": "Can I use a Cayman-flagged yacht for commercial charter from an Italian port?",
+        "a": "Yes, but with restrictions. Non-EU flagged yachts require specific commercial charter authorisation, and there are limitations on cabotage (carrying passengers between Italian ports). The setup typically requires an EU-based operator company. Consult specialised maritime counsel before assuming a Cayman flag is workable for Italian charter operations."
+      },
+      {
+        "type": "faq",
+        "q": "How do I invoice international clients for a charter in Italian waters?",
+        "a": "Standard Italian VAT rules apply — you invoice with VAT calculated on the effective-use basis. If the client is a VAT-registered business in another EU country, reverse-charge mechanisms may apply for certain services. For non-EU clients, the invoice is issued directly. Electronic invoicing (fatturazione elettronica) via the SdI system is mandatory."
+      },
+      {
+        "type": "faq",
+        "q": "What if the Agenzia delle Entrate audits my charter operation?",
+        "a": "Standard response involves providing: complete AIS/GPS logs for each charter, corresponding invoices, contracts, crew documentation, and evidence of navigation outside EU waters (port receipts, customs stamps). Well-documented operations typically face no reassessment. Poorly documented operations face full 22% VAT on gross charter revenue plus penalties of 90-180%."
+      },
+      {
+        "type": "callout",
+        "text": "Disclaimer: This guide provides general reference information as of August 2026. Italian yacht charter regulations are complex, technical, and change periodically. Specific transactions require review by qualified Italian maritime lawyers and commercialisti. The Italian Gateway coordinates yacht acquisition, flagging, crew, and charter setup for HNWI owners through our specialist network."
       }
     ]
   }
