@@ -443,8 +443,8 @@ function Nav({ setPage }) {
   const [sc, setSc] = useState(false);
   const [mob, setMob] = useState(false);
   useEffect(() => { const h = () => setSc(window.scrollY > 40); window.addEventListener("scroll", h); return () => window.removeEventListener("scroll", h); }, []);
-  const go = t => { setMob(false); if (["guides","quiz","properties","advisors","professionals","athletes","about"].includes(t) || t.startsWith("v-")) { setPage(t); window.scrollTo(0,0); } else { setPage("home"); setTimeout(() => document.getElementById(t)?.scrollIntoView({ behavior: "smooth" }), 100); } };
-  const links = [["About","about"],["Services","services"],["Advisors","advisors"],["For Professionals","professionals"],["Guides","guides"],["Contact","contact"]];
+  const go = t => { setMob(false); if (["guides","quiz","properties","advisors","professionals","athletes","about","orientation"].includes(t) || t.startsWith("v-")) { setPage(t); window.scrollTo(0,0); } else { setPage("home"); setTimeout(() => document.getElementById(t)?.scrollIntoView({ behavior: "smooth" }), 100); } };
+  const links = [["About","about"],["Orientation","orientation"],["Services","services"],["Advisors","advisors"],["For Professionals","professionals"],["Guides","guides"],["Contact","contact"]];
   return (
     <nav style={{ position:"fixed",top:0,left:0,right:0,zIndex:50,background:sc||mob?"rgba(10,14,23,0.97)":"transparent",backdropFilter:sc?"blur(12px)":"none",borderBottom:sc||mob?("1px solid "+C.border):"none",transition:"all 0.3s" }}>
       <div style={{ maxWidth:1200,margin:"0 auto",padding:"16px 24px",display:"flex",alignItems:"center",justifyContent:"space-between" }}>
@@ -1201,6 +1201,100 @@ function ArticleAdvisor({ articleCat }) {
   );
 }
 
+function OrientationPage({ setPage }) {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [situation, setSituation] = useState("");
+  const [sent, setSent] = useState(false);
+
+  return (
+    <section style={{ padding:"120px 24px 80px",maxWidth:900,margin:"0 auto" }}>
+      <FadeIn>
+        <div style={{ marginBottom:56 }}>
+          <div style={{ color:C.gold,fontSize:12,letterSpacing:4,textTransform:"uppercase",marginBottom:12 }}>Multi-Advisory Orientation</div>
+          <h1 style={{ fontFamily:"Georgia,serif",fontSize:"clamp(28px,5vw,44px)",color:C.white,fontWeight:400,lineHeight:1.2,marginBottom:20 }}>The right professionals,<br/><span style={{ color:C.gold }}>coordinated around your situation</span></h1>
+          <p style={{ color:C.textDim,fontSize:17,lineHeight:1.7,maxWidth:720 }}>Relocating to Italy involves separate decisions across medicine, finance, tax, and law. Most families make these decisions in isolation, at different times, with different advisors who never speak to each other. We coordinate a single orientation session that brings together the specialists your specific situation requires.</p>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={100}>
+        <div style={{ background:C.card,border:"1px solid "+C.border,padding:"36px",marginBottom:40 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:20 }}>How it works</h2>
+          <div style={{ display:"grid",gap:24 }}>
+            {[
+              { n: "01", title: "Scoping call with The Italian Gateway", desc: "60-minute confidential conversation. We map your situation across healthcare, finance, tax, immigration, education, and property. We identify which specialists your case requires — not more, not less." },
+              { n: "02", title: "Curated professional consultations", desc: "You meet with the specific advisors your case needs — an M.D. for pre-existing medical conditions, a private banker for wealth structuring, a commercialista for cross-border tax, a notary for property, an immigration lawyer for permits. Each professional operates independently in their regulated field." },
+              { n: "03", title: "Coordination and synthesis report", desc: "We synthesise the input from all professionals into a single actionable roadmap. What to do, in what order, by whom, at what cost. Written report, delivered within 5 business days of your final consultation." },
+              { n: "04", title: "60 days of implementation support", desc: "Not a hand-off, a follow-through. For 60 days after delivery, you have direct email access to us for questions and coordination as you execute the plan. Additional professional introductions as needed." },
+            ].map((s,i) => <div key={i} style={{ display:"flex",gap:20 }}><span style={{ fontFamily:"Georgia,serif",fontSize:32,color:C.gold,minWidth:50 }}>{s.n}</span><div><div style={{ color:C.white,fontSize:16,fontWeight:600,marginBottom:6 }}>{s.title}</div><div style={{ color:C.textDim,fontSize:14,lineHeight:1.6 }}>{s.desc}</div></div></div>)}
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={150}>
+        <div style={{ background:"rgba(201,169,110,0.04)",borderLeft:"3px solid "+C.gold,padding:"24px 28px",marginBottom:40 }}>
+          <h3 style={{ fontFamily:"Georgia,serif",fontSize:18,color:C.white,fontWeight:400,marginBottom:12 }}>Our positioning is deliberately narrow</h3>
+          <p style={{ color:C.textDim,fontSize:14,lineHeight:1.7,margin:0 }}>The Italian Gateway does not provide medical, financial, tax, legal, or insurance advice in its own name. We coordinate the work of independently qualified professionals, each regulated in their respective field. Your medical consultation is provided by an M.D. registered with the Italian medical council. Your financial input comes from an authorised private banker. Your tax planning is delivered by a chartered commercialista. Our value is orchestration, synthesis, and single point of contact — not substitution of specialist expertise.</p>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={200}>
+        <div style={{ marginBottom:40 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:20,paddingBottom:12,borderBottom:"1px solid "+C.border }}>Typical scenarios we coordinate</h2>
+          <div style={{ display:"grid",gap:20 }}>
+            {[
+              { title: "US citizens with pre-existing conditions", desc: "SSN registration + private GP + insurance strategy + coordination with US Medicare timeline. Medical consult, insurance broker input, US-Italy tax specialist review." },
+              { title: "UK families post non-dom", desc: "Flat tax election analysis + SIPP restructuring + property strategy + school placement + healthcare setup. Tax specialist, private banker, property advisor, education consultant." },
+              { title: "Foreign business owners establishing Italian company", desc: "IRES/IRAP planning + optimal legal structure + private banking introduction + immigration for family + tax residency coordination. Commercialista, notary, immigration lawyer, banker." },
+              { title: "Retirees considering the 7% regime", desc: "Southern municipality selection + property acquisition + healthcare setup + pension coordination + inheritance planning. Tax specialist, medical advisor, property lawyer, estate planner." },
+              { title: "HNWI transitioning from Dubai / Singapore / Hong Kong", desc: "Flat tax vs 7% analysis + private banking + real estate + international school placement + cross-border compliance. Tax specialist, banker, education consultant, immigration counsel." },
+            ].map((s,i) => <div key={i} style={{ background:C.card,border:"1px solid "+C.border,padding:"20px 24px" }}><div style={{ color:C.gold,fontSize:14,fontWeight:600,marginBottom:6 }}>{s.title}</div><div style={{ color:C.textDim,fontSize:13,lineHeight:1.6 }}>{s.desc}</div></div>)}
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={250}>
+        <div style={{ background:C.card,border:"1px solid "+C.border,padding:"32px 36px",marginBottom:40 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:16 }}>Investment</h2>
+          <p style={{ color:C.textDim,fontSize:14,lineHeight:1.7,marginBottom:20 }}>Fees are structured per case based on the specialists required. Typical ranges below. Full quote provided after the initial scoping call — no charge for the scoping conversation itself.</p>
+          <div style={{ display:"grid",gap:12 }}>
+            <div style={{ display:"flex",justifyContent:"space-between",padding:"12px 0",borderBottom:"1px solid "+C.border }}>
+              <div><div style={{ color:C.white,fontSize:15,fontWeight:600 }}>Essential Orientation</div><div style={{ color:C.textDim,fontSize:12,marginTop:2 }}>Scoping + 1 specialist consultation + report</div></div>
+              <div style={{ color:C.gold,fontSize:15,fontWeight:600,whiteSpace:"nowrap" }}>from €1,800</div>
+            </div>
+            <div style={{ display:"flex",justifyContent:"space-between",padding:"12px 0",borderBottom:"1px solid "+C.border }}>
+              <div><div style={{ color:C.white,fontSize:15,fontWeight:600 }}>Standard Orientation</div><div style={{ color:C.textDim,fontSize:12,marginTop:2 }}>Scoping + 2-3 specialist consultations + report + 60-day support</div></div>
+              <div style={{ color:C.gold,fontSize:15,fontWeight:600,whiteSpace:"nowrap" }}>€3,500 – €5,500</div>
+            </div>
+            <div style={{ display:"flex",justifyContent:"space-between",padding:"12px 0" }}>
+              <div><div style={{ color:C.white,fontSize:15,fontWeight:600 }}>Comprehensive Onboarding</div><div style={{ color:C.textDim,fontSize:12,marginTop:2 }}>Scoping + 4+ specialists + report + 90-day support + priority follow-up</div></div>
+              <div style={{ color:C.gold,fontSize:15,fontWeight:600,whiteSpace:"nowrap" }}>€8,000 – €15,000</div>
+            </div>
+          </div>
+          <p style={{ color:C.textDim,fontSize:12,lineHeight:1.6,marginTop:20,fontStyle:"italic",opacity:0.85 }}>All fees are inclusive of professional consultation costs. Ongoing implementation (insurance placement, property acquisition, corporate setup, etc.) is handled by the introduced professionals directly at their own separate rates, with full transparency.</p>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={300}>
+        <div style={{ background:C.card,border:"1px solid "+C.gold,padding:"40px 36px" }}>
+          {sent ? (
+            <div style={{ textAlign:"center" }}><div style={{ fontSize:40,marginBottom:12 }}>✓</div><h3 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,marginBottom:8 }}>Thank you</h3><p style={{ color:C.textDim,fontSize:14 }}>We will be in touch within 24 hours to schedule your confidential scoping call.</p></div>
+          ) : (<>
+            <h3 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:8 }}>Request a scoping conversation</h3>
+            <p style={{ color:C.textDim,fontSize:14,marginBottom:24 }}>Confidential. No obligation. No charge for the initial call.</p>
+            <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:16,marginBottom:16 }}>
+              <div><label style={{ color:C.textDim,fontSize:11,letterSpacing:2,textTransform:"uppercase",display:"block",marginBottom:6 }}>Name</label><input value={name} onChange={e=>setName(e.target.value)} style={{ width:"100%",padding:"12px 14px",background:C.bg,color:C.white,border:"1px solid "+C.border,fontSize:14,boxSizing:"border-box" }}/></div>
+              <div><label style={{ color:C.textDim,fontSize:11,letterSpacing:2,textTransform:"uppercase",display:"block",marginBottom:6 }}>Email *</label><input type="email" value={email} onChange={e=>setEmail(e.target.value)} style={{ width:"100%",padding:"12px 14px",background:C.bg,color:C.white,border:"1px solid "+C.border,fontSize:14,boxSizing:"border-box" }}/></div>
+            </div>
+            <div style={{ marginBottom:16 }}><label style={{ color:C.textDim,fontSize:11,letterSpacing:2,textTransform:"uppercase",display:"block",marginBottom:6 }}>Briefly, your situation</label><textarea value={situation} onChange={e=>setSituation(e.target.value)} rows={3} style={{ width:"100%",padding:"12px 14px",background:C.bg,color:C.white,border:"1px solid "+C.border,fontSize:14,boxSizing:"border-box",fontFamily:"inherit",resize:"vertical" }} placeholder="Origin country, family composition, planned timeline, any immediate concerns..."/></div>
+            <button onClick={async()=>{if(!email)return;await submitForm({_subject:"Multi-Advisory Orientation Inquiry",name,situation,email,source:"orientation-page"});trackEvent("generate_lead",{source:"orientation"});setSent(true)}} style={{ width:"100%",padding:"16px 0",background:email?C.gold:C.border,color:email?C.bg:C.textDim,border:"none",fontSize:14,fontWeight:600,letterSpacing:2,cursor:email?"pointer":"default" }}>REQUEST SCOPING CALL</button>
+          </>)}
+        </div>
+      </FadeIn>
+    </section>
+  );
+}
+
 function AboutPage({ setPage }) {
   const coreAdvisors = ADVISORS.core.filter(a => a.name);
   return (
@@ -1422,6 +1516,52 @@ function ProfessionalsPage({ setPage }) {
           <div style={{ color:C.textDim,fontSize:14,lineHeight:1.8 }}>
             Your client's relocation to Italy creates complexity that falls outside your core mandate — Italian tax elections, notarial property processes, school waitlists, healthcare registration, driving licence conversions. Attempting to manage this in-house is costly and risky. Ignoring it means your client calls someone else — who may also manage the assets.
             We exist to fill that gap. We coordinate every aspect of the Italian relocation without touching the investment relationship. Your AUM stays with you. Your client gets the service they expect.
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={175}>
+        <div style={{ background:C.card,border:"1px solid "+C.border,padding:"28px 32px",marginBottom:48 }}>
+          <div style={{ display:"flex",alignItems:"center",gap:12,marginBottom:12 }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <h3 style={{ fontFamily:"Georgia,serif",fontSize:18,color:C.white,fontWeight:400,margin:0 }}>Our positioning: complementary, not competing</h3>
+          </div>
+          <div style={{ color:C.textDim,fontSize:14,lineHeight:1.8 }}>
+            The Italian Gateway does not provide investment advisory, portfolio management, discretionary asset management, or financial planning services. We do not sell insurance products, securities, or tax preparation services in our own name. Our role is coordination and orchestration of independently qualified Italian professionals — tax advisors, lawyers, notaries, doctors, private banks — through a single point of contact.
+            <br/><br/>
+            This structural choice is deliberate. It ensures we can never be perceived as competing for the client's investment relationship, and it protects the trust that makes referral partnerships work. When you introduce a client to us, your advisory role and your AUM remain untouched.
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={190}>
+        <div style={{ background:"linear-gradient(145deg,#0F1523,#111827)",border:"1px solid "+C.goldDim,padding:"32px 36px",marginBottom:48 }}>
+          <div style={{ color:C.gold,fontSize:11,letterSpacing:3,textTransform:"uppercase",marginBottom:10 }}>Partner With Us</div>
+          <h3 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:16 }}>Two ways to work together</h3>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(240px,1fr))",gap:24 }}>
+            <div>
+              <div style={{ color:C.gold,fontSize:13,fontWeight:600,marginBottom:8,letterSpacing:1 }}>FEE-SHARING</div>
+              <p style={{ color:C.textDim,fontSize:14,lineHeight:1.7,margin:0 }}>For established partners with recurring HNWI relocation referrals, we structure formal fee-sharing arrangements on successfully onboarded clients. Transparent terms, documented agreement, quarterly settlement.</p>
+            </div>
+            <div>
+              <div style={{ color:C.gold,fontSize:13,fontWeight:600,marginBottom:8,letterSpacing:1 }}>RECIPROCAL REFERRAL</div>
+              <p style={{ color:C.textDim,fontSize:14,lineHeight:1.7,margin:0 }}>For advisory firms with clients also needing services outside Italy (private banking abroad, second citizenship, international structures), we operate a mutual referral network with vetted partners in complementary jurisdictions.</p>
+            </div>
+          </div>
+          <p style={{ color:C.textDim,fontSize:13,lineHeight:1.7,marginTop:20,marginBottom:0,fontStyle:"italic",opacity:0.9 }}>Both arrangements are structured formally, with written terms and clear economics. We prefer transparency to informality — it protects everyone and builds relationships that last beyond a single client.</p>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={205}>
+        <div style={{ background:C.card,border:"1px solid "+C.border,padding:"32px 36px",marginBottom:48 }}>
+          <div style={{ color:C.gold,fontSize:11,letterSpacing:3,textTransform:"uppercase",marginBottom:10 }}>For Investment Migration Firms</div>
+          <h3 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:16 }}>The Italian post-residence coordination partner</h3>
+          <div style={{ color:C.textDim,fontSize:14,lineHeight:1.8 }}>
+            Firms specialising in residence and citizenship by investment — Henley &amp; Partners, Latitude, Global Citizen Solutions, Astons, Arton, and others — deliver clients to the point of legal residency. What happens next often falls outside the scope of the migration mandate: the client arrives in Italy and needs a bank account, a home, a school, a doctor, a tax structure that works, and a support system for the family.
+            <br/><br/>
+            The Italian Gateway operates as the natural next partner for these clients. We handle the practical and personal side of relocation — everything that turns a residence permit into a functioning life in Italy. Our services do not overlap with investment migration advisory; we do not process visa applications, structure investment programs, or manage the government relationship. We start where your mandate ends.
+            <br/><br/>
+            For established migration firms with recurring flow of clients to Italy, we structure a preferred partnership: dedicated single point of contact for your case managers, priority scheduling for referred clients, transparent fee arrangements or reciprocal referrals depending on the direction of flow, and coordinated reporting so your team stays informed of client status without administrative burden.
           </div>
         </div>
       </FadeIn>
@@ -1717,6 +1857,7 @@ function pageToHash(p) {
   if (p === "properties") return "/locations";
   if (p === "advisors") return "/advisors";
   if (p === "about") return "/about";
+  if (p === "orientation") return "/orientation";
   if (p === "professionals") return "/professionals";
   if (p === "athletes") return "/athletes";
   if (p === "privacy") return "/privacy";
@@ -1735,6 +1876,7 @@ function hashToPage(h) {
   if (path === "/locations") return "properties";
   if (path === "/advisors") return "advisors";
   if (path === "/about") return "about";
+  if (path === "/orientation") return "orientation";
   if (path === "/professionals") return "professionals";
   if (path === "/athletes") return "athletes";
   if (path === "/privacy") return "privacy";
@@ -1787,6 +1929,7 @@ export default function App() {
       {page==="properties" && <PropertyGallery setPage={setPage}/>}
       {page==="advisors" && <AdvisorsSection/>}
       {page==="about" && <AboutPage setPage={setPage}/>}
+      {page==="orientation" && <OrientationPage setPage={setPage}/>}
       {page==="professionals" && <ProfessionalsPage setPage={setPage}/>}
       {page==="athletes" && <AthletesPage setPage={setPage}/>}
       {isVert && <VerticalPage id={page.replace("v-","")} setPage={setPage}/>}

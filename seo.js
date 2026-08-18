@@ -233,6 +233,16 @@ const profBody = `
 <p>1. You identify the need — your client mentions Italy. 2. Warm introduction via email. We schedule a confidential call within 48 hours. 3. We handle Italy — tax, property, banking, schools, healthcare, immigration. 4. You stay informed. Your client remains your client.</p>
 <h2>Why advisors refer to us</h2>
 <p>Your client's relocation creates complexity outside your core mandate. We coordinate every aspect without touching the investment relationship. Your AUM stays with you.</p>
+<h2>Our positioning: complementary, not competing</h2>
+<p>The Italian Gateway does not provide investment advisory, portfolio management, discretionary asset management, or financial planning services. We do not sell insurance products, securities, or tax preparation services in our own name. Our role is coordination and orchestration of independently qualified Italian professionals — tax advisors, lawyers, notaries, doctors, private banks — through a single point of contact. This structural choice is deliberate: it ensures we can never be perceived as competing for the client's investment relationship, and it protects the trust that makes referral partnerships work.</p>
+<h2>Partner with us: two ways to work together</h2>
+<p><strong>Fee-sharing:</strong> For established partners with recurring HNWI relocation referrals, we structure formal fee-sharing arrangements on successfully onboarded clients. Transparent terms, documented agreement, quarterly settlement.</p>
+<p><strong>Reciprocal referral:</strong> For advisory firms with clients also needing services outside Italy, we operate a mutual referral network with vetted partners in complementary jurisdictions.</p>
+<p>Both arrangements are structured formally, with written terms and clear economics.</p>
+<h2>For investment migration firms</h2>
+<p>Firms specialising in residence and citizenship by investment — Henley &amp; Partners, Latitude, Global Citizen Solutions, Astons, Arton, and others — deliver clients to the point of legal residency. What happens next often falls outside the scope of the migration mandate: the client arrives in Italy and needs a bank account, a home, a school, a doctor, a tax structure that works.</p>
+<p>The Italian Gateway operates as the natural next partner for these clients. We start where your mandate ends. We do not process visa applications, structure investment programs, or manage the government relationship. We handle the practical and personal side of relocation — everything that turns a residence permit into a functioning life in Italy.</p>
+<p>For established migration firms with recurring flow of clients to Italy, we structure a preferred partnership: dedicated single point of contact for your case managers, priority scheduling for referred clients, transparent fee arrangements or reciprocal referrals, and coordinated reporting.</p>
 <h2>Technical reference library</h2>
 <ul>
 <li><a href="/guide/flat-tax-2026/">Italy Flat Tax: Technical Briefing</a></li>
@@ -329,6 +339,36 @@ writeFileSync(join(DIST, 'about', 'index.html'), page(
   aboutLd
 ));
 console.log('  + about/');
+
+// ── Orientation page ───────────────────────────────────────────
+ensureDir(join(DIST, 'orientation'));
+const orientBody = `
+<h1>Multi-Advisory Orientation for HNWI Relocating to Italy</h1>
+<p style="color:#9CA3AF;font-size:17px;margin-bottom:16px">Relocating to Italy involves separate decisions across medicine, finance, tax, and law. Most families make these decisions in isolation. We coordinate a single orientation session that brings together the specialists your specific situation requires.</p>
+<h2>How it works</h2>
+<p><strong>1. Scoping call.</strong> 60-minute confidential conversation. We map your situation across healthcare, finance, tax, immigration, education, and property.</p>
+<p><strong>2. Curated professional consultations.</strong> You meet with the specific advisors your case needs — an M.D. for pre-existing medical conditions, a private banker for wealth structuring, a commercialista for cross-border tax, a notary for property, an immigration lawyer for permits.</p>
+<p><strong>3. Coordination and synthesis report.</strong> We synthesise the input into a single actionable roadmap, delivered within 5 business days of your final consultation.</p>
+<p><strong>4. 60 days of implementation support.</strong> Direct email access for questions and coordination as you execute the plan.</p>
+<h2>Our positioning</h2>
+<p>The Italian Gateway does not provide medical, financial, tax, legal, or insurance advice in its own name. We coordinate the work of independently qualified professionals, each regulated in their respective field. Our value is orchestration, synthesis, and single point of contact.</p>
+<h2>Typical scenarios</h2>
+<p>US citizens with pre-existing conditions (SSN + private GP + insurance strategy + US Medicare coordination).</p>
+<p>UK families post non-dom (flat tax election + SIPP restructuring + property + schools + healthcare).</p>
+<p>Foreign business owners establishing an Italian company (IRES/IRAP planning + legal structure + banking + immigration).</p>
+<p>Retirees considering the 7% regime (Southern municipality selection + property + healthcare + pension coordination).</p>
+<p>HNWI transitioning from Dubai, Singapore, Hong Kong (flat tax vs 7% + banking + real estate + international schools).</p>
+<h2>Investment</h2>
+<p>Essential Orientation: from €1,800. Standard Orientation: €3,500–€5,500. Comprehensive Onboarding: €8,000–€15,000. Full quote provided after the initial scoping call — no charge for the scoping conversation itself.</p>
+<p style="margin-top:32px">Request scoping call: <a href="mailto:info@theitaliangateway.com">info@theitaliangateway.com</a></p>`;
+
+writeFileSync(join(DIST, 'orientation', 'index.html'), page(
+  'Multi-Advisory Orientation for HNWI Relocating to Italy | The Italian Gateway',
+  'Coordinated orientation across medicine, finance, tax, law for families moving to Italy. Independent professionals, single point of contact, fixed fees.',
+  DOMAIN + '/orientation/',
+  orientBody
+));
+console.log('  + orientation/');
 
 // ── Inject SEO content into homepage ────────────────────────
 let homepage = readFileSync(join(DIST, 'index.html'), 'utf8');
@@ -435,6 +475,7 @@ const urls = [
   { loc: '/professionals/', p: '0.9' },
   { loc: '/athletes/', p: '0.8' },
   { loc: '/about/', p: '0.9' },
+  { loc: '/orientation/', p: '0.9' },
   ...ARTICLES.map(a => ({ loc: '/guide/' + a.id + '/', p: '0.8' })),
   { loc: '/privacy/', p: '0.3' },
   { loc: '/cookies/', p: '0.3' },
