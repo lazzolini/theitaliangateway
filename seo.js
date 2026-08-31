@@ -372,16 +372,18 @@ console.log('  + orientation/');
 
 // ── Inject SEO content into homepage ────────────────────────
 let homepage = readFileSync(join(DIST, 'index.html'), 'utf8');
-const seo = `<div id="seo" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+const seo = `<noscript>
 <h1>The Italian Gateway — Premium Relocation Advisory for HNWI Moving to Italy</h1>
 <p>We guide high-net-worth individuals and families to their ideal life in Italy. Tax optimization, private banking, real estate, healthcare, education, yachting — all through a single, confidential point of contact in Milan.</p>
 <h2>Services</h2>
 <p>Private Banking introductions. Tax and Legal structuring including the 300,000 euro flat tax regime. Real Estate across Milan, Lake Como, Tuscany, and the Amalfi Coast. Healthcare coordination. Education consulting for international schools. Immigration management. Yachting and marina services.</p>
 <h2>Guides</h2>
-${ARTICLES.map(a => '<p><a href="/guide/' + a.id + '/">' + a.title + '</a> - ' + a.desc + '</p>').join('\n')}
+<ul>
+${ARTICLES.map(a => '<li><a href="/guide/' + a.id + '/">' + a.title + '</a></li>').join('\n')}
+</ul>
 <h2>Contact</h2>
-<p>Email: info@theitaliangateway.com. Book a confidential 30-minute discovery call.</p>
-</div>`;
+<p>Email: info@theitaliangateway.com</p>
+</noscript>`;
 homepage = homepage.replace('</body>', seo + '\n</body>');
 writeFileSync(join(DIST, 'index.html'), homepage);
 console.log('  + homepage SEO injected');
