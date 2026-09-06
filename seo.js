@@ -21,6 +21,60 @@ try {
   process.exit(0); // Don't break the build, just skip SEO
 }
 
+// ── Assicura che dist esista (difensivo) ────────────────────
+if (!existsSync(DIST)) {
+  mkdirSync(DIST, { recursive: true });
+  console.log('[seo] Created dist/ (was missing)');
+}
+
+// ── Sitemap ─────────────────────────────────────────────────
+const urls = [
+  { loc: '/', p: '1.0' },
+  { loc: '/guides/', p: '0.9' },
+  { loc: '/advisors/', p: '0.8' },
+  { loc: '/professionals/', p: '0.9' },
+  { loc: '/athletes/', p: '0.8' },
+  { loc: '/about/', p: '0.9' },
+  { loc: '/orientation/', p: '0.9' },
+  { loc: '/healthcare/', p: '0.9' },
+  { loc: '/buying-agent/', p: '0.9' },
+  ...ARTICLES.map(a => ({ loc: '/guide/' + a.id + '/', p: '0.8' })),
+  { loc: '/privacy/', p: '0.3' },
+  { loc: '/cookies/', p: '0.3' },
+  { loc: '/terms/', p: '0.3' },
+];
+// lastmod: data reale dell'articolo dove disponibile, altrimenti data di build
+const MONTHS = { January:'01', February:'02', March:'03', April:'04', May:'05', June:'06',
+                 July:'07', August:'08', September:'09', October:'10', November:'11', December:'12' };
+const BUILD_DATE = new Date().toISOString().slice(0, 10);
+
+function lastmodFor(loc) {
+  const m = loc.match(/^\/guide\/(.+)\/$/);
+  if (m) {
+    const art = ARTICLES.find(a => a.id === m[1]);
+    if (art && art.date) {
+      const parts = art.date.trim().split(/\s+/);
+      if (parts.length === 2 && MONTHS[parts[0]]) {
+        return parts[1] + '-' + MONTHS[parts[0]] + '-01';
+      }
+    }
+  }
+  return BUILD_DATE;
+}
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(u => `  <url><loc>${DOMAIN}${u.loc}</loc><lastmod>${lastmodFor(u.loc)}</lastmod><priority>${u.p}</priority></url>`).join('\n')}
+</urlset>`;
+writeFileSync(join(DIST, 'sitemap.xml'), sitemap);
+console.log('  + sitemap.xml (' + urls.length + ' URLs)');
+
+// ── Robots.txt ──────────────────────────────────────────────
+writeFileSync(join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${DOMAIN}/sitemap.xml\n`);
+console.log('  + robots.txt');
+
+
+
 // ── Helpers ─────────────────────────────────────────────────
 function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
@@ -370,6 +424,74 @@ writeFileSync(join(DIST, 'orientation', 'index.html'), page(
 ));
 console.log('  + orientation/');
 
+// ── Healthcare service page ────────────────────────────────
+ensureDir(join(DIST, 'healthcare'));
+const healthBody = `
+<h1>Healthcare Setup Service for International Families in Italy</h1>
+<p style="color:#9CA3AF;font-size:17px;margin-bottom:16px">Most international families arriving in Italy either overpay for coverage they will never use, or discover a gap at the worst possible moment. We coordinate a doctor and an independent broker to produce a written recommendation for your specific situation.</p>
+<h2>Four configurations, four costs</h2>
+<p><strong>Public only</strong> — SSN registration alone. Free. For families with straightforward medical needs, comfortable with waiting lists for non-urgent care.</p>
+<p><strong>Public plus access</strong> — SSN plus a private GP on retainer. €1,500 to €2,500 per year. The configuration we recommend most often: public system for hospitals and emergencies, private doctor for continuity and English.</p>
+<p><strong>Public plus Italian cover</strong> — SSN, private GP and an Italian private policy. €5,500 to €9,000 per year. For families based in Italy wanting private rooms and fast specialist access without paying for worldwide coverage.</p>
+<p><strong>International</strong> — SSN, private GP and an international policy such as Bupa, Cigna or Allianz Care. €12,000 to €25,000 per year. For genuinely mobile families or complex conditions requiring cross-border treatment.</p>
+<p>One point worth knowing: the SSN covers pre-existing conditions from day one, with no exclusions and no waiting period. Private policies almost always apply a twelve to twenty-four month wait.</p>
+<h2>How the service works</h2>
+<p>A sixty-minute scoping conversation at no charge. Then a consultation with an internal medicine specialist, briefed on your case in advance. Then a review with an independent insurance broker, fee-based with no product commissions. Finally a written report setting out what to do, in what order, at what cost, followed by a period of email support.</p>
+<h2>Fees</h2>
+<p><strong>Healthcare Orientation — €1,200 (VAT included).</strong> Medical consultation, broker review, written summaries and final report, 30 days of email support.</p>
+<p><strong>Healthcare Orientation Extended — €1,800 (VAT included).</strong> Everything above, plus identification and introduction to an English-speaking GP, within the SSN at no cost to you or privately on retainer, and 60 days of support.</p>
+<p>Every professional you speak with is an independent third party. We receive no commission, referral fee or other payment from any of them.</p>
+<h2>Common questions</h2>
+<p><strong>Is SSN registration enough on its own?</strong> For many families, yes. The SSN covers emergencies, hospital treatment, specialists and prescriptions, including pre-existing conditions. The genuine weaknesses are waiting times for non-urgent care and the fact that the system operates in Italian.</p>
+<p><strong>How are pre-existing conditions treated?</strong> The SSN treats them like any other condition, covered from registration with no underwriting. Private insurers apply a waiting period of twelve to twenty-four months, exclude the condition permanently, or load the premium.</p>
+<p><strong>Should I cancel the policy from my home country?</strong> It depends on where you spend time and what you would be giving up. For US citizens approaching Medicare eligibility, cancelling early can create both a coverage gap and permanent enrolment penalties.</p>
+<p><strong>What does a private GP provide?</strong> A doctor who follows a small number of patients, speaks English, is reachable directly, knows your history and coordinates specialists. Typically €1,500 to €2,500 per year for a couple.</p>
+<p><strong>Do you sell insurance?</strong> No. We are not insurance intermediaries and we do not recommend specific policies. We coordinate independent regulated professionals and synthesise their input into a plan.</p>
+<p style="margin-top:32px">Request a scoping conversation: <a href="mailto:info@theitaliangateway.com">info@theitaliangateway.com</a></p>
+<p><a href="/guide/private-health-insurance-italy-expats-2026/">Read our full guide to health insurance in Italy</a></p>`;
+
+writeFileSync(join(DIST, 'healthcare', 'index.html'), page(
+  'Healthcare Setup Service for Expats in Italy | The Italian Gateway',
+  'SSN, private GP or international insurance? We coordinate a doctor and an independent broker to produce a written recommendation. Fixed fee from EUR 1,200.',
+  DOMAIN + '/healthcare/',
+  healthBody
+));
+console.log('  + healthcare/');
+
+// ── Buying agent page ──────────────────────────────────────
+ensureDir(join(DIST, 'buying-agent'));
+const agentBody = `
+<h1>Property Buying Agent Italy: Lake Como, Milan and Tuscany</h1>
+<p style="color:#9CA3AF;font-size:17px;margin-bottom:16px">In Italy the estate agent is paid by both sides and represents neither. For an international buyer, that structural conflict is the single largest source of overpayment and of problems discovered after completion. We act for the buyer only.</p>
+<h2>What goes wrong without representation</h2>
+<p>Asking prices on lake and prime rural property are frequently set for foreign buyers rather than for the market. Historic properties carry restrictions that make planned renovation impossible, and these are not disclosed unless asked for specifically. Cadastral records routinely disagree with the building as it stands, which becomes the buyer's problem at resale. Off-market stock, often the best of it, never reaches the portals at all.</p>
+<h2>How we work</h2>
+<p><strong>Brief.</strong> We define what you are actually looking for: location, budget, use, timeline, appetite for renovation.</p>
+<p><strong>Search.</strong> Listed stock, agency networks and off-market. We view on your behalf and report honestly, including on properties we think you should not pursue.</p>
+<p><strong>Diagnostics.</strong> Before any offer: cadastral conformity, planning and heritage restrictions, condominium position, structural condition. Coordinated with a surveyor and a lawyer acting for you.</p>
+<p><strong>Negotiation and completion.</strong> Price and terms negotiated on your behalf, then coordination through compromesso and rogito with a notary and lawyer of your choosing.</p>
+<h2>Where we operate</h2>
+<p><strong>Lake Como.</strong> Bellagio, Menaggio, Tremezzina, Como and the Argegno side. Waterfront and historic villas, where asking prices diverge most sharply from achievable prices and heritage restrictions are most common.</p>
+<p><strong>Milan.</strong> Brera, Quadrilatero, Porta Venezia, Cinque Giornate, CityLife. Apartments and penthouses, where the material risks are condominium liabilities and cadastral discrepancies.</p>
+<p><strong>Tuscany.</strong> Florence city centre, Chianti, Val d'Orcia. Historic apartments and rural estates, where planning restrictions, agricultural preemption rights and water rights require checking before an offer.</p>
+<h2>Fees</h2>
+<p>A retainer to begin the search, credited in full against the completion fee. The completion fee is a percentage of the purchase price, agreed in writing at the outset and payable only on completion. We are paid by you and by nobody else: no commission from selling agents, no share of the seller's fee. Surveyor, lawyer and notary are engaged directly by you at their own rates.</p>
+<h2>Common questions</h2>
+<p><strong>How is a buying agent different from an estate agent?</strong> An Italian estate agent is instructed by the seller and by custom takes commission from both parties. Their duty is to complete a sale. A buying agent is instructed and paid by the buyer alone.</p>
+<p><strong>Do I need a lawyer if the notary is involved?</strong> The notary verifies legality and registers the transfer. They do not represent your interests specifically and will not advise on whether the price is sensible or the renovation permitted. Above roughly EUR 300,000 an independent lawyer is money well spent.</p>
+<p><strong>What are the total costs on top of the price?</strong> Broadly eight to twelve per cent for a second home: registration tax, notary, agency commission, legal fees and survey.</p>
+<p><strong>Can you help if I have already found the property?</strong> Yes, and this is often where we add the most value. Diagnostics, valuation and negotiation on a property you identified yourself is a defined piece of work with a fixed fee.</p>
+<p style="margin-top:32px">Discuss a purchase: <a href="mailto:info@theitaliangateway.com">info@theitaliangateway.com</a></p>
+<p><a href="/guide/lake-como-property/">Read our Lake Como property guide</a> · <a href="/guide/buying-property-italy-foreigner-step-by-step-2026/">Step-by-step buying guide</a></p>`;
+
+writeFileSync(join(DIST, 'buying-agent', 'index.html'), page(
+  'Property Buying Agent Italy: Lake Como, Milan, Tuscany | The Italian Gateway',
+  'Independent buying agent acting for the buyer only. Lake Como, Milan and Tuscany. Search, diagnostics, negotiation and completion. Paid by you, not the seller.',
+  DOMAIN + '/buying-agent/',
+  agentBody
+));
+console.log('  + buying-agent/');
+
 // ── Inject SEO content into homepage ────────────────────────
 let homepage = readFileSync(join(DIST, 'index.html'), 'utf8');
 const seo = `<noscript>
@@ -377,6 +499,16 @@ const seo = `<noscript>
 <p>We guide high-net-worth individuals and families to their ideal life in Italy. Tax optimization, private banking, real estate, healthcare, education, yachting — all through a single, confidential point of contact in Milan.</p>
 <h2>Services</h2>
 <p>Private Banking introductions. Tax and Legal structuring including the 300,000 euro flat tax regime. Real Estate across Milan, Lake Como, Tuscany, and the Amalfi Coast. Healthcare coordination. Education consulting for international schools. Immigration management. Yachting and marina services.</p>
+<h2>Services</h2>
+<ul>
+<li><a href="/orientation/">Multi-Advisory Orientation</a> — coordinated advice across medicine, finance, tax and law</li>
+<li><a href="/healthcare/">Healthcare Setup Service</a> — SSN, private GP and insurance decided properly</li>
+<li><a href="/buying-agent/">Property Buying Agent</a> — Lake Como, Milan and Tuscany, acting for the buyer only</li>
+<li><a href="/professionals/">For Wealth Managers and Family Offices</a></li>
+<li><a href="/athletes/">Athlete and Sports Relocation</a></li>
+<li><a href="/advisors/">Our Advisory Network</a></li>
+<li><a href="/about/">About The Italian Gateway</a></li>
+</ul>
 <h2>Guides</h2>
 <ul>
 ${ARTICLES.map(a => '<li><a href="/guide/' + a.id + '/">' + a.title + '</a></li>').join('\n')}
@@ -469,57 +601,20 @@ for (const lp of legalPages) {
   console.log('  + ' + lp.slug + '/');
 }
 
-// ── Sitemap ─────────────────────────────────────────────────
-const urls = [
-  { loc: '/', p: '1.0' },
-  { loc: '/guides/', p: '0.9' },
-  { loc: '/advisors/', p: '0.8' },
-  { loc: '/professionals/', p: '0.9' },
-  { loc: '/athletes/', p: '0.8' },
-  { loc: '/about/', p: '0.9' },
-  { loc: '/orientation/', p: '0.9' },
-  ...ARTICLES.map(a => ({ loc: '/guide/' + a.id + '/', p: '0.8' })),
-  { loc: '/privacy/', p: '0.3' },
-  { loc: '/cookies/', p: '0.3' },
-  { loc: '/terms/', p: '0.3' },
-];
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(u => `  <url><loc>${DOMAIN}${u.loc}</loc><lastmod>2026-03-23</lastmod><priority>${u.p}</priority></url>`).join('\n')}
-</urlset>`;
-writeFileSync(join(DIST, 'sitemap.xml'), sitemap);
-console.log('  + sitemap.xml (' + urls.length + ' URLs)');
-
-// ── Robots.txt ──────────────────────────────────────────────
-writeFileSync(join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${DOMAIN}/sitemap.xml\n`);
-console.log('  + robots.txt');
-
-// ── IndexNow: ping Bing/Yandex with all URLs ────────────────
-const INDEXNOW_KEY = 'mdpubx9i7zjdmqnsr0d23kdqldypimfl';
-const allUrls = [
-  ...ARTICLES.map(a => DOMAIN + '/guide/' + a.id + '/'),
-  ...urls.map(u => DOMAIN + u.loc),
-];
-
-async function pingIndexNow() {
-  try {
-    const res = await fetch('https://api.indexnow.org/IndexNow', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json; charset=utf-8' },
-      body: JSON.stringify({
-        host: 'theitaliangateway.com',
-        key: INDEXNOW_KEY,
-        keyLocation: DOMAIN + '/' + INDEXNOW_KEY + '.txt',
-        urlList: allUrls,
-      }),
-    });
-    console.log('  + IndexNow ping: ' + res.status + ' (' + allUrls.length + ' URLs submitted)');
-  } catch (e) {
-    console.log('  ! IndexNow ping failed (non-blocking):', e.message);
+// ── Verifica finale: i file critici esistono? ───────────────
+const critical = ['sitemap.xml', 'robots.txt', 'index.html'];
+let allOk = true;
+for (const f of critical) {
+  if (existsSync(join(DIST, f))) {
+    console.log('  \u2713 ' + f + ' present');
+  } else {
+    console.error('  \u2717 MISSING: ' + f);
+    allOk = false;
   }
 }
-
-// Fire the ping — don't await, it's non-critical
-pingIndexNow();
+if (!allOk) {
+  console.error('[seo] CRITICAL FILES MISSING - build should be investigated');
+  process.exit(1);
+}
 
 console.log('[seo] Done!');

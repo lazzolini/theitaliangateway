@@ -631,6 +631,10 @@ const ARTICLES = [
         "a": "Historically, yes. Prime lakefront property has appreciated 5-8% annually over the past decade, with limited supply providing a natural floor. However, past performance is no guarantee — the market is illiquid at the top end, and you should buy primarily for lifestyle, not speculation."
       },
       {
+        "type": "p",
+        "text": "Related service: <a href=\"/#/buying-agent\">Property Buying Agent</a> — independent representation for the buyer, covering search, diagnostics and negotiation on Lake Como."
+      },
+      {
         "type": "callout",
         "text": "Disclaimer: This guide provides general information as of March 2026. Property markets, tax laws, and regulations change. Always engage qualified local professionals. The Italian Gateway provides independent buyer advisory for Lake Como properties."
       }
@@ -2000,6 +2004,10 @@ const ARTICLES = [
         "a": "Ideally, establish residency first to benefit from prima casa tax rates. However, if the right property appears before your move, you can still buy and claim prima casa within 18 months of purchase by registering residency in the municipality."
       },
       {
+        "type": "p",
+        "text": "Related service: <a href=\"/#/buying-agent\">Property Buying Agent</a> — independent buyer representation across Lake Como, Milan and Tuscany."
+      },
+      {
         "type": "callout",
         "text": "Disclaimer: This guide provides general information as of March 2026. Property laws and tax rates change. Always engage qualified Italian legal professionals. The Italian Gateway manages the entire acquisition process on your behalf."
       }
@@ -2159,6 +2167,10 @@ const ARTICLES = [
         "type": "faq",
         "q": "What about dental care?",
         "a": "Italian dental care is largely private (the SSN covers very little dentistry). Quality is high, and costs are 30-50% lower than London or Zurich. Milan has several English-speaking dental clinics catering to international patients, with services ranging from routine care to implantology and orthodontics."
+      },
+      {
+        "type": "p",
+        "text": "Related service: <a href=\"/#/healthcare\">Healthcare Setup Service</a> — coordinated medical and broker review with a written recommendation."
       },
       {
         "type": "callout",
@@ -3311,6 +3323,30 @@ const ARTICLES = [
       {
         "type": "callout",
         "text": "Action required: Before relocating, work with your wealth manager to move from US-domiciled ETFs to their Irish or Luxembourg equivalents. An iShares S&P 500 ETF domiciled in Ireland (CSPX) is taxed at 26%. The same fund domiciled in the US (IVV) faces up to 43%. Same underlying exposure, radically different tax treatment."
+      },
+      {
+        "type": "h3",
+        "text": "UK Fund Structures: OEICs, Unit Trusts and Investment Trusts"
+      },
+      {
+        "type": "p",
+        "text": "British investors rarely think in terms of \"harmonised\" or \"non-harmonised\" — they think in terms of the structures their platform offers. The three most common are OEICs, unit trusts and investment trusts, and Italy treats them very differently from one another."
+      },
+      {
+        "type": "p",
+        "text": "An <strong>OEIC (Open-Ended Investment Company)</strong> is the standard UK collective fund structure, the British equivalent of a SICAV. Most UK-domiciled OEICs were UCITS-compliant before Brexit, but UK funds are no longer automatically recognised as harmonised for Italian tax purposes. Whether a specific OEIC still qualifies depends on its current regulatory status and, critically, on whether the fund reports the data Italian intermediaries require. Many do not. The practical consequence is that gains may fall into ordinary IRPEF income rather than the 26% substitute tax."
+      },
+      {
+        "type": "p",
+        "text": "<strong>Unit trusts</strong> follow the same logic. The legal form differs (a trust deed rather than a corporate structure) but the Italian tax analysis is identical: what matters is UCITS status and reporting, not whether the vehicle is a company or a trust."
+      },
+      {
+        "type": "p",
+        "text": "<strong>Investment trusts</strong> are a different case entirely, and this is where UK investors are most often caught out. Despite the name, an investment trust is a listed company whose shares trade on the London Stock Exchange — not a collective investment fund. Italy taxes it as a shareholding: 26% on dividends and capital gains, with no harmonised/non-harmonised distinction. In practice this often makes investment trusts more tax-efficient in Italy than the OEICs sitting alongside them in the same portfolio."
+      },
+      {
+        "type": "callout",
+        "text": "Practical step before you move: ask your UK platform or adviser for the full list of holdings with their domicile and UCITS status. Then have each line assessed against Italian rules. In our experience the surprises run in both directions — some holdings are worse than expected, others (particularly investment trusts) turn out to be better placed than the client assumed."
       },
       {
         "type": "h2",
@@ -7281,6 +7317,10 @@ const ARTICLES = [
         "text": "For a typical €470,000 apartment purchase in central Firenze: expect total transaction costs (registration tax, notary, agent commission, lawyer, VAT where applicable) of approximately €45,000 – €60,000 on top of the purchase price. This is significantly higher than a rural farmhouse purchase of the same value in a smaller Tuscan municipality, where cadastral values and IMU rates are typically lower."
       },
       {
+        "type": "p",
+        "text": "Related service: <a href=\"/#/buying-agent\">Property Buying Agent</a> — we act for the buyer only, in Lake Como, Milan and Tuscany."
+      },
+      {
         "type": "callout",
         "text": "Disclaimer: This guide provides general information as of May 2026. Italian property law is complex and varies by region. Always engage an independent Italian lawyer and a qualified notary. The Italian Gateway manages the entire property acquisition process end-to-end."
       }
@@ -7694,6 +7734,10 @@ const ARTICLES = [
         "type": "faq",
         "q": "Can I access these hospitals from Lake Como?",
         "a": "San Raffaele and Humanitas are both reachable from Como in 50-70 minutes by car. For emergencies, Ospedale Sant'Anna in Como is excellent. For planned specialist care, Milan's hospitals are the regional reference."
+      },
+      {
+        "type": "p",
+        "text": "Related service: <a href=\"/#/healthcare\">Healthcare Setup Service</a> — deciding between SSN, private insurance and private practice for your situation."
       },
       {
         "type": "callout",
@@ -8877,6 +8921,97 @@ const ARTICLES = [
       },
       {
         "type": "h2",
+        "text": "ASL Registration vs Private Insurance: What Each Actually Covers"
+      },
+      {
+        "type": "p",
+        "text": "This is the question almost every arriving family asks first, and the one most often answered badly. Registering with your local ASL is not an alternative to private insurance and private insurance is not a substitute for ASL registration. They cover different failure modes, and the sensible question is not which one but whether the second is needed at all."
+      },
+      {
+        "type": "h3",
+        "text": "What ASL registration gives you"
+      },
+      {
+        "type": "p",
+        "text": "Enrolling with the Azienda Sanitaria Locale assigns you a medico di base and gives access to the full national system: hospital treatment, emergency care, specialist consultations, diagnostics and prescription medicines. Enrolment is compulsory for most residents and free where it derives from employment or self-employment. Voluntary enrolment, for those without an Italian income source, is available for an annual contribution which for most families falls between roughly €700 and €2,700 depending on declared income."
+      },
+      {
+        "type": "p",
+        "text": "The coverage is genuinely comprehensive. Cardiac surgery, oncology, transplants, intensive care, chronic disease management — all covered, with no ceiling and no exclusions. A ticket applies to non-urgent specialist visits and diagnostics, typically €15 to €70 per episode, with exemptions for low income, chronic conditions and age."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "",
+          "ASL / SSN",
+          "Private insurance"
+        ],
+        "rows": [
+          [
+            "Cost",
+            "Free with Italian income, or €700–€2,700/yr voluntary",
+            "€3,500–€25,000/yr depending on scope and age"
+          ],
+          [
+            "Pre-existing conditions",
+            "Covered from day one, no exclusions, no underwriting",
+            "12–24 month wait, permanent exclusion, or premium loading"
+          ],
+          [
+            "Emergency and hospital care",
+            "Full coverage, no ceiling",
+            "Covered, subject to policy limits"
+          ],
+          [
+            "Waiting time, non-urgent specialist",
+            "2 to 10 weeks depending on region and specialty",
+            "Days"
+          ],
+          [
+            "Choice of surgeon",
+            "Assigned team",
+            "You choose"
+          ],
+          [
+            "Room",
+            "Shared ward",
+            "Private room"
+          ],
+          [
+            "Language",
+            "Italian, with variable English at major centres",
+            "English support standard"
+          ],
+          [
+            "Coverage outside Italy",
+            "EHIC in the EU for emergencies only",
+            "Depends on policy, worldwide plans available"
+          ],
+          [
+            "Dental and optical",
+            "Minimal",
+            "Usually included"
+          ]
+        ]
+      },
+      {
+        "type": "h3",
+        "text": "What private insurance actually buys"
+      },
+      {
+        "type": "p",
+        "text": "Speed, comfort, choice and language. It does not buy better clinical outcomes in an emergency — the public hospitals that handle emergencies in Milan, Bologna and Florence are among the best in Europe and they are the same hospitals in both cases. What it buys is a specialist appointment in four days instead of six weeks, a private room, a surgeon you selected, an English-speaking case manager, and dental cover the SSN barely provides."
+      },
+      {
+        "type": "p",
+        "text": "For a family whose main worry is an existing condition, this reframes the decision. The condition is already covered by the SSN without exclusion, permanently and at no cost. Private insurance will almost certainly not cover it for the first year or two. The private layer is therefore about convenience around the condition, not about protection from it."
+      },
+      {
+        "type": "callout",
+        "text": "A practical rule of thumb. If you spend most of the year in Italy, have no unusual medical needs and speak enough Italian to navigate a booking system, ASL registration plus a private GP on retainer covers you well for around €2,000 a year. Add an Italian private policy if waiting lists and private rooms matter to you. Add an international policy only if you genuinely spend significant time outside Italy. Most families we work with are quoted for the fourth option and need the second."
+      },
+      {
+        "type": "h2",
         "text": "Bupa vs Cigna vs Allianz vs Generali: Head-to-Head Comparison"
       },
       {
@@ -9139,6 +9274,10 @@ const ARTICLES = [
       {
         "type": "callout",
         "text": "For former executives evaluating alternatives to FASI or AON-managed plans, the right choice depends on age, family composition, existing health conditions, and international travel patterns. There is no universal best answer — but the SSN + private GP + targeted Italian insurance combination typically delivers 60-70% cost savings versus continuing FASI voluntarily, with comparable practical outcomes for individuals living stably in Italy."
+      },
+      {
+        "type": "p",
+        "text": "If you would rather have this decided than researched: our <a href=\"/#/healthcare\">Healthcare Setup Service</a> coordinates a medical consultation and an independent broker review, and delivers a written recommendation for your specific situation."
       },
       {
         "type": "callout",
@@ -10075,6 +10214,228 @@ const ARTICLES = [
       {
         "type": "callout",
         "text": "Disclaimer: Property prices, school fees, and healthcare costs are indicative ranges as of August 2026. The Italian Gateway provides personalised city selection advisory as part of our relocation planning services, comparing Bologna, Milan, Florence, and other candidate locations based on family-specific requirements."
+      }
+    ]
+  },
+  {
+    "id": "hong-kong-singapore-to-italy-relocation-2026",
+    "cat": "Tax & Legal",
+    "title": "Hong Kong & Singapore to Italy: The HNWI Relocation Guide 2026",
+    "date": "September 2026",
+    "read": "13 min",
+    "desc": "Hong Kong or Singapore to Italy: territorial vs worldwide tax, MPF and CPF, CFC rules on Asian companies, banking and source of funds.",
+    "content": [
+      {
+        "type": "p",
+        "text": "Families relocating to Italy from Hong Kong or Singapore face a shift that is easy to underestimate. Both jurisdictions operate broadly territorial tax systems with no capital gains tax and no inheritance tax. Italy taxes residents on worldwide income and has a full set of anti-avoidance rules that apply to Asian holding structures. The move is entirely workable, and for many families financially attractive, but only if the structuring happens before residence is triggered rather than after."
+      },
+      {
+        "type": "p",
+        "text": "Related: <a href=\"/#/guide/flat-tax-2026\">Italy Flat Tax Guide</a> · <a href=\"/#/guide/trusts-cfc-rules-italy-hnwi-2026\">Trusts &amp; CFC Rules</a> · <a href=\"/#/guide/dubai-to-milan\">Dubai to Milan</a>"
+      },
+      {
+        "type": "h2",
+        "text": "The Core Shift: Territorial to Worldwide"
+      },
+      {
+        "type": "p",
+        "text": "In Hong Kong, profits tax applies only to income sourced in Hong Kong. Employment income earned for services rendered outside Hong Kong may fall outside the charge entirely. There is no capital gains tax, no tax on dividends, and no estate duty since 2006. Singapore operates on similar principles: foreign-sourced income is generally exempt when not remitted, there is no capital gains tax, and estate duty was abolished in 2008."
+      },
+      {
+        "type": "p",
+        "text": "Italy taxes residents on worldwide income regardless of where it arises or whether it is remitted. Capital gains are taxable. Foreign assets must be declared annually on the RW form. There are wealth taxes on foreign financial assets (IVAFE) and foreign property (IVIE). Inheritance tax exists, though at rates that remain among the lowest in Europe."
+      },
+      {
+        "type": "callout",
+        "text": "The single decision that matters most: whether to elect the €300,000 flat tax regime. For a family arriving from Hong Kong or Singapore with substantial foreign income and assets, the flat tax replaces Italian taxation on all foreign-source income, removes IVAFE and IVIE on foreign assets, and exempts foreign assets from Italian inheritance tax. For families above roughly €1 million of annual foreign income, it is usually decisive."
+      },
+      {
+        "type": "h2",
+        "text": "Retirement Savings: MPF and CPF"
+      },
+      {
+        "type": "h3",
+        "text": "Hong Kong Mandatory Provident Fund (MPF)"
+      },
+      {
+        "type": "p",
+        "text": "The MPF is a defined contribution scheme with mandatory employer and employee contributions. On leaving Hong Kong permanently, members may apply for early withdrawal of accrued benefits on grounds of permanent departure, subject to a statutory declaration and a restriction on making a second such claim."
+      },
+      {
+        "type": "p",
+        "text": "The Italian treatment depends on timing and structure. Withdrawing the MPF while still Hong Kong tax resident, before Italian residence is established, generally keeps the event outside Italian tax entirely. Withdrawing after becoming Italian tax resident brings the payment into scope as foreign-source income, unless the flat tax regime applies. There is no Italy–Hong Kong treaty provision that carves out MPF withdrawals, so the ordinary rules govern."
+      },
+      {
+        "type": "h3",
+        "text": "Singapore Central Provident Fund (CPF)"
+      },
+      {
+        "type": "p",
+        "text": "The CPF is more restrictive. Singapore citizens and permanent residents can generally only withdraw in full on renouncing citizenship or permanent residence and leaving Singapore and Malaysia permanently. Foreigners on employment passes are not CPF members, so this issue does not arise for most Western expatriates."
+      },
+      {
+        "type": "p",
+        "text": "For those who are members and who retain CPF balances after moving to Italy, the account continues to accrue interest. Whether that interest is taxable in Italy year by year, or only on withdrawal, depends on how the account is characterised — a question that requires specific analysis rather than a general answer. The CPF has no direct Italian equivalent and does not map neatly onto the categories Italian tax law uses for foreign pensions."
+      },
+      {
+        "type": "callout",
+        "text": "Sequencing matters more than structure here. Decisions on MPF withdrawal and CPF status should be resolved before the Italian residence trigger, not after. Once resident, the range of options narrows considerably."
+      },
+      {
+        "type": "h2",
+        "text": "Company Structures and CFC Rules"
+      },
+      {
+        "type": "p",
+        "text": "This is where families from Hong Kong and Singapore most often encounter difficulty. Both jurisdictions make it straightforward and inexpensive to hold investments, intellectual property or trading operations through a local company. Italy's controlled foreign company rules can attribute the profits of such a company directly to the Italian-resident owner."
+      },
+      {
+        "type": "p",
+        "text": "The Italian CFC regime broadly applies where an Italian resident controls a foreign entity, that entity's effective taxation is below half the Italian rate, and more than a third of its income is passive — dividends, interest, royalties, or income from intra-group services. Hong Kong's 16.5% profits tax rate and Singapore's 17% headline rate can both fall below the threshold once exemptions and incentives are applied, and a company holding a securities portfolio or licensing IP is squarely within the passive-income definition."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Structure",
+          "CFC Risk",
+          "Considerations"
+        ],
+        "rows": [
+          [
+            "HK/SG company holding a securities portfolio",
+            "High",
+            "Passive income and low effective tax rate. Profits likely attributed to the Italian resident."
+          ],
+          [
+            "HK/SG company with real trading operations and local substance",
+            "Lower",
+            "Substance carve-out may apply. Requires genuine staff, premises and decision-making in the jurisdiction."
+          ],
+          [
+            "HK/SG company licensing intellectual property",
+            "High",
+            "Royalty income is explicitly passive under the rules."
+          ],
+          [
+            "Minority holding under the control threshold",
+            "Low",
+            "CFC rules require control. Careful analysis of what constitutes control is essential."
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "text": "The flat tax regime changes the analysis materially. Foreign-source income covered by the substitute tax is not subject to the ordinary CFC attribution, which is one of the main reasons the regime is attractive to families arriving with Asian corporate structures. This is not a reason to skip the analysis: the interaction between the flat tax and CFC rules has technical limits, and structures should be reviewed by counsel who work with both regimes."
+      },
+      {
+        "type": "h2",
+        "text": "Trusts"
+      },
+      {
+        "type": "p",
+        "text": "Trusts are widely used in both jurisdictions for succession and asset protection. Italy recognises foreign trusts but distinguishes between opaque trusts, taxed as separate entities, and transparent trusts, whose income is attributed to identified beneficiaries. Where a trust is established in a jurisdiction Italy treats as low-tax and beneficiaries are Italian resident, distributions can be taxed as income rather than capital."
+      },
+      {
+        "type": "p",
+        "text": "Trusts also carry reporting obligations. Italian resident beneficiaries and, in some circumstances, settlors and protectors, may have RW disclosure requirements. A trust that has functioned smoothly for a decade in Hong Kong or Singapore may need restructuring or at minimum a formal Italian analysis before the family becomes resident."
+      },
+      {
+        "type": "h2",
+        "text": "Treaty Position"
+      },
+      {
+        "type": "p",
+        "text": "Italy and Singapore have a double taxation treaty in force, which provides relief on dividends, interest and royalties and includes exchange of information provisions. Planning benefits from a defined framework."
+      },
+      {
+        "type": "p",
+        "text": "Italy and Hong Kong do not have a comprehensive double taxation agreement of the same kind. Hong Kong maintains its own treaty network, and Italy's treaty with China does not extend to Hong Kong given its separate tax system. In practice this means relief from double taxation for Hong Kong-source income relies on Italian domestic foreign tax credit rules rather than treaty provisions. Families frequently assume a treaty exists and structure accordingly. It does not."
+      },
+      {
+        "type": "callout",
+        "text": "Hong Kong is a reportable jurisdiction under the Common Reporting Standard and exchanges financial account information with Italy. Singapore likewise. Accounts held in either jurisdiction by an Italian tax resident will be reported to the Italian tax authorities. Any planning must assume full transparency."
+      },
+      {
+        "type": "h2",
+        "text": "Banking and Source of Funds"
+      },
+      {
+        "type": "p",
+        "text": "Opening Italian bank accounts with funds arriving from Hong Kong or Singapore requires more documentation than most clients expect. Italian banks apply enhanced due diligence to transfers from Asian financial centres, and private banks in particular will want a documented history of how the wealth was generated."
+      },
+      {
+        "type": "p",
+        "text": "In practice this means audited financial statements if wealth came from a business, sale and purchase agreements for property or share disposals, tax filings from the source jurisdiction, and a clear narrative connecting the documents. Where records span several years and multiple entities, assembling this material takes time. Starting the process before the move, rather than after arrival when a property purchase is pending, avoids the most common source of delay."
+      },
+      {
+        "type": "p",
+        "text": "Timing of transfers also matters. Realising gains while still resident in a jurisdiction with no capital gains tax, before Italian residence is triggered, can be materially more efficient than realising the same gains as an Italian resident. This is a sequencing question that belongs in the planning phase."
+      },
+      {
+        "type": "h2",
+        "text": "Practical Timeline"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Phase",
+          "Actions"
+        ],
+        "rows": [
+          [
+            "12–18 months before",
+            "Review corporate structures against CFC rules. Assess trust arrangements. Decide on flat tax election. Begin assembling source of funds documentation."
+          ],
+          [
+            "6–12 months before",
+            "Resolve MPF withdrawal or CPF position. Consider realising gains while still non-Italian resident. Restructure portfolio holdings where beneficial."
+          ],
+          [
+            "3–6 months before",
+            "Visa and permit applications. School applications for the following academic year. Initial banking introductions."
+          ],
+          [
+            "Arrival",
+            "Residence registration, codice fiscale, SSN registration, permit collection."
+          ],
+          [
+            "First year",
+            "Flat tax election on the first Italian tax return. First RW reporting cycle. Ongoing coordination between Italian and Asian advisers."
+          ]
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Frequently Asked Questions"
+      },
+      {
+        "type": "faq",
+        "q": "Does the flat tax regime cover income from a Hong Kong or Singapore company I control?",
+        "a": "Foreign-source income falling within the substitute tax is covered, which in most cases includes dividends from a controlled foreign company. However, the interaction between the flat tax and the CFC rules has technical limits, and the treatment depends on how the company is structured and where its activity is genuinely carried out. This requires case-specific analysis before relying on it."
+      },
+      {
+        "type": "faq",
+        "q": "Should I withdraw my MPF before moving to Italy?",
+        "a": "Generally the timing question is whether the withdrawal happens before or after Italian tax residence begins. A withdrawal completed while still Hong Kong resident falls outside Italian scope. After becoming resident, it is foreign-source income and taxable unless the flat tax applies. The right answer depends on the amount involved and whether the flat tax election is being made, so it should be decided as part of the overall plan rather than in isolation."
+      },
+      {
+        "type": "faq",
+        "q": "Is there a tax treaty between Italy and Hong Kong?",
+        "a": "Not a comprehensive double taxation agreement of the type Italy has with Singapore. Italy's treaty with China does not extend to Hong Kong, which maintains a separate tax system and its own treaty network. Relief from double taxation for Hong Kong-source income therefore depends on Italian domestic foreign tax credit rules rather than treaty provisions."
+      },
+      {
+        "type": "faq",
+        "q": "Will my accounts in Hong Kong or Singapore be reported to Italy?",
+        "a": "Yes. Both jurisdictions participate in the Common Reporting Standard and exchange financial account information with Italy. Accounts held by Italian tax residents are reported automatically. Italian residents must also self-declare foreign financial assets on the RW form each year, with penalties for omission."
+      },
+      {
+        "type": "faq",
+        "q": "How long does it take to prepare a move from Hong Kong or Singapore?",
+        "a": "For families with corporate structures or trusts, twelve to eighteen months is a realistic planning horizon. The structuring decisions have to be made before Italian residence is triggered, and once triggered the options narrow. Families with straightforward affairs — employment income and personal investments, no controlled companies — can move considerably faster."
+      },
+      {
+        "type": "callout",
+        "text": "Disclaimer: This guide provides general information as of September 2026. Cross-border tax planning between Asian jurisdictions and Italy is technical and fact-specific. The Italian Gateway does not provide tax or legal advice; we coordinate qualified Italian and international advisers who do. Any structuring decision should be taken on professional advice covering both the departure jurisdiction and Italy."
       }
     ]
   }

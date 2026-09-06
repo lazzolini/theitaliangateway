@@ -443,7 +443,7 @@ function Nav({ setPage }) {
   const [sc, setSc] = useState(false);
   const [mob, setMob] = useState(false);
   useEffect(() => { const h = () => setSc(window.scrollY > 40); window.addEventListener("scroll", h); return () => window.removeEventListener("scroll", h); }, []);
-  const go = t => { setMob(false); if (["guides","quiz","properties","advisors","professionals","athletes","about","orientation"].includes(t) || t.startsWith("v-")) { setPage(t); window.scrollTo(0,0); } else { setPage("home"); setTimeout(() => document.getElementById(t)?.scrollIntoView({ behavior: "smooth" }), 100); } };
+  const go = t => { setMob(false); if (["guides","quiz","properties","advisors","professionals","athletes","about","orientation","healthcare-service","buying-agent"].includes(t) || t.startsWith("v-")) { setPage(t); window.scrollTo(0,0); } else { setPage("home"); setTimeout(() => document.getElementById(t)?.scrollIntoView({ behavior: "smooth" }), 100); } };
   const links = [["About","about"],["Orientation","orientation"],["Services","services"],["Advisors","advisors"],["For Professionals","professionals"],["Guides","guides"],["Contact","contact"]];
   return (
     <nav style={{ position:"fixed",top:0,left:0,right:0,zIndex:50,background:sc||mob?"rgba(10,14,23,0.97)":"transparent",backdropFilter:sc?"blur(12px)":"none",borderBottom:sc||mob?("1px solid "+C.border):"none",transition:"all 0.3s" }}>
@@ -1201,6 +1201,230 @@ function ArticleAdvisor({ articleCat }) {
   );
 }
 
+function HealthcarePage({ setPage }) {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [situation, setSituation] = useState("");
+  const [sent, setSent] = useState(false);
+
+  return (
+    <section style={{ padding:"120px 24px 80px",maxWidth:900,margin:"0 auto" }}>
+      <FadeIn>
+        <div style={{ marginBottom:56 }}>
+          <div style={{ color:C.gold,fontSize:12,letterSpacing:4,textTransform:"uppercase",marginBottom:12 }}>Healthcare Setup Service</div>
+          <h1 style={{ fontFamily:"Georgia,serif",fontSize:"clamp(28px,5vw,44px)",color:C.white,fontWeight:400,lineHeight:1.2,marginBottom:20 }}>Healthcare in Italy,<br/><span style={{ color:C.gold }}>decided properly</span></h1>
+          <p style={{ color:C.textDim,fontSize:17,lineHeight:1.7,maxWidth:720 }}>Most international families arriving in Italy either overpay for coverage they will never use, or discover a gap at the worst possible moment. The difficulty is not lack of options — it is that nobody explains how the public system, private insurance and private practice actually fit together for a specific family.</p>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={80}>
+        <div style={{ background:"rgba(201,169,110,0.04)",borderLeft:"3px solid "+C.gold,padding:"24px 28px",marginBottom:48 }}>
+          <h3 style={{ fontFamily:"Georgia,serif",fontSize:18,color:C.white,fontWeight:400,marginBottom:12 }}>The questions this service answers</h3>
+          <div style={{ color:C.textDim,fontSize:14,lineHeight:1.9 }}>
+            Do we need private insurance at all, or is SSN registration enough for our situation?<br/>
+            How is a pre-existing condition handled, and what will insurers exclude?<br/>
+            What happens to our coverage during the months we spend abroad each year?<br/>
+            Should we keep the policy from our home country, and for how long?<br/>
+            Who do we actually call when something goes wrong?
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={120}>
+        <div style={{ marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:24,color:C.white,fontWeight:400,marginBottom:16,paddingBottom:12,borderBottom:"1px solid "+C.border }}>Four configurations, four costs</h2>
+          <p style={{ color:C.textDim,fontSize:14,lineHeight:1.7,marginBottom:24 }}>Almost every family lands on one of these four structures. The right one depends on time spent abroad, existing medical needs, and age — not on budget alone.</p>
+          <div style={{ display:"grid",gap:16 }}>
+            {[
+              { t:"Public only", s:"SSN registration alone", c:"Free", w:"Families with straightforward medical needs, comfortable with waiting lists for non-urgent care and with Italian-language navigation." },
+              { t:"Public plus access", s:"SSN + private GP on retainer", c:"€1,500 – €2,500/yr", w:"The configuration we recommend most often. Public system for hospitals and emergencies, private doctor for continuity, English and rapid answers." },
+              { t:"Public plus Italian cover", s:"SSN + private GP + Italian policy", c:"€5,500 – €9,000/yr", w:"Families based in Italy who want private rooms, fast specialist access and dental, without paying for worldwide coverage they will not use." },
+              { t:"International", s:"SSN + private GP + international policy", c:"€12,000 – €25,000/yr", w:"Genuinely mobile families, frequent US travel, or complex conditions requiring treatment across borders." },
+            ].map((x,i) => (
+              <div key={i} style={{ background:C.card,border:"1px solid "+C.border,padding:"22px 26px" }}>
+                <div style={{ display:"flex",justifyContent:"space-between",alignItems:"baseline",gap:16,marginBottom:6,flexWrap:"wrap" }}>
+                  <div style={{ fontFamily:"Georgia,serif",fontSize:18,color:C.gold }}>{x.t}</div>
+                  <div style={{ color:C.white,fontSize:14,fontWeight:600,whiteSpace:"nowrap" }}>{x.c}</div>
+                </div>
+                <div style={{ color:"#6B7280",fontSize:12,marginBottom:10,letterSpacing:1 }}>{x.s}</div>
+                <div style={{ color:C.textDim,fontSize:14,lineHeight:1.7 }}>{x.w}</div>
+              </div>
+            ))}
+          </div>
+          <p style={{ color:C.textDim,fontSize:13,lineHeight:1.7,marginTop:18,fontStyle:"italic",opacity:0.9 }}>One point worth knowing before any of this: the SSN covers pre-existing conditions from day one, with no exclusions and no waiting period. Private policies almost always apply a twelve to twenty-four month wait. For families whose main concern is an existing condition, that single fact often reframes the entire decision.</p>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={160}>
+        <div style={{ background:C.card,border:"1px solid "+C.border,padding:"36px",marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:20 }}>How the service works</h2>
+          <div style={{ display:"grid",gap:22 }}>
+            {[
+              { n:"01", t:"Scoping conversation", d:"Sixty minutes with us. We map your situation: where you spend the year, what medical needs exist, what cover you hold now, what worries you. No charge and no obligation." },
+              { n:"02", t:"Medical consultation", d:"A consultation with an internal medicine specialist, briefed on your case in advance so the conversation starts informed. Focus on how existing conditions are best managed within the Italian system." },
+              { n:"03", t:"Independent broker review", d:"A conversation with an insurance broker on the options that genuinely apply to you. Fee-based, no product commissions, no obligation to purchase anything." },
+              { n:"04", t:"Written recommendation", d:"A summary after each consultation, then a final report setting out what to do, in what order, at what cost. Followed by a period of email support as you implement it." },
+            ].map((s,i) => <div key={i} style={{ display:"flex",gap:20 }}><span style={{ fontFamily:"Georgia,serif",fontSize:30,color:C.gold,minWidth:48 }}>{s.n}</span><div><div style={{ color:C.white,fontSize:16,fontWeight:600,marginBottom:6 }}>{s.t}</div><div style={{ color:C.textDim,fontSize:14,lineHeight:1.6 }}>{s.d}</div></div></div>)}
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={200}>
+        <div style={{ background:"linear-gradient(145deg,#0F1523,#111827)",border:"1px solid "+C.goldDim,padding:"32px 36px",marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:20 }}>Fees</h2>
+          <div style={{ display:"grid",gap:14 }}>
+            <div style={{ display:"flex",justifyContent:"space-between",gap:16,padding:"14px 0",borderBottom:"1px solid "+C.border }}>
+              <div><div style={{ color:C.white,fontSize:15,fontWeight:600 }}>Healthcare Orientation</div><div style={{ color:C.textDim,fontSize:13,marginTop:4,lineHeight:1.6 }}>Medical consultation, broker review, written summaries and final report, 30 days of email support.</div></div>
+              <div style={{ color:C.gold,fontSize:16,fontWeight:600,whiteSpace:"nowrap" }}>€1,200</div>
+            </div>
+            <div style={{ display:"flex",justifyContent:"space-between",gap:16,padding:"14px 0" }}>
+              <div><div style={{ color:C.white,fontSize:15,fontWeight:600 }}>Healthcare Orientation Extended</div><div style={{ color:C.textDim,fontSize:13,marginTop:4,lineHeight:1.6 }}>Everything above, plus identification and introduction to an English-speaking GP — within the SSN at no cost to you, or privately on retainer — and 60 days of support.</div></div>
+              <div style={{ color:C.gold,fontSize:16,fontWeight:600,whiteSpace:"nowrap" }}>€1,800</div>
+            </div>
+          </div>
+          <p style={{ color:C.textDim,fontSize:13,lineHeight:1.7,marginTop:20,marginBottom:0 }}>VAT included. Every professional you speak with is an independent third party. We receive no commission, referral fee or other payment from any of them — the only money we earn is the fee you pay us directly. If you later engage any of these professionals, you contract with them at their own rates and we take nothing from it.</p>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={240}>
+        <div style={{ marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:24,color:C.white,fontWeight:400,marginBottom:20,paddingBottom:12,borderBottom:"1px solid "+C.border }}>Common questions</h2>
+          <div style={{ display:"grid",gap:20 }}>
+            {[
+              { q:"Is SSN registration enough on its own?", a:"For many families, yes. The SSN covers emergencies, hospital treatment, specialists and prescriptions, and it covers pre-existing conditions without exclusion. The genuine weaknesses are waiting times for non-urgent care and the fact that the system operates in Italian. Private cover buys speed, comfort and language — not better clinical outcomes in an emergency." },
+              { q:"How are pre-existing conditions treated?", a:"The SSN treats them like any other condition: covered from the moment you register, no underwriting, no waiting period. Private insurers apply a waiting period of twelve to twenty-four months, exclude the condition permanently, or load the premium. This is why we almost always recommend keeping SSN registration as the base layer regardless of what else is added." },
+              { q:"Should I cancel the policy from my home country?", a:"Rarely straightforward, and it depends on where you spend time and what you would be giving up. For US citizens approaching Medicare eligibility, cancelling early can create both a coverage gap and permanent enrolment penalties. For others, a short-term or travel policy covering time abroad is far cheaper than maintaining full home-country cover. This is one of the specific questions the orientation is designed to answer." },
+              { q:"What does a private GP actually provide?", a:"A doctor who follows a small number of patients rather than fifteen hundred, speaks English, is reachable directly by phone, knows your history, and coordinates specialists on your behalf. Typically €1,500 to €2,500 per year for a couple. For families managing an ongoing condition it is usually the single most valuable component of the setup." },
+              { q:"Do you sell insurance?", a:"No. We are not insurance intermediaries and we do not recommend specific policies. We coordinate independent regulated professionals — a doctor, a broker — who advise within their own fields, and we synthesise their input into a plan you can act on." },
+            ].map((f,i) => (
+              <div key={i}>
+                <div style={{ color:C.gold,fontSize:15,fontWeight:600,marginBottom:8 }}>{f.q}</div>
+                <div style={{ color:C.textDim,fontSize:14,lineHeight:1.75 }}>{f.a}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={280}>
+        <div style={{ background:C.card,border:"1px solid "+C.gold,padding:"40px 36px" }}>
+          {sent ? (
+            <div style={{ textAlign:"center" }}><div style={{ fontSize:40,marginBottom:12 }}>✓</div><h3 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,marginBottom:8 }}>Thank you</h3><p style={{ color:C.textDim,fontSize:14 }}>We will be in touch within 24 hours to arrange the scoping conversation.</p></div>
+          ) : (<>
+            <h3 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:8 }}>Request the scoping conversation</h3>
+            <p style={{ color:C.textDim,fontSize:14,marginBottom:24 }}>Confidential, no charge, no obligation.</p>
+            <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:16,marginBottom:16 }}>
+              <div><label style={{ color:C.textDim,fontSize:11,letterSpacing:2,textTransform:"uppercase",display:"block",marginBottom:6 }}>Name</label><input value={name} onChange={e=>setName(e.target.value)} style={{ width:"100%",padding:"12px 14px",background:C.bg,color:C.white,border:"1px solid "+C.border,fontSize:14,boxSizing:"border-box" }}/></div>
+              <div><label style={{ color:C.textDim,fontSize:11,letterSpacing:2,textTransform:"uppercase",display:"block",marginBottom:6 }}>Email *</label><input type="email" value={email} onChange={e=>setEmail(e.target.value)} style={{ width:"100%",padding:"12px 14px",background:C.bg,color:C.white,border:"1px solid "+C.border,fontSize:14,boxSizing:"border-box" }}/></div>
+            </div>
+            <div style={{ marginBottom:16 }}><label style={{ color:C.textDim,fontSize:11,letterSpacing:2,textTransform:"uppercase",display:"block",marginBottom:6 }}>Your situation</label><textarea value={situation} onChange={e=>setSituation(e.target.value)} rows={3} style={{ width:"100%",padding:"12px 14px",background:C.bg,color:C.white,border:"1px solid "+C.border,fontSize:14,boxSizing:"border-box",fontFamily:"inherit",resize:"vertical" }} placeholder="Where you live in Italy, nationality, time spent abroad, any existing medical needs..."/></div>
+            <button onClick={async()=>{if(!email)return;await submitForm({_subject:"Healthcare Setup Inquiry",name,situation,email,source:"healthcare-page"});setSent(true)}} style={{ width:"100%",padding:"16px 0",background:email?C.gold:C.border,color:email?C.bg:C.textDim,border:"none",fontSize:14,fontWeight:600,letterSpacing:2,cursor:email?"pointer":"default" }}>REQUEST CONVERSATION</button>
+          </>)}
+        </div>
+      </FadeIn>
+    </section>
+  );
+}
+
+function BuyingAgentPage({ setPage }) {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [brief, setBrief] = useState("");
+  const [sent, setSent] = useState(false);
+
+  return (
+    <section style={{ padding:"120px 24px 80px",maxWidth:900,margin:"0 auto" }}>
+      <FadeIn>
+        <div style={{ marginBottom:56 }}>
+          <div style={{ color:C.gold,fontSize:12,letterSpacing:4,textTransform:"uppercase",marginBottom:12 }}>Buying Agent Service</div>
+          <h1 style={{ fontFamily:"Georgia,serif",fontSize:"clamp(28px,5vw,44px)",color:C.white,fontWeight:400,lineHeight:1.2,marginBottom:20 }}>A buying agent who works<br/><span style={{ color:C.gold }}>for you, not the seller</span></h1>
+          <p style={{ color:C.textDim,fontSize:17,lineHeight:1.7,maxWidth:720 }}>In Italy the estate agent is paid by both sides and represents neither. For an international buyer purchasing on Lake Como, in Milan or in Tuscany, that structural conflict is the single largest source of overpayment and of problems discovered after completion.</p>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={80}>
+        <div style={{ background:"rgba(201,169,110,0.04)",borderLeft:"3px solid "+C.gold,padding:"24px 28px",marginBottom:48 }}>
+          <h3 style={{ fontFamily:"Georgia,serif",fontSize:18,color:C.white,fontWeight:400,marginBottom:12 }}>What goes wrong without representation</h3>
+          <div style={{ color:C.textDim,fontSize:14,lineHeight:1.8 }}>
+            Asking prices on lake and prime rural property are frequently set for foreign buyers rather than for the market. Historic properties carry restrictions that make planned renovation impossible, and these are not disclosed unless asked for specifically. Cadastral records routinely disagree with the building as it stands, which becomes the buyer's problem at resale. Off-market stock — often the best of it — never reaches the portals at all.
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={120}>
+        <div style={{ background:C.card,border:"1px solid "+C.border,padding:"36px",marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:20 }}>How we work</h2>
+          <div style={{ display:"grid",gap:22 }}>
+            {[
+              { n:"01", t:"Brief", d:"We define what you are actually looking for: location, budget, use, timeline, appetite for renovation. This stage usually narrows the search considerably, and sometimes redirects it entirely." },
+              { n:"02", t:"Search", d:"Listed stock, agency networks and off-market. We view on your behalf and report honestly, including on properties we think you should not pursue." },
+              { n:"03", t:"Diagnostics", d:"Before any offer: cadastral conformity, planning and heritage restrictions, condominium position, structural condition. Coordinated with a surveyor and a lawyer acting for you." },
+              { n:"04", t:"Negotiation and completion", d:"Price and terms negotiated on your behalf, then coordination through compromesso and rogito with a notary and lawyer of your choosing, not the seller's." },
+            ].map((s,i) => <div key={i} style={{ display:"flex",gap:20 }}><span style={{ fontFamily:"Georgia,serif",fontSize:30,color:C.gold,minWidth:48 }}>{s.n}</span><div><div style={{ color:C.white,fontSize:16,fontWeight:600,marginBottom:6 }}>{s.t}</div><div style={{ color:C.textDim,fontSize:14,lineHeight:1.6 }}>{s.d}</div></div></div>)}
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={160}>
+        <div style={{ marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:24,color:C.white,fontWeight:400,marginBottom:20,paddingBottom:12,borderBottom:"1px solid "+C.border }}>Where we operate</h2>
+          <div style={{ display:"grid",gap:16 }}>
+            {[
+              { t:"Lake Como", d:"Bellagio, Menaggio, Tremezzina, Como and the Argegno side. Waterfront and historic villas, where asking prices diverge most sharply from achievable prices and where heritage restrictions are most common." },
+              { t:"Milan", d:"Brera, Quadrilatero, Porta Venezia, Cinque Giornate, CityLife. Apartments and penthouses, where the material risks are condominium liabilities and cadastral discrepancies rather than price." },
+              { t:"Tuscany", d:"Florence city centre, Chianti, Val d'Orcia. Historic apartments and rural estates, where planning restrictions, agricultural preemption rights and water rights all require checking before an offer." },
+            ].map((x,i) => <div key={i} style={{ background:C.card,border:"1px solid "+C.border,padding:"20px 24px" }}><div style={{ color:C.gold,fontSize:16,fontFamily:"Georgia,serif",marginBottom:8 }}>{x.t}</div><div style={{ color:C.textDim,fontSize:14,lineHeight:1.7 }}>{x.d}</div></div>)}
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={200}>
+        <div style={{ background:"linear-gradient(145deg,#0F1523,#111827)",border:"1px solid "+C.goldDim,padding:"32px 36px",marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:16 }}>Fees</h2>
+          <p style={{ color:C.textDim,fontSize:14,lineHeight:1.7,marginBottom:18 }}>A retainer to begin the search, credited in full against the completion fee. The completion fee is a percentage of the purchase price, agreed in writing at the outset and payable only on completion. We are paid by you and by nobody else — no commission from selling agents, no share of the seller's fee.</p>
+          <p style={{ color:C.textDim,fontSize:14,lineHeight:1.7,margin:0 }}>Surveyor, lawyer and notary are engaged directly by you at their own rates. We coordinate them and take nothing from their fees. Full terms are set out before any engagement begins.</p>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={240}>
+        <div style={{ marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:24,color:C.white,fontWeight:400,marginBottom:20,paddingBottom:12,borderBottom:"1px solid "+C.border }}>Common questions</h2>
+          <div style={{ display:"grid",gap:20 }}>
+            {[
+              { q:"How is a buying agent different from an estate agent?", a:"An Italian estate agent is instructed by the seller and, by custom, takes commission from both parties. Their duty is to complete a sale, not to secure the best outcome for you. A buying agent is instructed and paid by the buyer alone, which means the incentive is aligned with paying less rather than more." },
+              { q:"Do I need a lawyer if the notary is involved?", a:"The notary verifies legality and registers the transfer. They do not represent your interests specifically, and they will not advise you on whether the price is sensible or whether the renovation you are planning is permitted. On any purchase above roughly €300,000 an independent lawyer is money well spent." },
+              { q:"What are the total costs on top of the price?", a:"Broadly eight to twelve per cent for a second home: registration tax, notary fees, agency commission, legal fees, and survey. Higher in city centres than in rural municipalities, since cadastral values and local rates differ. We model the full figure for a specific property before you commit." },
+              { q:"Can you help if I have already found the property?", a:"Yes, and this is often where we add the most value. Diagnostics, valuation and negotiation on a property you have identified yourself is a defined piece of work with a fixed fee, and it frequently pays for itself several times over." },
+            ].map((f,i) => (
+              <div key={i}>
+                <div style={{ color:C.gold,fontSize:15,fontWeight:600,marginBottom:8 }}>{f.q}</div>
+                <div style={{ color:C.textDim,fontSize:14,lineHeight:1.75 }}>{f.a}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={280}>
+        <div style={{ background:C.card,border:"1px solid "+C.gold,padding:"40px 36px" }}>
+          {sent ? (
+            <div style={{ textAlign:"center" }}><div style={{ fontSize:40,marginBottom:12 }}>✓</div><h3 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,marginBottom:8 }}>Thank you</h3><p style={{ color:C.textDim,fontSize:14 }}>We will be in touch within 24 hours to discuss your brief.</p></div>
+          ) : (<>
+            <h3 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:8 }}>Discuss a purchase</h3>
+            <p style={{ color:C.textDim,fontSize:14,marginBottom:24 }}>Confidential. No charge for the initial conversation.</p>
+            <div style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:16,marginBottom:16 }}>
+              <div><label style={{ color:C.textDim,fontSize:11,letterSpacing:2,textTransform:"uppercase",display:"block",marginBottom:6 }}>Name</label><input value={name} onChange={e=>setName(e.target.value)} style={{ width:"100%",padding:"12px 14px",background:C.bg,color:C.white,border:"1px solid "+C.border,fontSize:14,boxSizing:"border-box" }}/></div>
+              <div><label style={{ color:C.textDim,fontSize:11,letterSpacing:2,textTransform:"uppercase",display:"block",marginBottom:6 }}>Email *</label><input type="email" value={email} onChange={e=>setEmail(e.target.value)} style={{ width:"100%",padding:"12px 14px",background:C.bg,color:C.white,border:"1px solid "+C.border,fontSize:14,boxSizing:"border-box" }}/></div>
+            </div>
+            <div style={{ marginBottom:16 }}><label style={{ color:C.textDim,fontSize:11,letterSpacing:2,textTransform:"uppercase",display:"block",marginBottom:6 }}>Your brief</label><textarea value={brief} onChange={e=>setBrief(e.target.value)} rows={3} style={{ width:"100%",padding:"12px 14px",background:C.bg,color:C.white,border:"1px solid "+C.border,fontSize:14,boxSizing:"border-box",fontFamily:"inherit",resize:"vertical" }} placeholder="Area, budget range, intended use, timeline. Or a property you have already found."/></div>
+            <button onClick={async()=>{if(!email)return;await submitForm({_subject:"Buying Agent Inquiry",name,brief,email,source:"buying-agent-page"});setSent(true)}} style={{ width:"100%",padding:"16px 0",background:email?C.gold:C.border,color:email?C.bg:C.textDim,border:"none",fontSize:14,fontWeight:600,letterSpacing:2,cursor:email?"pointer":"default" }}>START A CONVERSATION</button>
+          </>)}
+        </div>
+      </FadeIn>
+    </section>
+  );
+}
+
 function OrientationPage({ setPage }) {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -1858,6 +2082,8 @@ function pageToHash(p) {
   if (p === "advisors") return "/advisors";
   if (p === "about") return "/about";
   if (p === "orientation") return "/orientation";
+  if (p === "healthcare-service") return "/healthcare";
+  if (p === "buying-agent") return "/buying-agent";
   if (p === "professionals") return "/professionals";
   if (p === "athletes") return "/athletes";
   if (p === "privacy") return "/privacy";
@@ -1877,6 +2103,8 @@ function hashToPage(h) {
   if (path === "/advisors") return "advisors";
   if (path === "/about") return "about";
   if (path === "/orientation") return "orientation";
+  if (path === "/healthcare") return "healthcare-service";
+  if (path === "/buying-agent") return "buying-agent";
   if (path === "/professionals") return "professionals";
   if (path === "/athletes") return "athletes";
   if (path === "/privacy") return "privacy";
@@ -1930,6 +2158,8 @@ export default function App() {
       {page==="advisors" && <AdvisorsSection/>}
       {page==="about" && <AboutPage setPage={setPage}/>}
       {page==="orientation" && <OrientationPage setPage={setPage}/>}
+      {page==="healthcare-service" && <HealthcarePage setPage={setPage}/>}
+      {page==="buying-agent" && <BuyingAgentPage setPage={setPage}/>}
       {page==="professionals" && <ProfessionalsPage setPage={setPage}/>}
       {page==="athletes" && <AthletesPage setPage={setPage}/>}
       {isVert && <VerticalPage id={page.replace("v-","")} setPage={setPage}/>}
