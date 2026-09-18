@@ -38,6 +38,7 @@ const urls = [
   { loc: '/orientation/', p: '0.9' },
   { loc: '/healthcare/', p: '0.9' },
   { loc: '/buying-agent/', p: '0.9' },
+  { loc: '/adviser-guides/', p: '0.9' },
   ...ARTICLES.map(a => ({ loc: '/guide/' + a.id + '/', p: '0.8' })),
   { loc: '/privacy/', p: '0.3' },
   { loc: '/cookies/', p: '0.3' },
@@ -297,6 +298,16 @@ const profBody = `
 <p>Firms specialising in residence and citizenship by investment — Henley &amp; Partners, Latitude, Global Citizen Solutions, Astons, Arton, and others — deliver clients to the point of legal residency. What happens next often falls outside the scope of the migration mandate: the client arrives in Italy and needs a bank account, a home, a school, a doctor, a tax structure that works.</p>
 <p>The Italian Gateway operates as the natural next partner for these clients. We start where your mandate ends. We do not process visa applications, structure investment programs, or manage the government relationship. We handle the practical and personal side of relocation — everything that turns a residence permit into a functioning life in Italy.</p>
 <p>For established migration firms with recurring flow of clients to Italy, we structure a preferred partnership: dedicated single point of contact for your case managers, priority scheduling for referred clients, transparent fee arrangements or reciprocal referrals, and coordinated reporting.</p>
+<h2>Three ways we support advisers</h2>
+<p><strong>Client Feasibility Report — €1,500 to €2,500.</strong> You send us the case. We produce a written analysis covering the tax regime likely to apply, treatment of existing structures and holdings, realistic costs, timeline, and the points where decisions become irreversible. Ten to fifteen pages, delivered within two weeks. Most advisers present it to the client as part of their own work.</p>
+<p><strong>Relocation Execution — €5,000 to €15,000.</strong> Once the client decides. We coordinate everything on the ground: Italian accountant, property, schools, healthcare registration, banking introductions, permits. You stay informed through a single point of contact.</p>
+<p><strong>Technical Desk — €3,000 to €6,000 per year.</strong> An annual retainer giving your team unlimited access to technical questions on Italy for any of your clients, plus a quarterly briefing on regulatory and tax developments.</p>
+<h2>Questions advisers ask</h2>
+<p><strong>Can my firm keep managing the portfolio once the client is Italian resident?</strong> It depends on your authorisations. Since MiFID passporting into the EU ended, a UK-only authorised firm faces a genuine regulatory question, and reverse solicitation is interpreted narrowly in Italy. Firms with an EU entity generally transfer the relationship to it. This is the first thing to resolve, ideally twelve months before the move.</p>
+<p><strong>Will the client have to move assets to an Italian bank?</strong> No, and most do not. What changes is reporting: foreign assets must be declared annually on the RW form and are subject to the IVAFE wealth tax, unless the flat tax regime applies, in which case neither obligation arises.</p>
+<p><strong>What happens to UK funds in the portfolio?</strong> Italy distinguishes harmonised from non-harmonised collective investments. Harmonised are taxed at 26%; non-harmonised gains fall into ordinary income at rates up to 43% plus surcharges. Post-Brexit, UK OEICs and unit trusts are frequently in the second category. Investment trusts, being listed companies, are taxed at 26%.</p>
+<p><strong>Do you take a share of anything?</strong> No. We are paid by you or by the client directly, in fees agreed in advance. We receive no commission, referral fee or retrocession from any professional we introduce.</p>
+<p><strong>Do you provide investment or tax advice?</strong> No. We do not hold investment, insurance or tax advisory authorisations. We coordinate independently qualified Italian professionals, each regulated in their own field, and act as a single point of contact.</p>
 <h2>Technical reference library</h2>
 <ul>
 <li><a href="/guide/flat-tax-2026/">Italy Flat Tax: Technical Briefing</a></li>
@@ -308,7 +319,7 @@ const profBody = `
 <li><a href="/guide/italy-7-percent-retiree-flat-tax-south-2026/">7% Retiree Flat Tax</a></li>
 <li><a href="/guide/eu-pension-transfer-italy-pepp-2026/">EU Pension Coordination</a></li>
 <li><a href="/guide/italy-vs-portugal-vs-greece-tax-2026/">Italy vs Portugal vs Greece</a></li>
-<li><a href="/guide/uk-millionaire-exodus-italy-2026/">UK Wealth Exodus Data</a></li>
+<li><a href="/guide/adviser-guide-relocating-client-uk-to-italy-2026/">Adviser\u2019s Guide: Relocating a Client from the UK to Italy</a></li>\n<li><a href="/guide/uk-millionaire-exodus-italy-2026/">UK Wealth Exodus Data</a></li>
 </ul>
 <p style="margin-top:32px">Contact: <a href="mailto:info@theitaliangateway.com">info@theitaliangateway.com</a></p>`;
 
@@ -492,6 +503,40 @@ writeFileSync(join(DIST, 'buying-agent', 'index.html'), page(
 ));
 console.log('  + buying-agent/');
 
+// ── Adviser guides hub ─────────────────────────────────────
+ensureDir(join(DIST, 'adviser-guides'));
+const adviserBody = `
+<h1>Adviser Desk: Relocating a Client to Italy</h1>
+<p style="color:#9CA3AF;font-size:17px;margin-bottom:16px">What changes when a client moves to Italy depends almost entirely on where they are coming from. These are the technical guides by departure jurisdiction, written for the adviser rather than the client.</p>
+<h2>United Kingdom to Italy</h2>
+<p><strong>The mandate question comes first.</strong> Since MiFID passporting ended, a UK-only authorised firm faces a real question about whether it can continue to act, and reverse solicitation is read narrowly in Italy. Alongside it: UK OEICs and unit trusts are frequently non-harmonised for Italian purposes, the ISA wrapper is disregarded, and temporary non-residence rules bite if the client returns within five years.</p>
+<p><a href="/guide/adviser-guide-relocating-client-uk-to-italy-2026/">Read the UK guide</a></p>
+<h2>Switzerland to Italy</h2>
+<p><strong>Usually workable, but the details bite.</strong> Swiss institutions generally serve Italian residents under defined cross-border frameworks, so the relationship typically survives. The technical work is elsewhere: pillar 2 and pillar 3a sequencing, recovery of the 35% Swiss withholding through the treaty, and the comparison between the Swiss forfait and the Italian flat tax. Switzerland is no longer on Italy's privileged-taxation list.</p>
+<p><a href="/guide/adviser-guide-relocating-client-switzerland-to-italy-2026/">Read the Switzerland guide</a></p>
+<h2>United States to Italy</h2>
+<p><strong>The client never stops being a US taxpayer.</strong> Citizenship-based taxation means the client acquires a second system rather than swapping one for another. Many US custodians restrict or close foreign-resident accounts. European funds are PFICs and attract punitive US treatment. The Roth exemption does not necessarily travel to Italy. Optimising for one jurisdiction often damages the other.</p>
+<p><a href="/guide/adviser-guide-relocating-client-us-to-italy-2026/">Read the US guide</a></p>
+<h2>UAE and Gulf to Italy</h2>
+<p><strong>Documentation, not regulation.</strong> There is no passporting problem. The binding constraint is source of funds: Italian banks require a documented economic history spanning years, and assembling it takes months. Free zone structures attract CFC attribution. Unrealised gains should usually be crystallised before Italian residence begins.</p>
+<p><a href="/guide/adviser-guide-relocating-client-uae-to-italy-2026/">Read the UAE guide</a></p>
+<h2>Clients arriving from elsewhere in the EU</h2>
+<p>A simpler position: freedom of movement applies, passporting is unaffected, and the technical work concentrates on the tax regime election and pension coordination. <a href="/guide/eu-pension-transfer-italy-pepp-2026/">EU pension coordination</a>.</p>
+<h2>Engagements</h2>
+<p><strong>Client Feasibility Report</strong> — a written analysis of a specific case: applicable regime, treatment of existing holdings and structures, costs, timeline, and the points at which decisions become irreversible.</p>
+<p><strong>Relocation Execution</strong> — coordination on the ground once the client decides: accountant, property, schools, healthcare, banking, permits.</p>
+<p><strong>Technical Desk</strong> — an annual retainer giving your team unlimited technical questions on Italy for any client, plus a quarterly briefing.</p>
+<p><a href="/professionals/">Full details for advisers</a></p>
+<p style="margin-top:32px">Contact: <a href="mailto:info@theitaliangateway.com">info@theitaliangateway.com</a></p>`;
+
+writeFileSync(join(DIST, 'adviser-guides', 'index.html'), page(
+  'Adviser Desk: Relocating a Client to Italy | The Italian Gateway',
+  'Technical guides by departure jurisdiction for wealth managers: UK, Switzerland, US and UAE clients moving to Italy. Mandate, portfolio, regime, reporting.',
+  DOMAIN + '/adviser-guides/',
+  adviserBody
+));
+console.log('  + adviser-guides/');
+
 // ── Inject SEO content into homepage ────────────────────────
 let homepage = readFileSync(join(DIST, 'index.html'), 'utf8');
 const seo = `<noscript>
@@ -504,6 +549,7 @@ const seo = `<noscript>
 <li><a href="/orientation/">Multi-Advisory Orientation</a> — coordinated advice across medicine, finance, tax and law</li>
 <li><a href="/healthcare/">Healthcare Setup Service</a> — SSN, private GP and insurance decided properly</li>
 <li><a href="/buying-agent/">Property Buying Agent</a> — Lake Como, Milan and Tuscany, acting for the buyer only</li>
+<li><a href="/adviser-guides/">Adviser Desk — guides by departure jurisdiction</a></li>
 <li><a href="/professionals/">For Wealth Managers and Family Offices</a></li>
 <li><a href="/athletes/">Athlete and Sports Relocation</a></li>
 <li><a href="/advisors/">Our Advisory Network</a></li>

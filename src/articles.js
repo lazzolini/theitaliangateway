@@ -10438,6 +10438,785 @@ const ARTICLES = [
         "text": "Disclaimer: This guide provides general information as of September 2026. Cross-border tax planning between Asian jurisdictions and Italy is technical and fact-specific. The Italian Gateway does not provide tax or legal advice; we coordinate qualified Italian and international advisers who do. Any structuring decision should be taken on professional advice covering both the departure jurisdiction and Italy."
       }
     ]
+  },
+  {
+    "id": "adviser-guide-relocating-client-uk-to-italy-2026",
+    "cat": "Tax & Legal",
+    "title": "Adviser's Guide: Relocating a Client from the UK to Italy (2026)",
+    "date": "September 2026",
+    "read": "15 min",
+    "desc": "For wealth managers and advisers: what happens to the mandate, the portfolio and the reporting when a UK client becomes Italian tax resident.",
+    "content": [
+      {
+        "type": "p",
+        "text": "Your client tells you they are moving to Italy. The questions that follow are rarely the ones covered in relocation guides written for the client, because your exposure is different from theirs. Can you continue to act for them once they are resident in another jurisdiction? What happens to the portfolio you have built? What reporting obligations arise, and for whom? And at what point in the process do these things actually bite?"
+      },
+      {
+        "type": "p",
+        "text": "This guide is written for the adviser, not the client. It sets out the sequence of decisions, the points at which each becomes irreversible, and where local professionals are genuinely required."
+      },
+      {
+        "type": "p",
+        "text": "Related: <a href=\"/#/guide/flat-tax-2026\">Italy Flat Tax Guide</a> · <a href=\"/#/guide/sipp-ira-funds-italy-relocation\">SIPPs, IRAs and Fund Structures</a> · <a href=\"/#/guide/uk-to-italy-hnwi-2026\">UK to Italy: Client Guide</a>"
+      },
+      {
+        "type": "h2",
+        "text": "1. Can You Continue to Act? The Regulatory Question"
+      },
+      {
+        "type": "p",
+        "text": "This is the first question and the one most often deferred until it becomes urgent. Since the end of the transition period, UK investment firms no longer benefit from MiFID passporting rights into the EU. A UK-authorised firm cannot, as a general matter, provide investment services to a retail or elective professional client resident in Italy without either a local authorisation, an EU entity, or reliance on a narrow exemption."
+      },
+      {
+        "type": "p",
+        "text": "The exemption most commonly invoked is reverse solicitation: where the client, at their own exclusive initiative, requests the service. Italian regulators, in line with ESMA guidance, interpret this narrowly. It does not cover an existing relationship that simply continues, it does not survive marketing or the offer of new products, and each new category of service may require a fresh demonstration that the initiative came from the client. Relying on it as a permanent structure for an ongoing discretionary mandate is not a defensible position."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Firm structure",
+          "Position after client becomes Italian resident"
+        ],
+        "rows": [
+          [
+            "UK-only authorisation",
+            "Continuation of a discretionary or advisory mandate is problematic. Requires specific legal review."
+          ],
+          [
+            "EU entity (Luxembourg, Ireland, Malta)",
+            "Generally workable. The relationship is typically transferred to the EU entity."
+          ],
+          [
+            "Swiss booking centre",
+            "Cross-border rules apply. Many Swiss institutions serve Italian residents under defined frameworks. Confirm the firm's Italian cross-border policy."
+          ],
+          [
+            "Execution-only, no advice",
+            "Lower risk, but not risk-free. Depends on facts and on how the relationship is documented."
+          ]
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "Practical point: this question should be answered before the client moves, not after. Discovering in month four that the mandate cannot continue in its current form is an avoidable conversation, and it is the most common way advisers lose a client at relocation — not to a competitor, but to a compliance decision they did not anticipate."
+      },
+      {
+        "type": "h2",
+        "text": "2. When Does Italian Residence Actually Begin?"
+      },
+      {
+        "type": "p",
+        "text": "Italian tax residence for individuals turns on three alternative tests, any one of which is sufficient, applied for the greater part of the tax year — more than 183 days. The tests are registration with the resident population register, domicile in Italy in the sense of the centre of personal and family interests, and habitual abode."
+      },
+      {
+        "type": "p",
+        "text": "Two consequences follow that matter for planning. First, registration alone can establish residence even where the client spends less time in Italy than expected, so the timing of the anagrafe registration is a planning decision rather than an administrative formality. Second, because the test is applied to the tax year as a whole, Italy does not operate split-year treatment as a domestic rule: a client who becomes resident is generally resident for the entire calendar year. The UK–Italy double tax treaty contains tie-breaker provisions that may allocate residence for treaty purposes, but the domestic starting point is the full year."
+      },
+      {
+        "type": "p",
+        "text": "From the UK side, the Statutory Residence Test governs departure, and the temporary non-residence rules mean that certain income and gains realised during a period of non-residence shorter than five complete tax years can be taxed on return. A client who may come back to the UK within five years needs this modelled before disposing of assets."
+      },
+      {
+        "type": "h2",
+        "text": "3. What Happens to the Portfolio"
+      },
+      {
+        "type": "p",
+        "text": "Italy's treatment of collective investments turns on a distinction that has no direct UK equivalent and that catches most advisers the first time. Funds that are UCITS-compliant and marketed in the EU, or established in EU or EEA jurisdictions subject to supervision, fall into the harmonised category and their income and gains are subject to the 26% substitute tax. Everything else is non-harmonised, and gains are added to ordinary income and taxed at progressive IRPEF rates reaching 43% before regional and municipal surcharges."
+      },
+      {
+        "type": "p",
+        "text": "Post-Brexit this matters enormously for UK holdings. UK-domiciled OEICs and unit trusts are no longer automatically treated as harmonised, and whether a given fund qualifies depends on its current status and on whether it provides the data Italian intermediaries require. Many do not."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Holding",
+          "Italian treatment",
+          "Planning note"
+        ],
+        "rows": [
+          [
+            "UK OEIC / unit trust",
+            "Likely non-harmonised. Gains potentially at IRPEF rates.",
+            "Review line by line before the move. Consider restructuring into EU-domiciled equivalents."
+          ],
+          [
+            "Investment trust (listed company)",
+            "Taxed as a shareholding at 26%.",
+            "Often more efficient in Italy than the OEICs alongside it. Frequently overlooked."
+          ],
+          [
+            "Irish or Luxembourg UCITS",
+            "Harmonised. 26% substitute tax.",
+            "Generally the cleanest structure for an Italian-resident client."
+          ],
+          [
+            "Direct equities and bonds",
+            "26% on gains. Italian government bonds at 12.5%.",
+            "No structural issue."
+          ],
+          [
+            "ISA",
+            "No Italian recognition. Wrapper disregarded, underlying taxed.",
+            "The tax shelter does not travel. Consider realising gains before residence."
+          ],
+          [
+            "SIPP",
+            "Foreign pension. Treatment depends on drawdown structure and regime elected.",
+            "Covered by the flat tax if elected. Otherwise requires specific analysis."
+          ]
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "4. The Flat Tax Decision"
+      },
+      {
+        "type": "p",
+        "text": "For clients with substantial foreign income, the substitute tax regime under Article 24-bis TUIR replaces Italian taxation on all foreign-source income with a fixed annual payment of €300,000 for elections made from 2026, plus €50,000 per additional family member. Elections made earlier remain grandfathered at their original amount for the full fifteen-year duration."
+      },
+      {
+        "type": "p",
+        "text": "From an adviser's perspective the regime does three things that materially simplify the position. Foreign-source investment income falls outside Italian taxation, so the harmonised versus non-harmonised distinction becomes largely irrelevant for assets held abroad. The RW reporting obligation and the IVAFE wealth tax on foreign financial assets do not apply. And foreign assets are excluded from Italian inheritance tax for the duration of the regime."
+      },
+      {
+        "type": "p",
+        "text": "The regime does not cover Italian-source income, and capital gains on qualified shareholdings disposed of in the first five years are excluded. It requires the client to have been non-resident for at least nine of the preceding ten years."
+      },
+      {
+        "type": "callout",
+        "text": "The break-even is generally reached somewhere around €700,000 to €900,000 of annual foreign income, depending on composition. Below that, ordinary taxation with the 26% substitute rate on financial income is often more efficient — and that is the scenario in which portfolio composition, harmonised status and reporting all become live issues."
+      },
+      {
+        "type": "h2",
+        "text": "5. Reporting: Who Files What"
+      },
+      {
+        "type": "p",
+        "text": "Outside the flat tax regime, an Italian-resident individual must report foreign financial assets and foreign real estate annually on the RW section of the tax return. This applies to accounts, portfolios, insurance wrappers, shareholdings and property, regardless of whether income arises. Penalties for omission run from 3% to 15% of the undeclared amount, doubling for assets held in jurisdictions Italy treats as non-cooperative."
+      },
+      {
+        "type": "p",
+        "text": "Two wealth taxes accompany the reporting. IVAFE applies at 0.2% on the value of foreign financial assets, rising to 0.4% for assets held in blacklisted jurisdictions. IVIE applies at 1.06% on foreign real estate, with relief where the property is the main residence."
+      },
+      {
+        "type": "p",
+        "text": "The client's custodian will not do this. If assets are held outside Italy, there is no Italian withholding agent and the reporting burden sits entirely with the client and their Italian accountant. Advisers who assume the position is handled automatically, as it would be with an Italian intermediary, create a problem that surfaces at the first filing."
+      },
+      {
+        "type": "p",
+        "text": "Separately, the Common Reporting Standard means that accounts held by an Italian tax resident in the UK, Switzerland, Singapore, Hong Kong and the other participating jurisdictions are reported automatically to the Italian authorities. Any planning has to assume full transparency."
+      },
+      {
+        "type": "h2",
+        "text": "6. Sequence and Timing"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "When",
+          "What needs to happen"
+        ],
+        "rows": [
+          [
+            "12–18 months before",
+            "Regulatory review of whether the mandate can continue. Portfolio analysis against harmonised rules. Preliminary flat tax modelling. UK temporary non-residence check if a return within five years is possible."
+          ],
+          [
+            "6–12 months before",
+            "Portfolio restructuring where indicated. Realisation of gains while still UK resident where beneficial. Decision on ISA position. SIPP structure reviewed."
+          ],
+          [
+            "3–6 months before",
+            "Italian accountant appointed. Banking introductions. Visa or permit where applicable. School applications for the following academic year."
+          ],
+          [
+            "Arrival",
+            "Codice fiscale, anagrafe registration, healthcare registration, permit collection. Note that anagrafe registration timing affects the residence determination."
+          ],
+          [
+            "First filing",
+            "Flat tax election, if applicable, is made on the first Italian tax return. First RW cycle if outside the regime."
+          ]
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "7. Where Local Professionals Are Genuinely Required"
+      },
+      {
+        "type": "p",
+        "text": "Not everything requires an Italian adviser, and part of the value of getting this right is knowing where the line falls. An Italian commercialista is required for the tax return, the flat tax election and RW reporting, and there is no workaround. A notary is required for any property transaction and cannot be substituted. Immigration counsel is required where a visa or permit is involved. Italian legal advice is required for wills and succession where Italian assets or residence are involved, because the interaction between Italian forced heirship rules and a foreign will is not intuitive."
+      },
+      {
+        "type": "p",
+        "text": "Conversely, portfolio management, financial planning and the client relationship itself do not need to move to Italy, provided the regulatory question in section one has been resolved. This distinction is worth making explicitly with the client early, because the assumption that relocating means changing adviser is common and rarely examined."
+      },
+      {
+        "type": "h2",
+        "text": "Frequently Asked Questions"
+      },
+      {
+        "type": "faq",
+        "q": "Will my client have to move their assets to an Italian bank?",
+        "a": "No. There is no requirement to hold assets in Italy, and most HNWI clients do not. What changes is the reporting position: assets held abroad must be declared annually on the RW form and are subject to IVAFE, unless the flat tax regime applies, in which case neither obligation arises. A local current account is usually needed for practical purposes such as utilities and rent, but that is a separate matter from custody."
+      },
+      {
+        "type": "faq",
+        "q": "Can I keep managing the portfolio after the client becomes Italian resident?",
+        "a": "It depends on your firm's authorisations. A UK-only authorised firm faces a genuine regulatory question, since MiFID passporting no longer applies and reverse solicitation is interpreted narrowly in Italy. Firms with an EU entity generally transfer the relationship to it. This needs to be resolved with your compliance function before the client moves, not after."
+      },
+      {
+        "type": "faq",
+        "q": "Does the flat tax cover income from a company my client controls abroad?",
+        "a": "Foreign-source income within the scope of the substitute tax is generally covered, which in most cases includes dividends from a controlled foreign company. The interaction with Italy's CFC rules has technical limits and depends on the structure and on where activity is genuinely carried out, so it requires case-specific analysis rather than a general answer."
+      },
+      {
+        "type": "faq",
+        "q": "What happens to my client's ISA?",
+        "a": "Italy does not recognise the ISA wrapper. The tax shelter does not travel: the underlying holdings are taxed according to their own character, which for UK-domiciled funds usually means the non-harmonised treatment. Realising gains while still UK resident, before Italian residence begins, is frequently the more efficient route."
+      },
+      {
+        "type": "faq",
+        "q": "How long does the whole process realistically take?",
+        "a": "For a client with a portfolio, a possible corporate structure and a family, twelve to eighteen months of planning before the move is realistic. The decisions that matter most — regulatory position, portfolio restructuring, gain realisation — have to be made before Italian residence is triggered, and afterwards the options narrow considerably. Clients with simpler affairs move faster."
+      },
+      {
+        "type": "faq",
+        "q": "Will I lose the client?",
+        "a": "The risk is real but it is not primarily competitive. Clients are usually lost at relocation for one of two reasons: a regulatory issue that forces a change of provider, or the accumulation of practical problems in Italy that the adviser cannot solve and that eventually get solved by someone local, who then becomes the trusted point of contact. Both are addressable if handled early."
+      },
+      {
+        "type": "callout",
+        "text": "Disclaimer: This guide provides general information as of September 2026 and does not constitute legal, tax or regulatory advice. The Italian Gateway does not provide investment advisory, portfolio management or tax services. We coordinate independently qualified Italian professionals and act as a single point of contact for advisers whose clients are relocating to Italy. Regulatory positions should be confirmed with your own compliance function and with counsel qualified in both jurisdictions."
+      }
+    ]
+  },
+  {
+    "id": "adviser-guide-relocating-client-switzerland-to-italy-2026",
+    "cat": "Tax & Legal",
+    "title": "Adviser's Guide: Relocating a Client from Switzerland to Italy (2026)",
+    "date": "September 2026",
+    "read": "13 min",
+    "desc": "For advisers: Swiss cross-border rules, pillar 2 and 3a treatment, forfait exit, withholding recovery and reporting when a client moves to Italy.",
+    "content": [
+      {
+        "type": "p",
+        "text": "Switzerland to Italy is the shortest move on the map and one of the more technical on paper. The two systems interact through a dense treaty framework, a bilateral agreement on frontier workers renegotiated in 2023, and a set of Swiss cross-border rules that determine whether your institution can continue to serve the client at all."
+      },
+      {
+        "type": "p",
+        "text": "Related: <a href=\"/#/guide/adviser-guide-relocating-client-uk-to-italy-2026\">Adviser Guide: UK to Italy</a> · <a href=\"/#/guide/flat-tax-2026\">Italy Flat Tax</a> · <a href=\"/#/guide/cost-of-living-milan-vs-london-dubai-2026\">Cost of Living Comparison</a>"
+      },
+      {
+        "type": "h2",
+        "text": "1. Can the Institution Continue to Act?"
+      },
+      {
+        "type": "p",
+        "text": "Switzerland is a third country for EU purposes, so there is no passporting. What exists instead is a well-established cross-border practice: many Swiss banks and asset managers serve Italian-resident clients under defined internal frameworks, with restrictions on where advice can be given, what can be marketed, and how meetings are conducted."
+      },
+      {
+        "type": "p",
+        "text": "In practice this is a question for your institution's cross-border desk rather than a matter of general law. Most private banks maintain a country manual for Italy specifying what is permitted. The common constraints are that advice cannot be given on Italian soil, that marketing of financial products into Italy is restricted, and that client-initiated contact must be documented. Some institutions require the relationship to be moved to an EU booking centre; others service Italian residents from Switzerland without difficulty."
+      },
+      {
+        "type": "callout",
+        "text": "Unlike the UK case, where Brexit created a hard regulatory break, the Swiss position is usually workable. The failure mode is different: advisers assume nothing changes and discover that specific activities — a portfolio review meeting held in Milan, the offer of a new product — fall outside the permitted framework."
+      },
+      {
+        "type": "h2",
+        "text": "2. Switzerland Is No Longer Blacklisted"
+      },
+      {
+        "type": "p",
+        "text": "This matters more than it appears. Switzerland was removed from Italy's list of privileged-taxation states for individuals with effect from 2024. Two consequences follow. The IVAFE wealth tax on foreign financial assets applies at the ordinary 0.2% rather than the penalty 0.4% rate. And the presumption that assets held in Switzerland were undeclared income, with the doubled penalties and extended assessment periods that accompanied it, no longer applies."
+      },
+      {
+        "type": "p",
+        "text": "Clients who moved earlier and were structured around the blacklist position should have that structuring revisited. Arrangements that made sense in 2020 may now be carrying cost for no reason."
+      },
+      {
+        "type": "h2",
+        "text": "3. Swiss Withholding Tax and Recovery"
+      },
+      {
+        "type": "p",
+        "text": "Switzerland applies a 35% withholding tax (Verrechnungssteuer) on Swiss-source dividends and interest. A Swiss resident recovers it through the annual return. An Italian resident recovers it through the treaty, which reduces the rate to 15% on dividends, with the balance reclaimed via Form 95 submitted to the Swiss Federal Tax Administration."
+      },
+      {
+        "type": "p",
+        "text": "The reclaim is not automatic and has a three-year limitation period. Clients who hold Swiss securities and move without adjusting the process quietly lose 20% of their dividend income. Where the portfolio has meaningful Swiss exposure, this is worth resolving in the first year rather than discovering at the third."
+      },
+      {
+        "type": "h2",
+        "text": "4. Pillar 2 and Pillar 3a"
+      },
+      {
+        "type": "p",
+        "text": "Swiss occupational pension assets are the most commonly mishandled element of this move."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Element",
+          "Position on departure",
+          "Italian treatment"
+        ],
+        "rows": [
+          [
+            "Pillar 2 — mandatory portion",
+            "Cannot be withdrawn in cash when moving to an EU/EFTA state with social security coverage. Transferred to a vested benefits account.",
+            "Remains a foreign pension asset. Reportable on RW unless flat tax applies."
+          ],
+          [
+            "Pillar 2 — extra-mandatory portion",
+            "Can generally be withdrawn in cash on definitive departure.",
+            "Timing is critical: withdrawal before Italian residence begins is outside Italian scope."
+          ],
+          [
+            "Pillar 3a",
+            "Can be withdrawn on definitive departure from Switzerland.",
+            "Same timing logic. Swiss withholding applies at source, partially recoverable under treaty."
+          ],
+          [
+            "Vested benefits account",
+            "Held until retirement age if not withdrawn.",
+            "Foreign asset. Reportable. Taxation on eventual drawdown depends on structure."
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "text": "The sequencing point is the same as with any pension: a withdrawal completed while still Swiss resident falls outside Italian taxation. After residence begins it is foreign-source income, taxable unless the flat tax regime applies. Swiss withholding on lump-sum payments is levied at the canton of the pension institution, and the rates vary significantly between cantons — Schwyz and Zug are materially cheaper than Zurich or Geneva, and where the client has a choice of vested benefits provider this is worth a conversation."
+      },
+      {
+        "type": "h2",
+        "text": "5. Clients Leaving the Forfait"
+      },
+      {
+        "type": "p",
+        "text": "A client taxed under the Swiss lump-sum regime (imposition d'après la dépense) is by definition someone with substantial foreign income who has been paying a negotiated fixed amount. The Italian flat tax is the natural comparison, and for many the arithmetic works: €300,000 for elections from 2026 against a Swiss forfait that in Geneva or Vaud frequently exceeds CHF 400,000."
+      },
+      {
+        "type": "p",
+        "text": "Two structural differences matter. The Swiss forfait prohibits Swiss-source employment and business activity, while the Italian regime permits Italian work with that income taxed ordinarily. And the Italian regime excludes foreign assets from Italian inheritance tax, where Switzerland's position varies by canton."
+      },
+      {
+        "type": "p",
+        "text": "The eligibility condition differs too: Italy requires nine of the previous ten years as non-resident. A client who spent part of the last decade in Italy may not qualify, and this should be checked before the comparison is presented."
+      },
+      {
+        "type": "h2",
+        "text": "6. Frontier Workers and Partial Moves"
+      },
+      {
+        "type": "p",
+        "text": "Some clients do not fully relocate. The Italy–Switzerland frontier worker agreement in force since 2024 changed the treatment for new cross-border workers: those who began after the cut-off are taxed in both states with Italy granting a credit, rather than exclusively in Switzerland as under the previous regime. For high earners this is a material change and it is easy to assume the old position still applies."
+      },
+      {
+        "type": "p",
+        "text": "A client keeping a Swiss role while moving the family to Como or Varese needs the residence question answered precisely, because the 183-day test and the centre of interests test can both be triggered by the family's location even where the client is physically in Switzerland during the week."
+      },
+      {
+        "type": "h2",
+        "text": "7. Reporting"
+      },
+      {
+        "type": "p",
+        "text": "Switzerland participates in the Common Reporting Standard and exchanges account information with Italy. Accounts held by an Italian tax resident are reported automatically. Outside the flat tax regime, the client must also self-declare on the RW form and pay IVAFE at 0.2%."
+      },
+      {
+        "type": "p",
+        "text": "Vested benefits accounts and pillar 3a holdings are reportable. Life insurance policies with a surrender value are reportable. Physical gold held in a safe deposit box is reportable if held through a financial relationship. The scope is wider than most clients expect."
+      },
+      {
+        "type": "h2",
+        "text": "Frequently Asked Questions"
+      },
+      {
+        "type": "faq",
+        "q": "Can our Swiss bank keep the relationship after the client moves to Italy?",
+        "a": "Usually yes, subject to your institution's cross-border framework for Italy. The constraints are typically on where advice is given, what may be marketed, and how contact is documented, rather than on the existence of the relationship itself. Confirm with your cross-border desk before the move, because the permitted activities are narrower than most relationship managers assume."
+      },
+      {
+        "type": "faq",
+        "q": "Should the client withdraw pillar 2 before moving?",
+        "a": "The mandatory portion generally cannot be withdrawn in cash when moving to an EU state with social security coverage. The extra-mandatory portion usually can, and the timing matters: a withdrawal completed while still Swiss resident is outside Italian scope. Where a withdrawal is possible, the canton of the vested benefits institution affects the Swiss withholding rate significantly."
+      },
+      {
+        "type": "faq",
+        "q": "Is the Italian flat tax better than the Swiss forfait?",
+        "a": "Frequently yes on headline cost, particularly against Geneva or Vaud forfaits. The Italian regime also permits Italian employment and excludes foreign assets from Italian inheritance tax. The eligibility condition is stricter: nine of the previous ten years as non-resident. The comparison should be run on the client's actual numbers rather than on headline rates."
+      },
+      {
+        "type": "faq",
+        "q": "What happens to Swiss withholding tax on the portfolio?",
+        "a": "The 35% withholding continues to apply at source. An Italian resident reclaims the excess above the 15% treaty rate through Form 95 to the Swiss Federal Tax Administration, within a three-year limitation period. The reclaim is not automatic and is commonly missed."
+      },
+      {
+        "type": "callout",
+        "text": "Disclaimer: General information as of September 2026, not legal, tax or regulatory advice. The Italian Gateway does not provide investment, tax or legal services. We coordinate qualified Italian professionals and act as a single point of contact for advisers. Cross-border positions must be confirmed with your own compliance function."
+      }
+    ]
+  },
+  {
+    "id": "adviser-guide-relocating-client-us-to-italy-2026",
+    "cat": "Tax & Legal",
+    "title": "Adviser's Guide: Relocating a US Client to Italy (2026)",
+    "date": "September 2026",
+    "read": "14 min",
+    "desc": "For advisers: citizenship-based taxation, PFIC exposure, Roth and 401(k) treatment, SEC constraints and reporting when a US client moves to Italy.",
+    "content": [
+      {
+        "type": "p",
+        "text": "The American case differs from every other relocation in one respect that governs everything else: the client does not stop being a US taxpayer. Citizenship-based taxation means the United States continues to tax worldwide income regardless of residence, so the client acquires a second tax system rather than exchanging one for another."
+      },
+      {
+        "type": "p",
+        "text": "For the adviser this creates two distinct problems. The first is whether the firm can continue to hold the account. The second is that several structures which are efficient for an Italian resident are penalised by the US system, and vice versa, so optimising for one jurisdiction frequently damages the position in the other."
+      },
+      {
+        "type": "p",
+        "text": "Related: <a href=\"/#/guide/pfic-rules-us-citizens-italy-2026\">PFIC Rules for US Citizens</a> · <a href=\"/#/guide/roth-ira-italy-tax-treatment-2026\">Roth IRA in Italy</a> · <a href=\"/#/guide/adviser-guide-relocating-client-uk-to-italy-2026\">Adviser Guide: UK to Italy</a>"
+      },
+      {
+        "type": "h2",
+        "text": "1. Can the Firm Keep the Account?"
+      },
+      {
+        "type": "p",
+        "text": "This is where American relocations most often break down, and it is rarely the adviser who initiates it. Many US broker-dealers and registered investment advisers restrict or close accounts for clients with a foreign address, driven by state registration requirements, the extraterritorial reach of EU regulation, and internal risk policy rather than by a single prohibition."
+      },
+      {
+        "type": "p",
+        "text": "The practical consequences are familiar to anyone who has handled one of these: the client is told the account will be restricted to liquidation-only, or that advisory services cannot continue, or that the account must be transferred. Some large custodians maintain international divisions that accommodate expatriate clients; many do not."
+      },
+      {
+        "type": "callout",
+        "text": "Establish the firm's policy on foreign-resident accounts before the client gives notice on their US home. A client who discovers in month two that their account is liquidation-only, while also learning that European institutions are reluctant to onboard US persons under FATCA, is a client with no custodian. This happens regularly."
+      },
+      {
+        "type": "h2",
+        "text": "2. The PFIC Problem"
+      },
+      {
+        "type": "p",
+        "text": "Any non-US pooled investment — a UCITS fund, an Italian fondo comune, a European ETF — is a Passive Foreign Investment Company for US tax purposes. The default regime imposes tax at the highest ordinary rate plus an interest charge on deferred distributions, and the reporting on Form 8621 is onerous per holding."
+      },
+      {
+        "type": "p",
+        "text": "This collides directly with the Italian position. An Italian resident is encouraged by the tax system toward harmonised EU funds taxed at 26%. A US citizen holding those same funds faces punitive US treatment. The intersection of the two rule sets is narrow."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Holding",
+          "Italian treatment",
+          "US treatment",
+          "Workable?"
+        ],
+        "rows": [
+          [
+            "US-domiciled ETF or mutual fund",
+            "Non-harmonised. Gains at IRPEF rates up to 43%.",
+            "Ordinary. No PFIC issue.",
+            "Poor for Italy, fine for US"
+          ],
+          [
+            "EU UCITS fund",
+            "Harmonised. 26% substitute tax.",
+            "PFIC. Punitive.",
+            "Fine for Italy, poor for US"
+          ],
+          [
+            "Direct equities and bonds",
+            "26% on gains.",
+            "Ordinary capital gains.",
+            "Workable in both"
+          ],
+          [
+            "Individually managed portfolio of direct securities",
+            "26%.",
+            "Ordinary.",
+            "Generally the cleanest solution"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "text": "The practical answer for most US clients resident in Italy is a portfolio of directly held securities rather than funds, which avoids PFIC on the US side and the non-harmonised penalty on the Italian side. Where a fund structure is unavoidable, US-domiciled funds are usually preferable and the Italian cost is accepted — unless the flat tax regime applies, in which case foreign-source income is outside Italian taxation and the Italian half of the problem disappears."
+      },
+      {
+        "type": "h2",
+        "text": "3. Retirement Accounts"
+      },
+      {
+        "type": "p",
+        "text": "The treaty addresses pensions but does not resolve every question, and the Roth is the clearest example of divergence."
+      },
+      {
+        "type": "p",
+        "text": "A traditional IRA or 401(k) is generally respected: contributions were deductible, growth is deferred, and distributions are taxable. The Italy–US treaty allocates taxing rights on pension distributions and a foreign tax credit prevents double taxation in most cases."
+      },
+      {
+        "type": "p",
+        "text": "The Roth is different. Its US tax-free character derives from US domestic law, not from the treaty. Italy has no domestic equivalent and no obligation to recognise the exemption, so a Roth distribution that is tax-free in the United States may be taxable in Italy — with no US tax paid against which to claim a credit. The position is not fully settled in Italian practice, and treatment has varied. For a client with a substantial Roth, this is a first-order planning issue rather than a detail."
+      },
+      {
+        "type": "p",
+        "text": "Under the flat tax regime, foreign pension income falls within the substitute tax and the question largely resolves itself, which is one reason the regime is attractive for Americans with significant retirement assets."
+      },
+      {
+        "type": "h2",
+        "text": "4. The Treaty and the Saving Clause"
+      },
+      {
+        "type": "p",
+        "text": "The Italy–US treaty contains a saving clause permitting the United States to tax its citizens as if the treaty did not exist, subject to enumerated exceptions. The practical effect is that most treaty relief that would benefit a US citizen resident in Italy is switched off, and relief flows instead through the foreign tax credit."
+      },
+      {
+        "type": "p",
+        "text": "The credit mechanism generally works where Italian tax exceeds US tax on the same income, which is often the case given Italian rates. It works poorly where the income is taxed in only one jurisdiction — the Roth scenario — or where the two systems characterise the income differently and the credit does not match."
+      },
+      {
+        "type": "p",
+        "text": "The Foreign Earned Income Exclusion is available for employment income up to the annual threshold, but does not apply to investment income and interacts awkwardly with the foreign tax credit. Which mechanism is preferable depends on the income mix and requires modelling."
+      },
+      {
+        "type": "h2",
+        "text": "5. Reporting: The Heaviest of Any Jurisdiction"
+      },
+      {
+        "type": "p",
+        "text": "A US citizen resident in Italy files in both systems. On the US side: Form 1040 annually regardless of residence, FBAR for foreign accounts exceeding $10,000 in aggregate, Form 8938 under FATCA above the applicable thresholds, Form 8621 for each PFIC holding, and Forms 5471 or 8865 where foreign entities are involved. On the Italian side: the ordinary return, the RW section and IVAFE, unless the flat tax regime applies."
+      },
+      {
+        "type": "p",
+        "text": "FATCA also affects the client's ability to open accounts in Italy. Italian banks report US account holders and many retail institutions decline US persons to avoid the compliance burden. Private banks generally accommodate, but the account opening takes longer and requires more documentation."
+      },
+      {
+        "type": "h2",
+        "text": "6. The Flat Tax for Americans"
+      },
+      {
+        "type": "p",
+        "text": "The Italian substitute tax regime is unusually well suited to US clients, because it removes the Italian half of most of the problems above. Foreign-source income — US dividends, capital gains, pension distributions, Roth withdrawals — falls outside Italian taxation. RW reporting and IVAFE do not apply. Foreign assets are excluded from Italian inheritance tax."
+      },
+      {
+        "type": "p",
+        "text": "What it does not do is reduce US tax, which continues in full. And because Italian tax on foreign income is replaced by a fixed payment rather than computed on the income, the foreign tax credit position on the US side requires care: a substitute tax is not straightforwardly creditable in the way an income tax is. This is a question for the client's US accountant, and it should be asked before the election rather than after."
+      },
+      {
+        "type": "h2",
+        "text": "7. Estate Exposure"
+      },
+      {
+        "type": "p",
+        "text": "US citizens remain subject to US federal estate tax on worldwide assets, with the lifetime exemption currently high but scheduled to change. Italy applies inheritance tax at rates between 4% and 8% depending on the relationship, with generous allowances — among the lowest in Europe. The estate treaty between the two countries provides relief, but wills drafted in the United States frequently do not function as intended under Italian forced heirship rules, which reserve fixed shares to spouse and children regardless of testamentary intent."
+      },
+      {
+        "type": "p",
+        "text": "A client holding Italian real estate with a US will should have the position reviewed by counsel qualified in both systems. This is routinely deferred and routinely expensive to fix afterwards."
+      },
+      {
+        "type": "h2",
+        "text": "Frequently Asked Questions"
+      },
+      {
+        "type": "faq",
+        "q": "Will the client's US brokerage account survive the move?",
+        "a": "It depends entirely on the firm. Many restrict foreign-resident accounts to liquidation-only or close them; some maintain international divisions that accommodate expatriates. Establish the policy before the client changes address, because replacing a US custodian while resident in Europe is difficult and FATCA makes European institutions cautious about US persons."
+      },
+      {
+        "type": "faq",
+        "q": "Can the client hold European funds?",
+        "a": "They can, but any non-US pooled investment is a PFIC and attracts punitive US treatment plus per-holding reporting on Form 8621. The usual solution is a portfolio of directly held securities, which avoids PFIC exposure and also avoids the Italian non-harmonised penalty. Where the flat tax regime applies, the Italian side of the problem disappears but the US side does not."
+      },
+      {
+        "type": "faq",
+        "q": "Is the Roth IRA tax-free in Italy?",
+        "a": "Not necessarily. The US exemption comes from domestic law, not from the treaty, and Italy has no obligation to recognise it. A distribution that is tax-free in the US may be taxable in Italy, with no US tax paid to credit against it. The position is unsettled in Italian practice. Under the flat tax regime the issue largely resolves, which is one reason the regime suits Americans with substantial retirement assets."
+      },
+      {
+        "type": "faq",
+        "q": "Does the flat tax reduce the client's US tax bill?",
+        "a": "No. US citizens are taxed on worldwide income regardless of residence. The regime removes Italian taxation on foreign income only. Whether the fixed substitute payment is creditable against US tax requires specific analysis by the client's US accountant, and the answer is not obviously favourable — this should be settled before the election is made."
+      },
+      {
+        "type": "callout",
+        "text": "Disclaimer: General information as of September 2026, not legal, tax or regulatory advice. US–Italy cross-border taxation is technical and fact-specific. The Italian Gateway does not provide investment, tax or legal services; we coordinate qualified Italian professionals and act as a single point of contact for advisers. US positions must be confirmed with US-qualified counsel."
+      }
+    ]
+  },
+  {
+    "id": "adviser-guide-relocating-client-uae-to-italy-2026",
+    "cat": "Tax & Legal",
+    "title": "Adviser's Guide: Relocating a Client from the UAE to Italy (2026)",
+    "date": "September 2026",
+    "read": "12 min",
+    "desc": "For advisers: moving a client from Dubai or Abu Dhabi to Italy — source of funds, free zone structures, CFC exposure, and the shift to worldwide taxation.",
+    "content": [
+      {
+        "type": "p",
+        "text": "A client moving from the Emirates to Italy is making the largest single change in tax exposure of any common relocation. The UAE levies no personal income tax, no capital gains tax and no inheritance tax. Italy taxes residents on worldwide income, applies wealth taxes to foreign assets, and requires annual disclosure of everything held abroad."
+      },
+      {
+        "type": "p",
+        "text": "The regulatory question that dominates the UK and US cases barely arises here — UAE institutions are not constrained in the same way. What replaces it is a documentation problem that is consistently underestimated."
+      },
+      {
+        "type": "p",
+        "text": "Related: <a href=\"/#/guide/dubai-to-milan\">Dubai to Milan: Client Guide</a> · <a href=\"/#/guide/flat-tax-2026\">Italy Flat Tax</a> · <a href=\"/#/guide/trusts-cfc-rules-italy-hnwi-2026\">Trusts and CFC Rules</a>"
+      },
+      {
+        "type": "h2",
+        "text": "1. Source of Funds Is the Binding Constraint"
+      },
+      {
+        "type": "p",
+        "text": "Italian banks, and private banks in particular, apply enhanced due diligence to wealth arriving from the Gulf. This is not a judgement about the client; it is the product of AML frameworks that treat certain corridors as higher risk and require a documented economic history rather than an explanation."
+      },
+      {
+        "type": "p",
+        "text": "What is typically required: audited financial statements where wealth derives from a business, sale and purchase agreements for disposals, evidence of the original capital that founded the business, tax filings from any jurisdiction where the client was previously resident, and a coherent narrative connecting the documents across time. Where the wealth was generated over fifteen years across several entities in different jurisdictions, assembling this takes months."
+      },
+      {
+        "type": "callout",
+        "text": "Begin the documentation process before the client arrives, not when a property purchase is pending. The most common failure in UAE relocations is a client who has bought a villa, has a completion date, and cannot move funds because the receiving bank has not cleared the source of wealth file. The purchase is at risk and the timeline is not negotiable."
+      },
+      {
+        "type": "h2",
+        "text": "2. The UAE Is No Longer Blacklisted"
+      },
+      {
+        "type": "p",
+        "text": "The Emirates were removed from Italy's list of privileged-taxation jurisdictions for individuals with effect from 2023. IVAFE on assets held there applies at the ordinary 0.2% rather than 0.4%, and the presumption that undeclared Gulf assets represented concealed income no longer operates."
+      },
+      {
+        "type": "p",
+        "text": "There is a double taxation treaty in force between Italy and the UAE, though its practical utility is limited by the absence of meaningful UAE taxation to relieve. Its main relevance is in residence tie-breaker provisions and in the exchange of information framework."
+      },
+      {
+        "type": "h2",
+        "text": "3. Free Zone Companies and CFC Exposure"
+      },
+      {
+        "type": "p",
+        "text": "Most UAE-resident HNWI hold assets or operate through a free zone entity — DMCC, JAFZA, ADGM, DIFC, RAK ICC. These structures are efficient in the Emirates and are the single largest source of difficulty on arrival in Italy."
+      },
+      {
+        "type": "p",
+        "text": "Italy's controlled foreign company rules attribute the profits of a foreign entity directly to an Italian-resident controller where effective taxation is below half the Italian rate and more than a third of income is passive. The UAE corporate tax introduced in 2023 applies at 9% above the threshold, with qualifying free zone income often at 0%. Both fall below the CFC threshold. A free zone company holding a securities portfolio or licensing intellectual property is squarely within the passive income definition."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Structure",
+          "CFC risk",
+          "Note"
+        ],
+        "rows": [
+          [
+            "Free zone entity holding investments",
+            "High",
+            "Passive income, low effective rate. Profits likely attributed to the Italian resident."
+          ],
+          [
+            "Free zone entity with genuine operations and substance",
+            "Lower",
+            "Substance carve-out may apply. Requires real staff, premises and decision-making in the UAE."
+          ],
+          [
+            "Free zone entity holding IP",
+            "High",
+            "Royalty income is explicitly passive."
+          ],
+          [
+            "Minority stake below control threshold",
+            "Low",
+            "CFC requires control. What constitutes control needs careful analysis."
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "text": "The flat tax regime changes this materially: foreign-source income within the substitute tax is not subject to ordinary CFC attribution. This is among the main reasons the regime suits clients arriving with Gulf structures. The interaction has technical limits and the structure should still be reviewed by counsel familiar with both regimes."
+      },
+      {
+        "type": "h2",
+        "text": "4. Realising Gains Before Residence"
+      },
+      {
+        "type": "p",
+        "text": "A client resident in a jurisdiction with no capital gains tax is sitting on unrealised positions that will become taxable the moment Italian residence begins. Realising and rebasing while still UAE resident is frequently the single most valuable piece of planning in the whole move, and it has a hard deadline."
+      },
+      {
+        "type": "p",
+        "text": "The same logic applies to any liquidity event under consideration: a business sale, a property disposal, a fund distribution. Completing it before the Italian residence trigger rather than after can be the difference between zero tax and 26% — or more where the asset is characterised as non-harmonised."
+      },
+      {
+        "type": "p",
+        "text": "Where the flat tax regime is being elected, the urgency reduces for foreign assets, since foreign gains fall within the substitute tax. It does not disappear: gains on qualified shareholdings disposed of in the first five years are excluded from the regime."
+      },
+      {
+        "type": "h2",
+        "text": "5. The Reporting Shock"
+      },
+      {
+        "type": "p",
+        "text": "Clients arriving from the Emirates have often never filed a personal tax return anywhere. The Italian position involves an annual return, the RW disclosure of every foreign account, portfolio, policy, shareholding and property, IVAFE at 0.2% on foreign financial assets and IVIE at 1.06% on foreign real estate."
+      },
+      {
+        "type": "p",
+        "text": "The UAE participates in the Common Reporting Standard and exchanges account information with Italy. There is no version of this move in which the Italian authorities do not know what the client holds."
+      },
+      {
+        "type": "p",
+        "text": "Under the flat tax regime, RW and IVAFE obligations fall away for foreign assets, which for this client profile is often worth more than the headline tax saving. It removes an administrative burden the client has no experience of and no appetite for."
+      },
+      {
+        "type": "h2",
+        "text": "6. What the Client Is Actually Buying"
+      },
+      {
+        "type": "p",
+        "text": "It is worth being direct with clients about this, because the comparison is frequently framed wrongly. Dubai offers zero tax and a high cost of living. Italy offers a fixed tax of €300,000 on foreign income and a cost of living that, for equivalent quality, is materially lower outside the property market."
+      },
+      {
+        "type": "p",
+        "text": "For a client with €3 million of annual foreign income, the Italian regime costs 10% of income against zero. The offset is in schooling, healthcare, proximity to Europe, property quality and residence rights within the EU. These are real and quantifiable, but they are not tax arguments, and presenting the move as tax-driven invites a comparison the Emirates will always win."
+      },
+      {
+        "type": "h2",
+        "text": "Frequently Asked Questions"
+      },
+      {
+        "type": "faq",
+        "q": "How long does source of funds documentation take?",
+        "a": "For straightforward cases with clean records, four to eight weeks. Where wealth was built over many years across multiple entities and jurisdictions, three to six months is realistic. The variable is document availability, not bank processing. Starting before arrival rather than when a transaction is pending is the single most useful thing an adviser can do here."
+      },
+      {
+        "type": "faq",
+        "q": "Will the client's free zone company create problems?",
+        "a": "Potentially. Italy's CFC rules can attribute the profits of a low-taxed foreign entity with mainly passive income directly to the Italian-resident controller. A free zone company holding investments or IP is typically within scope. The flat tax regime substantially mitigates this for foreign-source income, but the structure should be reviewed before residence begins."
+      },
+      {
+        "type": "faq",
+        "q": "Should the client realise gains before moving?",
+        "a": "Where the flat tax is not being elected, almost certainly yes — unrealised gains become taxable once Italian residence begins, and the UAE imposes nothing on realisation. Where the flat tax is elected the urgency reduces, but gains on qualified shareholdings in the first five years remain outside the regime."
+      },
+      {
+        "type": "faq",
+        "q": "Is there a treaty between Italy and the UAE?",
+        "a": "Yes, though its practical utility is limited by the absence of meaningful UAE taxation to relieve. Its relevance lies mainly in residence tie-breaker provisions and the exchange of information framework. The Emirates also participate in the Common Reporting Standard, so accounts held there by Italian residents are reported automatically."
+      },
+      {
+        "type": "callout",
+        "text": "Disclaimer: General information as of September 2026, not legal, tax or regulatory advice. The Italian Gateway does not provide investment, tax or legal services. We coordinate qualified Italian professionals and act as a single point of contact for advisers. Structuring decisions require advice covering both the departure jurisdiction and Italy."
+      }
+    ]
   }
 ];
 export default ARTICLES;

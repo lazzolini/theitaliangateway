@@ -443,7 +443,7 @@ function Nav({ setPage }) {
   const [sc, setSc] = useState(false);
   const [mob, setMob] = useState(false);
   useEffect(() => { const h = () => setSc(window.scrollY > 40); window.addEventListener("scroll", h); return () => window.removeEventListener("scroll", h); }, []);
-  const go = t => { setMob(false); if (["guides","quiz","properties","advisors","professionals","athletes","about","orientation","healthcare-service","buying-agent"].includes(t) || t.startsWith("v-")) { setPage(t); window.scrollTo(0,0); } else { setPage("home"); setTimeout(() => document.getElementById(t)?.scrollIntoView({ behavior: "smooth" }), 100); } };
+  const go = t => { setMob(false); if (["guides","quiz","properties","advisors","professionals","athletes","about","orientation","healthcare-service","buying-agent","adviser-guides"].includes(t) || t.startsWith("v-")) { setPage(t); window.scrollTo(0,0); } else { setPage("home"); setTimeout(() => document.getElementById(t)?.scrollIntoView({ behavior: "smooth" }), 100); } };
   const links = [["About","about"],["Orientation","orientation"],["Services","services"],["Advisors","advisors"],["For Professionals","professionals"],["Guides","guides"],["Contact","contact"]];
   return (
     <nav style={{ position:"fixed",top:0,left:0,right:0,zIndex:50,background:sc||mob?"rgba(10,14,23,0.97)":"transparent",backdropFilter:sc?"blur(12px)":"none",borderBottom:sc||mob?("1px solid "+C.border):"none",transition:"all 0.3s" }}>
@@ -1692,6 +1692,141 @@ function AthletesPage({ setPage }) {
   );
 }
 
+const ADVISER_JURISDICTIONS = [
+  { id:"uk", label:"United Kingdom", slug:"adviser-guide-relocating-client-uk-to-italy-2026",
+    headline:"The mandate question comes first",
+    summary:"Since MiFID passporting ended, a UK-only authorised firm faces a real question about whether it can continue to act. Reverse solicitation is read narrowly in Italy. Alongside it: UK funds are frequently non-harmonised for Italian purposes, the ISA wrapper is disregarded, and temporary non-residence rules bite if the client returns within five years.",
+    flags:["MiFID passporting lost","OEICs likely non-harmonised","ISA not recognised","5-year return rule"] },
+  { id:"ch", label:"Switzerland", slug:"adviser-guide-relocating-client-switzerland-to-italy-2026",
+    headline:"Usually workable, but the details bite",
+    summary:"Swiss institutions generally serve Italian residents under defined cross-border frameworks, so the relationship typically survives. The technical work is elsewhere: pillar 2 and 3a sequencing, recovery of the 35% withholding through the treaty, and the comparison between the Swiss forfait and the Italian flat tax.",
+    flags:["Cross-border framework applies","Pillar 2 / 3a timing","35% withholding recovery","No longer blacklisted"] },
+  { id:"us", label:"United States",  slug:"adviser-guide-relocating-client-us-to-italy-2026",
+    headline:"The client never stops being a US taxpayer",
+    summary:"Citizenship-based taxation means the client acquires a second system rather than swapping one for another. Many US custodians restrict foreign-resident accounts. European funds are PFICs. The Roth exemption does not necessarily travel. Optimising for one jurisdiction often damages the other.",
+    flags:["Custodian may close account","PFIC on EU funds","Roth treatment unsettled","Dual filing permanently"] },
+  { id:"ae", label:"UAE / Gulf", slug:"adviser-guide-relocating-client-uae-to-italy-2026",
+    headline:"Documentation, not regulation",
+    summary:"No passporting problem here. The binding constraint is source of funds: Italian banks require a documented economic history spanning years, and assembling it takes months. Free zone structures attract CFC attribution. Unrealised gains should usually be crystallised before residence begins.",
+    flags:["Source of funds is the bottleneck","Free zone CFC exposure","Realise gains pre-arrival","Zero-tax to worldwide shift"] },
+];
+
+const ADVISER_NEEDS = [
+  { id:"mandate", label:"Can we keep acting for them?",
+    note:"The regulatory question. Resolve it with compliance twelve months out, not after the move. It is the most common reason advisers lose a client at relocation.",
+    service:"Client Feasibility Report" },
+  { id:"portfolio", label:"What happens to the portfolio",
+    note:"Harmonised versus non-harmonised treatment, wrapper recognition, and whether to restructure or realise before Italian residence begins.",
+    service:"Client Feasibility Report" },
+  { id:"structure", label:"Tax regime and structures",
+    note:"Whether the flat tax election makes sense on the client's numbers, and how existing companies, trusts and pensions are treated once they are resident.",
+    service:"Client Feasibility Report" },
+  { id:"execution", label:"They have decided — we need it done",
+    note:"Accountant, property, schools, healthcare, banking, permits. Coordinated through one point of contact, with you kept informed.",
+    service:"Relocation Execution" },
+  { id:"recurring", label:"We handle these regularly",
+    note:"Unlimited technical questions on Italy for any of your clients, plus a quarterly briefing on what has changed.",
+    service:"Technical Desk" },
+];
+
+function AdviserGuidesPage({ setPage }) {
+  const [jur, setJur] = useState(null);
+  const [need, setNeed] = useState(null);
+
+  const selected = ADVISER_JURISDICTIONS.find(j => j.id === jur);
+  const selectedNeed = ADVISER_NEEDS.find(n => n.id === need);
+
+  return (
+    <section style={{ padding:"120px 24px 80px",maxWidth:900,margin:"0 auto" }}>
+      <FadeIn>
+        <div style={{ marginBottom:48 }}>
+          <div style={{ color:C.gold,fontSize:12,letterSpacing:4,textTransform:"uppercase",marginBottom:12 }}>Adviser Desk</div>
+          <h1 style={{ fontFamily:"Georgia,serif",fontSize:"clamp(28px,5vw,44px)",color:C.white,fontWeight:400,lineHeight:1.2,marginBottom:20 }}>Your client is moving to Italy.<br/><span style={{ color:C.gold }}>Start here.</span></h1>
+          <p style={{ color:C.textDim,fontSize:17,lineHeight:1.7,maxWidth:720 }}>What changes depends almost entirely on where the client is coming from. Select the departure jurisdiction and what you need to resolve, and we will point you to the relevant technical guide and the right engagement.</p>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={80}>
+        <div style={{ marginBottom:36 }}>
+          <div style={{ color:C.gold,fontSize:11,letterSpacing:3,textTransform:"uppercase",marginBottom:14 }}>Step 1 — Where is the client now?</div>
+          <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(150px,1fr))",gap:12 }}>
+            {ADVISER_JURISDICTIONS.map(j => (
+              <button key={j.id} onClick={()=>setJur(j.id)} style={{
+                padding:"18px 16px",
+                background: jur===j.id ? "rgba(201,169,110,0.12)" : C.card,
+                border: "1px solid " + (jur===j.id ? C.gold : C.border),
+                color: jur===j.id ? C.gold : C.white,
+                fontFamily:"Georgia,serif", fontSize:16, cursor:"pointer", textAlign:"left",
+                transition:"all 0.2s"
+              }}>{j.label}</button>
+            ))}
+          </div>
+        </div>
+      </FadeIn>
+
+      {selected && (
+        <FadeIn delay={40}>
+          <div style={{ marginBottom:36 }}>
+            <div style={{ color:C.gold,fontSize:11,letterSpacing:3,textTransform:"uppercase",marginBottom:14 }}>Step 2 — What do you need to resolve?</div>
+            <div style={{ display:"grid",gap:10 }}>
+              {ADVISER_NEEDS.map(n => (
+                <button key={n.id} onClick={()=>setNeed(n.id)} style={{
+                  padding:"14px 18px",
+                  background: need===n.id ? "rgba(201,169,110,0.12)" : C.card,
+                  border: "1px solid " + (need===n.id ? C.gold : C.border),
+                  color: need===n.id ? C.gold : C.textDim,
+                  fontSize:14, cursor:"pointer", textAlign:"left", transition:"all 0.2s"
+                }}>{n.label}</button>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+      )}
+
+      {selected && (
+        <FadeIn delay={40}>
+          <div style={{ background:"linear-gradient(145deg,#0F1523,#111827)",border:"1px solid "+C.goldDim,padding:"32px 36px",marginBottom:40 }}>
+            <div style={{ color:C.gold,fontSize:11,letterSpacing:3,textTransform:"uppercase",marginBottom:10 }}>{selected.label} → Italy</div>
+            <h2 style={{ fontFamily:"Georgia,serif",fontSize:24,color:C.white,fontWeight:400,marginBottom:16 }}>{selected.headline}</h2>
+            <p style={{ color:C.textDim,fontSize:15,lineHeight:1.8,marginBottom:20 }}>{selected.summary}</p>
+            <div style={{ display:"flex",flexWrap:"wrap",gap:8,marginBottom:24 }}>
+              {selected.flags.map((f,i) => <span key={i} style={{ background:"rgba(201,169,110,0.08)",border:"1px solid "+C.border,color:C.gold,fontSize:12,padding:"6px 12px" }}>{f}</span>)}
+            </div>
+
+            {selectedNeed && (
+              <div style={{ borderTop:"1px solid "+C.border,paddingTop:20,marginBottom:20 }}>
+                <div style={{ color:C.white,fontSize:15,fontWeight:600,marginBottom:8 }}>{selectedNeed.label}</div>
+                <p style={{ color:C.textDim,fontSize:14,lineHeight:1.7,marginBottom:12 }}>{selectedNeed.note}</p>
+                <div style={{ color:C.gold,fontSize:13 }}>Suggested engagement: <strong>{selectedNeed.service}</strong></div>
+              </div>
+            )}
+
+            <div style={{ display:"flex",gap:12,flexWrap:"wrap" }}>
+              <a href={"/guide/" + selected.slug + "/"} style={{ padding:"14px 24px",background:C.gold,color:C.bg,fontSize:13,fontWeight:600,letterSpacing:1.5,textDecoration:"none" }}>READ THE FULL GUIDE</a>
+              <button onClick={()=>setPage("professionals")} style={{ padding:"14px 24px",background:"transparent",border:"1px solid "+C.gold,color:C.gold,fontSize:13,fontWeight:600,letterSpacing:1.5,cursor:"pointer" }}>SEE ENGAGEMENTS</button>
+            </div>
+          </div>
+        </FadeIn>
+      )}
+
+      <FadeIn delay={120}>
+        <div style={{ marginTop:8 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:8,paddingBottom:14,borderBottom:"1px solid "+C.border }}>All adviser guides</h2>
+          <div style={{ display:"grid",gap:14,marginTop:20 }}>
+            {ADVISER_JURISDICTIONS.map(j => (
+              <a key={j.id} href={"/guide/" + j.slug + "/"} style={{ display:"block",background:C.card,border:"1px solid "+C.border,padding:"18px 22px",textDecoration:"none" }}>
+                <div style={{ color:C.gold,fontSize:16,fontFamily:"Georgia,serif",marginBottom:6 }}>{j.label} → Italy</div>
+                <div style={{ color:C.textDim,fontSize:13,lineHeight:1.6 }}>{j.headline}</div>
+              </a>
+            ))}
+          </div>
+          <p style={{ color:C.textDim,fontSize:13,lineHeight:1.7,marginTop:24,fontStyle:"italic",opacity:0.9 }}>Clients arriving from elsewhere in the EU face a simpler position: freedom of movement applies, passporting is unaffected, and the technical work concentrates on the tax regime election and pension coordination. Contact us and we will point you to what is relevant.</p>
+        </div>
+      </FadeIn>
+    </section>
+  );
+}
+
 function ProfessionalsPage({ setPage }) {
   const [email, setEmail] = useState("");
   const [firm, setFirm] = useState("");
@@ -1792,6 +1927,49 @@ function ProfessionalsPage({ setPage }) {
 
       <FadeIn delay={200}>
         <div style={{ marginBottom:48 }}>
+      <FadeIn delay={215}>
+        <div style={{ marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:24,color:C.white,fontWeight:400,marginBottom:8,paddingBottom:16,borderBottom:"1px solid "+C.border }}>Three ways we support advisers</h2>
+          <p style={{ color:C.textDim,fontSize:14,lineHeight:1.7,marginTop:16,marginBottom:24 }}>Defined engagements with fixed scope and fixed fees. All three are structured so that your client relationship and your mandate remain untouched.</p>
+          <div style={{ display:"grid",gap:20 }}>
+            {[
+              { t:"Client Feasibility Report", p:"€1,500 – €2,500", d:"You send us the case. We produce a written analysis covering the tax regime likely to apply, treatment of existing structures and holdings, realistic costs, timeline, and the points where decisions become irreversible. Typically ten to fifteen pages, delivered within two weeks. Most advisers present it to the client as part of their own work — we are comfortable being invisible." },
+              { t:"Relocation Execution", p:"€5,000 – €15,000", d:"Once the client decides. We coordinate everything on the ground: Italian accountant, property, schools, healthcare registration, banking introductions, permits. You stay informed through a single point of contact and are copied on what matters. Fee depends on family size and complexity, agreed in writing before we begin." },
+              { t:"Technical Desk", p:"€3,000 – €6,000 / year", d:"An annual retainer giving your team unlimited access to technical questions on Italy for any of your clients, plus a quarterly briefing on regulatory and tax developments. For firms with recurring exposure to Italian relocations, this replaces the need to research each case from scratch." },
+            ].map((x,i) => (
+              <div key={i} style={{ background:C.card,border:"1px solid "+C.border,padding:"24px 28px" }}>
+                <div style={{ display:"flex",justifyContent:"space-between",alignItems:"baseline",gap:16,marginBottom:10,flexWrap:"wrap" }}>
+                  <div style={{ fontFamily:"Georgia,serif",fontSize:19,color:C.gold }}>{x.t}</div>
+                  <div style={{ color:C.white,fontSize:14,fontWeight:600,whiteSpace:"nowrap" }}>{x.p}</div>
+                </div>
+                <div style={{ color:C.textDim,fontSize:14,lineHeight:1.75 }}>{x.d}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={230}>
+        <div style={{ marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:24,color:C.white,fontWeight:400,marginBottom:8,paddingBottom:16,borderBottom:"1px solid "+C.border }}>Questions advisers ask</h2>
+          <div style={{ display:"grid",gap:22,marginTop:24 }}>
+            {[
+              { q:"Can my firm keep managing the portfolio once the client is Italian resident?", a:"It depends on your authorisations. Since MiFID passporting into the EU ended, a UK-only authorised firm faces a genuine regulatory question, and reverse solicitation is interpreted narrowly in Italy. Firms with an EU entity generally transfer the relationship to it. This is the first thing to resolve, ideally twelve months before the move — it is the most common reason advisers lose a client at relocation, and it is entirely avoidable." },
+              { q:"Will the client have to move assets to an Italian bank?", a:"No, and most do not. What changes is reporting: foreign assets must be declared annually on the RW form and are subject to the IVAFE wealth tax, unless the flat tax regime applies, in which case neither obligation arises. A local account is needed for practical matters, not for custody." },
+              { q:"What happens to UK funds in the portfolio?", a:"Italy distinguishes harmonised from non-harmonised collective investments. Harmonised are taxed at 26%; non-harmonised gains fall into ordinary income at rates up to 43% plus surcharges. Post-Brexit, UK OEICs and unit trusts are frequently in the second category. Investment trusts, being listed companies, are taxed at 26% and are often more efficient than the funds sitting alongside them." },
+              { q:"Do you take a share of anything?", a:"No. We are paid by you or by the client directly, in fees agreed in advance. We receive no commission, referral fee or retrocession from any professional we introduce — not from accountants, lawyers, notaries, brokers or banks. This is structural, not a policy we could change, and it is the reason we can be neutral about who ends up doing the work." },
+              { q:"Do you provide investment or tax advice?", a:"No. We do not hold investment, insurance or tax advisory authorisations and do not act in any of those capacities. We coordinate independently qualified Italian professionals — commercialisti, lawyers, notaries, doctors — each regulated in their own field, and act as a single point of contact. Our value is orchestration and synthesis, not substitution." },
+              { q:"How do you handle confidentiality?", a:"Client information is shared only with the professionals required for the specific engagement, and only to the extent needed. We work under NDA where your firm requires it, and we are accustomed to being the invisible party in an adviser-led relationship." },
+            ].map((f,i) => (
+              <div key={i}>
+                <div style={{ color:C.gold,fontSize:15,fontWeight:600,marginBottom:8 }}>{f.q}</div>
+                <div style={{ color:C.textDim,fontSize:14,lineHeight:1.75 }}>{f.a}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </FadeIn>
+
           <h2 style={{ fontFamily:"Georgia,serif",fontSize:24,color:C.white,fontWeight:400,marginBottom:8,paddingBottom:16,borderBottom:"1px solid "+C.border }}>Technical reference library</h2>
           <p style={{ color:C.textDim,fontSize:14,marginBottom:24 }}>Guides your team can use for client conversations and due diligence:</p>
           <div style={{ display:"grid",gap:12 }}>
@@ -2084,6 +2262,7 @@ function pageToHash(p) {
   if (p === "orientation") return "/orientation";
   if (p === "healthcare-service") return "/healthcare";
   if (p === "buying-agent") return "/buying-agent";
+  if (p === "adviser-guides") return "/adviser-guides";
   if (p === "professionals") return "/professionals";
   if (p === "athletes") return "/athletes";
   if (p === "privacy") return "/privacy";
@@ -2105,6 +2284,7 @@ function hashToPage(h) {
   if (path === "/orientation") return "orientation";
   if (path === "/healthcare") return "healthcare-service";
   if (path === "/buying-agent") return "buying-agent";
+  if (path === "/adviser-guides") return "adviser-guides";
   if (path === "/professionals") return "professionals";
   if (path === "/athletes") return "athletes";
   if (path === "/privacy") return "privacy";
@@ -2161,6 +2341,7 @@ export default function App() {
       {page==="healthcare-service" && <HealthcarePage setPage={setPage}/>}
       {page==="buying-agent" && <BuyingAgentPage setPage={setPage}/>}
       {page==="professionals" && <ProfessionalsPage setPage={setPage}/>}
+      {page==="adviser-guides" && <AdviserGuidesPage setPage={setPage}/>}
       {page==="athletes" && <AthletesPage setPage={setPage}/>}
       {isVert && <VerticalPage id={page.replace("v-","")} setPage={setPage}/>}
       {isArt && <ArticlePage id={page} setPage={setPage}/>}
