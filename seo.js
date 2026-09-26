@@ -106,6 +106,9 @@ function page(title, desc, canonical, body, jsonLd) {
 <meta property="og:url" content="${canonical}">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="The Italian Gateway">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QFVSS3Y5M"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-5QFVSS3Y5M");</script>
 ${ldScript}
 <style>body{background:#0A0E17;color:#E5E7EB;font-family:Segoe UI,-apple-system,sans-serif;margin:0;padding:0}
 .w{max-width:780px;margin:0 auto;padding:60px 24px}
