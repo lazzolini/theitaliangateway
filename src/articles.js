@@ -316,7 +316,7 @@ const ARTICLES = [
   {
     "id": "lake-como-property",
     "cat": "Real Estate",
-    "title": "Buying Property on Lake Como: Complete Guide for International Buyers",
+    "title": "Buying Property on Lake Como: Guide for Foreign Buyers",
     "date": "March 2026",
     "read": "15 min",
     "desc": "Best towns, realistic pricing, the Italian buying process, transaction costs, renovation, and rental yields.",
@@ -647,7 +647,7 @@ const ARTICLES = [
   {
     "id": "international-schools",
     "cat": "Education",
-    "title": "Best International Schools in Milan 2026: Fees, Curricula & Admissions",
+    "title": "Best International Schools in Milan: Fees and Admissions 2026",
     "date": "March 2026",
     "read": "10 min",
     "desc": "ASM, ISM, St. Louis, Sir James Henderson — compared. Plus admissions timeline and how to choose.",
@@ -2197,7 +2197,7 @@ const ARTICLES = [
   {
     "id": "international-schools-guide",
     "cat": "Education",
-    "title": "International Schools in Milan: How to Choose and Get Accepted in 2026",
+    "title": "International Schools in Milan: How to Choose and Apply",
     "date": "March 2026",
     "read": "9 min",
     "desc": "Comparing Milan's international schools: ASM, ISM, St. Louis, Sir James Henderson. IB, British, American curricula. Fees and waitlists.",
@@ -4121,7 +4121,7 @@ const ARTICLES = [
   {
     "id": "divorce-relocation-italy-hnwi",
     "cat": "Relocation",
-    "title": "Relocating to Italy After a Separation: A Confidential Guide for HNWI",
+    "title": "Relocating to Italy After a Separation: A Confidential Guide",
     "date": "April 2026",
     "read": "10 min",
     "desc": "Relocating to Italy after a life transition. Tax planning, property, schools, privacy, and professional support with discretion.",
@@ -10240,7 +10240,7 @@ const ARTICLES = [
   {
     "id": "living-in-bologna-hnwi-expats-2026",
     "cat": "Relocation",
-    "title": "Living in Bologna as an HNWI Expat: Healthcare, Schools, Property 2026",
+    "title": "Living in Bologna: Healthcare, Schools and Property for Expats",
     "date": "August 2026",
     "read": "11 min",
     "desc": "Bologna for HNWI expats: world-class hospitals, international schools, historic property. The overlooked alternative to Milan for wealthy families.",
@@ -10968,7 +10968,7 @@ const ARTICLES = [
   {
     "id": "adviser-guide-relocating-client-switzerland-to-italy-2026",
     "cat": "Tax & Legal",
-    "title": "Adviser's Guide: Relocating a Client from Switzerland to Italy (2026)",
+    "title": "Adviser's Guide: Moving a Client from Switzerland to Italy",
     "date": "September 2026",
     "read": "13 min",
     "desc": "For advisers: Swiss cross-border rules, pillar 2 and 3a treatment, forfait exit, withholding recovery and reporting when a client moves to Italy.",

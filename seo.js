@@ -316,7 +316,7 @@ ${bloccoCorrelate}`;
   });
 
   writeFileSync(join(dir, 'index.html'), page(
-    art.title + ' | The Italian Gateway',
+    art.title,
     art.desc,
     DOMAIN + '/guide/' + art.id + '/',
     body,
@@ -427,7 +427,7 @@ const profBody = `
 <p style="margin-top:32px">Contact: <a href="mailto:info@theitaliangateway.com">info@theitaliangateway.com</a></p>`;
 
 writeFileSync(join(DIST, 'professionals', 'index.html'), page(
-  'For Wealth Managers & Family Offices | The Italian Gateway',
+  'For Wealth Managers and Family Offices | The Italian Gateway',
   'Your client wants to move to Italy. We handle tax, property, banking, schools, healthcare. Reference library for advisors.',
   DOMAIN + '/professionals/',
   profBody
@@ -449,7 +449,7 @@ const athBody = `
 <p style="margin-top:32px">Contact: <a href="mailto:info@theitaliangateway.com">info@theitaliangateway.com</a></p>`;
 
 writeFileSync(join(DIST, 'athletes', 'index.html'), page(
-  'Player Landing Service — Athletes Relocating to Italy | The Italian Gateway',
+  'Athlete Relocation to Italy | The Italian Gateway',
   'Athletes relocating to Italy: housing, banking, healthcare, schools, Impatriati tax. For agents and clubs. One fixed fee.',
   DOMAIN + '/athletes/',
   athBody
@@ -531,7 +531,7 @@ const orientBody = `
 <p style="margin-top:32px">Request scoping call: <a href="mailto:info@theitaliangateway.com">info@theitaliangateway.com</a></p>`;
 
 writeFileSync(join(DIST, 'orientation', 'index.html'), page(
-  'Multi-Advisory Orientation for HNWI Relocating to Italy | The Italian Gateway',
+  'Multi-Advisory Orientation Italy | The Italian Gateway',
   'Coordinated orientation across medicine, finance, tax, law for families moving to Italy. Independent professionals, single point of contact, fixed fees.',
   DOMAIN + '/orientation/',
   orientBody
@@ -568,7 +568,7 @@ const healthBody = `
 <p><a href="/guide/private-health-insurance-italy-expats-2026/">Read our full guide to health insurance in Italy</a></p>`;
 
 writeFileSync(join(DIST, 'healthcare', 'index.html'), page(
-  'Healthcare Setup Service for Expats in Italy | The Italian Gateway',
+  'Healthcare Setup Service Italy | The Italian Gateway',
   'SSN, private GP or international insurance? An orientation call from EUR 350, or a full written recommendation from a doctor and an independent broker.',
   DOMAIN + '/healthcare/',
   healthBody
@@ -602,7 +602,7 @@ const agentBody = `
 <p><a href="/guide/lake-como-property/">Read our Lake Como property guide</a> · <a href="/guide/buying-property-italy-foreigner-step-by-step-2026/">Step-by-step buying guide</a></p>`;
 
 writeFileSync(join(DIST, 'buying-agent', 'index.html'), page(
-  'Property Buying Agent Italy: Lake Como, Milan, Tuscany | The Italian Gateway',
+  'Buying Agent Italy: Como, Milan, Tuscany | The Italian Gateway',
   'Independent buying agent acting for the buyer only. Lake Como, Milan and Tuscany. Search, diagnostics, negotiation and completion. Paid by you, not the seller.',
   DOMAIN + '/buying-agent/',
   agentBody
@@ -645,14 +645,17 @@ console.log('  + adviser-guides/');
 
 // ── Inject SEO content into homepage ────────────────────────
 let homepage = readFileSync(join(DIST, 'index.html'), 'utf8');
-// Fallback senza JavaScript: deve essere la stessa pagina, in versione semplice.
-// Non un secondo testo ottimizzato: titolo allineato a quello che l'utente legge,
-// nessuna lista di tutti gli articoli (quella e' /guides/, raggiungibile da qui).
-const seo = `<noscript>
-<h1>Your family's gateway to Italian living</h1>
-<p>The Italian Gateway guides families moving to Italy through tax, property, healthcare, schooling and banking, with a single point of contact in Milan. This page needs JavaScript; the sections below work without it.</p>
-<h2>Services</h2>
-<ul>
+// Fallback della home, posto DENTRO #root invece che in <noscript>.
+// Motivo: in <noscript> l'<h1> non conta come intestazione della pagina per un
+// crawler che non esegue JS, e Bing segnalava "The <h1> tag is missing" sulla
+// home. React monta con createRoot(), che svuota il container: questo contenuto
+// viene sostituito dall'app al mount, e resta visibile a chi non ha JavaScript.
+// Il testo e' lo stesso che l'utente legge, non una seconda versione ottimizzata.
+const seo = `<div style="max-width:780px;margin:0 auto;padding:96px 24px;color:#E5E7EB;font-family:Segoe UI,-apple-system,sans-serif">
+<h1 style="font:400 38px/1.25 Georgia,serif;color:#fff;margin:0 0 20px">Your family's gateway to Italian living</h1>
+<p style="font-size:17px;line-height:1.7;color:#9CA3AF;margin:0 0 36px">The Italian Gateway guides families moving to Italy through tax, property, healthcare, schooling and banking, with a single point of contact in Milan.</p>
+<h2 style="font:400 24px Georgia,serif;color:#fff;margin:0 0 16px">Services</h2>
+<ul style="line-height:1.9;padding-left:20px">
 <li><a href="/orientation/">Multi-Advisory Orientation</a> — coordinated advice across medicine, finance, tax and law</li>
 <li><a href="/healthcare/">Healthcare Setup Service</a> — SSN, private GP and insurance decided properly</li>
 <li><a href="/buying-agent/">Property Buying Agent</a> — Lake Como, Milan and Tuscany, acting for the buyer only</li>
@@ -662,14 +665,19 @@ const seo = `<noscript>
 <li><a href="/advisors/">Our Advisory Network</a></li>
 <li><a href="/about/">About The Italian Gateway</a></li>
 </ul>
-<h2>Guides</h2>
-<p><a href="/guides/">All ${ARTICLES.length} guides on relocating to Italy</a> — tax, property, healthcare, schools, pensions and immigration.</p>
-<h2>Contact</h2>
-<p>Email: info@theitaliangateway.com</p>
-</noscript>`;
-homepage = homepage.replace('</body>', seo + '\n</body>');
+<h2 style="font:400 24px Georgia,serif;color:#fff;margin:32px 0 16px">Guides</h2>
+<p><a href="/guides/" style="color:#C9A96E">All ${ARTICLES.length} guides on relocating to Italy</a> — tax, property, healthcare, schools, pensions and immigration.</p>
+<h2 style="font:400 24px Georgia,serif;color:#fff;margin:32px 0 16px">Contact</h2>
+<p>Email: <a href="mailto:info@theitaliangateway.com" style="color:#C9A96E">info@theitaliangateway.com</a></p>
+</div>`;
+// Il fallback va DENTRO #root: React lo sostituisce al mount, i crawler senza JS
+// lo leggono come contenuto reale della pagina, h1 compreso.
+if (!homepage.includes('<div id="root"></div>')) {
+  throw new Error('[seo] #root vuoto non trovato in index.html: il fallback della home non e\' stato inserito');
+}
+homepage = homepage.replace('<div id="root"></div>', '<div id="root">' + seo + '</div>');
 writeFileSync(join(DIST, 'index.html'), homepage);
-console.log('  + homepage SEO injected');
+console.log('  + homepage: fallback dentro #root (h1 reale per i crawler)');
 
 // ── Legal pages ─────────────────────────────────────────────
 const legalPages = [
@@ -850,5 +858,43 @@ if (!allOk) {
   console.error('[seo] CRITICAL FILES MISSING - build should be investigated');
   process.exit(1);
 }
+
+// ── IndexNow ────────────────────────────────────────────────
+// Bing raccomanda IndexNow e per un sito deindicizzato e' un canale di
+// segnalazione diretto. A settembre un ping IndexNow ha troncato il build:
+// era async, chiamato SENZA await come ultima istruzione, quindi Node restava
+// appeso sulla richiesta e il processo veniva tagliato prima di scrivere
+// sitemap.xml e robots.txt. Qui non puo' ripetersi:
+//   - gira DOPO la verifica dei file critici: a questo punto e' gia' tutto scritto
+//   - e' atteso con await, quindi il processo non resta appeso
+//   - ha un timeout di 5 secondi imposto da AbortController
+//   - qualunque errore viene inghiottito: non fallisce mai il build
+//   - si disattiva con SKIP_INDEXNOW=1 senza toccare il codice
+const INDEXNOW_KEY = 'mdpubx9i7zjdmqnsr0d23kdqldypimfl';
+async function pingIndexNow() {
+  if (process.env.SKIP_INDEXNOW === '1') {
+    console.log('  IndexNow: saltato (SKIP_INDEXNOW=1)');
+    return;
+  }
+  const host = DOMAIN.replace(/^https?:\/\//, '');
+  const urlList = urls.map(u => DOMAIN + u.loc);
+  const ctrl = new AbortController();
+  const stop = setTimeout(() => ctrl.abort(), 5000);
+  try {
+    const r = await fetch('https://api.indexnow.org/IndexNow', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      body: JSON.stringify({ host, key: INDEXNOW_KEY, keyLocation: DOMAIN + '/' + INDEXNOW_KEY + '.txt', urlList }),
+      signal: ctrl.signal,
+    });
+    console.log('  IndexNow: ' + urlList.length + ' URL inviati, risposta ' + r.status);
+  } catch (e) {
+    console.log('  IndexNow: non riuscito (' + (e.name === 'AbortError' ? 'timeout 5s' : e.message) + ') - build non interrotto');
+  } finally {
+    clearTimeout(stop);
+  }
+}
+
+await pingIndexNow();
 
 console.log('[seo] Done!');
