@@ -444,7 +444,7 @@ function Nav({ setPage }) {
   const [mob, setMob] = useState(false);
   useEffect(() => { const h = () => setSc(window.scrollY > 40); window.addEventListener("scroll", h); return () => window.removeEventListener("scroll", h); }, []);
   const go = t => { setMob(false); if (["guides","quiz","properties","advisors","professionals","athletes","about","orientation","healthcare-service","buying-agent","adviser-guides"].includes(t) || t.startsWith("v-")) { setPage(t); window.scrollTo(0,0); } else { setPage("home"); setTimeout(() => document.getElementById(t)?.scrollIntoView({ behavior: "smooth" }), 100); } };
-  const links = [["About","about"],["Orientation","orientation"],["Services","services"],["Advisors","advisors"],["For Professionals","professionals"],["Guides","guides"],["Contact","contact"]];
+  const links = [["About","about"],["Orientation","orientation"],["Buying Agent","buying-agent"],["Services","services"],["Advisors","advisors"],["For Professionals","professionals"],["Guides","guides"],["Contact","contact"]];
   return (
     <nav style={{ position:"fixed",top:0,left:0,right:0,zIndex:50,background:sc||mob?"rgba(10,14,23,0.97)":"transparent",backdropFilter:sc?"blur(12px)":"none",borderBottom:sc||mob?("1px solid "+C.border):"none",transition:"all 0.3s" }}>
       <div style={{ maxWidth:1200,margin:"0 auto",padding:"16px 24px",display:"flex",alignItems:"center",justifyContent:"space-between" }}>
@@ -751,7 +751,7 @@ function SimpleCalc() {
         <div><label style={{ color:C.textDim,fontSize:12,letterSpacing:2,textTransform:"uppercase",display:"block",marginBottom:8 }}>Compare with</label><select value={ci} onChange={e=>setCi(+e.target.value)} style={{ width:"100%",padding:"14px 16px",background:C.card,color:C.white,border:"1px solid "+C.border,fontSize:16 }}>{COL_CITIES.map((x,i)=><option key={i} value={i}>{x.flag} {x.name}</option>)}</select></div>
         <div><label style={{ color:C.textDim,fontSize:12,letterSpacing:2,textTransform:"uppercase",display:"block",marginBottom:8 }}>Annual foreign income</label><select value={inc} onChange={e=>setInc(+e.target.value)} style={{ width:"100%",padding:"14px 16px",background:C.card,color:C.white,border:"1px solid "+C.border,fontSize:16 }}>{[1000000,2000000,3000000,5000000,10000000,20000000].map(v=><option key={v} value={v}>€{v.toLocaleString()}</option>)}</select></div>
       </div>
-      <div style={{ overflowX:"auto" }}><table style={{ width:"100%",borderCollapse:"collapse" }}>
+      <div style={{ overflowX:"auto",maxWidth:"100%" }}><table style={{ width:"100%",borderCollapse:"collapse" }}>
         <thead><tr><th style={{ textAlign:"left",padding:"14px 16px",borderBottom:"2px solid "+C.gold,color:C.textDim,fontSize:12 }}>EXPENSE</th><th style={{ textAlign:"right",padding:"14px 16px",borderBottom:"2px solid "+C.gold,color:C.textDim,fontSize:12 }}>{c.flag} {c.name.toUpperCase()}</th><th style={{ textAlign:"right",padding:"14px 16px",borderBottom:"2px solid "+C.gold,color:C.gold,fontSize:12 }}>🇮🇹 ITALY</th><th style={{ textAlign:"right",padding:"14px 16px",borderBottom:"2px solid "+C.gold,color:C.textDim,fontSize:12 }}>SAVING</th></tr></thead>
         <tbody>{rows.map(([label,cv,mv],i)=><tr key={i}><td style={{ padding:"14px 16px",borderBottom:"1px solid "+C.border,color:C.text,fontSize:14 }}>{label}</td><td style={{ padding:"14px 16px",borderBottom:"1px solid "+C.border,color:"#ef4444",fontSize:14,textAlign:"right" }}>{fmt(cv)}</td><td style={{ padding:"14px 16px",borderBottom:"1px solid "+C.border,color:C.gold,fontSize:14,textAlign:"right" }}>{fmt(mv)}</td><td style={{ padding:"14px 16px",borderBottom:"1px solid "+C.border,color:cv-mv>0?"#22c55e":"#ef4444",fontSize:14,textAlign:"right",fontWeight:600 }}>{cv-mv>0?"+":""}{fmt(cv-mv)}</td></tr>)}
         <tr><td style={{ padding:"16px",borderTop:"2px solid "+C.gold,color:C.white,fontWeight:600 }}>TOTAL</td><td style={{ padding:"16px",borderTop:"2px solid "+C.gold,color:"#ef4444",fontSize:18,textAlign:"right",fontWeight:600,fontFamily:"Georgia,serif" }}>{fmt(cTotal)}</td><td style={{ padding:"16px",borderTop:"2px solid "+C.gold,color:C.gold,fontSize:18,textAlign:"right",fontWeight:600,fontFamily:"Georgia,serif" }}>{fmt(mTotal)}</td><td style={{ padding:"16px",borderTop:"2px solid "+C.gold,color:saving>0?"#22c55e":"#ef4444",fontSize:18,textAlign:"right",fontWeight:600,fontFamily:"Georgia,serif" }}>{saving>0?"+":""}{fmt(saving)}</td></tr>
@@ -1061,7 +1061,7 @@ function Newsletter() {
     <section style={{ padding:"80px 24px",background:"rgba(201,169,110,0.04)",borderTop:"1px solid "+C.border,borderBottom:"1px solid "+C.border }}>
       <div style={{ maxWidth:600,margin:"0 auto",textAlign:"center" }}>
         <FadeIn><div style={{ color:C.gold,fontSize:12,letterSpacing:4,textTransform:"uppercase",marginBottom:12 }}>Weekly Dispatch</div><h2 style={{ fontFamily:"Georgia,serif",fontSize:28,color:C.white,fontWeight:400,marginBottom:12 }}>Retire to Italy</h2><p style={{ color:C.textDim,fontSize:14,lineHeight:1.6,marginBottom:32 }}>One email per week. A featured property, a tax insight, and a taste of Italian life.</p>
-          {done ? <p style={{ color:C.gold,fontSize:15 }}>✓ You are in. First dispatch arrives next Monday.</p> : <div style={{ display:"flex",gap:12,maxWidth:440,margin:"0 auto" }}><input type="email" placeholder="Your email" value={email} onChange={e=>setEmail(e.target.value)} style={{ flex:1,padding:"14px 16px",background:C.card,color:C.white,border:"1px solid "+C.border,fontSize:15 }}/><button onClick={handleSub} style={{ background:C.gold,color:C.bg,padding:"14px 28px",border:"none",fontSize:13,fontWeight:600,letterSpacing:1,cursor:"pointer",whiteSpace:"nowrap" }}>SUBSCRIBE</button></div>}
+          {done ? <p style={{ color:C.gold,fontSize:15 }}>✓ You are in. First dispatch arrives next Monday.</p> : <div style={{ display:"flex",flexWrap:"wrap",gap:12,maxWidth:440,margin:"0 auto" }}><input type="email" placeholder="Your email" value={email} onChange={e=>setEmail(e.target.value)} style={{ flex:"1 1 180px",minWidth:0,padding:"14px 16px",background:C.card,color:C.white,border:"1px solid "+C.border,fontSize:15 }}/><button onClick={handleSub} style={{ background:C.gold,color:C.bg,padding:"14px 28px",border:"none",fontSize:13,fontWeight:600,letterSpacing:1,cursor:"pointer",whiteSpace:"nowrap" }}>SUBSCRIBE</button></div>}
         </FadeIn>
       </div>
     </section>
@@ -1269,10 +1269,24 @@ function HealthcarePage({ setPage }) {
         </div>
       </FadeIn>
 
+      <FadeIn delay={180}>
+        <div id="orientation-call" style={{ border:"1px solid "+C.goldDim,padding:"32px 36px",marginBottom:48 }}>
+          <h2 style={{ fontFamily:"Georgia,serif",fontSize:24,color:C.white,fontWeight:400,marginBottom:16 }}>Where to start</h2>
+          <p style={{ color:C.textDim,fontSize:15,lineHeight:1.8,marginBottom:16 }}>Most people arriving here are deciding one thing: whether they need private cover at all, or whether SSN registration plus a top-up policy is enough for their situation. That is a question for a call, not a project.</p>
+          <p style={{ color:C.textDim,fontSize:15,lineHeight:1.8,marginBottom:16 }}>The orientation call is 45 minutes, followed by a written note: which of the four configurations above applies to you, what it costs at your age, and what you would need to settle before anything is bought. No broker and no doctor at this stage — just the shape of the decision, in writing, so you can act on it yourself if that is all you need.</p>
+          <p style={{ color:C.white,fontSize:15,lineHeight:1.8,marginBottom:22 }}><strong style={{ color:C.gold,fontWeight:600 }}>€350.</strong> If you go on to either service below, it comes off the fee in full.</p>
+          <button onClick={() => { setPage("home"); setTimeout(() => document.getElementById("contact")?.scrollIntoView({ behavior:"smooth" }), 100); }} style={{ background:C.gold,color:C.bg,padding:"13px 28px",border:"none",fontSize:13,fontWeight:600,letterSpacing:1,cursor:"pointer" }}>REQUEST AN ORIENTATION CALL</button>
+        </div>
+      </FadeIn>
+
       <FadeIn delay={200}>
         <div style={{ background:"linear-gradient(145deg,#0F1523,#111827)",border:"1px solid "+C.goldDim,padding:"32px 36px",marginBottom:48 }}>
           <h2 style={{ fontFamily:"Georgia,serif",fontSize:22,color:C.white,fontWeight:400,marginBottom:20 }}>Fees</h2>
           <div style={{ display:"grid",gap:14 }}>
+            <div style={{ display:"flex",justifyContent:"space-between",gap:16,padding:"14px 0",borderBottom:"1px solid "+C.border }}>
+              <div><div style={{ color:C.white,fontSize:15,fontWeight:600 }}>Orientation Call</div><div style={{ color:C.textDim,fontSize:13,marginTop:4,lineHeight:1.6 }}>A 45-minute call and a written note setting out which route fits your situation and what it costs. No professionals involved at this stage. Credited in full against either service below if you proceed within 30 days.</div></div>
+              <div style={{ color:C.gold,fontSize:16,fontWeight:600,whiteSpace:"nowrap" }}>€350</div>
+            </div>
             <div style={{ display:"flex",justifyContent:"space-between",gap:16,padding:"14px 0",borderBottom:"1px solid "+C.border }}>
               <div><div style={{ color:C.white,fontSize:15,fontWeight:600 }}>Healthcare Orientation</div><div style={{ color:C.textDim,fontSize:13,marginTop:4,lineHeight:1.6 }}>Medical consultation, broker review, written summaries and final report, 30 days of email support.</div></div>
               <div style={{ color:C.gold,fontSize:16,fontWeight:600,whiteSpace:"nowrap" }}>€1,200</div>

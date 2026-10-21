@@ -44,21 +44,45 @@ const urls = [
   { loc: '/cookies/', p: '0.3' },
   { loc: '/terms/', p: '0.3' },
 ];
+// ── Link crawlabili nelle pagine statiche ───────────────────
+// I link in forma "/#/x" sono il routing hash della SPA: un crawler ignora il
+// frammento, quindi per lui puntano TUTTI a "/". Nelle pagine statiche vengono
+// riscritti come "/x/", la pagina statica corrispondente, cosi' i rimandi fra
+// articoli diventano link reali invece di 121 link alla sola home.
+// Si converte solo verso rotte presenti in `urls`: un bersaglio non riconosciuto
+// resta invariato e continua a funzionare per chi clicca dentro la SPA.
+const ROTTE_STATICHE = new Set(urls.map(u => u.loc));
+let dehashOk = 0;
+const dehashSaltati = new Set();
+function dehash(html) {
+  if (!html) return html;
+  return html.replace(/href="\/#\/([^"]*)"/g, (intero, percorso) => {
+    const pulito = '/' + percorso.replace(/^\/+|\/+$/g, '') + '/';
+    if (ROTTE_STATICHE.has(pulito)) { dehashOk++; return 'href="' + pulito + '"'; }
+    dehashSaltati.add(percorso);
+    return intero;
+  });
+}
+
 // lastmod: data reale dell'articolo dove disponibile, altrimenti data di build
 const MONTHS = { January:'01', February:'02', March:'03', April:'04', May:'05', June:'06',
                  July:'07', August:'08', September:'09', October:'10', November:'11', December:'12' };
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
+// "July 2026" -> "2026-07-01". Restituisce null se il formato non e' riconosciuto.
+function isoFromArticleDate(d) {
+  if (!d) return null;
+  const parts = d.trim().split(/\s+/);
+  if (parts.length === 2 && MONTHS[parts[0]]) return parts[1] + '-' + MONTHS[parts[0]] + '-01';
+  return null;
+}
+
 function lastmodFor(loc) {
   const m = loc.match(/^\/guide\/(.+)\/$/);
   if (m) {
     const art = ARTICLES.find(a => a.id === m[1]);
-    if (art && art.date) {
-      const parts = art.date.trim().split(/\s+/);
-      if (parts.length === 2 && MONTHS[parts[0]]) {
-        return parts[1] + '-' + MONTHS[parts[0]] + '-01';
-      }
-    }
+    const iso = art && isoFromArticleDate(art.date);
+    if (iso) return iso;
   }
   return BUILD_DATE;
 }
@@ -86,12 +110,40 @@ function renderBlock(b) {
   if (b.type === 'list') return '<ul>' + b.items.map(i => '<li>' + i + '</li>').join('') + '</ul>';
   if (b.type === 'callout') return '<blockquote>' + b.text + '</blockquote>';
   if (b.type === 'faq') return '<details><summary>' + b.q + '</summary><p>' + b.a + '</p></details>';
-  if (b.type === 'table') return '<table><thead><tr>' + b.headers.map(h => '<th>' + h + '</th>').join('') + '</tr></thead><tbody>' + b.rows.map(r => '<tr>' + r.map(c => '<td>' + c + '</td>').join('') + '</tr>').join('') + '</tbody></table>';
+  // La tabella va in un contenitore scorrevole: su mobile una tabella a 4 colonne
+  // sfonda il viewport e crea scroll orizzontale di pagina (problema di usabilita').
+  if (b.type === 'table') return '<div class="tw"><table><thead><tr>' + b.headers.map(h => '<th>' + h + '</th>').join('') + '</tr></thead><tbody>' + b.rows.map(r => '<tr>' + r.map(c => '<td>' + c + '</td>').join('') + '</tr>').join('') + '</tbody></table></div>';
   return '';
 }
 
-function page(title, desc, canonical, body, jsonLd) {
-  const ldScript = jsonLd ? jsonLd.map(j => `<script type="application/ld+json">${JSON.stringify(j)}</script>`).join('\n') : '';
+// Entita' dell'organizzazione, identica su ogni pagina. Serve al riconoscimento
+// del brand come entita': e' quello da cui dipende la ricerca branded, che oggi
+// su Bing non restituisce nulla. Prima stava solo sulla home.
+const ORG = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": DOMAIN + '/#organization',
+  "name": "The Italian Gateway",
+  "url": DOMAIN + '/',
+  "description": "Relocation advisory for families moving to Italy: tax, property, healthcare, schooling and banking, coordinated from Milan.",
+  "email": "info@theitaliangateway.com",
+  "areaServed": ["Italy", "Milan", "Lake Como", "Tuscany"],
+  "address": { "@type": "PostalAddress", "addressLocality": "Milan", "addressCountry": "IT" },
+  "sameAs": [
+    "https://www.instagram.com/theitaliangateway",
+    "https://www.linkedin.com/company/theitaliangateway",
+    "https://www.tiktok.com/@theitaliangateway"
+  ]
+};
+
+// Stesso endpoint che usa la SPA (src/App.jsx). Nelle pagine statiche il form e'
+// HTML puro con POST nativo: non richiede React, quindi chi arriva da un motore
+// puo' convertire senza passare nella SPA. Formspree rimanda a _next al termine.
+const FORMSPREE = 'https://formspree.io/f/xbdzzepp';
+
+function page(title, desc, canonical, body, jsonLd, senzaCta) {
+  const tutti = [ORG, ...(jsonLd || [])];
+  const ldScript = tutti.map(j => `<script type="application/ld+json">${JSON.stringify(j)}</script>`).join('\n');
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,6 +153,7 @@ function page(title, desc, canonical, body, jsonLd) {
 <meta name="description" content="${esc(desc)}">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="${canonical}">
+<link rel="alternate" type="application/rss+xml" title="The Italian Gateway — Guides" href="${DOMAIN}/feed.xml">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${canonical}">
@@ -117,33 +170,56 @@ h2{font:400 26px/1.3 Georgia,serif;color:#fff;margin:40px 0 12px;padding-bottom:
 h3{font:400 20px/1.3 Georgia,serif;color:#C9A96E;margin:28px 0 10px}
 p{font-size:16px;line-height:1.8;margin:0 0 16px}
 ul{margin:0 0 20px;padding:0 0 0 20px}li{margin:0 0 8px;line-height:1.7}
-table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:14px}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 20px;max-width:100%}
+table{width:100%;border-collapse:collapse;margin:0;font-size:14px}
+@media(max-width:700px){.w{padding:40px 16px}table{font-size:13px;min-width:460px}th,td{padding:8px}}
 th{text-align:left;padding:10px;background:rgba(201,169,110,.1);color:#C9A96E;border-bottom:2px solid #C9A96E;font-size:12px;text-transform:uppercase}
 td{padding:10px;border-bottom:1px solid #1F2937}
 blockquote{background:rgba(201,169,110,.06);border-left:3px solid #C9A96E;padding:16px 20px;margin:0 0 20px}
 details{margin:0 0 16px}summary{color:#fff;font-weight:600;cursor:pointer;margin:0 0 8px}
 details p{color:#9CA3AF}
-.nav{background:rgba(10,14,23,.97);border-bottom:1px solid #1F2937;padding:16px 24px;position:sticky;top:0;z-index:10}
-.nav a{color:#C9A96E;text-decoration:none;font:400 20px Georgia,serif}
+.nav{background:rgba(10,14,23,.97);border-bottom:1px solid #1F2937;padding:14px 24px;position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 22px}
+.nav a{color:#C9A96E;text-decoration:none}
+.nav .brand{font:400 20px Georgia,serif;margin-right:auto}
+.navlinks{display:flex;flex-wrap:wrap;gap:8px 18px}
+.navlinks a{font-size:13px;letter-spacing:.5px}
+.navlinks a:hover{color:#fff}
+@media(max-width:700px){.nav{gap:10px}.nav .brand{margin-right:0;width:100%}.navlinks a{font-size:12px}}
 .cta{background:#111827;border:1px solid #C9A96E;padding:40px;text-align:center;margin:40px 0}
 .cta a{background:#C9A96E;color:#0A0E17;padding:12px 32px;text-decoration:none;font-weight:600;font-size:13px;letter-spacing:2px}
+.cta a.plain{background:none;color:#C9A96E;padding:0;font-weight:400;font-size:13px;letter-spacing:0;text-decoration:underline}
 .ft{max-width:780px;margin:40px auto;padding:20px 24px;border-top:1px solid #1F2937;text-align:center;color:#9CA3AF;font-size:12px}
 .tag{color:#C9A96E;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin:0 0 12px}
+.f{display:grid;gap:10px;max-width:420px;margin:0 auto;text-align:left}
+.f input,.f textarea{width:100%;padding:12px 14px;background:#0A0E17;color:#E5E7EB;border:1px solid #1F2937;font-size:15px;font-family:inherit}
+.f input:focus,.f textarea:focus{outline:1px solid #C9A96E}
+.f textarea{min-height:92px;resize:vertical}
+.f button{background:#C9A96E;color:#0A0E17;padding:13px 24px;border:none;font-size:13px;font-weight:600;letter-spacing:1.5px;cursor:pointer}
+.f button:hover{background:#D8BD87}
 </style>
 </head>
 <body>
-<div class="nav"><a href="/">THE ITALIAN <span style="color:#fff">GATEWAY</span></a></div>
+<div class="nav"><a class="brand" href="/">THE ITALIAN <span style="color:#fff">GATEWAY</span></a><span class="navlinks"><a href="/guides/">Guides</a><a href="/orientation/">Orientation</a><a href="/healthcare/">Healthcare</a><a href="/buying-agent/">Buying Agent</a><a href="/advisors/">Advisors</a><a href="/professionals/">For Professionals</a><a href="/about/">About</a></span></div>
 <div class="w">
-${body}
-<div class="cta">
+${dehash(body)}
+${senzaCta ? '' : `<div class="cta">
 <p style="font:400 22px Georgia,serif;color:#fff;margin:0 0 12px">Want personalized guidance?</p>
-<p style="color:#9CA3AF;font-size:14px;margin:0 0 20px">Confidential 30-minute discovery call.</p>
-<a href="https://theitaliangateway.com">BOOK A CALL</a>
-</div>
+<p style="color:#9CA3AF;font-size:14px;margin:0 0 20px">Confidential 30-minute discovery call. Tell us where you are in the process.</p>
+<form class="f" action="${FORMSPREE}" method="POST">
+<input type="text" name="name" placeholder="Your name" required>
+<input type="email" name="email" placeholder="Your email" required>
+<textarea name="message" placeholder="What are you trying to work out?" required></textarea>
+<input type="hidden" name="source" value="${canonical}">
+<input type="hidden" name="_subject" value="Enquiry from ${esc(title)}">
+<input type="hidden" name="_next" value="${DOMAIN}/thank-you/">
+<button type="submit">REQUEST A CALL</button>
+</form>
+<p style="color:#9CA3AF;font-size:13px;margin:18px 0 0">Or write directly: <a class="plain" href="mailto:info@theitaliangateway.com">info@theitaliangateway.com</a></p>
+</div>`}
 </div>
 <div class="ft">
 <p>&copy; 2026 The Italian Gateway. All rights reserved.</p>
-<p style="margin-top:8px"><a href="/">Home</a> &middot; <a href="/guides/">Guides</a> &middot; info@theitaliangateway.com</p>
+<p style="margin-top:8px"><a href="/">Home</a> &middot; <a href="/guides/">Guides</a> &middot; <a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/cookies/">Cookies</a> &middot; <a href="/terms/">Terms</a> &middot; info@theitaliangateway.com</p>
 </div>
 </body>
 </html>`;
@@ -157,13 +233,37 @@ console.log('[seo] Generating static pages...');
 for (const art of ARTICLES) {
   const dir = join(DIST, 'guide', art.id);
   ensureDir(dir);
+  // Guide correlate: stessa categoria, poi altre, fino a 5. Senza questo blocco
+  // la pagina e' un vicolo cieco per il lettore e un nodo foglia per il crawler.
+  // La selezione ruota in base alla posizione dell'articolo: senza rotazione
+  // ogni pagina linkerebbe sempre i primi 5 dell'array e gli ultimi resterebbero
+  // senza link in entrata.
+  const idx = ARTICLES.indexOf(art);
+  const ruota = arr => arr.length ? arr.map((_, i) => arr[(i + idx) % arr.length]) : arr;
+  const stessaCat = ruota(ARTICLES.filter(a => a.id !== art.id && a.cat === art.cat));
+  const altre = ruota(ARTICLES.filter(a => a.id !== art.id && a.cat !== art.cat));
+  const correlate = [...stessaCat, ...altre].slice(0, 5);
+  const bloccoCorrelate = correlate.length ? `
+<h2>Related guides</h2>
+<ul>
+${correlate.map(a => '<li><a href="/guide/' + a.id + '/">' + esc(a.title) + '</a> <span style="color:#9CA3AF;font-size:13px">&mdash; ' + esc(a.cat) + '</span></li>').join('\n')}
+</ul>
+<p style="font-size:14px"><a href="/guides/">Browse all ${ARTICLES.length} guides</a></p>` : '';
+
+  // Breadcrumb VISIBILE, allineato allo schema BreadcrumbList gia' emesso.
+  // Prima lo schema dichiarava Home > Guides > Titolo ma in pagina c'era solo
+  // "All Guides": il disallineamento fa cadere il rich result (le impressioni
+  // breadcrumb in Search Console erano scese a zero).
+  const briciole = `<nav aria-label="Breadcrumb" style="font-size:13px;color:#9CA3AF"><a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; <span>${esc(art.title)}</span></nav>`;
+
   const body = `
-<a href="/guides/" style="color:#C9A96E;font-size:13px">&larr; All Guides</a>
+${briciole}
 <div class="tag" style="margin-top:24px">${art.cat} &middot; ${art.read} read</div>
 <h1>${art.title}</h1>
 <p style="color:#9CA3AF;font-size:17px">${art.desc}</p>
 <hr style="border:none;height:2px;background:linear-gradient(to right,#C9A96E,transparent);margin:28px 0">
-${art.content.map(renderBlock).join('\n')}`;
+${art.content.map(renderBlock).join('\n')}
+${bloccoCorrelate}`;
 
   // Build structured data
   const jsonLd = [];
@@ -182,8 +282,8 @@ ${art.content.map(renderBlock).join('\n')}`;
     "@type": "Article",
     "headline": art.title,
     "description": art.desc,
-    "datePublished": "2026-04-01",
-    "dateModified": "2026-06-01",
+    "datePublished": isoFromArticleDate(art.date) || BUILD_DATE,
+    "dateModified": isoFromArticleDate(art.date) || BUILD_DATE,
     "author": { "@type": "Organization", "name": "The Italian Gateway", "url": DOMAIN },
     "publisher": { "@type": "Organization", "name": "The Italian Gateway", "url": DOMAIN },
     "reviewedBy": reviewer ? { "@type": "Person", "name": reviewer.name, "url": reviewer.url } : undefined,
@@ -451,7 +551,10 @@ const healthBody = `
 <p>One point worth knowing: the SSN covers pre-existing conditions from day one, with no exclusions and no waiting period. Private policies almost always apply a twelve to twenty-four month wait.</p>
 <h2>How the service works</h2>
 <p>A sixty-minute scoping conversation at no charge. Then a consultation with an internal medicine specialist, briefed on your case in advance. Then a review with an independent insurance broker, fee-based with no product commissions. Finally a written report setting out what to do, in what order, at what cost, followed by a period of email support.</p>
+<h2>Where to start</h2>
+<p>Most people are deciding one thing: whether they need private cover at all, or whether SSN registration plus a top-up policy is enough. That is a question for a call, not a project. The orientation call is forty-five minutes followed by a written note — which configuration applies to you, what it costs at your age, and what you would need to settle before anything is bought. No broker and no doctor at that stage.</p>
 <h2>Fees</h2>
+<p><strong>Orientation Call — €350 (VAT included).</strong> A forty-five minute call and a written note setting out which route fits your situation and what it costs. Credited in full against either service below if you proceed within 30 days.</p>
 <p><strong>Healthcare Orientation — €1,200 (VAT included).</strong> Medical consultation, broker review, written summaries and final report, 30 days of email support.</p>
 <p><strong>Healthcare Orientation Extended — €1,800 (VAT included).</strong> Everything above, plus identification and introduction to an English-speaking GP, within the SSN at no cost to you or privately on retainer, and 60 days of support.</p>
 <p>Every professional you speak with is an independent third party. We receive no commission, referral fee or other payment from any of them.</p>
@@ -466,7 +569,7 @@ const healthBody = `
 
 writeFileSync(join(DIST, 'healthcare', 'index.html'), page(
   'Healthcare Setup Service for Expats in Italy | The Italian Gateway',
-  'SSN, private GP or international insurance? We coordinate a doctor and an independent broker to produce a written recommendation. Fixed fee from EUR 1,200.',
+  'SSN, private GP or international insurance? An orientation call from EUR 350, or a full written recommendation from a doctor and an independent broker.',
   DOMAIN + '/healthcare/',
   healthBody
 ));
@@ -542,26 +645,25 @@ console.log('  + adviser-guides/');
 
 // ── Inject SEO content into homepage ────────────────────────
 let homepage = readFileSync(join(DIST, 'index.html'), 'utf8');
+// Fallback senza JavaScript: deve essere la stessa pagina, in versione semplice.
+// Non un secondo testo ottimizzato: titolo allineato a quello che l'utente legge,
+// nessuna lista di tutti gli articoli (quella e' /guides/, raggiungibile da qui).
 const seo = `<noscript>
-<h1>The Italian Gateway — Premium Relocation Advisory for HNWI Moving to Italy</h1>
-<p>We guide high-net-worth individuals and families to their ideal life in Italy. Tax optimization, private banking, real estate, healthcare, education, yachting — all through a single, confidential point of contact in Milan.</p>
-<h2>Services</h2>
-<p>Private Banking introductions. Tax and Legal structuring including the 300,000 euro flat tax regime. Real Estate across Milan, Lake Como, Tuscany, and the Amalfi Coast. Healthcare coordination. Education consulting for international schools. Immigration management. Yachting and marina services.</p>
+<h1>Your family's gateway to Italian living</h1>
+<p>The Italian Gateway guides families moving to Italy through tax, property, healthcare, schooling and banking, with a single point of contact in Milan. This page needs JavaScript; the sections below work without it.</p>
 <h2>Services</h2>
 <ul>
 <li><a href="/orientation/">Multi-Advisory Orientation</a> — coordinated advice across medicine, finance, tax and law</li>
 <li><a href="/healthcare/">Healthcare Setup Service</a> — SSN, private GP and insurance decided properly</li>
 <li><a href="/buying-agent/">Property Buying Agent</a> — Lake Como, Milan and Tuscany, acting for the buyer only</li>
-<li><a href="/adviser-guides/">Adviser Desk — guides by departure jurisdiction</a></li>
+<li><a href="/adviser-guides/">Adviser Desk</a> — guides by departure jurisdiction</li>
 <li><a href="/professionals/">For Wealth Managers and Family Offices</a></li>
 <li><a href="/athletes/">Athlete and Sports Relocation</a></li>
 <li><a href="/advisors/">Our Advisory Network</a></li>
 <li><a href="/about/">About The Italian Gateway</a></li>
 </ul>
 <h2>Guides</h2>
-<ul>
-${ARTICLES.map(a => '<li><a href="/guide/' + a.id + '/">' + a.title + '</a></li>').join('\n')}
-</ul>
+<p><a href="/guides/">All ${ARTICLES.length} guides on relocating to Italy</a> — tax, property, healthcare, schools, pensions and immigration.</p>
 <h2>Contact</h2>
 <p>Email: info@theitaliangateway.com</p>
 </noscript>`;
@@ -614,7 +716,7 @@ const legalPages = [
 <h2>5. Legal Framework</h2>
 <p>This policy complies with GDPR, the Italian Privacy Code (Legislative Decree 196/2003), and the ePrivacy Directive as implemented by the Garante (Guidelines on cookies, June 2021).</p>` },
 
-  { slug: 'terms', title: 'Terms of Service', desc: 'Terms governing the use of The Italian Gateway website and services.',
+  { slug: 'terms', title: 'Terms of Service', desc: 'Terms governing the use of The Italian Gateway website, the scope of our services and the limits of the information published here.',
     body: `<h1>Terms of Service</h1>
 <p><strong>Last updated:</strong> March 2026</p>
 <p>By using theitaliangateway.com, you agree to these Terms.</p>
@@ -650,7 +752,90 @@ for (const lp of legalPages) {
   console.log('  + ' + lp.slug + '/');
 }
 
+// ── Pagina di conferma invio ────────────────────────────────
+// Destinazione di _next del form Formspree. Volutamente noindex e fuori dalla
+// sitemap: e' una pagina di servizio, non un contenuto da indicizzare. Qui parte
+// l'evento generate_lead, perche' il POST nativo porta via dalla pagina del form.
+ensureDir(join(DIST, 'thank-you'));
+writeFileSync(join(DIST, 'thank-you', 'index.html'), page(
+  'Message received | The Italian Gateway',
+  'Your message has reached The Italian Gateway. We reply to every enquiry within one business day.',
+  DOMAIN + '/thank-you/',
+  `<h1>Message received</h1>
+<p>Thank you. Your message has reached us and we reply to every enquiry within one business day, usually sooner.</p>
+<p>If it is urgent, write directly to <a href="mailto:info@theitaliangateway.com">info@theitaliangateway.com</a>.</p>
+<h2>While you wait</h2>
+<ul>
+<li><a href="/guides/">All ${ARTICLES.length} guides on relocating to Italy</a></li>
+<li><a href="/healthcare/">Healthcare Setup Service</a> — SSN, private GP and insurance decided properly</li>
+<li><a href="/orientation/">Multi-Advisory Orientation</a> — medicine, finance, tax and law in one place</li>
+<li><a href="/buying-agent/">Property Buying Agent</a> — acting for the buyer only</li>
+</ul>
+<script>if(typeof gtag==="function"){gtag("event","generate_lead",{source:"static-page-form"});}</script>`,
+  null,
+  true
+).replace('<meta name="robots" content="index, follow">', '<meta name="robots" content="noindex, follow">'));
+console.log('  + thank-you/ (noindex, fuori sitemap)');
+
+// ── Feed RSS ────────────────────────────────────────────────
+// Canale di scoperta diretto, usato da Bing per trovare contenuti nuovi e
+// aggiornati. Referenziato con <link rel="alternate"> in tutte le pagine.
+const feedItems = ARTICLES.map(a => {
+  const iso = isoFromArticleDate(a.date) || BUILD_DATE;
+  const pub = new Date(iso + 'T09:00:00Z').toUTCString();
+  const url = DOMAIN + '/guide/' + a.id + '/';
+  return `  <item>
+    <title>${esc(a.title)}</title>
+    <link>${url}</link>
+    <guid isPermaLink="true">${url}</guid>
+    <category>${esc(a.cat)}</category>
+    <pubDate>${pub}</pubDate>
+    <description>${esc(a.desc)}</description>
+  </item>`;
+}).join('\n');
+writeFileSync(join(DIST, 'feed.xml'), `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>The Italian Gateway — Guides</title>
+  <link>${DOMAIN}/guides/</link>
+  <atom:link href="${DOMAIN}/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Guides on relocating to Italy: tax, property, healthcare, schooling, pensions and immigration.</description>
+  <language>en</language>
+  <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+${feedItems}
+</channel>
+</rss>`);
+console.log('  + feed.xml (' + ARTICLES.length + ' guide)');
+
+// ── Coerenza dei prezzi fra SPA e pagine statiche ───────────
+// Le pagine servizio esistono in due copie indipendenti: il componente React in
+// src/App.jsx e il corpo HTML scritto a mano qui dentro. Un prezzo aggiornato in
+// una sola delle due e' un errore che arriva al cliente. Finche' le due copie
+// esistono, questo controllo le tiene allineate. Avvisa, non blocca il build.
+const PREZZI_CRITICI = [
+  { importo: '€350', pagina: 'healthcare', servizio: 'Orientation Call' },
+  { importo: '€1,200', pagina: 'healthcare', servizio: 'Healthcare Orientation' },
+  { importo: '€1,800', pagina: 'healthcare', servizio: 'Healthcare Orientation Extended' },
+];
+const sorgenteApp = readFileSync(join(__dirname, 'src', 'App.jsx'), 'utf8');
+let prezziKo = 0;
+for (const p of PREZZI_CRITICI) {
+  const inReact = sorgenteApp.includes(p.importo);
+  const fileStatico = join(DIST, p.pagina, 'index.html');
+  const inStatica = existsSync(fileStatico) && readFileSync(fileStatico, 'utf8').includes(p.importo);
+  if (!inReact || !inStatica) {
+    prezziKo++;
+    console.warn('  ⚠ PREZZO DISALLINEATO: ' + p.servizio + ' ' + p.importo
+      + ' | src/App.jsx: ' + (inReact ? 'presente' : 'ASSENTE')
+      + ' | /' + p.pagina + '/: ' + (inStatica ? 'presente' : 'ASSENTE'));
+  }
+}
+console.log('  prezzi critici allineati fra SPA e pagine statiche: '
+  + (PREZZI_CRITICI.length - prezziKo) + '/' + PREZZI_CRITICI.length);
+
 // ── Verifica finale: i file critici esistono? ───────────────
+console.log('  link hash -> percorso crawlabile: ' + dehashOk + ' convertiti'
+  + (dehashSaltati.size ? ' | NON riconosciuti, lasciati invariati: ' + [...dehashSaltati].join(', ') : ''));
 const critical = ['sitemap.xml', 'robots.txt', 'index.html'];
 let allOk = true;
 for (const f of critical) {
